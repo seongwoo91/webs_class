@@ -108,17 +108,7 @@
 
         }
 
-        h5 {
-            margin-top: 15px;
-            margin-bottom: 15px;
-            background-color: rgb(100, 221, 237);
-            color: #000;
-            display: inline-block;
-            font-size: 20px;
-            font-weight: 500;
-            padding: 3px 10px 1px 10px;
-        }
-
+        
         h3 {
             margin-top: 30px;
         }
@@ -127,7 +117,31 @@
             margin-top: 20px;
             font-weight: 500;
         }
+
+        pre {
+            margin: 0;
+            border-radius: 0 0 0px 0px;
+        }
+
+        .sample {
+            border-radius: 5px;
+        }
+
+        .sample h3 {
+            background: #f2f2f2;
+            font-size: 16px;
+            padding: 20px 20px 15px 20px;
+            border-radius: 5px 5px 0 0;
+            border: 1px solid #e6e6e6;
+
+        }
+
+        .sample pre {
+            margin: 0 !important;
+            border-radius: 0 0 5px 5px !important;
+        }
     </style>
+    <link rel="stylesheet" href="../assets/css/prism.css">
 </head>
 
 <body>
@@ -145,30 +159,47 @@
         이는 마치 낙타의 등과 같다고 해서 낙타(Camel) 표기법이라 부릅니다.<br>
     </p>
     
-        <h5> 기본형 :  var 변수명; 또는 var 변수명 =값; </h5>
+    <div id="sample1" class="sample">
+        <h3>기본형</h3>
+        <div class="code">
+            <pre class="line-numbers"><code class="language-js">var 변수명; 또는 var 변수명 =값;</code></pre>
+        </div>
+    </div>
+<br>
+<br>
        
     <p>변수를 선언하면 변수명으로 데이터를 저장할 수 잇는 공간이 생성됩니다.<br>
         다음은 box라는 이름을 가진 변수에 100이라는 값을 대입한 예제입니다. 초기에는 값이 등록되지 않은 상태(underfined)입니다.<br>
         box에 100을 대입하면 다음 그림과 같이 변수에 100이 저장됩니다.<br>
     </p>
-    
-    <h5>var box;<br>
-    box=100;</h5>
-
+    <br>
+    <div id="sample1" class="sample">        
+        <div class="code">
+            <pre class="line-numbers"><code class="language-js">var box;<br>
+box=100;</code></pre>
+</div>
+</div>
+<br>
     <p>변수에는 하나의 값만 넣을 수 있습니다. 만약 변수 box에 값을 두번 넣으면 어떻게 될까요?<br>
         다음과 같이 변수 box에 새로운 데이터 30이 저장되면 기존에 저장되어 있던 데이터100은 삭제되고 새로운 데이터 30이 저장됩니다.    
     </p>
-
-    <h5>&lt;script&gt; <br>
-          var box; <br>
-          box = 100;<br>
-          box = 30;   <---- box는 결국 30이 저장됩니다. <br>
-          document.write(box); //30  <br>
-          &lt;/script&gt;<br>
-    </h5>
+<br>
+    <div id="sample1" class="sample">        
+        <div class="code">
+            <pre class="line-numbers"><code class="language-js">&lt;script&gt; <br>
+var box; <br>
+box = 100;<br>
+box = 30;   <---- box는 결국 30이 저장됩니다. <br>
+document.write(box);     //30  <br>
+&lt;/script&gt;</code></pre>
+        </div>
+        </div>
+        <br>
+    
 
     <p>위에서 작성한 문서를 저장한후 브라우저에서 확인하면 변수 box에 마지막으로 저장된 데이터 30이 출력됩니다.</p>
 
+    <script src="../assets/js/prism.js"></script>
 </body>
 
 </html>
