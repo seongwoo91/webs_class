@@ -108,16 +108,7 @@
 
         }
 
-        h5 {
-            margin-top: 15px;
-            margin-bottom: 15px;
-            background-color: rgb(100, 221, 237);
-            color: #000;
-            display: inline-block;
-            font-size: 20px;
-            font-weight: 500;
-            padding: 3px 10px 1px 10px;
-        }
+        
 
         h3 {
             margin-top: 15px;
@@ -142,7 +133,27 @@
             margin: 0;
             border-radius: 0 0 0px 0px;
         }
+
+        .sample {
+            border-radius: 5px;
+        }
+
+        .sample h3 {
+            background: #f2f2f2;
+            font-size: 16px;
+            padding: 20px 20px 15px 20px;
+            border-radius: 5px 5px 0 0;
+            border: 1px solid #e6e6e6;
+
+        }
+
+        .sample pre {
+            margin: 0 !important;
+            border-radius: 0 0 5px 5px !important;
+        }
+
     </style>
+    <link rel="stylesheet" href="../assets/css/prism.css">
 </head>
 
 <body>
@@ -179,15 +190,19 @@
         식별자를 작성할때 보통 Camel Case 방식을 많이 사용하는 편입니다.<br>
 
         <h5>
-            <pre class="line-numbers">
+            <div id="sample1" class="sample">
+                <h3>키워드 종류</h3>
+                <div class="code">
+                    <pre class="line-numbers"><code class="language-js">
 var firstVar = 10;                 // Camel Case 방식
 
-function my first_func {       // Underscore Case 방식
-    var firstLocalVal = 20;    // Camel Case 방식</pre>
-        </h5>
-    </p>
+function my first_func {          // Underscore Case 방식
+var firstLocalVal = 20;           // Camel Case 방식
+</code></pre>
+</div>
+</div>  
 
-    </p>
+    
     <br>
     <br>
     <h1>키워드</h1>
@@ -195,97 +210,104 @@ function my first_func {       // Underscore Case 방식
         키워드는 제어문의 시작과 끝, 특정한 조작 목적 등으로 쓰입니다.<br>
         이런 기능들이 정의되어 있기 때문에 식별자나 프로퍼티 이름으로 사용할 수 없습니다.</p>
     <br>
-    <h6>키워드 종류</h6>
-    <p>break<br>
-        loop문이나 switch문을 종료하기 위해 사용<br>
-        <br>
-        continue<br>
-        loop문을 빠져나가 최상단으로 가는데 사용<br>
-        <br>
-        var<br>
-        변수를 선언한다.<br>
-        <br>
-        new<br>
-        생성자 함수를 실행한다.<br>
-        <br>
-        function<br>
-        함수 선언<br>
-        <br>
-        if ... else<br>
-        if문 실행<br>
-        <br>
-        return<br>
-        함수에 return 뒤에 있는 값을 반환하고 함수를 종료한다.<br>
-        <br>
-        switch<br>
-        switch문 실행<br>
-        <br>
-        debugger<br>
-        자바스크립트의 실행을 중지하고 (가능하다면)디버깅 function을 부른다.<br>
-        <br>
-        do ... while do while반복문 실행 for<br>
-        for반복문 실행<br>
-        <br>
-        try ... catch<br>
-        error를 핸들링하는 try catch문 실행<br>
-        <br>
-        abstract<br>
-        abstract는 클래스의 메소드를 하위 클래스가 반드시 오버라이드 하도록 하는 것입니다.<br>
-        이것을 통해서 부모클래스의 일부 기능을 하위 클래스가 구현하도록 강제할 수 있습니다.<br>
-        <br>
-        boolean<br>
-        Boolean 객체는 불리언 값을 감싸고 있는 객체입니다.<br>
-        <br>
-        case<br>
-        <br>
-        catch<br>
-        <br>
-        char<br>
-        <br>
-        class<br>
-        <br>
-        const<br>
-        const 선언은 블록 범위의 상수를 선언합니다. 상수의 값은 재할당할 수 없으며 다시 선언할 수도 없습니다.<br>
-        <br>
-        default<br>
-        CSS:default 의사 클래스는 연관 요소 내에서의 기본값인 요소를 선택합니다.<br>
-        <br>
-        goto<br>
-        <br>
-        float<br>
-        <br>
-        for<br>
-        <br>
-        implements<br>
-        <br>
-        import<br>
-        <br>
-        in<br>
-        <br>
-        instanceof<br>
-        <br>
-        int<br>
-        <br>
-        interface<br>
-        <br>
-        byte<br>
-        <br>
-        public<br>
-        <br>
-        short<br>
-        <br>
-        static<br>
-        <br>
-        super<br>
-        <br>
-        synchronized<br>
-        <br>
-        this<br>
-        <br>
-        throw<br>
-        <br>
-        throws<br></p>
-
+    <h6></h6>
+    <div id="sample1" class="sample">
+        <h3>키워드 종류</h3>
+        <div class="code">
+            <pre class="line-numbers"><code class="language-js">
+break<br>
+loop문이나 switch문을 종료하기 위해 사용<br>
+<br>
+continue<br>
+loop문을 빠져나가 최상단으로 가는데 사용<br>
+<br>
+var<br>
+변수를 선언한다.<br>
+<br>
+new<br>
+생성자 함수를 실행한다.<br>
+<br>
+function<br>
+함수 선언<br>
+<br>
+if ... else<br>
+if문 실행<br>
+<br>
+return<br>
+함수에 return 뒤에 있는 값을 반환하고 함수를 종료한다.<br>
+<br>
+switch<br>
+switch문 실행<br>
+<br>
+debugger<br>
+자바스크립트의 실행을 중지하고 (가능하다면)디버깅 function을 부른다.<br>
+<br>
+do ... while do while반복문 실행 for<br>
+for반복문 실행<br>
+<br>
+try ... catch<br>
+error를 핸들링하는 try catch문 실행<br>
+<br>
+abstract<br>
+abstract는 클래스의 메소드를 하위 클래스가 반드시 오버라이드 하도록 하는 것입니다.<br>
+이것을 통해서 부모클래스의 일부 기능을 하위 클래스가 구현하도록 강제할 수 있습니다.<br>
+<br>
+boolean<br>
+Boolean 객체는 불리언 값을 감싸고 있는 객체입니다.<br>
+<br>
+case<br>
+<br>
+catch<br>
+<br>
+char<br>
+<br>
+class<br>
+<br>
+const<br>
+const 선언은 블록 범위의 상수를 선언합니다. 상수의 값은 재할당할 수 없으며 다시 선언할 수도 없습니다.<br>
+<br>
+default<br>
+CSS : default 의사 클래스는 연관 요소 내에서의 기본값인 요소를 선택합니다.<br>
+<br>
+goto<br>
+<br>
+float<br>
+<br>
+for<br>
+<br>
+implements<br>
+<br>
+import<br>
+<br>
+in<br>
+<br>
+instanceof<br>
+<br>
+int<br>
+<br>
+interface<br>
+<br>
+byte<br>
+<br>
+public<br>
+<br>
+short<br>
+<br>
+static<br>
+<br>
+super<br>
+<br>
+synchronized<br>
+<br>
+this<br>
+<br>
+throw<br>
+<br>
+throws<br>
+</code></pre>
+        </div>
+    </div>    
+        <script src="../assets/js/prism.js"></script>
 </body>
 
 </html>
