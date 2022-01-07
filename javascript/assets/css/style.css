@@ -48,15 +48,14 @@ a {
 
 /* header */
 #header {
-    padding: 30px;
+    padding: 40px;
+    border-bottom: 1px dashed #cdcdcd;
 }
 
 #header h1{
     margin-bottom: 30px;
     font-size: 40px;
 }
-#header nav {}
-#header nav ul {}
 #header nav ul li {
     display: inline;
 }
@@ -67,4 +66,18 @@ a {
     border-radius: 30px;
     display: inline-block;
     margin-bottom: 10px;
+}
+
+@media (max-width: 800px){
+    #header {
+        padding: 20px;
+    }
+    #header h1 {
+        margin-bottom: 15px;
+        font-size: 24px;
+    }
+    #header nav ul li a {
+        font-size: 16px;
+        padding: 8px 15px 6px 15px;
+        margin-bottom: 5px;
 }
