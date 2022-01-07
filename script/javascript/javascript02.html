@@ -180,10 +180,10 @@
             <pre class="line-numbers"><code class="language-js">{
     let x = 100, y = 200, z = "javascript";
         
-    document.write("<br>*** 01. 변수 ***<br>")
-    document.write(x)
-    document.write(y)
-    document.write(z)
+    document.write("<br>*** 01. 변수 ***<br>");
+    document.write(x);
+    document.write(y);
+    document.write(z);
 }</code></pre>
         </div>
     </div>
@@ -200,14 +200,67 @@
           y = 200,
           z = "javascript";
     
-    document.write("<br>*** 01. 상수 ***<br>")
-    document.write(x, "<br>")
-    document.write(y, "<br>")
-    document.write(z, "<br>")
+    document.write("<br>*** 01. 상수 ***<br>");
+    document.write(x, "<br>");
+    document.write(y, "<br>");
+    document.write(z, "<br>");
 }</code></pre>
         </div>
     </div>
     <!-- sample2 -->
+
+    <hr>
+
+    <!-- sample3 -->
+    <div id="sample1" class="sample">
+        <h3>03. 배열 : 데이터 불러오기</h3>
+        <div class="code">
+            <pre class="line-numbers"><code class="language-js">{
+    const arr = [100, 200, "javascript"];
+    
+    document.write("<br>*** 03. 배열 ***<br>");
+    document.write(arr[0], "<br>");
+    document.write(arr[1], "<br>");
+    document.write(arr[2], "<br>");
+}</code></pre>
+        </div>
+    </div>
+    <!-- sample3 -->
+
+    <hr>
+
+    <!-- sample4 -->
+    <div id="sample1" class="sample">
+        <h3>04. 배열 : 데이터 불러오기 : 2차 배열</h3>
+        <div class="code">
+            <pre class="line-numbers"><code class="language-js">{
+    const arr = [100, 200, ["javascript", "jquery"]];
+    
+    document.write("<br>*** 04. 배열 : 2차 배열 ***<br>");
+    document.write(arr[0], "<br>");
+    document.write(arr[1], "<br>");
+    document.write(arr[2][0], "<br>");
+    document.write(arr[2][1], "<br>");
+}</code></pre>
+        </div>
+    </div>
+    <!-- sample4 -->
+
+    <hr>
+
+    <!-- sample5 -->
+    <div id="sample1" class="sample">
+        <h3>05. 배열 : 데이터 불러오기 : 갯수 구하기</h3>
+        <div class="code">
+            <pre class="line-numbers"><code class="language-js">{
+    const arr = [100, 200, "javascript"];
+    
+    document.write("<br>*** 05. 배열 ***<br>");
+    document.write(arr.length);                 
+}</code></pre>
+        </div>
+    </div>
+    <!-- sample5 -->
 
     <script src="../assets/js/prism.js"></script>
     <!-- Javascript -->
