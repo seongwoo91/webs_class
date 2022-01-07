@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트</title>
+
+    <!-- style -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/prism.css">
+
+    <!-- script -->
+    <script src="assets/js/prism.js"></script>
+</head>
+
+<body>
+    <header id="header">
+        <h1><a href="index.html">Javascript 레퍼런스</a></h1>
+        <nav>
+            <ul class="list1">
+                <li><a href="reference01.html">기초 문법</a></li>
+                <li><a href="reference02.html">변수</a></li>
+                <li class="active"><a href="reference03.html">자료형</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="main">
+        <div class="doc">
+            <h2>데이터 타입(자료형)</h2>
+            <p>변수에는 여러가지 유형이 들어갈 수 있습니다. 프로그램 언어에 있어 가장 기본적인 데이터 타입이라고 합니다.<br>
+                데이터 타입에는 숫자, 문자열, 논리값, 특수값, 심벌, 객체, 배열, 함수 등을 표현할 수 있습니다.
+            </p>
+
+            <h3>숫자(Number)</h3>
+            <p>숫자형(Number) 데이터는 단어 의미 그대로 숫자를 의미한다.<br>
+                만약"100"과 같이 큰따옴표가 숫자를 감싸고 있다면 숫자가 아닌 문자형 데이터이다.<br>
+                이 경우에는 Number("100")를 이용하면 문자형 데이터를 숫자형 데이터로 바꿀 수 있다.</p>
+            <div class="code">
+                <pre><code>var 변수=숫자;<br>
+Number("문자형 숫자");</code></pre>
+            </div>
+
+            <h3>문자열(String)</h3>
+            <p>문자형(String) 데이터는 문자나 숫자를 큰 따음표("") 또는 작은 따옴표('')로 감싸고 있다.<br>
+                또한 문자형 데이터에 HTML 태그를 포함하여 출력하면 태그로 인식합니다.</p>
+            <div class="code">
+                <pre><code>기본형 : var 변수="사용할 문자나 숫자";<br>
+var s="javascript";
+var num="100";
+var tag="(h1)String(/h1)"</code></pre>
+            </div>
+
+            <h3>논리값(Boolean)</h3>
+            <p>논리값(Boolean) 데이터는 true(참) 또는 false(거짓)가 있습니다.<br>
+                이 데이터는 주로 2개의 데이터를 비교할때 나오는 결과이다<br>
+                예를 들어 '100보다 10이 크다'는 잘못된 비교이므로 false라는 결과를 반환하게 된다.</p>
+            <div class="code">
+                <pre><code>기본형 : var 변수= true or false; 또는 Boolean(데이터);<br>
+var s=true;
+var t=10>=100; //false
+var k=Boolean("hello"); //true</code></pre>
+            </div>
+            <br>
+            <p>Boolean( )메서드에 데이터를 입력하면 논리형 데이터인 ture 또는 false를 반환합니다.<br>
+                Boolean( )메서드는 숫자 0과 null,undefined, 빈 문자("")를 제외한 모든 데이터에 대해 true를 반화합니다.<br>
+                다음과 같이 Boolean( )메서드에 숫자 0을 입력하면 false라는 값을 반환합니다.<br>
+                그리고 Boolean( )메서드에 "성우"을 입력하면 true를 반환합니다.</p>
+            <div class="code">
+                <pre><code>var m = Boolean(0) //false
+var k =Boolean("성우") //true</code></pre>
+            </div>
+
+            <h3>특수값(Null)</h3>
+            <p>null값의 경우 값이 비어있음을 나타냅니다<br>
+                아무것도 참조하고 있지 않다라는 의미가 담겨 있으며 주로 객체를 담을 변수를 초기화할 때 많이 사용합니다.<br>
+                하지만 null 역시 아래의 undefined와 마찬가지로 값이며 데이터 타입입니다.<br>
+                분명한 차이점은 undefined는 변수를 선언만 하더라도 할당되지만 null은 변수를 선언한 후에 null로 값을 바꾼다는 점입니다
+            </p>
+            <div class="code">
+                <pre><code>var a = 100;
+a = null    //null</code></pre>
+            </div>
+
+            <h3>특수값(Undefined)</h3>
+            <p>undefined는 데이터 타입이자, 값을 나타냅니다.<br>
+                예를 들어 var seongwoo; 와 같이 변수를 선언하게 되면 변수에 Undefined를 할당시킨다.<br>
+                이럴경우 변수의 초깃값이 Undefined이며, 변수를 선언했지만 값을 가지게된다.<br>
+                그렇기에 데이터타입 이자 값인 것이다.
+            </p>
+            <div class="code">
+                <pre><code>var seongwoo;      //undefined</code></pre>
+            </div>
+
+            <h3>심벌(Symbol)</h3>
+            <p>Symbol은 유일한 식별자를 만들고 싶을때 사용한다.<br>
+                사용법은 Symbol(); 이며 활용법은 아래와 같다.
+            </p>
+            <div class="code">
+                <pre><code>let temp = Symbol();                        // 새로운 Symbol 만들기
+let temp2 = Symbol('seongwoo');    // 'seongwoo'라는 설명을 붙인 Symbol temp2</code></pre>
+            </div>
+
+            <h3>객체(Object)</h3>
+            <p>객체는 기능과 속성을 가지고 있습니다.<br>
+                다양한 키 모음 및 더 복잡한 엔티티들을 저장하는 데 사용됩니다.
+            </p>
+            <div class="code">
+                <pre><code>const obj = new Object( );
+const obj = { };</code></pre>
+            </div>
+
+
+            <h3>배열(Array)</h3>
+            <p>배열(array)은 1개의 변수에 여러 개의 값을 순차적으로 저장할 때 사용한다. 배열은 객체에 포함된다.</p>
+            <div class="code">
+                <pre><code>const arr = new Array( );
+const arr = [ ];</code></pre>
+            </div>
+
+
+            <h3>함수(Function)</h3>
+            <p>함수는 다른 모든 객체처럼 속성과 메서드를 가질 수 있다.<br>
+                다른 객체와 함수를 구별하는 것은, 함수는 호출할 수 있다는 점이며 간단히 말해 함수는 Function 객체입니다.</p>
+            <div class="code">
+                <pre>function( ){ };</code></pre>
+            </div>
+
+        </div>
+
+    </main>
+</body>
+
+</html>

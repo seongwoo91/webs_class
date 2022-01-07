@@ -1,1 +1,92 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트</title>
+
+    <!-- style -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/prism.css">
+
+    <!-- script -->
+    <script src="assets/js/prism.js"></script>
+</head>
+<body>    
+    <header id="header">
+        <h1><a href="index.html">Javascript 레퍼런스</a></h1>
+        <nav>
+            <ul class="list1">               
+            <li class="active"><a href="reference01.html">기초 문법</a></li>
+            <li><a href="reference02.html">변수</a></li>
+            <li><a href="reference03.html">자료형</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="main">
+        <div class="doc">
+            <h2>자바스크립트 선언문</h2>
+            <p>선언문은 자바스크립트 코드를 작성할 영역을 선언하는 것이라고 이해하면 됩니다.<br>
+                &lt;script&gt;라는 태그로 선언문이 시작된 곳부터 &lt;script&gt;라는 태그로 종료된 곳까지를 스크립트 영역이라고 부릅니다.<br>
+                <br>
+                선언문은 &lt;head&gt;태그 영역 또는 &lt;body&gt;태그 영역에 선언하면 됩니다.<br>
+                우리나라 개발자의 대부분은 &lt;head&gt;태그 영역에 선언하고 있습니다.
+            </p>
+            <div class="code"><pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="ko"&gt;
+    &lt;head&gt;
+        &lt;meta charset="UTF-8"&gt;
+        &lt;title&gt;Document&lt;/title&gt;
+        &lt;script&gt;
+        document.write("환영합니다")
+        &lt;/script&gt;
+    &lt;/head&gt;
+&lt;body&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre></div>
+
+            <h2>자바스크립트 주석처리</h2>
+            <p>자바스크립트 선언문 안에서 코드가 아닌 설명글을 넣고 싶을 때는 주석 처리를 할수있다.<br>
+                이때 한줄 주석일 경우에는 // 한줄 설명글로 작성할수있고, 여러줄 주석일경우는 /* 주석 */ 로 작성할수있다.
+            </p>
+            <div class="line">
+                // 한줄 설명글<br>
+                /* <br>
+                여러줄<br>
+                설명할때는<br>
+                이렇게<br>
+                */
+            </div>
+
+            <h2>코드 입력시 주의사항</h2>
+            <p>다음은 자바스크립트를 작성할 때 주의해야 할 몇 가지 사항입니다.</p>
+            <h3>대 / 소문자를 구분하여 작성한다.</h3>
+            <div class="line">
+                날짜 객체 생성: New date(); ( X )<br>
+                날짜 객체 생성: new Date(); ( O )
+            </div>
+            <h3>코드 작성후에는 세미콜론(;)을 붙여줘야하며, 세미콜론을 쓰지않으면 한줄에 2개의 코드를 작성할경우 오류가 발생한다.</h3>
+            <div class="code"><pre><code>
+document.write("hi") document.write("bye")    ( X )<br>
+document.write("hi"); document.write("bye");  ( O )
+        </code></pre></div>
+            <h3>코드 작성시에는 위처럼 한줄에 여러개 작성보다는 한줄만 작성하는것이 가독성이 좋다.</h3>
+            <br>
+            <h3>문자형 데이터를 작성할 때는 큰따옴표(" ")와 작은따옴표('')의 겹침 오류를 주의해야 합니다.</h3>
+            <div class="code"><pre><code>큰따옴표 겹침 오류
+documente.write("책에 "자바스크립트는 대소문자를 구분해야합니다"라고 나와 있다.");
+
+잘된 예
+documente.write('책에 "자바스크립트는 대소문자를 구분해야합니다"라고 나와 있다.'');
+documente.write("책에\"자바스크립트는 대소문자를 구분해야합니다\"라고 나와 있다.");</code></pre>
+</div>
+
+
+
+        </div>
         
+    </main>
+</body>
+</html>
