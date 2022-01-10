@@ -297,6 +297,33 @@ a {
     .result div {
         font-size: 14px;
         padding: 15px;
-        
+
     }
+}
+
+.table-bordered {
+    border:1px solid black;
+    border-width:thin;
+    
+}
+.table-bordered th {
+    border:1px solid black;
+    padding: 10px;
+    background: rgb(155, 204, 166)
+           
+
+}
+
+.table-bordered tr {
+    border:1px solid #000;
+    border-width:thin;
+    padding: 10px;
+
+
+}
+.table-bordered td {
+    border:1px solid #000;
+    border-width:thin;
+    padding: 10px;
+
 }
