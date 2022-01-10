@@ -128,14 +128,26 @@
                 <h3>04. 변수 : 변수의 종류 = 지역변수 + 전역변수 + 매개변수</h3>
                 <div class="code">
                     <pre class="line-numbers"><code class="language-js">{
-    let x = 100;
-    let y = 200;
-    let z = "javascript";
-    
-    document.write("<br>*** 04. 변수: 변수의종류 ***<br>");
-    document.write(x);
-    document.write(y);
-    document.write(z);
+    let x = 100; //전역변수는 지역변수에 영향을 받지않는다.
+    let y = 200; //전역변수   
+
+    function func() {
+        let x = 100; //지역변수
+        let z = "javascript";
+        x = 200; //지역변수 100->200
+        y = 300; //전역변수 200->300
+
+        document.write("<br>함수 안<br>");
+        document.write(x, "<br>");
+        document.write(y, "<br>");
+        document.write(z, "<br>");
+    }
+    func();
+
+    document.write("함수 밖<br>");
+    document.write(x, "<br>");
+    document.write(y, "<br>");
+    document.write(z, "<br>");
 }</code></pre>
                 </div>
             </div>
@@ -462,8 +474,7 @@
 
         //04. 변수 : 변수의 종류 : 지역변수 + 전역변수 + 매개변수
         {
-            document.write("<br>*** 04. 변수: 변수의종류 ***<br>");
-
+            document.write("<br>*** 04. 변수 ***<br>");
             let x = 100; //전역변수는 지역변수에 영향을 받지않는다.
             let y = 200; //전역변수   
 
