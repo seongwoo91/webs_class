@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트</title>
+
+    <!-- style -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/prism.css">
+
+    <!-- script -->
+    <script src="assets/js/prism.js"></script>
+</head>
+<body>    
+    <header id="header">
+        <h1><a href="index.html">Javascript 레퍼런스</a></h1>
+        <nav>
+            <ul class="list1">               
+            <li><a href="reference01.html">기초 문법</a></li>
+            <li><a href="reference02.html">변수</a></li>
+            <li><a href="reference03.html">자료형</a></li>
+            <li class="active"><a href="reference04.html">for문</a></li>
+            <li><a href="reference05.html">연산자</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="main">
+        <div class="doc">
+           <h2>for 문</h2>
+           <p>기본적으로 for문은 초깃값, 조건식, 증감식으로 구성되어 있습니다.<br>
+            <br>
+            1. 초기화 구문인 초깃값이 존재한다면 초깃값이 실행됩니다 보통 1이나 반복문 카운터로 초기 설정이 됩니다.<br>
+            그러나 복잡한 구문으로 표현 될 때도 있습니다 또한 변수로 선언 되기도 합니다.<br>
+            <br>
+            2. 조건문은 조건을 검사합니다 만약 조건문이 참이라면, 그 반복문은 실행됩니다.<br>
+            만약 조건문이 거짓이라면, 그 for문은 종결됩니다 만약 그 조건문이 생략된다면, 그 조건문은 참으로 추정됩니다.<br>
+            <br>
+            3. 문장을 실행합니다. 많은 문장을 실행할 경우엔, { } 를 써서 문장들을 묶어줍니다.<br>
+            갱신 구문인 증감식이 존재한다면 실행되고 2번째 단계로 돌아갑니다.<br>
+            <br>
+            아래는 예시입니다. 
+        </p>
+        <div class="code"><pre><code>let array = [100, 200 ,300];
+
+for (let i=0; i &lt; array.length; i++){
+    document.write(arr[i]);
+}
+    
+/**
+100
+200
+300
+*/</code></pre></div>
+
+           <h3>for문 문법</h3>
+           <p></p>
+
+        </div>
+        
+    </main>
+</body>
+</html>
