@@ -32,8 +32,8 @@
         <!-- menu -->
         <div class="menu">
             <ul>
-                <li class="active"><a href="css.html">속성</a></li>
-                <li><a href="cssReference01.html">기초 문법</a></li>
+                <li><a href="css.html">속성</a></li>
+                <li class="active"><a href="cssReference01.html">기초 문법</a></li>
                 <li><a href="cssReference02.html">Block/Inline</a></li>
                 <li><a href="cssReference03.html">CSS 단위</a></li>
                 <li><a href="cssReference04.html">CSS 색상</a></li>
@@ -46,24 +46,36 @@
         <div class="refer">
             <div class="doc">
                 <h3>CSS란?</h3>
-                <p></p>
+                <p>CSS(Cascading Style Sheets)는 HTML 같은 문서의 스타일을 꾸밀 때 사용하는 스타일 시트 언어입니다.<br>
+                글꼴, 배경색, 너비와높이, 위치등을 조정하거나 웹브라우저의 스크린 크기, 장치에 따라서 화면을 다르게 표시하도록 지정할수도 있습니다.
+                </p>
 
-                <h3>css 주석 표시 </h3>
+                <h3>css 주석 표시방법</h3>
                 <div class="code"><pre><code>/* CSS 주석 */</code></pre></div>
-            </div>
-
+            
             <h3>CSS 선언 방법</h3>
+            
             <h4>내부 스타일</h4>
-            <p></p>
-            <div class="code"><pre><code></code></pre></div>
+            <p>HTML 파일 안에 &lt;style&gt; 태그로 스타일을 작성하는 방식입니다.</p>
+            <div class="code"><pre><code>&lt;style&gt;
+    .doc {
+        font-size: 18px;
+        line-height: 1.8;
+        margin-bottom: 200px;
+    }
+&lt;/style&gt;</code></pre></div>
 
             <h4>외부 스타일</h4>
-            <p></p>
-            <div class="code"><pre><code></code></pre></div>
+            <p>link 태그를 이용하여 외부 CSS 파일을 연결하는 방식입니다.</p>    
+    <div class="code"><pre><code>&lt;link rel="stylesheet" href="assets/css/style.css"&gt;</code></pre></div>
 
             <h4>인라인 스타일</h4>
-            <p></p>
-            <div class="code"><pre><code></code></pre></div>
+            <p>요소의 style 속성에 직접 스타일을 작성하는 방식입니다.<br>
+            최우선 순위이기 때문에 외부스타일과 혼합하여 사용하는경우 추후 수정에 어려움이 따를수있는 방식입니다.</p>
+            <div class="code"><pre><code>&lt;div style="color:black; margin:20px;"&gt;
+    ...
+&lt;/div&gt;</code></pre></div>
+        </div>
         </div>
 
         <!--// refer -->
