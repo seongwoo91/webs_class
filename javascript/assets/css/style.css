@@ -358,13 +358,14 @@ a {
     border: 8px solid #0066FF;
     box-sizing: border-box;
     border-radius: 20px;
+    position: relative;
     
 }
-.avascript::before {
+.javascript::before {
     content: '';
     width: 100%;
     height: calc(100vh - 16px);
-    border: 8px solid rgb(7, 7, 7);
+    border: 8px solid #50B5F9;
     box-sizing: border-box;
     position: absolute;
     left: 0; top: 0;
@@ -395,7 +396,7 @@ a {
 }
 .javascript .menu li a:hover {
     background: #0066FF;
-    color:rgb(29, 3, 98)
+    color:#fff;
 } 
 
 @media (max-width: 800px){
