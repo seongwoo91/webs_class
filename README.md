@@ -7,10 +7,10 @@ https://seongwoo91.github.io/webs_class/
 https://seongwoo91.github.io/webs_class/javascript/index.html
 
 ## HTML 레퍼런스
-https://seongwoo91.github.io/webs_class/html/index.html
+https://seongwoo91.github.io/webs_class/reper/html.html
 
 ## CSS 레퍼런스
-https://seongwoo91.github.io/webs_class/css/index.html
+https://seongwoo91.github.io/webs_class/reper/css.html
 
 ## 레이아웃
 https://seongwoo91.github.io/webs_class/layout/index.html
