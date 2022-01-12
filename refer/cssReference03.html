@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CSS Reference</title>
+    <title>CSS Reference03</title>
 
     <!-- 파비콘 -->
     <link rel="shortcut icon" href="../assets/face/css50.png">
@@ -47,6 +47,224 @@
         <div class="refer">
             <div class="doc">
                 <h3>CSS 단위</h3>
+                <p>CSS 단위는 길이 단위, 각도 단위, 시간 단위, 진동수 단위, 해상도 단위가 존재합니다.</p>
+                <h3>길이 단위</h3>
+                <p>길이 단위는 상대적인 길이 단위와 절대적인 길이 단위가 존재합니다.</p>
+                <h4>상대적 길이 단위</h4>
+                <div class="table">
+                    <table>
+                        <thead>
+                            <th>단위</th>
+                            <th>비교의 대상</th>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>em</td>
+                                <td>해당 요소의 폰트 크기</td>
+                            </tr>
+                            <tr>
+                                <td>ex</td>
+                                <td>해당 요소의 폰트의 x높의</td>
+                            </tr>
+                            <tr>
+                                <td>cap</td>
+                                <td>해당 요소의 폰트의 대문자 높이(대문자의 공칭 높이)</td>
+                            </tr>
+                            <tr>
+                                <td>ch</td>
+                                <td>해당 요소의 폰트의 좁은 문자가 평균적으로 나아가는 길이. "0" (ZERO, U+0030)문자로 대표됨</td>
+                            </tr>
+                            <tr>
+                                <td>ic</td>
+                                <td>해당 요소의 폰트의 전각 문자가 평균적으로 나아가는 길이, "水" (CJK 물 표의 문자, U+6C34) 문자로 대표됨</td>
+                            </tr>
+                            <tr>
+                                <td>rem</td>
+                                <td>루트 요소의 폰트 크기</td>
+                            </tr>
+                            <tr>
+                                <td>lh</td>
+                                <td>해당 요소의 줄 높이</td>
+                            </tr>
+                            <tr>
+                                <td>rlh</td>
+                                <td>루트 요소의 줄 높이</td>
+                            </tr>
+                            <tr>
+                                <td>vw</td>
+                                <td>뷰포트 너비의 1%</td>
+                            </tr>
+                            <tr>
+                                <td>vh</td>
+                                <td>뷰포트 높이의 1%</td>
+                            </tr>
+                            <tr>
+                                <td>vi</td>
+                                <td>루트 요소의 인라인 축 방향으로 뷰포트 길이의 1%</td>
+                            </tr>
+                            <tr>
+                                <td>vb</td>
+                                <td>루트 요소의 블록 축 방향으로 뷰포트 길이의 1%</td>
+                            </tr>
+                            <tr>
+                                <td>vmin</td>
+                                <td>뷰포트의 길이 중 더 짧은 것의 1%</td>
+                            </tr>
+                            <tr>
+                                <td>vmax</td>
+                                <td>뷰포트의 길이 중 더 긴 것의 1%</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <p>상대적 길이 단위는 다른 무언가와 비교해 상대적인 길이를 나타냅니다.</p>
+                <h4>절대적 길이 단위</h4>
+                <div class="table">
+                    <table>
+                        <thead>
+                            <th>단위</th>
+                            <th>이름</th>
+                            <th>다음과 동일함</th>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>cm</td>
+                                <td>센티미터</td>
+                                <td>1cm = 96px/2.54</td>
+                            </tr>
+                            <tr>
+                                <td>mm</td>
+                                <td>밀리미터</td>
+                                <td>1mm = 1cm의 1/10</td>
+                            </tr>
+                            <tr>
+                                <td>Q</td>
+                                <td>쿼터-밀리미터</td>
+                                <td>1Q = 1cm의 1/40</td>
+                            </tr>
+                            <tr>
+                                <td>in</td>
+                                <td>인치</td>
+                                <td>1in = 2.54cm = 96px</td>
+                            </tr>
+                            <tr>
+                                <td>pc</td>
+                                <td>피카</td>
+                                <td>1pc = 1in의 1/16</td>
+                            </tr>
+                            <tr>
+                                <td>pt</td>
+                                <td>포인트</td>
+                                <td>1pt = 1in의 1/72</td>
+                            </tr>
+                            <tr>
+                                <td>px</td>
+                                <td>픽셀</td>
+                                <td>1px = 1in의 1/96</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <h3>각도 단위</h3>
+                <div class="table">
+                    <table>
+                        <thead>
+                            <th>단위</th>
+                            <th>이름</th>
+                            <th>설명</th>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>deg</td>
+                                <td>도</td>
+                                <td>360도가 완전한 원을 이룹니다.</td>
+                            </tr>
+                            <tr>
+                                <td>grad</td>
+                                <td>그라디안</td>
+                                <td>400 그라디안이 완전한 원을 이룹니다.</td>
+                            </tr>
+                            <tr>
+                                <td>rad</td>
+                                <td>라디안</td>
+                                <td>2π 라디안이 완전한 원을 이룹니다.</td>
+                            </tr>
+                            <tr>
+                                <td>turn</td>
+                                <td>턴</td>
+                                <td>1턴이 완전한 원을 이룹니다.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <h3>시간 단위</h3>
+                <div class="table">
+                    <table>
+                        <thead>
+                            <th>단위</th>
+                            <th>이름</th>
+                            <th>설명</th>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>s</td>
+                                <td>초</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>ms</td>
+                                <td>밀리초</td>
+                                <td>1,000 밀리초는 1초와 같습니다.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h3>진동수 단위</h3>
+                <div class="table">
+                    <table>
+                        <thead>
+                            <th>단위</th>
+                            <th>이름</th>
+                            <th>설명</th>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Hz</td>
+                                <td>헤르츠</td>
+                                <td>1초당 발생한 횟수를 나타냅니다.</td>
+                            </tr>
+                            <tr>
+                                <td>kHz</td>
+                                <td>킬로헤르츠</td>
+                                <td>1 킬로헤르츠는 1000헤르츠와 같습니다.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <h3>해상도 단위</h3>
+                <div class="table">
+                    <table>
+                        <thead>
+                            <th>단위</th>
+                            <th>설명</th>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>dpi</td>
+                                <td>인치당 점의 수</td>
+                            </tr>
+                            <tr>
+                                <td>dpcm</td>
+                                <td>센티미터당 점의 수</td>
+                            </tr>
+                            <tr>
+                                <td>dppx, x</td>
+                                <td>픽셀당 점의 수</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
         <!--// refer -->

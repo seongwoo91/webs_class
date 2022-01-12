@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CSS Reference</title>
+    <title>CSS Reference02</title>
 
     <!-- 파비콘 -->
     <link rel="shortcut icon" href="../assets/face/css50.png">
@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/prism.css">
     <!-- //CSS연동 -->
+
 </head>
 
 <body>
@@ -46,7 +47,31 @@
         <!-- refer -->
         <div class="refer">
             <div class="doc">
-                <h3>Block과 Inline</h3>
+                <h3>Block 속성</h3>
+            <p>Block 속성은 한줄에 나열되지 않고 그 자체로 한 줄을 차지합니다 대표적으로 &lt;p&gt; 태그가 있습니다.<br>
+            block속성을 가진 태그는 기본적으로 너비 100%(width: 100%)속성을 가지고있습니다.<br>
+            그래서 다음요소는 자연히 줄넘김이 됩니다.
+            그리고 inline과는 달리 margin, width, height 속성을 정의하면 모두 적용됩니다.<br>
+            이러한 속성때문에 대부분 블록 속성의 태그는 화면 구성이나 레이아웃에 사용하기에 좋습니다.                
+            </p>
+<br>
+<h3>Inline</h3>
+<p>inline 속성은 줄을 바꾸지 않고 다른 요소와 함께 한행에 위치하려는 성향이며 대표적인 태그로는 &lt;a&gt; 태그가 있습니다.<br>
+    그래서 inline 속성은 문장안에서 사용하는 태그에 주로 기본값으로 설정되어 있습니다 예를 들면 문장을 강조해주는 em이나 strong 태그도 inline 속성입니다.<br>
+    CSS를 작성할때 아래와 같은 특징을 발견하면 inline 속성으로 파악하기 쉽습니다.<br>
+</p>
+<ul>
+    <li>margin 속성이 적용되지 않으며 여백은 line-height 속성에 의해 발생합니다.</li>
+    <li>너비(width)와 높이(height) 속성이 적용되지 않습니다.</li>
+    <li>inline속성을 가진 태그를 연속으로 사용시 좌,우로 5px가량의 여백이 자동으로 발생합니다.</li>
+
+</ul>
+<br>
+<h3>inline-block</h3>
+<p>Inline과 Block, 두 속성의 중간 단계도 있습니다<br>
+inline-block이라는 이 속성은 inline과 같이 한줄에 표현하면서도 margin,width,height 속성을 적용가능하게 해줍니다.<br>
+기본적으로 inline-block속성을 가지고있는 태그는 없으며 이 속성은 CSS를 통해 선언해주어야만 합니다.<br>
+</p>
             </div>
         </div>
         <!--// refer -->
