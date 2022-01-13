@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트</title>
+
+    <!-- style -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/prism.css">
+
+    <!-- script -->
+    <script src="assets/js/prism.js"></script>
+</head>
+
+<body>
+    <header id="header">
+        <h1><a href="index.html">Javascript 레퍼런스</a></h1>
+        <nav>
+            <ul class="list1">
+                <li><a href="reference01.html">기초 문법</a></li>
+                <li><a href="reference02.html">변수</a></li>
+                <li><a href="reference03.html">자료형</a></li>
+                <li><a href="reference04.html">for문</a></li>
+                <li><a href="reference05.html">연산자</a></li>
+                <li><a href="reference06.html">조건문</a></li>
+                <li class="active"><a href="reference07.html">반복문</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="main">
+        <div class="doc">
+            <h2>반복문</h2>
+            <p><strong>반복문을 사용하면 코드를 원하는 횟수만큼 반복실행이 가능합니다.</strong><br>
+                반복문에는 while문과 do while 문, for문이 있습니다.</p>
+
+            <h3>while문</h3>
+            <p><strong>while문은 조건식을 만족할때까지 코드를 여러 회 반복하여 실행이 가능합니다.</strong><br>
+                아래는 while문을 사용하여 1.Hello부터 10.Hello 까지 Hello 앞의 숫자가 1씩 증가하면서 출력하도록 작성했습니다.</p>
+            <div class="code">
+                <pre><code>{
+    let num = 1;      ( 변수 = 초깃값;)
+
+    while(num &lt;= 10){        (조건식)  
+        document.write(num + ".Hello");  (출력)
+        num++;                  (증감식)
+    }
+}</code></pre>
+            </div>
+            <p>코드의 작동순서는 위에부터 조건식 -> 출력 -> 증감식 -> 조건식 으로 반복 실행됩니다. <br>
+                <br>
+                <p>다음 예제는 while 문을 사용하여 1부터 30까지의 숫자중 2의 배수이면서 6의 배수인 숫자만 출력하도록 작성했습니다.</p>
+                <div class="code">
+                    <pre><code>&lt;script&gt;
+    var i=1;
+    while( i &lt;=30) {
+        if(i % 2 == 0 && i % 6 == 0){
+        document.write(i, "&lt;br /&gt;");
+        }
+        i++;
+    }
+&lt;/script&gt;</code></pre>
+                </div>
+                <br>
+                <br>
+                <h3>for문</h3>
+                <p>for 문은 조건식을 만족할 때까지 특정 코드를 반복하여 실행합니다.
+                    사용방법은 while문과 같지만<br> <strong>while 문보다 사용이 간편해 사용빈도가 높은것이 특징입니다.</strong></p>
+                <div class="code">
+                    <pre><code>기본형
+for(초깃값; 조건식; 증감식){
+    자바스크립트 코드;
+}
+실행순서는 초깃값 -> 조건식 -> JS코드 -> 증감식 -> 조건식 입니다.</code></pre>
+                </div>
+                <br>
+                <p>다음은 for문을 사용해 1.안녕~10.안녕 까지 1씩 반복하여 출력하는 예제입니다. </p>
+                <div class="code">
+                    <pre><code>&lt;script&gt;
+    {
+        for(let i=1; i&lt;=10; i++){       //(초깃값; 조건식; 증감식)
+            document.write(i + ".안녕");   //중괄호의 코드가 10회 반복 실행됩니다.
+        }
+    }
+&lt;/script&gt;
+</code></pre>
+                </div>
+                <br>
+                <br>
+                <h3>break문</h3>
+                <p>반복문인 while 문 또는 for 문앞에서 <strong>break 문을 실행하면 조건식과 상관없이 강제로 종료시킵니다.</strong><br>
+                    다음은 for 문과 while문에서 사용된 예제입니다.
+                </p>
+                <div class="code">
+                    <pre><code>{
+    let num = 0;
+        
+    while(num &lt;= 20){
+        document.write(num);
+        num++;
+        if(num==10){
+            break;
+        }
+    }
+    // 위의 while문의 경우 출력하는식이 숫자를 더해나가는 ++; 식보다 앞에 있기 때문에 9까지 출력이 되고   
+    // 아래 ++; 식으로 넘어와서 10이 만들어지게 되면 다음식인 break에서 걸리기 때문에 9까지만 출력이된다.
+    
+    for(i=0; i&lt;=20; i++){
+        document.write(i);
+        if(i == 10){
+            break;
+        }
+    }
+    //위의 for문의 경우는 출력하는식이 break보다 앞에 있기 때문에 10까지는 출력이 되고
+    //그 후에 10이 break에 오기 때문에 10까지 출력이 되고 break가 걸리게 됩니다.
+}</code></pre>
+                </div>
+                <br>
+                <br>
+                <h3>continue문</h3>
+                <p>continue 문은 반복문에서만 사용할수 있으며 실행되면 종료시키는 break문과 달리<br>
+                    <strong>continue는 해당 값을 건너 뛰고 다음 식으로 이동해서 실행합니다.</strong>
+                </p>
+                <p class="bt20">while문과 for문에서 continue의 기본형은 다음과 같습니다.</p>
+                <div class="code">
+                    <pre><code>for(초깃값; 조건식; 증감식){
+    continu;
+    JS 코드;
+}</code></pre>
+                </div>
+                <div class="code">
+                    <pre><code>var 변수=초깃값;
+while(조건식){
+    증감식;
+    continue;
+    자바스크립트 코드;
+}</code></pre>
+                </div>
+                <br>
+                <p>다음은 사용 예제입니다.</p>
+                <div class="code">
+                    <pre><code>{                
+    let num =0;
+    while(num &lt; 10){                   
+        num++;
+        if (num == 5){
+            continue;
+        }
+        document.write(num);
+        
+    }                
+    for(let i=1; i&lt;=10; i++){
+        if(i == 5){
+            continue;
+        }
+        document.write(i);
+    
+    }
+}</code></pre>
+            </div>
+            <p>위와 식의 경우 5를 건너뛰고 1234678910 을 출력합니다.</p>
+
+        </div>
+    </main>
+</body>
+
+</html>
