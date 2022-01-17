@@ -13,9 +13,9 @@
         body {
             background-color: #E8F5E9;
         }
-        #container {
-            width: 1200px;             
-            margin: 0 auto;  /* 가운데 정렬(블록구조이면서 위드값이 있을때만 적용됨) */
+        #wrap {
+            width: 1200px;
+            margin: 0 auto;
         }
         #header {
             width: 1200px;
@@ -27,46 +27,42 @@
             height: 100px;
             background-color: #A5D6A7;
         }
-        #contents {
-            width: 1200px;         
+        #main {
+            width: 1200px;
+            display: flex;
+        }
+        #main .article1 {
+            width: 300px;
+            height: 780px;
+            background-color: #81C784;
+        }
+        #main .article2 {
+            width: 600px;
+            height: 780px;
+            background-color: #66BB6A;
+        }
+        #main .article3 {
+            width: 300px;
+            height: 780px;
+            background-color: #4CAF50;
         }
         #footer {
             width: 1200px;
             height: 100px;
             background-color: #43A047;
-            clear: both;
-
-        }
-        #contents .left {
-            width: 300px;
-            height: 780px;
-            background-color: #81C784;
-            float: left;
-        }
-        #contents .center {
-            width: 600px;
-            height: 780px;
-            background-color: #66BB6A;
-            float: left;
-        }
-        #contents .right {
-            width: 300px;
-            height: 780px;
-            background-color: #4CAF50;
-            float: left;
-        }
+        }        
     </style>
 </head>
 <body>
-    <div id="container">
-        <div id="header"></div>
-        <div id="nav"></div>
-        <div id="contents">
-            <div class="left"></div>
-            <div class="center"></div>
-            <div class="right"></div>
-        </div>
-        <div id="footer"></div>
+    <div id="wrap">
+        <header id="header"></header>
+        <nav id="nav"></nav>
+        <main id="main">
+            <article class="article1"></article>
+            <article class="article2"></article>
+            <article class="article3"></article>
+        </main>
+        <footer id="footer"></footer>
     </div>
 </body>
 </html>
