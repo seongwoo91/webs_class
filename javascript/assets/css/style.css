@@ -447,8 +447,9 @@ img {
     padding: 10px 20px;
     font-weight: normal;
     margin-top: 10px;
-    border-radius: 5px 5px 0 0;
+    border-radius: 5px;
     font-size: 16px;
+    cursor:pointer
 }
 
 .result>div {
@@ -457,10 +458,16 @@ img {
     color: #fff;
     border-radius: 0 0 5px 5px;
     font-size: 16px;
-    line-height: 1.4;
-    /* display: none; */
+    line-height: 1.4;   
+    display: none;     
 }
-
+.result.active h4 {
+    border-radius: 5px 5px 0 0;
+} 
+.result.active > div {
+    display: block;
+    border-radius: 0 0 5px 5px;
+}
 @media (max-width: 800px) {
     .result h4 {
         font-size: 14px;
