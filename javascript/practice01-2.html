@@ -13,6 +13,7 @@
 
     <!-- script -->
     <script src="assets/js/prism2.js"></script>
+    <script src="assets/js/script.js"></script>
 </head>
 
 <body>
@@ -22,8 +23,53 @@
     <main id="main">
         <div class="test">
             <h2>구구단 출력하기</h2>
+            <!-- sample1 -->
+            <div id="sample1" class="sample">
+                <h3>for문을 사용해서 구구단 신나게 출력하기</h3>
+                <div class="code">
+                    <pre class="line-numbers"><code class="language-js">for (let i = 2; i &lt;= 9; i++){
+    document.write("<br>");
 
-
+    for (let j = 1; j &lt;= 9; j++) {
+        let sum = i * j;
+        document.write(i + " * " + j + " = " + sum, "<br>")
+    }
+}</code></pre>
+                </div>
+                <div class="result">
+                    <h4>결과보기</h4>
+                    <div>
+                        어흥!<br>
+                        123<br>
+                    </div>
+                </div>
+            </div>
+            <!-- sample1 -->
+            <br>
+              <!-- sample2 -->
+              <div id="sample2" class="sample">
+                <h3>while문을 사용해서 구구단 출력하기</h3>
+                <div class="code">
+                    <pre class="line-numbers"><code class="language-js">let h = 2
+while (h &lt;= 9) {
+    document.write("<br>");
+    let g = 1
+    while (g &lt;= 9) {
+        let sum = h * g;
+        document.write(h + "X" + g + "=" + sum, "<br>")
+        g++
+    }
+    h++
+}</code></pre>
+                </div>
+                <div class="result">
+                    <h4>결과보기</h4>
+                    <div>
+                        어흥!<br>
+                    </div>
+                </div>
+            </div>
+            <!-- sample2 -->            
         </div>
     </main>
     <!-- script -->
@@ -33,27 +79,25 @@
         // j = for
 
         // sum = 1 * j
-        for (let i = 2; i <= 9; i++) {
-            document.write("<br>");
-
-            for (let j = 1; j <= 9; j++) {
-                let sum = i * j;
-                document.write(i + " * " + j + " = " + sum, "<br>")
-            }
-        }
-
-        //wihle문을 이용해서 구구단 출력
-        let h = 2
-        while (h <= 9) {
-            document.write("<br>");
-            let g = 1
-            while (g <= 9) {
-                let sum = h * g;
-                document.write(h + "X" + g + "=" + sum, "<br>")
-                g++
-            }
-            h++
-        }
+        // for (let i = 2; i <= 9; i++) {
+        //     document.write("<br>")
+        //     for (let j = 1; j <= 9; j++) {
+        //         sum = i * j;
+        //         document.write(i + " * " + j + " = " + sum, "<br>")
+        //     }
+        // }
+        // //wihle문을 이용해서 구구단 출력
+        // let h = 2
+        // while (h <= 9) {
+        //     document.write("<br>");
+        //     let g = 1
+        //     while (g <= 9) {
+        //         let sum = h * g;
+        //         document.write(h + "X" + g + "=" + sum, "<br>")
+        //         g++
+        //     }
+        //     h++
+        // }
     </script>
 </body>
 

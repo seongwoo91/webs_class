@@ -81,7 +81,9 @@ document.write(table);</code></pre>
             </div>
 
             <div class="result03"></div>
+            <br>
 
+            <div class="result04"></div>            
         </div>
     </main>
     <!-- script -->
@@ -127,12 +129,12 @@ document.write(table);</code></pre>
             let table = "<table>";
 
             for (let i = 1; i <= 5; i++) {
-                table += "<tr>";                
+                table += "<tr>";
                 for (let j = 1; j <= 5; j++) {
-                    if(i>j){        
-                    table += "<td> </td>";
-                    }else{
-                    table += "<td>*</td>";
+                    if (i > j) {
+                        table += "<td> </td>";
+                    } else {
+                        table += "<td>*</td>";
                     }
                 }
                 table += "</tr>";
@@ -141,6 +143,26 @@ document.write(table);</code></pre>
 
             document.querySelector(".result03").innerHTML = table;
         }
+        //04
+        {
+
+            let table = "<table>";
+
+            for (let i = 1; i <= 5; i++) {
+                table += "<tr>";
+                for (let j = 1; j <= 5; j++) {
+                    if (i >= j) {
+                        table += "<td>*</td>";
+                    } else {
+                        table += "<td></td>";
+                    }
+                }
+                table += "</tr>";
+            }
+            table += "</table>";
+
+            document.querySelector(".result04").innerHTML = table;
+        }        
     </script>
 </body>
 
