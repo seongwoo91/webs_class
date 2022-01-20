@@ -11,9 +11,7 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/prism2.css">
 
-    <!-- script -->
-    <script src="assets/js/prism2.js"></script>
-    <script src="assets/js/script.js"></script>
+
 </head>
 
 <body>
@@ -39,15 +37,14 @@
                 <div class="result">
                     <h4>결과보기</h4>
                     <div>
-                        123<br>
-                        123
+
                     </div>
                 </div>
             </div>
             <!-- sample1 -->
             <br>
-              <!-- sample2 -->
-              <div id="sample2" class="sample">
+            <!-- sample2 -->
+            <div id="sample2" class="sample">
                 <h3>1.2 while문을 사용해서 구구단 출력하기</h3>
                 <div class="code">
                     <pre class="line-numbers"><code class="language-js">let h = 2
@@ -65,14 +62,14 @@ while (h &lt;= 9) {
                 <div class="result">
                     <h4>결과보기</h4>
                     <div>
-                        1234<br>
+                        <br>
                     </div>
                 </div>
             </div>
-            <!-- sample2 -->            
+            <!-- sample2 -->
             <br>
-              <!-- sample2 -->
-              <div id="sample3" class="sample">
+            <!-- sample2 -->
+            <div id="sample3" class="sample">
                 <h3>1.3 사용자가 원하는 단을 받아 출력하시오!</h3>
                 <p>조건 : 사용자가 원하는 단은 prompt()를 사용합니다. <a href="#;" class="pBtn btn03">클릭</a></p>
                 <div class="code">
@@ -90,62 +87,49 @@ while (h &lt;= 9) {
                 </div>
                 <div class="result result03">
                     <h4>결과보기</h4>
-                    <div>
-                        1234<br>
-                    </div>
+                    <div></div>
                 </div>
             </div>
-            <!-- sample2 -->            
+            <!-- sample2 -->
         </div>
     </main>
     <!-- script -->
     <script>
-        // for문을 이용해서 구구단 출력
 
-        // i = for( let i=2; 2<=9; i++)
-        // j = for
-
-        // sum = 1 * j
-        // for (let i = 2; i <= 9; i++) {
-        //     document.write("<br>")
-        //     for (let j = 1; j <= 9; j++) {
-        //         sum = i * j;
-        //         document.write(i + " * " + j + " = " + sum, "<br>")
-        //     }
-        // }
-        // wihle문을 이용해서 구구단 출력
-
-        // let h = 2
-        // while (h <= 9) {
-        //     document.write("<br>");
-        //     let g = 1
-        //     while (g <= 9) {
-        //         let sum = h * g;
-        //         document.write(h + "X" + g + "=" + sum, "<br>")
-        //         g++
-        //     }
-        //     h++
-        // }
-
-
-        //1.3 사용자가 원하는 단을 받아 출력하시오!
+        //3번 원하는 단을 받아서 구구단 출력하기
         {
             let num, result;
 
             document.querySelector(".btn03").addEventListener("click", () => {
                 num = prompt("출력해보고싶은 구구단 숫자를 입력해보세요!", "2");
                 // console.log(num)
-            
-            for(let i=1; i<=9; i++){
-                result = num + " * " + i + " = " + (num * i) + "<br>";
-                // console.log(result)
-                document.querySelector(".result03 > div").innerHTML += result;
-            }
-        });
-            
-            
+
+                for (let i = 1; i <= 9; i++) {
+                    result = num + " * " + i + " = " + (num * i) + "<br>";
+                    // console.log(result)
+                    document.querySelector(".result03 > div").innerHTML += result;
+                }
+            });
+
         }
+
+        //2번 while문을 사용해서 구구단 출력
+        {
+            let h = 2;
+            while(h<=9){
+                let g = 1;
+                while(g<=9){
+                    document.querySelector("result02").innerHTML += h + "x" + g + "=" + (h*g) + "<br>";                    
+                    g++;
+                } 
+                h++;
+            }
+        }
+            
     </script>
+    <!-- script -->
+    <script src="assets/js/prism2.js"></script>
+    <script src="assets/js/script.js"></script>
 </body>
 
 </html>
