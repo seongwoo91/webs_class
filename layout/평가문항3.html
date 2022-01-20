@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>레이아웃 평가3번</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            background-color: gray;
+        }
+        #wrap {
+            width: 1200px;
+            height: 1080;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        #header {
+            width: 1200px;
+            height: 100px;
+            background-color: red;
+        }
+        #nav {
+            width: 1200px;
+            height: 100px;
+            background-color: orange;
+        }
+        #contents {
+            width: 1200px;
+            height: 780px;
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: column;
+        }
+        #footer {
+            width: 1200px;
+            height: 100px;
+            background-color: black;
+        }
+        #contents .aside {
+            width: 300px;
+            height: 780px;
+            background-color: yellow;
+        }
+        #contents .article1 {
+            width:900px;
+            height:260px;
+            display: flex;
+        }
+        #contents .article1 .article1-1 {
+            width:450px;
+            height: 260px;
+            background-color: green;
+        }
+        #contents .article1 .article1-2 {
+            width:450px;
+            height: 260px;
+            background-color: blue;
+        }
+        #contents .article2 {
+            width: 900px;
+            height: 260px;
+            background-color: navy;
+        }
+        #contents .article3 {
+            width: 900px;
+            height: 260px;
+            background-color: purple;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <header id="header"></header>
+        <nav id="nav"></nav>
+        <section id="contents">
+            <aside class="aside"></aside>
+            <article class="article1">
+                <article class="article1-1"></article>
+                <article class="article1-2"></article>
+            </article>
+            <article class="article2"></article>            
+            <article class="article3"></article>            
+        </section>
+        <footer id="footer"></footer>
+    </div>
+    
+</body>
+</html>

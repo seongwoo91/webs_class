@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>레이아웃 평가1번</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            background-color: #EDE7F6;
+        }
+        #wrap {
+            width: 1200px;
+            height: 1080;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        #header {
+            width: 1200px;
+            height: 100px;
+            background-color: #D1C4E9;
+        }
+        #nav {
+            width: 1200px;
+            height: 100px;
+            background-color: #B39DDB;
+        }
+        #contents {
+            width: 1200px;
+            height: 780px;
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: column;
+        }
+        #footer {
+            width: 1200px;
+            height: 100px;
+            background-color: #9575CD;
+        }
+        #contents .aside {
+            width: 400px;
+            height: 780px;
+            background-color: #7E57C2;
+        }
+        #contents .article1 {
+            width:800px;
+            height: 390px;
+            background-color: #673AB7;
+        }
+        #contents .article2 {
+            width:800px;
+            height: 390px;
+            background-color: #5E35B1;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <header id="header"></header>
+        <nav id="nav"></nav>
+        <section id="contents">
+            <aside class="aside"></aside>
+            <article class="article1"></article>
+            <article class="article2"></article>
+        </section>
+        <footer id="footer"></footer>
+    </div>
+    
+</body>
+</html>
