@@ -37,8 +37,16 @@
                 <li><a href="javascript11.html">이벤트 객체</a></li>
             </ul>
             <ul>
-                <li><a href="practice01.html">데이터 연습하기</a></li>
+                <li><a href="practice.html">데이터 연습하기</a></li>
             </ul>
+            <ul>
+                <li><a href="sample.html">필수 예제</a></li>
+                <li><a href="plugin.html">플러그인</a></li>
+                <li><a href="effect/mouseEffect.html">마우스 이펙트</a></li>
+                <li><a href="effect/parallaxEffect.html">패랠랙스 이펙트</a></li>
+                <li><a href="effect/slideEffect.html">슬라이드 이펙트</a></li>
+                <li><a href="effect/gameEffect.html">게임 이펙트</a></li>
+              </ul>
         </nav>
     </header>
     <!-- //header -->
@@ -157,14 +165,13 @@
 
             btn.addEventListener("click", () => {
             const conf = confirm("오늘 공부할 준비가 되었나요?");
+            let conf2 = '';
                 if(conf == true){
-                    document.write("준비가 되었군요");
+                    conf2 = "준비가 되었군요";
                 } if(conf == false) {
-                    document.write("아직 안됐군요");
+                    conf2 = "아직 안됐군요";
                 }
-                document.querySelector("#sample2 .view").innerHTML += conf;
-
-                // document.querySelector("#sample2 .view").innerText = conf;
+                document.querySelector("#sample2 .view").innerHTML += conf2;
             })
         }
 

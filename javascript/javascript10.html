@@ -37,8 +37,16 @@
                 <li><a href="javascript11.html">이벤트 객체</a></li>
             </ul>
             <ul>
-                <li><a href="practice01.html">데이터 연습하기</a></li>
+                <li><a href="practice.html">데이터 연습하기</a></li>
             </ul>
+            <ul>
+                <li><a href="sample.html">필수 예제</a></li>
+                <li><a href="plugin.html">플러그인</a></li>
+                <li><a href="effect/mouseEffect.html">마우스 이펙트</a></li>
+                <li><a href="effect/parallaxEffect.html">패랠랙스 이펙트</a></li>
+                <li><a href="effect/slideEffect.html">슬라이드 이펙트</a></li>
+                <li><a href="effect/gameEffect.html">게임 이펙트</a></li>
+              </ul>
         </nav>
     </header>
     <!-- //header -->
@@ -101,8 +109,8 @@ document.querySelector("#sample1 .btn4").addEventListener("click", function () {
             </div>
             <!-- //sample 1-->
 
-             <!-- sample2 -->
-             <div id="sample2" class="sample">
+            <!-- sample2 -->
+            <div id="sample2" class="sample">
                 <h3>02. 요소 메서드 : .classList.toggle()</h3>
                 <div class="view">
                     <div class="view1"><a href="#;"><img src="/assets/img/image07.jpg" alt="이미지07"></a></div>
@@ -141,8 +149,8 @@ document.querySelectorAll("#sample2 .view > div").forEach(function(el){
             </div>
             <!-- //sample 2-->
 
-             <!-- sample3 -->
-             <div id="sample3" class="sample">
+            <!-- sample3 -->
+            <div id="sample3" class="sample">
                 <h3>03. 요소 메서드 : .classList.contains()</h3>
                 <div class="view">
                     <div class="view1"><img src="/assets/img/image13.jpg" alt="이미지13"></div>
@@ -194,7 +202,7 @@ document.querySelector("#sample3 .btn2").addEventListener("click", function(){
     <!-- script -->
     <script>
         //sample1
-        
+
         ////두번째 이미지 선택 / 해제
         document.querySelector("#sample1 .btn1").addEventListener("click", function () {
             document.querySelector("#sample1 .view2").classList.add("selected");
@@ -214,64 +222,62 @@ document.querySelector("#sample3 .btn2").addEventListener("click", function(){
             });
         });
 
-            //sample 2
-            //리셋
-            document.querySelector("#sample2 .btn0").addEventListener("click", function(){
-                document.querySelectorAll("#sample2 .view > div").forEach(function(el){
-                    el.classList.remove("selected");
-                })        
+        //sample 2
+        //리셋
+        document.querySelector("#sample2 .btn0").addEventListener("click", function () {
+            document.querySelectorAll("#sample2 .view > div").forEach(function (el) {
+                el.classList.remove("selected");
             })
+        })
 
-            //이 버튼을 클릭하면 모든 이미지가 선택 또는 해제 됩니다.
-        
-            document.querySelector("#sample2 .btn1").addEventListener("click", function(){
-                document.querySelector("#sample2 .view2").classList.toggle("selected")
+        //이 버튼을 클릭하면 모든 이미지가 선택 또는 해제 됩니다.
+
+        document.querySelector("#sample2 .btn1").addEventListener("click", function () {
+            document.querySelector("#sample2 .view2").classList.toggle("selected")
+        })
+
+        document.querySelector("#sample2 .btn2").addEventListener("click", function () {
+            document.querySelectorAll("#sample2 .view > div").forEach(function (el) {
+                el.classList.toggle("selected");
             })
-
-            document.querySelector("#sample2 .btn2").addEventListener("click", function(){
-                document.querySelectorAll("#sample2 .view > div").forEach(function (el){
-                    el.classList.toggle("selected");
-                })
-            })
+        })
 
 
-            //숙제
-            //각 이미지를 클릭하면 선택 / 해제 할수있게                                           
-            document.querySelectorAll("#sample2 .view > div").forEach(function(el){
-                el.addEventListener("click", function(){
-                    el.classList.toggle("selected");
-                });
+        //숙제
+        //각 이미지를 클릭하면 선택 / 해제 할수있게                                           
+        document.querySelectorAll("#sample2 .view > div").forEach(function (el) {
+            el.addEventListener("click", function () {
+                el.classList.toggle("selected");
             });
-
-            
-
+        });
 
 
-            //이 버튼을 클릭하면 선택된 클래스(selected)를 찾은 후 클래스를 삭제합니다.
-            document.querySelector("#sample3 .btn1").addEventListener("click", function(){
-                document.querySelectorAll("#sample3 .view > div").forEach(function(el){
-                    if(el.classList.contains("selected")){
-                        el.classList.remove("selected", "selected2");
-                    }
-                });
+
+
+
+        //이 버튼을 클릭하면 선택된 클래스(selected)를 찾은 후 클래스를 삭제합니다.
+        document.querySelector("#sample3 .btn1").addEventListener("click", function () {
+            document.querySelectorAll("#sample3 .view > div").forEach(function (el) {
+                if (el.classList.contains("selected")) {
+                    el.classList.remove("selected", "selected2");
+                }
             });
-            //리셋
-            document.querySelector("#sample3 .btn0").addEventListener("click", function(){
-                document.querySelector("#sample3 .view2").classList.add("selected");
-                document.querySelector("#sample3 .view4").classList.add("selected");
-                document.querySelector("#sample3 .view6").classList.add("selected");
+        });
+        //리셋
+        document.querySelector("#sample3 .btn0").addEventListener("click", function () {
+            document.querySelector("#sample3 .view2").classList.add("selected");
+            document.querySelector("#sample3 .view4").classList.add("selected");
+            document.querySelector("#sample3 .view6").classList.add("selected");
+        })
+        //숙제
+        //이 버튼을 클릭하면 선택된 클래스(selected)을 찾은 후 색을 파랑색으로 나오게 하세요! 
+        document.querySelector("#sample3 .btn2").addEventListener("click", function () {
+            document.querySelectorAll("#sample3 .view > div").forEach(function (el) {
+                if (el.classList.contains("selected")) {
+                    el.classList.toggle("selected2");
+                }
             })
-            //숙제
-            //이 버튼을 클릭하면 선택된 클래스(selected)을 찾은 후 색을 파랑색으로 나오게 하세요! 
-            document.querySelector("#sample3 .btn2").addEventListener("click", function(){
-                document.querySelectorAll("#sample3 .view > div").forEach(function(el){
-                    if(el.classList.contains("selected")){
-                        el.classList.toggle("selected2");
-                    }
-                })
-            })
-            
-
+        })
     </script>
 
 
