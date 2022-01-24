@@ -14,3 +14,6 @@ https://seongwoo91.github.io/webs_class/reper/css.html
 
 ## 레이아웃
 https://seongwoo91.github.io/webs_class/layout/index.html
+
+## 웹표준 사이트 제작
+https://seongwoo91.github.io/webs_class/site/webClass/index.html
