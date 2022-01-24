@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>오답노트</title>
+</head>
+<body>
+
+    
+</body>
+<script>
+
+    {
+        const obj ={
+            a : 100,
+            b : [200,300],
+            c : "javascript",
+            d : function(){
+                document.write("javascript가 실행되었습니다.");
+            },
+            e : function(){
+                document.write(obj.d + "가 실행되었습니다.");
+            },
+            f : function(){
+                document.write(this.d + " 가 실행되었습니다.");
+            }            
+        }
+        document.write(obj.a, "<br>");
+        document.write(obj.b, "<br>");
+        document.write(obj.b[0], "<br>");
+        document.write(obj.b[1], "<br>");
+        document.write(obj.c, "<br>");
+        obj.d(); 
+        obj.e(); 
+        obj.f(); 
+    }
+</script>
+</html>

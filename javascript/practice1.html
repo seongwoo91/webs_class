@@ -11,8 +11,7 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/prism2.css">
 
-    <!-- script -->
-    <script src="assets/js/prism2.js"></script>
+
 </head>
 
 <body>
@@ -36,6 +35,11 @@
     }
 }</code></pre>
             </div>
+            <div class="result result01">
+                <h4>결과보기</h4>
+                <div></div>
+
+            </div>
 
             <!-- 02 -->
             <h3>1.2 for문 이용해서 1부터 100까지 출력하는 함수를 작성해주세요.</h3>
@@ -46,34 +50,50 @@
     }     
 }</code></pre>
             </div>
-
+            <div class="result">
+                <h4>결과보기</h4>
+                <div></div>
+            </div>
             <!-- 03 -->
             <h3>1.3 for문 이용해서 1부터 100까지 출력하는 함수를 작성해주세요.</h3>
             <p>조건1. 짝수만 출력하시오</p>
-            <div class="code"><pre class="line-numbers"><code class="language-js">{
+            <div class="code">
+                <pre class="line-numbers"><code class="language-js">{
 for(let i=1; 1&lt;=100; 1++){
     if(i%2==0) console.log(i);    
 }</code></pre>
             </div>
             <p>조건2 짝수이면서 5의 배수만 출력하시오</p>
-            <div class="code"><pre class="line-numbers"><code class="language-js">{
+            <div class="code">
+                <pre class="line-numbers"><code class="language-js">{
     for(let i=1; i&lt;=100; i++){
         if(i%2==0){
             if(i%5==0)
-            console.log(i);
+            document.(i);
         }         
     }
-}</code></pre></div>
+}</code></pre>
+            </div>
+            <div class="result">
+                <h4>결과보기</h4>
+                <div></div>
 
 
-            
-        </div>
+            </div>
     </main>
     <script>
+        // 1번
+        {
+            for (let i = 1; i <= 100; i++) {
+                document.querySelector(".result01 > div").innerHTML += i;
+            }
+        }
+        //2번
         
     </script>
-  </body>
- 
+    <!-- script -->
+    <script src="assets/js/prism2.js"></script>
+    <script src="assets/js/script.js"></script>
+</body>
+
 </html>
-
-
