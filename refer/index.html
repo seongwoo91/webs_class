@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML/CSS 레퍼런스북</title>
+
+    <!-- 파비콘 -->
+    <link rel="shortcut icon" href="../assets/img/html.css128.jpg">
+    <link rel="apple-touch-icon-precomposed" href="../assets/img/html.css500.jpg">
+    <link rel="icon" href="../assets/img/html.css128.jpg" sizes="128x128">
+
+    <style>
+        @font-face {
+            font-family: 'KotraHope';
+            font-weight: normal;
+            font-style: normal;
+            src: url('https://cdn.jsdelivr.net/gh/webfontworld/kotra/KotraHope.eot');
+            src: url('https://cdn.jsdelivr.net/gh/webfontworld/kotra/KotraHope.eot?#iefix') format('embedded-opentype'),
+                url('https://cdn.jsdelivr.net/gh/webfontworld/kotra/KotraHope.woff2') format('woff2'),
+                url('https://cdn.jsdelivr.net/gh/webfontworld/kotra/KotraHope.woff') format('woff'),
+                url('https://cdn.jsdelivr.net/gh/webfontworld/kotra/KotraHope.ttf') format("truetype");
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'Cafe24SsurroundAir';
+            font-weight: normal;
+            font-style: normal;
+            src: url('https://cdn.jsdelivr.net/gh/webfontworld/Cafe24SsurroundAir/Cafe24SsurroundAir.eot');
+            src: url('https://cdn.jsdelivr.net/gh/webfontworld/Cafe24SsurroundAir/Cafe24SsurroundAir.eot?#iefix') format('embedded-opentype'),
+                url('https://cdn.jsdelivr.net/gh/webfontworld/Cafe24SsurroundAir/Cafe24SsurroundAir.woff2') format('woff2'),
+                url('https://cdn.jsdelivr.net/gh/webfontworld/Cafe24SsurroundAir/Cafe24SsurroundAir.woff') format('woff'),
+                url('https://cdn.jsdelivr.net/gh/webfontworld/Cafe24SsurroundAir/Cafe24SsurroundAir.ttf') format("truetype");
+            font-display: swap;
+            t-display: swap;
+        }
+
+        @font-face {
+            font-family: 'Jalnan';
+            font-weight: normal;
+            font-style: normal;
+            src: url('https://cdn.jsdelivr.net/gh/webfontworld/goodchoice/Jalnan.eot');
+            src: url('https://cdn.jsdelivr.net/gh/webfontworld/goodchoice/Jalnan.eot?#iefix') format('embedded-opentype'),
+                url('https://cdn.jsdelivr.net/gh/webfontworld/goodchoice/Jalnan.woff2') format('woff2'),
+                url('https://cdn.jsdelivr.net/gh/webfontworld/goodchoice/Jalnan.woff') format('woff'),
+                url('https://cdn.jsdelivr.net/gh/webfontworld/goodchoice/Jalnan.ttf') format("truetype");
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'JalpullineunOneul';
+            font-weight: normal;
+            font-style: normal;
+            src: url('https://cdn.jsdelivr.net/gh/webfontworld/Jalpullineun/JalpullineunOneul.eot');
+            src: url('https://cdn.jsdelivr.net/gh/webfontworld/Jalpullineun/JalpullineunOneul.eot?#iefix') format('embedded-opentype'),
+                url('https://cdn.jsdelivr.net/gh/webfontworld/Jalpullineun/JalpullineunOneul.woff2') format('woff2'),
+                url('https://cdn.jsdelivr.net/gh/webfontworld/Jalpullineun/JalpullineunOneul.woff') format('woff'),
+                url('https://cdn.jsdelivr.net/gh/webfontworld/Jalpullineun/JalpullineunOneul.ttf') format("truetype");
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'Cafe24Syongsyong';
+            font-weight: normal;
+            font-style: normal;
+            src: url('https://cdn.jsdelivr.net/gh/webfontworld/Cafe24Syongsyong/Cafe24Syongsyong.eot');
+            src: url('https://cdn.jsdelivr.net/gh/webfontworld/Cafe24Syongsyong/Cafe24Syongsyong.eot?#iefix') format('embedded-opentype'),
+                url('https://cdn.jsdelivr.net/gh/webfontworld/Cafe24Syongsyong/Cafe24Syongsyong.woff2') format('woff2'),
+                url('https://cdn.jsdelivr.net/gh/webfontworld/Cafe24Syongsyong/Cafe24Syongsyong.woff') format('woff'),
+                url('https://cdn.jsdelivr.net/gh/webfontworld/Cafe24Syongsyong/Cafe24Syongsyong.ttf') format("truetype");
+            font-display: swap;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        img {
+            width: 100%;
+        }
+
+        .ship {
+            width: 300px;
+            position: absolute;
+            left: 0;
+            bottom: 10vh;
+            z-index: 15;
+            animation: move;
+            animation-duration: 50s;
+            animation-timing-function: linear;
+            animation-iteration-count: infinite;
+        }
+
+        @keyframes move {
+            0% {
+                left: -15%;
+            }
+
+            100% {
+                left: 110%;
+            }
+        }
+
+        .ship2 {
+            width: 500px;
+            position: absolute;
+            right: 0;
+            bottom: 18vh;
+            z-index: 13;
+            transform: rotatey(180deg);
+            animation: move7 200s infinite linear;
+        }
+
+        @keyframes move7 {
+            0% {
+                right: -25vw
+            }
+
+            100% {
+                right: 130vw
+            }
+        }
+
+        .human {
+            width: 550px;
+            position: absolute;
+            left: 50%;
+            bottom: -95px;
+            transform: translateX(-50%);
+            z-index: 50;
+        }
+
+        .human::after {
+            content: "오늘 공부할까?";
+            position: absolute;
+            right: -7vw;
+            top: 6vw;
+            font-family: 'Cafe24Syongsyong';
+            color: #EB6567;
+            font-size: 30px;
+            transform: rotate(2deg);
+        }
+
+        .human::before {
+            content: "어서와!";
+            position: absolute;
+            left: -3vw;
+            top: 6vw;
+            font-family: 'Cafe24Syongsyong';
+            color: #ec68ec;
+            font-size: 30px;
+            transform: rotate(-5deg);
+        }
+
+        .plane {
+            width: 200px;
+            position: absolute;
+            right: 10vw;
+            top: 3vh;
+            z-index: 14;
+            animation: move9 10s infinite linear;
+        }
+
+        @Keyframes move9 {
+            0% {
+                right: -20vw
+            }
+
+            100% {
+                right: 120vw
+            }
+        }
+
+        .duck1 {
+            width: 30px;
+            position: absolute;
+            right: 10vw;
+            bottom: 20vh;
+            z-index: 14;
+            animation: move5 100s infinite linear;
+        }
+
+        @keyframes move5 {
+            0% {
+                right: -15vw
+            }
+
+            100% {
+                right: 100vw
+            }
+        }
+
+        .duck2 {
+            width: 30px;
+            position: absolute;
+            right: 8vw;
+            bottom: 19vh;
+            z-index: 14;
+            animation: move4 100s infinite linear;
+        }
+
+        @keyframes move4 {
+            0% {
+                right: -10vw
+            }
+
+            100% {
+                right: 100vw
+            }
+        }
+
+        .balloon {
+            width: 100px;
+            position: absolute;
+            left: 10vw;
+            top: 10vw;
+            animation: move6 18s infinite linear;
+        }
+
+        @keyframes move6 {
+            0% {
+                top: 15vw
+            }
+
+            50% {
+                top: 2vw
+            }
+
+            100% {
+                top: 15vw
+            }
+        }
+
+        .cloud1 {
+            width: 100px;
+            position: absolute;
+            left: 10vw;
+            top: 3vw;
+            transform: rotatey(180deg);
+            animation: move3 150s infinite linear;
+        }
+
+        @keyframes move3 {
+            0% {
+                left: -11vw
+            }
+
+            100% {
+                left: 110vw
+            }
+        }
+
+        .cloud2 {
+            width: 100px;
+            position: absolute;
+            left: 40vw;
+            top: 10vh;
+            transform: rotatey(180deg);
+            animation: move2 100s infinite linear;
+        }
+
+        @keyframes move2 {
+            0% {
+                left: -10vw
+            }
+
+            100% {
+                left: 110vw
+            }
+        }
+
+        .cloud3 {
+            width: 100px;
+            position: absolute;
+            right: 10vw;
+            top: 15vh;
+            animation: move1 90s infinite linear;
+        }
+
+        @keyframes move1 {
+            0% {
+                right: -10vw
+            }
+
+            100% {
+                right: 110vw
+            }
+        }
+        
+        body {
+            background: #FFDBE5;
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        #wrap {
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .sea {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 30vh;
+            background: #000;
+            background: linear-gradient(to bottom, #FCC3CA 10%, #DFC8FA);
+            z-index: 10;
+        }
+
+        .text {
+            position: absolute;
+            left: 50%;
+            top: 40%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            z-index: 30;
+        }
+        .text h1 a {
+        font-family: 'Cafe24Syongsyong';
+        font-size:4vw;
+        line-height: 1.2;
+        color: #EB6567;
+        font-weight: normal;
+        font-style: italic;
+        position: relative;
+        font-weight: bold;
+        text-decoration: none;
+    }
+    .text h2 a {
+        font-family: 'Cafe24Syongsyong';
+        font-size: 80px;
+        color: #fff;
+        position: relative;
+        display: inline-block;
+        text-decoration: none;
+        margin: 0 10px;
+        transition: all 0.3s;
+    }
+    .text h2 a:hover {
+        color: #EB6567;
+    }
+
+        .text h2 a::hover {
+            color: #EB6567;
+        }
+
+        .text .subTitle {
+            font-family: 'Cafe24SsurroundAir';
+            background: #EB6567;
+            color: #fff;
+            border-radius: 50px;
+            padding: 14px 60px 10px 60px;
+            display: inline-block;
+            margin-bottom: 30px;
+            font-size: 30px;
+            box-shadow: 3px 5px 0 #6C4C4D;
+            position: relative;
+        }
+
+        .text .subTitle::before {
+            content: '';
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: #6C4C4D;
+            position: absolute;
+            left: 30px;
+            top: 50%;
+            margin-top: -5px;
+        }
+
+        .text .subTitle::after {
+            content: '';
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: #6C4C4D;
+            position: absolute;
+            right: 30px;
+            top: 50%;
+            margin-top: -5px;
+        }
+
+        .ship {
+            width: 300px;
+        }
+        .confetti>.particle {
+            opacity: 0;
+            position: absolute;
+            -webkit-animation: confetti 3s ease-in infinite;
+            animation: confetti 3s ease-in infinite;
+        }
+        .confetti>.particle.c1 {
+            background-color: rgba(76, 175, 80, 0.5);
+        }
+        .confetti>.particle.c2 {
+            background-color: rgba(156, 39, 176, 0.5);
+        }
+
+        @keyframes confetti {
+            0% {
+                opacity: 0;
+                transform: translateY(0%) rotate(0deg);
+            }
+
+            10% {
+                opacity: 1;
+            }
+
+            35% {
+                transform: translateY(-800%) rotate(270deg);
+            }
+
+            80% {
+                opacity: 1;
+            }
+
+            100% {
+                opacity: 0;
+                transform: translateY(2000%) rotate(1440deg);
+            }
+        }
+        @media (max-width: 800px) {
+            .text .subTitle {
+                font-size: 16px;
+            }
+
+            .text h2 a {
+                font-size: 40px;
+            }
+
+            .text h1 a {
+                white-space: nowrap;
+                font-size: 70px;
+            }
+
+            .cloud1,
+            .ship,
+            .ship2 {
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="wrap">
+        <div class="sea"></div>
+        <div class="text">
+            <span class="subTitle">HTML/CSS 레퍼런스 북</span>
+            <h1 class="confetti">
+                <a href="../index.html">궁금할때 찾아보는 레퍼런스 북</a>
+            </h1>
+            <h2>
+                <a href="html.html">HTML</a>
+                <a href="css.html">CSS</a>
+            </h2>
+        </div>
+        <div class="ship">
+            <img src="../assets/img/ship.png" alt="배">
+        </div>
+        <div class="ship2">
+            <img src="../assets/img/ship2.png" alt="배">
+        </div>
+        <div class="human">
+            <img src="../assets/img/human.png" alt="사람">
+        </div>
+        <div class="duck1">
+            <img src="../assets/img/duck1.png" alt="오리1">
+        </div>
+        <div class="duck2">
+            <img src="../assets/img/duck2.png" alt="오리2">
+        </div>
+        <div class="balloon">
+            <img src="../assets/img/balloon.png" alt="열기구">
+        </div>
+        <div class="cloud1">
+            <img src="../assets/img/cloud.png" alt="구름">
+        </div>
+        <div class="cloud2">
+            <img src="../assets/img/cloud.png" alt="구름">
+        </div>
+        <div class="cloud3">
+            <img src="../assets/img/cloud.png" alt="구름">
+        </div>
+        <div class="plane">
+            <img src="../assets/img/plane.png" alt="구름">
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+    <script>
+        jQuery.rnd = function (m, n) {
+            m = parseInt(m);
+            n = parseInt(n);
+            return Math.floor(Math.random() * (n - m + 1)) + m;
+        }
+        function confetti() {
+            $.each($(".confetti"), function () {
+                var confetticount = ($(this).width() / 50) * 10;
+                for (var i = 0; i <= confetticount; i++) {
+                    $(this).append('<span class="particle c' + $.rnd(1, 2) + '" style="top:' + $.rnd(10, 50) +
+                        '%; left:' + $.rnd(0, 100) + '%;width:' + $.rnd(6, 8) + 'px; height:' + $.rnd(3,
+                        4) + 'px;animation-delay: ' + ($.rnd(0, 30) / 10) + 's;"></span>');
+                }
+            });
+        }
+        confetti();
+    </script>
+</body>
+
+</html>
