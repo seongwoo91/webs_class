@@ -29,7 +29,7 @@
     <main id="contents">
         <h2><em>CSS</em> 레퍼런스 북</h2>
 
-        <!-- menu -->
+        <!-- menu 
         <div class="menu">
             <ul>
                 <li class="active"><a href="css.html">속성</a></li>
@@ -300,47 +300,47 @@
                             <tr>
                                 <th>:nth-child(n)</th>
                                 <td>p:nth-child(n) {color: #fff;}</td>
-                                <td>p요소중 n번째 요소의 글자색을 하얀색으로 변경합니다.</td>
+                                <td>부모의 p요소중 n번째 요소의 글자색을 하얀색으로 변경합니다.</td>
                             </tr>  
                             <tr>
                                 <th>:nth-last-child(2)</th>
                                 <td>p:nth-last-child(2) {color: #fff;}</td>
-                                <td>p요소중 n번째 요소의 글자색을 하얀색으로 변경합니다. (n번째는 뒤에서부터 카운트합니다)</td>
+                                <td>부모의 p요소중 n번째 요소의 글자색을 하얀색으로 변경합니다. (n번째는 뒤에서부터 카운트합니다)</td>
                             </tr>    
                             <tr>
                                 <th>:nth-of-type(n)</th>
                                 <td>p:nth-of-type(n) {color: #fff;}</td>
-                                <td>부모안에 p라는 요소중 n번째 요소의 글자색을 하얀색으로 변경합니다.</td>
+                                <td>같은 유형의 p라는 요소중 n번째 요소의 글자색을 하얀색으로 변경합니다.</td>
                             </tr>  
                             <tr>
                                 <th>:nth-last-of-type(2)</th>
                                 <td>p:nth-last-of-type(2) {color: #fff;}</td>
-                                <td></td>
+                                <td>같은 유형의 p라는 요소중 n번째 요소의 글자색을 하얀색으로 변경합니다.</td>
                             </tr>    
                             <tr>
-                                <th>:only-chil)</th>
+                                <th>:only-child</th>
                                 <td>p:only-child {color: #fff;}</td>
-                                <td></td>
+                                <td>부모의 유일한 자식인 p요소의 글자색을 하얀색으로 변경합니다.</td>
                             </tr>   
                             <tr>
                                 <th>:only-of-type</th>
                                 <td>p:only-of-type {color: #fff;}</td>
-                                <td></td>
+                                <td>같은 유형의 유일한 형제인 P요소의 글자색을 하얀색으로 변경합니다.</td>
                             </tr>         
                             <tr>
                                 <th>:not</th>
-                                <td>li:not(:nth-child(2)) {color: #fff;}</td>
-                                <td></td>
+                                <td>li:not(class)) {color: #fff;}</td>
+                                <td>li요소중 class를 제외한 나머지 모든태그의 글자색을 하얀색으로 변경합니다.</td>
                             </tr>    
                             <tr>
                                 <th>:root</th>
                                 <td>:root {color: #fff;}</td>
-                                <td></td>
+                                <td>--로 변수를 설정하고 일괄적으로 글자색을 하얀색으로 변경합니다.</td>
                             </tr>        
                             <tr>
                                 <th>:empty</th>
-                                <td>:empty {color: #fff;}</td>
-                                <td></td>
+                                <td>:empty {backgroud: #fff;}</td>
+                                <td>자식이 없는 빈 요소의 배경색을 하얀색으로 변경합니다. </td>
                             </tr>                                            
                         </tbody>
                     </table>
@@ -364,22 +364,22 @@
                             <tr>
                                 <th>:link</th>
                                 <td>a:link {color: #fff}</td>
-                                <td></td>
+                                <td>현재 문서에 연결된 외부문서를 표시하는 글씨의 색깔을 하얀색으로 변경합니다.</td>
                             </tr>
                             <tr>
                                 <th>:visited</th>
                                 <td>a:visited {color: #fff}</td>
-                                <td></td>
+                                <td>방문했던 링크의 글씨색깔을 하얀색으로 변경합니다.</td>
                             </tr>
                             <tr>
                                 <th>:hover</th>
                                 <td>a:hover {color: #fff}</td>
-                                <td></td>
+                                <td>링크의 글씨에 마우스를 올렸을때 글씨색깔을 하얀색으로 변경합니다.</td>
                             </tr>
                             <tr>
                                 <th>:active</th>
                                 <td>a:active {color: #fff}</td>
-                                <td></td>
+                                <td>링크를 클릭했을때 글씨의 색깔을 하얀색으로 변경합니다.</td>
                             </tr>        
                                         
                         </tbody>
@@ -404,22 +404,22 @@
                             <tr>
                                 <th>:checked</th>
                                 <td>input:checked {color: #fff}</td>
-                                <td></td>
+                                <td>input요소를 선택하였을때 대상의 색깔을 하얀색으로 변경합니다.</td>
                             </tr>
                             <tr>
                                 <th>:focus</th>
                                 <td>input:focus {color: #fff}</td>
-                                <td></td>
+                                <td>input 요소에 커서가 클릭하여 선택된 동안의 색깔을 하얀색으로 변경합니다.</td>
                             </tr>
                             <tr>
                                 <th>:enabled</th>
                                 <td>input:enabled {color: #fff}</td>
-                                <td></td>
+                                <td>input 요소중 활성화되어있는 영역의 색을 하얀색으로 변경합니다.</td>
                             </tr>
                             <tr>
                                 <th>:disabled</th>
                                 <td>input:disabled {color: #fff}</td>
-                                <td></td>
+                                <td>input 요소중 비활성화되어있는 영역의 색을 하얀색으로 변경합니다.</td>
                             </tr>
                         </tbody>
                     </table>
