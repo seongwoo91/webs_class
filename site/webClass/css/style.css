@@ -217,7 +217,7 @@
     }
 }
 @media (-webkit-min-device-pixel-ratio:2.5){
-    .itType01 .img2 {
+    .itType01 .img1 {
         background-image: url(../../../assets/img/test@3x.jpg);
     }
 }
