@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Reference08</title>
+
+    <!-- 파비콘 -->
+    <link rel="shortcut icon" href="../assets/face/css50.png">
+    <link rel="apple-touch-icon-precomposed" href="../assets/face/css50.png">
+    <link rel="icon" href="../assets/face/css50.png" sizes="128x128">
+    <!-- 파비콘 -->
+
+    <!-- CSS연동 -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/prism.css">
+    <!-- //CSS연동 -->
+</head>
+
+<body>
+
+    <header id="header">
+        <h1><a href="#">라인 중학교 1학년 코딩반</a></h1>
+        <strong>박성우</strong>
+    </header>
+
+    <main id="contents">
+        <h2><a href="css.html"><em>CSS</em> img 표현방법</a></h2>
+
+        <!-- menu -->
+        <div class="menu">
+            <ul>
+                <li><a href="css.html">속성</a></li>
+                <li><a href="cssReference01.html">기초 문법</a></li>
+                <li><a href="cssReference02.html">Block/Inline</a></li>
+                <li><a href="cssReference03.html">CSS 단위</a></li>
+                <li><a href="cssReference04.html">CSS 색상</a></li>
+                <li><a href="cssReference05.html">ID/CLASS 차이점</a></li>
+                <li><a href="cssReference06.html">float</a></li>
+                <li><a href="cssReference07.html">벤더프리픽스</a></li>
+                <li class="active"><a href="cssReference08.html">img표현방법</a></li>
+            </ul>
+        </div>
+        <!-- //menu -->
+
+
+        <!-- refer -->
+        <div class="refer">
+            <div class="doc">
+                <h3>웹 사이트에서 이미지를 표현하는 방법을 알아보겠습니다.</h3>
+                <br>
+                <h4>1. Img 태그</h4>
+                <p>이미지의 의미가 있을 때에 img 태그를 사용하여 표현하며, Alt 를 이용하여 대체문자를 적어야합니다.</p>
+                <div>
+                    <img src="../assets/img/cssimg1.jpg" alt="img설명1">
+                </div>
+                
+                <br>
+                <h4>2. Background 속성</h4>
+                <p>이미지의 의미가 없을때 background 속성을 사용하며 대체문자를 적을 필요가 없습니다.</p>
+                <div>
+                    <img src="../assets/img/cssimg2.jpg" alt="img설명2">
+                </div>
+                <br>
+                <h4>3. 이미지 스프라이트 기법</h4>
+                <p>여러개의 이미지들을 하나의 이미지에 합쳐서 관리합니다. 이 방법을 사용하면 이미지의 관리가 용이하며<br>
+                웹페이지의 용량을 줄여줌으로 인해 로딩시간도 단축시킬수 있습니다.<br>
+                IR기법을 통해 가상으로 대체문자를 만들어 사용합니다.
+                </p>
+                <div>
+                    <img src="../assets/img/cssimg3.jpg" alt="img설명3">
+                </div>
+            </div>
+        </div>
+        <!--// refer -->
+
+    </main>
+
+    <!-- script연동 -->
+    <script src="assets/js/prism.js"></script>
+    <!-- script연동-->
+</body>
+
+</html>
+웹 사이트에서 이미지를 표현하는 방법
+        1.HTML 태그를 통해서 : img 태그 : 의미가 있는 이미지(로고, 메뉴) --> alt(대체 문자)
+        2.CSS 속성을 통해서 : background 속성 : 의미가 없는 이미지(배경, 색표현) -->ir효과)대체 문자를 CSS속성으로 표현)
+        3. 이미지 스프라이트 : background와 ir 효과를 통해서 이미지를 표현

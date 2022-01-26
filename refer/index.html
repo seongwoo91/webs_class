@@ -73,17 +73,14 @@
                 url('https://cdn.jsdelivr.net/gh/webfontworld/Cafe24Syongsyong/Cafe24Syongsyong.ttf') format("truetype");
             font-display: swap;
         }
-
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-
         img {
             width: 100%;
         }
-
         .ship {
             width: 300px;
             position: absolute;
@@ -91,11 +88,10 @@
             bottom: 10vh;
             z-index: 15;
             animation: move;
-            animation-duration: 50s;
+            animation-duration: 80s;
             animation-timing-function: linear;
             animation-iteration-count: infinite;
         }
-
         @keyframes move {
             0% {
                 left: -15%;
@@ -105,7 +101,6 @@
                 left: 110%;
             }
         }
-
         .ship2 {
             width: 500px;
             position: absolute;
@@ -115,7 +110,6 @@
             transform: rotatey(180deg);
             animation: move7 200s infinite linear;
         }
-
         @keyframes move7 {
             0% {
                 right: -25vw
@@ -125,7 +119,6 @@
                 right: 130vw
             }
         }
-
         .human {
             width: 550px;
             position: absolute;
@@ -134,7 +127,6 @@
             transform: translateX(-50%);
             z-index: 50;
         }
-
         .human::after {
             content: "오늘 공부할까?";
             position: absolute;
@@ -145,7 +137,6 @@
             font-size: 30px;
             transform: rotate(2deg);
         }
-
         .human::before {
             content: "어서와!";
             position: absolute;
@@ -156,7 +147,6 @@
             font-size: 30px;
             transform: rotate(-5deg);
         }
-
         .plane {
             width: 200px;
             position: absolute;
