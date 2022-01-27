@@ -40,10 +40,17 @@
 
 <body>
     <noscript>"페이지를 보려면 자바스크립트 옵션이 활성화 되어 있어야 합니다."</noscript>
+
+    <div id="skip">
+        <a href="#contents">컨텐츠 바로가기</a>        
+    </div>
+    <!-- //skip -->
+
     <div id="wrap">
         <header id="header">
             <h1 class="logo"><a>WEB <em>class</em></a></h1>
             <nav class="menu">
+                <h2 class="ir_so">메인 메뉴</h2>
                 <ul>
                     <li><a href="#">레이아웃</a></li>
                     <li><a href="#">메뉴 영역</a></li>
@@ -53,39 +60,70 @@
                 </ul>
             </nav>
             <div class="member">
-                <a href="#">회원가입</a>
+                <a href="https://www.figma.com/file/0xdxu3owVTXyVN5JRap4wO/%EC%9B%B9%ED%91%9C%EC%A4%80-%EC%82%AC%EC%9D%B4%ED%8A%B8-%EB%A7%8C%EB%93%A4%EA%B8%B0?node-id=0%3A1">회원가입</a>
                 <a href="#">로그인</a>
             </div>
         </header>
         <!-- //header -->
 
+
+        <!-- banner--->
         <section id="banner">
+            <h2 class="ir_so">배너영역</h2>
             <div class="img_type">
                 <!-- <img src="img/bg01.jpg" alt="메인 배너"> -->
             </div>
         </section>
         <!-- //banner -->
 
-        <section id="contents">
-            <div class="container img_text_type itType01">
+        <!-- itType01 -->
+        <section id="contents">   
+            <h2 class="ir_so">컨텐츠 영역</h2>         
+            <article class="container img_text_type itType01">
                 <div class="text">
-                    <h2>이미지&텍스트</h2>
-                    <p>사이트 제작에 있어 이미지와
-                        텍스트를 혼합해서 사용하는 경우가 많다.
-                        기본 레이아웃은 동일하기 때문에 
-                        이미지나 배치에 따라서
-                        느낌은 얼마든지 다르게 표현할 수 있다.
-                        Gmarket Sans 50px
-                        Nexon Lv1 Gothic 18px
-                        어흥
+                    <h3 class="text_title">이미지&텍스트</h3>
+                    <p class="text_desc">사이트 제작에 있어 이미지와<br>
+                        텍스트를 혼합해서 사용하는 경우가 많다.<br>
+                        기본 레이아웃은 동일하기 때문에 <br>
+                        이미지나 배치에 따라서<br>
+                        느낌은 얼마든지 다르게 표현할 수 있다.<br>
+                        Gmarket Sans 50px<br>
+                        Nexon Lv1 Gothic 18px Regular
                     </p>
-                    <a href="#"></a>
+                    <div class="text_more">
+                        <a href="#">
+                            <span>더 많은 유형 살펴보기</span>
+                            <svg width="102" height="8" viewBox="0 0 102 6" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M102 3.00001L97 0.113257L97 5.88676L102 3.00001ZM-4.37114e-08 3.5L97.5 3.50001L97.5 2.50001L4.37114e-08 2.5L-4.37114e-08 3.5Z"
+                                    fill="#ED0E0E" />
+                            </svg>
+                        </a>
+                    </div>
                 </div>
                 <div class="img1"></div>
                 <div class="img2"></div>
-            </div>
-            <!-- <div class="img_text_type itType02"></div>
-            <div class="img_text_type itType03"></div> -->
+            </article>
+            <!-- //itType01 -->
+
+            <article class="img_text_type itType02">
+                <div class="itType02_left"></div>
+                <div class="itType02_right">
+                    <span class="sub">웅냠냠 맛좋은 여행지!</span>
+                    <h3 class="title">스위스 호이건버그 (Horgenberg)</h3>
+                    <p class="desc">
+                        이미지와 텍스트를 같이 사용하는 경우입니다.<br>
+                        CNBC에 따르면 가장 적은 검색이 이뤄진 여행지는 세계에서 가장<br>
+                        아름다운 단풍을 자랑하는 스위스의 호이건버그입니다.<br>
+                        배경으로 텍스트를 나타내는 경우에도 많이 사용합니다.<br>
+                        Gmarket Sans 24px 140%, Light
+                    </p>
+                    <h4 class="view1">자세히보기</h4>
+                </div>
+            </article>
+            <!-- <div class="img_text_type itType03"></div> -->
+
         </section>
         <!-- //contents -->
     </div>
