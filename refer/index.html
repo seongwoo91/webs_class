@@ -73,17 +73,14 @@
                 url('https://cdn.jsdelivr.net/gh/webfontworld/Cafe24Syongsyong/Cafe24Syongsyong.ttf') format("truetype");
             font-display: swap;
         }
-
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-
         img {
             width: 100%;
         }
-
         .ship {
             width: 300px;
             position: absolute;
@@ -91,21 +88,14 @@
             bottom: 10vh;
             z-index: 15;
             animation: move;
-            animation-duration: 50s;
+            animation-duration: 80s;
             animation-timing-function: linear;
             animation-iteration-count: infinite;
         }
-
         @keyframes move {
-            0% {
-                left: -15%;
-            }
-
-            100% {
-                left: 110%;
-            }
+            0% {left: -15%;}
+            100% {left: 110%;}
         }
-
         .ship2 {
             width: 500px;
             position: absolute;
@@ -115,7 +105,6 @@
             transform: rotatey(180deg);
             animation: move7 200s infinite linear;
         }
-
         @keyframes move7 {
             0% {
                 right: -25vw
@@ -125,7 +114,6 @@
                 right: 130vw
             }
         }
-
         .human {
             width: 550px;
             position: absolute;
@@ -134,9 +122,8 @@
             transform: translateX(-50%);
             z-index: 50;
         }
-
         .human::after {
-            content: "오늘 공부할까?";
+            content: "오늘도 공부해볼까?";
             position: absolute;
             right: -7vw;
             top: 6vw;
@@ -145,7 +132,6 @@
             font-size: 30px;
             transform: rotate(2deg);
         }
-
         .human::before {
             content: "어서와!";
             position: absolute;
@@ -156,7 +142,6 @@
             font-size: 30px;
             transform: rotate(-5deg);
         }
-
         .plane {
             width: 200px;
             position: absolute;
@@ -223,17 +208,11 @@
         }
 
         @keyframes move6 {
-            0% {
-                top: 15vw
-            }
+            0% {top: 15vw}
 
-            50% {
-                top: 2vw
-            }
+            50% {top: 2vw}
 
-            100% {
-                top: 15vw
-            }
+            100% {top: 15vw}
         }
 
         .cloud1 {
@@ -470,13 +449,13 @@
             <img src="../assets/img/ship.png" alt="배">
         </div>
         <div class="ship2">
-            <img src="../assets/img/ship2.png" alt="배">
+            <img src="../assets/img/ship2.png" alt="배2">
         </div>
         <div class="human">
-            <img src="../assets/img/human.png" alt="사람">
+            <img src="../assets/img/human.png" alt="사람들">
         </div>
         <div class="duck1">
-            <img src="../assets/img/duck1.png" alt="오리1">
+            <img src="../assets/img/duck1.png" alt="오리1">     
         </div>
         <div class="duck2">
             <img src="../assets/img/duck2.png" alt="오리2">
@@ -485,16 +464,16 @@
             <img src="../assets/img/balloon.png" alt="열기구">
         </div>
         <div class="cloud1">
-            <img src="../assets/img/cloud.png" alt="구름">
+            <img src="../assets/img/cloud.png" alt="구름1">
         </div>
         <div class="cloud2">
-            <img src="../assets/img/cloud.png" alt="구름">
+            <img src="../assets/img/cloud.png" alt="구름2">
         </div>
         <div class="cloud3">
-            <img src="../assets/img/cloud.png" alt="구름">
+            <img src="../assets/img/cloud.png" alt="구름3">
         </div>
         <div class="plane">
-            <img src="../assets/img/plane.png" alt="구름">
+            <img src="../assets/img/plane.png" alt="비핻기">
         </div>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>

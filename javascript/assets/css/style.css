@@ -496,9 +496,7 @@ img {
     box-sizing: border-box;
     border-radius: 20px;
     position: relative;
-
 }
-
 .javascript::before {
     content: '';
     width: 100%;
@@ -546,6 +544,12 @@ img {
     .javascript h1 {
         font-size: 55px;
         padding: 10px 0;
+    }
+    .javascript .menu ul {
+        display: none;
+    }
+    .javascript .menu ul:first-child {
+        display: block;        
     }
 }
 

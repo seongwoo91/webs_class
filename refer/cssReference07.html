@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Reference07</title>
+
+    <!-- 파비콘 -->
+    <link rel="shortcut icon" href="../assets/face/css50.png">
+    <link rel="apple-touch-icon-precomposed" href="../assets/face/css50.png">
+    <link rel="icon" href="../assets/face/css50.png" sizes="128x128">
+    <!-- 파비콘 -->
+
+    <!-- CSS연동 -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/prism.css">
+    <!-- //CSS연동 -->
+</head>
+
+<body>
+
+    <header id="header">
+        <h1><a href="#">라인 중학교 1학년 코딩반</a></h1>
+        <strong>박성우</strong>
+    </header>
+
+    <main id="contents">
+        <h2><a href="css.html"><em>CSS</em> 벤더프리픽스</a></h2>
+
+        <!-- menu -->
+        <div class="menu">
+            <ul>
+                <li><a href="css.html">속성</a></li>
+                <li><a href="cssReference01.html">기초 문법</a></li>
+                <li><a href="cssReference02.html">Block/Inline</a></li>
+                <li><a href="cssReference03.html">CSS 단위</a></li>
+                <li><a href="cssReference04.html">CSS 색상</a></li>
+                <li><a href="cssReference05.html">ID/CLASS 차이점</a></li>
+                <li><a href="cssReference06.html">float</a></li>
+                <li class="active"><a href="cssReference07.html">벤더프리픽스</a></li>
+                <li><a href="cssReference08.html">img표현방법</a></li>
+                <li><a href="cssReference09.html">IR 기법</a></li>
+            </ul>
+        </div>
+        <!-- //menu -->
+
+
+        <!-- refer -->
+        <div class="refer">
+            <div class="doc">
+                <h3>벤더프리픽스</h3>
+                <p>각각 브라우저별로 따로 사용했던 CSS3의 속성을 잡아주기 위해 사용되기 시작됬으며, CSS의 class앞에<br>
+                    -moz-, -webkit-, -o-, -ms-라는 각 브라우저에서 판독이 가능한 접두어를 붙여서<br> 해당 브라우저에서 인식할 수 있게 하는 것을 지칭하고 있습니다. </p>
+                    <br>
+                    <p>요새는 하나하나 작성 하는것 보다 Codekit, Compass, grunt, gulp등과 같은 <br>전처리(Preprocessing)를 도와주는 툴을 사용하고 있는게 추세라고 할 수 있을 것 같습니다.</p>
+                <div class="table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>CSS 사용예제</th>
+                                <th>브라우저</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>-webkit-border:1px;</td>
+                                <td>사파리, 크롬</td>
+                            </tr>
+                            <tr>
+                                <td>-moz-border:1px;</td>
+                                <td>파이어폭스</td>
+                            </tr>
+                            <tr>
+                                <td>-o-border:1px;</td>
+                                <td>오페라</td>
+                            </tr>
+                            <tr>
+                                <td>-ms-border:1px;</td>
+                                <td>인터넷 익스플로러</td>
+                            </tr>
+                            <tr>
+                                <td>border:1px;</td>
+                                <td>표준 속성</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <!--// refer -->
+
+    </main>
+
+    <!-- script연동 -->
+    <script src="assets/js/prism.js"></script>
+    <!-- script연동-->
+</body>
+
+</html>
