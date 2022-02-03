@@ -133,14 +133,17 @@ img {
     font-size: 14px;
     padding: 8px 20px 6px 20px;
 }
+
 #header nav ul:nth-child(3) li a {
     font-size: 14px;
     padding: 8px 20px 6px 20px;
 }
+
 #header nav ul:nth-child(3) li a {
     font-size: 14px;
     padding: 8px 20px 6px 20px;
 }
+
 #header nav ul li.active a {
     background: #000;
     color: #fff;
@@ -269,6 +272,7 @@ img {
 .script .sample .view>div.selected img {
     opacity: 0.3;
 }
+
 .script .sample .view>div.selected2 {
     border: 4px solid rgb(65, 43, 187);
     background-color: rgb(65, 43, 187);
@@ -278,9 +282,46 @@ img {
 .script .sample .view>div.selected2 img {
     opacity: 0.3;
 }
+
 .script .sample .view>div img {
     border-radius: 1em;
 }
+
+.script .sample .table {
+    border-left: 1px solid #e6e6e6;
+    border-right: 1px solid #e6e6e6;
+    padding: 20px;
+}
+
+.script .sample .table table {
+    width: 100%;
+    border: 1px solid #e6e6e6;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.script .sample .table table th {
+    padding: 10px 5px;
+    font-weight: normal;
+}
+
+.script .sample .table table td {
+    padding: 10px 5px;
+    border: 1px solid #e6e6e6
+}
+
+.script .sample .table td[class*="_R"],
+.script .sample .table td[class*="_P"] {
+    color: #fff;
+    transition: all 0.2s;
+    cursor: help;
+}
+
+.script .sample .table td:hover[class*="_R"],
+.script .sample .table td:hover[class*="_P"] {
+    color: #000;
+}
+
 
 .script .sample .btn {
     border: 1px solid #e6e6e6;
@@ -327,6 +368,18 @@ img {
 
     .script .sample .code pre {
         font-size: 14px;
+    }
+
+    .script .sample .table {
+        overflow-x: scroll;
+    }
+
+    .script .sample .table table {
+        width: 700px;
+    }
+    .script .sample .table td[class*="_R"],
+    .script .sample .table td[class*="_P"] {
+        color:#000;
     }
 }
 
@@ -451,7 +504,7 @@ img {
     margin-top: 10px;
     border-radius: 5px;
     font-size: 16px;
-    cursor:pointer
+    cursor: pointer
 }
 
 .result>div {
@@ -460,18 +513,21 @@ img {
     color: #fff;
     border-radius: 0 0 5px 5px;
     font-size: 16px;
-    line-height: 1.4;   
+    line-height: 1.4;
     display: none;
-    box-sizing:border-box;
-    overflow: auto;     
+    box-sizing: border-box;
+    overflow: auto;
 }
+
 .result.active h4 {
     border-radius: 5px 5px 0 0;
-} 
-.result.active > div {
+}
+
+.result.active>div {
     display: block;
     border-radius: 0 0 5px 5px;
 }
+
 @media (max-width: 800px) {
     .result h4 {
         font-size: 14px;
@@ -497,6 +553,7 @@ img {
     border-radius: 20px;
     position: relative;
 }
+
 .javascript::before {
     content: '';
     width: 100%;
@@ -545,11 +602,13 @@ img {
         font-size: 55px;
         padding: 10px 0;
     }
+
     .javascript .menu ul {
         display: none;
     }
+
     .javascript .menu ul:first-child {
-        display: block;        
+        display: block;
     }
 }
 
