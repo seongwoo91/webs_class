@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>layouttest02</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        a {
+            text-decoration: none;
+            color:#000
+        }
+        #wrap {
+            width: 100%;
+        }
+        #header {
+            width: 1920px;
+            height: 113px;
+            background: #fff;
+            overflow: hidden;
+            display: flex;
+            margin: 0 auto;
+        }
+        #header .menu1 {
+            width: 20%;
+            text-align: center;
+            margin-top: 25px;
+            
+        }
+        #header .menu1 p {
+            font-size: 40px;
+        }
+        #header .menu2 {
+            width: 80%;
+            margin-top: 40px;
+            position: absolute;
+            margin-left: 1300px;
+        }
+        #header .menu2 a {
+            font-size: 17px;
+            padding: 20px 30px;
+        }
+        #contents {
+            width: 1150px;
+            margin: 0 auto;
+        }
+        #contents .cont1 {
+            width: 1150px;
+            height: 400px;
+            background: #fff(184, 39, 39);
+        }
+        #contents .cont1 p {
+            padding-top: 160px;
+            font-size: 40px;
+            font-weight: bold;
+        }
+        #contents .cont2 {
+            width: 1150px;
+            height: 810px;
+            display: flex;
+        }
+        #contents .cont2 .img1 {
+            width: 548px;
+            height: 650px;
+            margin-right: 20px;
+            background: url(img/te1.jpg);
+            border-top: 1px solid #000;
+        }
+        #contents .cont2 .img1 p,
+        #contents .cont2 .img2 p {
+            font-size: 28px;
+            font-weight: bold;
+            padding-top: 45px;
+        }
+        #contents .cont2 .img2 {
+            width: 548px;
+            height: 650px;
+            margin-left: 20px;
+            margin-top: 50px;
+            background: url(img/te2.jpg);
+            border-top: 1px solid #000;
+        }
+        #contents .cont3 {
+            width: 1150px;
+            height: 810px;
+            display: flex;
+        }
+        #contents .cont3 .img1 {
+            width: 548px;
+            height: 650px;
+            margin-right: 20px;
+            background: url(img/te3.jpg);
+            border-top: 1px solid #000;
+        }
+        #contents .cont3 .img1 p,
+        #contents .cont3 .img2 p {
+            font-size: 28px;
+            font-weight: bold;
+            padding-top: 45px;
+
+        }
+        #contents .cont3 .img2 {
+            width: 548px;
+            height: 650px;
+            margin-left: 20px;
+            margin-top: 50px;
+            background: url(img/te4.jpg);
+            border-top: 1px solid #000;
+        }
+        #contents .cont4 {
+            width: 1150px;
+            height: 460px;
+            background: #fff;
+        }
+        #footer {
+            width: 1920px;
+            height: 376px;
+            background: #444;
+            margin:0 auto;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <header id="header">
+            <nav class="menu1">
+                <p>IMFORM</p>
+            </nav>
+            <nav class="menu2">
+                <a href="#">SERVICE</a>
+                <a href="#">WORK</a>
+                <a href="#">ABOUT</a>
+                <a href="#">CONTACT</a>
+            </nav>
+        </header>
+        <section id="contents">
+            <article class="cont1">
+                <p>We research new opportunities<br>
+                that inspire success.</p>
+            </article>
+            <article class="cont2">
+                <div class="img1">
+                    <p>맛좋은 타이어<br>
+                    한국타이어</p>
+                </div>
+                <div class="img2">
+                    <p>한샘 프리미어 스타일<br>
+                    모바일 룩북</p>
+                </div>
+            </article>
+            <article class="cont3">
+                <div class="img1">
+                    <p>나는 대만족 합니다<br>
+                    소말리아 홈페이지 리뉴얼</p>
+                </div>
+                <div class="img2">
+                    <p>세련된 감각의 까말랑이<br>
+                    라이프스타일 매거진</p>
+                </div>
+            </article>
+            <article class="cont4"></article>
+        </section>
+        <footer id=footer></footer>
+     
+    </div>
+</body>
+</html>
