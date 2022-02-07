@@ -179,31 +179,29 @@
 
     <!-- script -->
     <script>
-        const searchBox = document.querySelector("#search-box");
-        const cssList = document.querySelectorAll(".list ul li")
+        const searchBox = document.querySelector("#search-box"); //search-box 변수에 저장
+        const cssList = document.querySelectorAll(".list ul li") //다수의 li를 변수에 저장
 
 
 
-        searchBox.addEventListener("keyup", () => {
-            const searchWord = searchBox.value; //사용자가 입력한 데이터 저장소
+        searchBox.addEventListener("keyup", () => { //input을 클릭했을 때 이벤트 설정
+            const searchWord = searchBox.value; //사용자가 입력한 데이터 저장소 변수에 저장
             // console.log(searchWord);
 
-            cssList.forEach(el=>{
+            cssList.forEach(el=>{                   //다수의 li를
                 console.log(el.dataset.name)
 
-                const cssName = el.dataset.name;
+                const cssName = el.dataset.name;    //CSS 속성 값을 변수에 저장
 
-                if( cssName.indexOf(searchWord)){
-                    el.classList.add("hide");
+                if( cssName.indexOf(searchWord)){       //사용자가 입력한 값에 데이터가 있는지 확인
+                    el.classList.add("hide");           //데이터가 있으면 클래스 add를 추가
                 } else {
-                    el.classList.remove("hide");
+                    el.classList.remove("hide");        //데이터가 있으면 클래스 add를 삭제
                 }
                
             })
 
         })
-
-
     </script>
 </body>
 </html>

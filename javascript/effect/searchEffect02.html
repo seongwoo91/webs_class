@@ -217,10 +217,10 @@
                 const cssName = el.dataset.name;  //CSS 속성 값
                 // console.log(cssName);
 
-                if(cssName.includes(searchWord)){
-                    el.classList.add("show");
+                if(cssName.includes(searchWord)){ //값을 일력하면 데이터를 확인
+                    el.classList.add("show"); //데이터가 있을경우 추가
                 } else {
-                    el.classList.remove("show");
+                    el.classList.remove("show"); //데이터가 있을경우 삭제
                 }              
             })
         })
