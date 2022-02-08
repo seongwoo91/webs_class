@@ -267,34 +267,34 @@
 
         ///CSS 속성 값/전체 갯수 출력하기
         cssProperty.map((element, index) => {
-            cssCount.innerText = "전체 목록 갯수 : "+ (index+1) +"개";
-            cssList.innerHTML += "<span>"+ element.name +"</span>";
+            cssCount.innerText = "전체 목록 갯수 : "+ (index+1) +"개"; //전체 갯수표현
+            cssList.innerHTML += "<span>"+ element.name +"</span>";   //리스트안에 span과 네임값 삽입
         });
         //사용자가 검색한 값
 
         searchBox.addEventListener("keyup", () => {
-            const searchWord = searchBox.value;
+            const searchWord = searchBox.value;     //변수명에 사용자가 입력한 값 저장
             //console.log(searchWord)
-            findProp(searchWord);
+            findProp(searchWord);            //함수명findProp 파라미터 searchWord를 넣어준다
         });
 
         document.querySelectorAll(".list span").forEach(span => {
-            span.addEventListener("click", () => {
+            span.addEventListener("click", () => {        //span에 있는 데이터들을 클릭할시
                 //클릭한 데이터 값을 가져오기
-                const listProp = span.innerText;
-                findProp(listProp);
+                const listProp = span.innerText;   //변수명에 span에 있는 텍스트 저장
+                findProp(listProp);              //함수명finProp에 파라미터 listProp을 넣어준다
             })
         })
 
         function findProp(searchProp){
-            const targetData = cssProperty.find((data) => data.name === searchProp)
+            const targetData = cssProperty.find((data) => data.name === searchProp)  //find를 이용해 tagetdata에 검색한값과 데이터가 값이 같을시
 
             //찾는 데이터가 없을 때
-            if(targetData == null){
+            if(targetData == null){  //입력 데이터가 없을경우 아래 메시지 출력
                 cssDesc.textContent = "해당 속성은 존재하지 않습니다. 다시 검색해 주세요!"
                 return
             } 
-            cssDesc.innerHTML = targetData.desc;
+            cssDesc.innerHTML = targetData.desc;     //데이터가 맞을경우 desc 출력
         }
     </script>
 </body>
