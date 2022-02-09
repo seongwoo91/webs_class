@@ -248,23 +248,6 @@
             {view: "10", name:"grid-template-rows", desc:"grid-template-rows 명시적 행(Track)의 크기를 정의"},
         ];
         
-
-        cssProperty.forEach(el => {
-            console.log(el)
-        });
-
-        cssProperty.map(el => {
-            console.log(el.desc)
-        });
-
-        for (let i of cssProperty){
-            console.log(cssProperty.name)
-        }
-                
-       
-
-
-
         const searchBox = document.querySelectorAll(".search span");  // 알파벳 버튼들
         const cssList = document.querySelector(".list ul");       // 속성리스트
         const cssCount = document.querySelector(".count em");     // 속성 갯수
@@ -276,7 +259,7 @@
             })
         })
 
-        //버튼을 클릭했을때
+        //버튼을 클릭했을때 작동시켜줄 함수내용
         function onClickButton(){
 
         }
@@ -287,13 +270,13 @@
 
             for(let data of cssProperty){
                 //list += "<li>" + data.view + "</li>";
-                list += `<li>${data.name} : ${data.desc} <span>${data.view}</span></li>`;
+                list += `<li>${data.name} : ${data.desc} <span>${data.view}</span></li>`; //정규표현식을 사용한 표기법
             }
 
 
             cssList.innerHTML = list; 
         }
-        upDaTaList();
+        upDaTaList(); //CSS 리스트 출력
 
         
 
