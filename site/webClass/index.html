@@ -36,6 +36,7 @@
     <link rel="stylesheet" href="css/fonts.css">
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css">
 </head>
 
 <body>
@@ -76,10 +77,72 @@
 
             <!-- banner--->
             <section id="banner">
-                <h2 class="ir_so">배너영역</h2>
-                <div class="img_type">
-                    <!-- <img src="img/bg01.jpg" alt="메인 배너"> -->
-                </div>
+                <h3 class="ir_so">배너영역</h3>
+                <!-- <div class="img_type slider">
+                    <div class="slider-img">
+                        <div class="desc">
+                            <span>DEVELOPER</span>
+                            <h4>NEW FRONTEND</h4>
+                            <p>당신이 만들어갈 새로운 이야기<br> 당신도 할 수 있습니다.</p>
+                            <div class="btn">
+                                <a href="#" class="white">자세히 보기</a>
+                                <a href="#" class="black">사이트 보기</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slider-arrow">
+                        <a href="#" class="left"><span class="ir_pm">이전이미지</span></a>
+                        <a href="#" class="right"><span class="ir_pm">다음이미지</span></a>
+                    </div>
+                    <div class="slider-dot">
+                        <a href="#" class="dot active"><span class="ir_pm">1</span></a>
+                        <a href="#" class="dot"><span class="ir_pm">2</span></a>
+                        <a href="#" class="dot"><span class="ir_pm">3</span></a>
+                        <a href="#" class="dot"><span class="ir_pm">4</span></a>
+                        <a href="#" class="play"><span class="ir_pm">자동플레이</span></a>
+                        <a href="#" class="stop"><span class="ir_pm">정지</span></a>
+                    </div>
+                </div> -->
+
+                <div class="swiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <div class="desc">
+                                <span>DEVELOPER01</span>
+                                <h4>NEW FRONTEND</h4>
+                                <p>당신이 만들어갈 새로운 이야기<br> 당신도 할 수 있습니다.</p>
+                                <div class="btn">
+                                    <a href="#" class="white">자세히 보기</a>
+                                    <a href="#" class="black">사이트 보기</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="desc">
+                                <span>DEVELOPER02</span>
+                                <h4>NEW FRONTEND</h4>
+                                <p>당신이 만들어갈 새로운 이야기<br> 당신도 할 수 있습니다.</p>
+                                <div class="btn">
+                                    <a href="#" class="white">자세히 보기</a>
+                                    <a href="#" class="black">사이트 보기</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="desc">
+                                <span>DEVELOPER03</span>
+                                <h4>NEW FRONTEND</h4>
+                                <p>당신이 만들어갈 새로운 이야기<br> 당신도 할 수 있습니다.</p>
+                                <div class="btn">
+                                    <a href="#" class="white">자세히 보기</a>
+                                    <a href="#" class="black">사이트 보기</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-pagination"></div>
+                        <div class="swiper-button-prev"></div>
+                        <div class="swiper-button-next"></div>
+                    </div>
             </section>
             <!-- //banner -->
 
@@ -150,6 +213,7 @@
                 </div>
             </section>
             <!-- //imgtext01 -->
+
 
             <!--중간배너-->
             <div class="banner_type01">
@@ -248,7 +312,7 @@
                             <li><a href="#">포트폴리오 사이트</a></li>
                         </ul>
                     </div>
-                    
+
                 </div>
                 <address class="footer-rights">
                     &copy; 2022 parkseongwoo All rights reserved
@@ -264,9 +328,29 @@
             </div>
         </footer>
         <!--//footer-->
-        
+
     </div>
     <!--//wrap-->
+    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+    <script>
+        const swiper = new Swiper('.swiper', {
+            // Optional parameters
+            direction: 'horizontal',
+            loop: true,
+            effect: "slide",
+            
+            // If we need pagination
+            pagination: {
+                el: '.swiper-pagination',
+                clickable : true
+            },
+            // Navigation arrows
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+        });
+    </script>
 </body>
 
 </html>
