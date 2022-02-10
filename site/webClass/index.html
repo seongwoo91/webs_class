@@ -78,6 +78,7 @@
             <!-- banner--->
             <section id="banner">
                 <h3 class="ir_so">배너영역</h3>
+
                 <!-- <div class="img_type slider">
                     <div class="slider-img">
                         <div class="desc">
@@ -145,7 +146,7 @@
                     </div>
             </section>
             <!-- //banner -->
-
+         
             <!-- itType01 -->
             <section class="container img_Text_type01 container">
                 <div class="text">
@@ -331,19 +332,25 @@
 
     </div>
     <!--//wrap-->
-    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+     <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
     <script>
         const swiper = new Swiper('.swiper', {
             // Optional parameters
             direction: 'horizontal',
-            loop: true,
-            effect: "slide",
-            
+            loop: false,
+
+            // autoplay: {
+            //     delay: 1000,
+            //     disableOnInteraction: false,
+            //     pauseOnMouseEnter: true,
+            // },
+
             // If we need pagination
             pagination: {
                 el: '.swiper-pagination',
                 clickable : true
             },
+
             // Navigation arrows
             navigation: {
                 nextEl: '.swiper-button-next',
