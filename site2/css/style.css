@@ -1,6 +1,6 @@
 /* 메뉴바 */
 * {
-    font-family: 'Poppins';
+    font-family: 'Poppins', sans-serif;
 }
 /* 컨테이너 */
 .container {
@@ -235,4 +235,25 @@
     top: 289px;
     font-size: 20px;
     font-family: 'Poppins';
+}
+
+/* 카드이미지 */
+#cardimage1 {
+    width: 1052px;
+    height: 1124px;
+    margin: 0 auto;
+    margin-top: 173px;
+}
+#cardimage1 .header {
+    display: flex;
+    justify-content: space-between;
+}
+
+#cardimage1 .menu {
+    width: 421px;
+    height: 20px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 111px;
 }
