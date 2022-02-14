@@ -102,8 +102,9 @@
 }
 #banner .banner_imgtxt .container .desc strong {
     position: absolute;
-    left: 40%;
+    left: 42%;
     bottom: 10%;
+    font-size: 20px;
     
 }
 #banner .banner_imgtxt .desc div {
