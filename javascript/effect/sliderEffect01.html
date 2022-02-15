@@ -6,224 +6,78 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>슬라이드 이펙트</title>
-    <link rel="stylesheet"
-      href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/styles/default.min.css">
+    
     <style>
-        @import url('https://webfontworld.github.io/NexonLv1Gothic/NexonLv1Gothic.css');
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'NexonLv1Gothic';
-        }
-
-        a {
-            text-decoration: none;
-            color: #fff;
-            transition: all 0.2s;
-        }
-
-        li {
-            list-style: none;
-        }
-
-        body {
-            width: 100%;
-            height: 100vh;
-            background: url(img/slider01.jpg);
-            background-size: cover;
-            background-position: center center;
-            overflow: hidden;
-            color: #fff;
-        }
-
-        body::before {
-            content: '';
-            position: absolute;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100vh;
-            background: rgba(13, 104, 122, 0.6);
-            z-index: -1;
-        }
-
-        /* info */
-        .title {
-            position: absolute;
-            left: 20px;
-            top: 20px;
-        }
-
-        .title h1 {
-            font-size: 30px;
-            border-bottom: 1px dashed #fff;
-            margin-bottom: 10px;
-            padding-bottom: 5px;
-            font-weight: 500;
-        }
-
-        .title p {
-            font-size: 16px;
-        }
-
-        .number {
-            position: absolute;
-            right: 20px;
-            top: 20px;
-        }
-
-        .number li {
-            display: inline;
-        }
-
-        .number li a {
-            display: inline-block;
-            width: 30px;
-            height: 30px;
-            border: 1px dashed #fff;
-            border-radius: 20px;
-            text-align: center;
-            line-height: 30px;
-            font-size: 12px;
-        }
-
-        .number li a:hover,
-        .number li.active a {
-            background: #fff;
-            color: #000;
-        }
-
-        .source {
-            position: absolute;
-            right: 20px;
-            bottom: 20px;
-        }
-
-        .source button {
-            border: 1px solid #fff;
-            background: transparent;
-            font-family: 'NexonLv1Gothic';
-            color: #fff;
-            font-size: 16px;
-            padding: 10px 30px;
-            border-radius: 50px;
-            transition: all 0.2s;
-            cursor: pointer;
-        }
-
-        .source button:hover {
-            background: #fff;
-            color: #000;
-        }
-
-        /* modal */
-        #modal {
-            position: fixed;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100vh;
-            background: rgba(0, 0, 0, 0.4);
-            z-index: 1000;
-            transform: scale(0);
-            transition: all 0.3s ease;
-        }
-
-        #modal.show {
-            animation: foldOut 1s ease forwards;
-        }
-
-        @keyframes foldOut {
-            0% {
-                transform: scaleX(0) scaleY(0.005)
-            }
-
-            50% {
-                transform: scaleX(1) scaleY(0.005)
-            }
-
-            100% {
-                transform: scaleX(1) scaleY(1)
-            }
-        }
-
-        .modal-wrap {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-direction: column;
-            height: 100vh;            
-        }
-        .modal-close {
-            margin-top: 10px;
-
-        }
-        .modal-cont {
-            opacity: 1;
-        }
-        .code-view {
-            width: 60vw;
-            height: 70vh;
-            background: #fff;
-            border: 1px solid #f2f2f2;
-            border-radius: 10px;
-            overflow: hidden;
-        }
-        .view-header {
-            padding: 5px 0 5px 10px;
-            border-bottom: 1px solid #e2e8f0;
-        }
-        .view-header > span {
-            width: 10px;
-            height: 10px;
-            display: inline-block;
-            border-radius: 10px;
-        }
-        .view-header > span:nth-child(1) {
-            background-color: #f56565;
-        }
-        .view-header > span:nth-child(2) {
-            background-color: #f6e05e;
-        }
-        .view-header > span:nth-child(3) {
-            background-color: #4ebb7b;
-        }
-        .view-title {
-            border-bottom: 1px solid #eee;
-            padding: 9px 10px 7px 10px ;
-            height: 37px;
-        }  
-        .view-title ul {
-
-        }  
-        .view-title li {
-            display: inline;
-        }  
-        .view-title li a {
-            color: rgb(150,150,150);
-            font-size: 14px;
-            text-transform: uppercase;
-            padding: 12px 15px 8px 15px;
-            margin: 2px 5px 0 5px;
-        }  
-        .view-title li.active a {
-            color:#000;
-            border-bottom: 2px solid #f56565;
-
-        }
-        .view-cont {
-            background-color: #e8e8e8;
-            height: 100%;
-            padding: 20px;
-        }
+        @import url(css/NexonLv1Gothic.css);
+        @import url(css/agate.min.css);
+        @import url(css/custom.css);
+       /* slider */
+       .slider__wrap {
+           display: flex;
+           align-items: center;
+           justify-content: center;
+           height: 100vh;
+       }
+       .slider__img {
+           position: relative;
+           width: 800px;
+           height: 480px;
+       }
+       .slider {
+           position: absolute;
+           left: 0; top: 0;
+       }
+       .slider::before {
+        position: absolute;
+        left: 5px;
+        top: 5px;
+        background: rgba(0,0,0,0.4);
+        color: #fff;
+        padding: 5px 10px 3px;
+       }
+       .slider:nth-child(1)::before {content: '이미지1';}
+       .slider:nth-child(2)::before {content: '이미지2';}
+       .slider:nth-child(3)::before {content: '이미지3';}
+       .slider:nth-child(4)::before {content: '이미지4';}
+       .slider:nth-child(5)::before {content: '이미지5';}
+       .slider:nth-child(6)::before {content: '이미지6';}
+       .slider:nth-child(7)::before {content: '이미지7';}
+       .slider:nth-child(8)::before {content: '이미지8';}
+       .slider:nth-child(9)::before {content: '이미지9';}
+       .slider:nth-child(1) {z-index: 9;}       
+       .slider:nth-child(2) {z-index: 8;}       
+       .slider:nth-child(3) {z-index: 7;}       
+       .slider:nth-child(4) {z-index: 6;}       
+       .slider:nth-child(5) {z-index: 5;}       
+       .slider:nth-child(6) {z-index: 4;}       
+       .slider:nth-child(7) {z-index: 3;}       
+       .slider:nth-child(8) {z-index: 2;}       
+       .slider:nth-child(9) {z-index: 1;}       
     </style>
 </head>
 
 <body>
 
 
+    <!-- main -->
+    <main>
+        <section id="sliderType01">
+            <div class="slider__wrap">
+                <div class="slider__img">
+                    <div class="slider"><img src="img/slider02.jpg" alt="이미지1"></div>
+                    <div class="slider"><img src="img/slider03.jpg" alt="이미지2"></div>
+                    <div class="slider"><img src="img/slider04.jpg" alt="이미지3"></div>
+                    <div class="slider"><img src="img/slider05.jpg" alt="이미지4"></div>
+                    <div class="slider"><img src="img/slider06.jpg" alt="이미지5"></div>
+                    <div class="slider"><img src="img/slider07.jpg" alt="이미지6"></div>
+                    <div class="slider"><img src="img/slider08.jpg" alt="이미지7"></div>
+                    <div class="slider"><img src="img/slider09.jpg" alt="이미지8"></div>
+                    <div class="slider"><img src="img/slider10.jpg" alt="이미지9"></div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!-- //main -->
 
 
 
@@ -248,7 +102,7 @@
 
     <div class="source">
         <button class="source-btn">소스보기</button>
-        <div id="modal" class="show">
+        <div id="modal">
             <div class="modal-wrap">
                 <div class="modal-cont">
                     <div class="code-view">
@@ -266,20 +120,100 @@
                             </ul>
                         </div>
                         <div class="view-cont">
+                            <!-- cont1 -->
                             <div>
-                                <pre><code class="language-javascript">const modal = function(){
-    document.querySelector(".source-btn").addEventListener('click', () => {
-        document.querySelector("#modal").classList.add("show");
-    })
-    document.querySelector(".modal-close").addEventListener('click', () => {
-        document.querySelector('#modal').classList.remove("show");
-    })
-};
-modal()    </code></pre>
+                                <pre><code class="language-html">&lt;main&gt;
+    &lt;section id="sliderType01"&gt;
+        &lt;div class="slider__wrap"&gt;
+            &lt;div class="slider__img"&gt;
+                &lt;div class="slider"&gt;&lt;img src="img/slider02.jpg" alt="이미지1"&gt;&lt;/div&gt;
+                &lt;div class="slider"&gt;&lt;img src="img/slider03.jpg" alt="이미지2"&gt;&lt;/div&gt;
+                &lt;div class="slider"&gt;&lt;img src="img/slider04.jpg" alt="이미지3"&gt;&lt;/div&gt;
+                &lt;div class="slider"&gt;&lt;img src="img/slider05.jpg" alt="이미지4"&gt;&lt;/div&gt;
+                &lt;div class="slider"&gt;&lt;img src="img/slider06.jpg" alt="이미지5"&gt;&lt;/div&gt;
+                &lt;div class="slider"&gt;&lt;img src="img/slider07.jpg" alt="이미지6"&gt;&lt;/div&gt;
+                &lt;div class="slider"&gt;&lt;img src="img/slider08.jpg" alt="이미지7"&gt;&lt;/div&gt;
+                &lt;div class="slider"&gt;&lt;img src="img/slider09.jpg" alt="이미지8"&gt;&lt;/div&gt;
+                &lt;div class="slider"&gt;&lt;img src="img/slider10.jpg" alt="이미지9"&gt;&lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+&lt;/main&gt;</code></pre>
                             </div>
-                            <div></div>
-                            <div></div>
-                            <div></div>
+                            <!-- //cont1 -->
+                            <!-- cont2 -->
+                            <div>
+                                <pre><code class="language-css">.slider__wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+.slider__img {
+    position: relative;
+    width: 800px;
+    height: 480px;
+}
+.slider {
+    position: absolute;
+    left: 0; top: 0;
+}
+.slider::before {
+    position: absolute;
+    left: 5px;
+    top: 5px;
+    background: rgba(0,0,0,0.4);
+    color: #fff;
+    padding: 5px 10px 3px;
+}
+.slider:nth-child(1)::before {content: '이미지1';}
+.slider:nth-child(2)::before {content: '이미지2';}
+.slider:nth-child(3)::before {content: '이미지3';}
+.slider:nth-child(4)::before {content: '이미지4';}
+.slider:nth-child(5)::before {content: '이미지5';}
+.slider:nth-child(6)::before {content: '이미지6';}
+.slider:nth-child(7)::before {content: '이미지7';}
+.slider:nth-child(8)::before {content: '이미지8';}
+.slider:nth-child(9)::before {content: '이미지9';}
+.slider:nth-child(1) {z-index: 9;}       
+.slider:nth-child(2) {z-index: 8;}       
+.slider:nth-child(3) {z-index: 7;}       
+.slider:nth-child(4) {z-index: 6;}       
+.slider:nth-child(5) {z-index: 5;}       
+.slider:nth-child(6) {z-index: 4;}       
+.slider:nth-child(7) {z-index: 3;}       
+.slider:nth-child(8) {z-index: 2;}       
+.slider:nth-child(9) {z-index: 1;}</code></pre>
+                            </div>
+                            <!-- //cont2 -->
+                            <!-- cont3 -->
+                            <div>
+                                <pre><code class="language-javascript">const sliderWrap = document.querySelector(".slider__wrap")
+const sliderImg = document.querySelector(".slider__img")
+const slider = document.querySelectorAll(".slider")
+
+let currentIndex = 0   //현재 보이는 이미지
+let sliderCount = slider.length; // 이미지 갯수!
+
+setInterval(() => {         //일정한 간격으로 주기적으로 실행되는 함수
+    let nextIndex = (currentIndex + 1) % 9; // 0 1 2 3 4 5 6 7 8 0  무한루프 알고리즘
+
+    slider[currentIndex].style.opacity = "0"         //첫 번째 이미지를 안보이게
+    slider[nextIndex].style.opacity ="1"             //두 번째 이미지를 보이게
+
+    slider.forEach(slider => {
+        slider.style.transition = "all 0.5s";  //자연스레 바뀌는 효과
+    });
+
+    currentIndex = nextIndex; // 함수가 한번 실행될때마다 넥스트값을 커렌트값에 옮겨준다.
+}, 2000);           // 함수가 실행되는 주기는 2초(2000)</code></pre>
+                            </div>
+                            <!-- //cont3 -->
+                            <!-- cont4 -->
+                            <div>
+                                <pre><code class="language-jQuery"></code></pre>
+                            </div>
+                            <!-- //cont4 -->
                         </div>
 
                     </div>
@@ -292,43 +226,36 @@ modal()    </code></pre>
 
     <!-- script -->
     <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/highlight.min.js"></script>
+    <script src="js/custom.js"></script>
     <script>
-        //highlight.js
-        hljs.highlightAll();
-
-            //modal
-            const modal = function(){
-                document.querySelector(".source-btn").addEventListener('click', () => {
-                    document.querySelector("#modal").classList.add("show");
-                })
-                document.querySelector(".modal-close").addEventListener('click', () => {
-                    document.querySelector('#modal').classList.remove("show");
-                })
-            };
-            modal() 
-                  
-        //tabmenu
-        const tabMenu = function(){
-            const tabBtn = document.querySelectorAll(".view-title > ul > li");
-            const tabCont = document.querySelectorAll(".view-cont > div");
-
-            //각각의 버튼을 클릭하면 경고창을 띄워주세요
-            tabBtn.forEach((btn) => {
-                btn.addEventListener('click', () => {
-                    //내가 클릭하지 않은건 active 삭제
-                    tabBtn.forEach((el) => {
-                        el.classList.remove("active");
-                    })
-                        
-                    //내가 클릭한건 active 추가
-                    btn.classList.add("active");
-                })
-            })
-        }
+        highlight();
+        modal();
         tabMenu();
 
+        //slider01
+        const sliderWrap = document.querySelector(".slider__wrap")
+        const sliderImg = document.querySelector(".slider__img")
+        const slider = document.querySelectorAll(".slider")
+
+        let currentIndex = 0   //현재 보이는 이미지
+        let sliderCount = slider.length; // 이미지 갯수!
+
+        setInterval(() => {
+            let nextIndex = (currentIndex + 1) % 9; // 0 1 2 3 4 0 무한루프 알고리즘
+
+            slider[currentIndex].style.opacity = "0" //첫 번째 이미지를 안보이게
+            slider[nextIndex].style.opacity ="1"             //두 번째 이미지를 보이게
+
+            slider.forEach(slider => {
+                slider.style.transition = "all 0.5s";  //자연스레 바뀌는 효과
+            });
+
+            currentIndex = nextIndex; // 함수가 한번 실행될때마다 넥스트값을 커렌트값에 옮겨준다.
+
+
+        }, 2000);
     </script>
-    //<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <!--//<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     //<script>
     //    const modal = function () {
     //        $(".source-btn").click(() => {
@@ -339,7 +266,7 @@ modal()    </code></pre>
     //        })
     //    }
     //    modal();
-    //</script>
+    //</script> -->
 </body>
 
 </html>
