@@ -27,7 +27,21 @@ body {
     overflow: hidden;
     color: #fff;
 }
-
+body.img02 {
+    background-image: url(../img/sliderbg02.jpg);
+}
+body.img03 {
+    background-image: url(../img/sliderbg03.jpg);
+}
+body.img04 {
+    background-image: url(../img/slider01.jpg);
+}
+body.img05 {
+    background-image: url(../img/slider01.jpg);
+}
+body.img06 {
+    background-image: url(../img/slider01.jpg);
+}
 body::before {
     content: '';
     position: absolute;
