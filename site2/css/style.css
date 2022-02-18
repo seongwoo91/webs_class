@@ -514,12 +514,13 @@
 }
 
 /* 푸터 */
-#footer {
+.txt_img3 {
     display: flex;
     width: 1440px;
-    height: 746px;
+    height: 520px;
     margin: 0 auto;    
     padding: 130px 135px;
+    position: relative;
 }
 .t_box .logobox{
     font-size: 14px;
@@ -579,7 +580,8 @@
     background-image: url(../img/arw.svg);
     width: 20px;
     height: 11px;
-    background-position: center;
+    margin-left: 15px;
+    margin-top: 20px;
 }
 .st_btn p {
     color:#fff;
@@ -587,4 +589,94 @@
     position: absolute;
     left: 0; top: -8px;
   
+}
+.f_img {
+    background-image: url(../img/71x59.jpg);
+    width: 71px;
+    height: 59px;
+    margin-top: 223px;
+    margin-left: -140px;
+}
+.txt_img3 a {
+    margin-top: 236px;
+    margin-left: 10px;
+    text-decoration: underline;
+}
+.txt_img3 .c_img {
+    background-image: url(../img/258x279.jpg);
+    width: 258px;
+    height: 279px;
+    right: 32px;
+    top: 160px;
+    position: absolute;
+}
+.bm_menu {
+    width: 1440px;
+    height: 50px;
+    margin: 0 auto;
+    padding: 0 0 0 135px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.menu2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.menu2 a {
+    font-size: 15px;
+    line-height: 20px;
+    color: #494949;
+    margin: 0 43px;
+}
+.my2 {
+    display: flex;
+    align-items: center;  
+    margin-right: 100px;  
+}
+.my2 .btn1 {
+    background-image: url(../img/bi1\(6x12\).jpg);
+    width: 6px;
+    height: 12px;
+    margin-right: 25px;
+}
+.my2 .btn2 {
+    background-image: url(../img/bi2\(13x9\).jpg);
+    width: 13px;
+    height: 9px;
+    margin-right: 25px;
+}
+.my2 .btn3 {
+    background-image: url(../img/bi3\(12x12\).jpg);
+    width: 12px;
+    height: 12px;
+    margin-right: 25px;
+}
+.logo2 {
+    display: flex;
+}
+.logo2 .pik {
+    background-image: url(../img/logo1.jpg);
+    width: 35px;
+    height: 35px;
+}
+.lop {      
+    font-size: 30px;
+    line-height: 1;
+    display: inline-block;
+    padding-left: 10px;
+}
+/* 푸터 */
+#footer {
+    width: 1440px;
+    height: 90px;
+    margin: 0 auto;
+}
+#footer p {
+    padding: 30px 0 0 0;
+    text-align: center;
+    margin-left: 120px;
+    font-size: 12px;
+    color: #adadad;
 }
