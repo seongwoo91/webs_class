@@ -49,7 +49,7 @@
     </style>
 </head>
 
-<body class="img02">
+<body class="img04">
 
 
     <!-- main -->
@@ -58,11 +58,11 @@
             <div class="slider__wrap">
                 <div class="slider__img">
                     <div class="slider__inner">
-                        <div class="slider"><img src="img/slider11.jpg" alt="이미지1"></div>
-                        <div class="slider"><img src="img/slider12.jpg" alt="이미지2"></div>
-                        <div class="slider"><img src="img/slider13.jpg" alt="이미지3"></div>
-                        <div class="slider"><img src="img/slider14.jpg" alt="이미지4"></div>
-                        <div class="slider"><img src="img/slider15.jpg" alt="이미지5"></div>
+                        <div class="slider"><img src="img/slider21.jpg" alt="이미지1"></div>
+                        <div class="slider"><img src="img/slider22.jpg" alt="이미지2"></div>
+                        <div class="slider"><img src="img/slider23.jpg" alt="이미지3"></div>
+                        <div class="slider"><img src="img/slider24.jpg" alt="이미지4"></div>
+                        <div class="slider"><img src="img/slider25.jpg" alt="이미지5"></div>
                     </div>
                 </div>
             </div>
@@ -74,7 +74,7 @@
 
     <!-- info -->
     <div class="title">
-        <h1><a href="sliderEffect.html">JavaScript Slider Effect02</a></h1>
+        <h1><a href="sliderEffect.html">JavaScript Slider Effect04</a></h1>
         <p>이미지 슬라이드 - 위로 움직이기</p>
     </div>
 
@@ -114,15 +114,15 @@
                             <!-- cont1 -->
                             <div>
                                 <pre><code class="language-html">&lt;main&gt;
-    &lt;section id="sliderType01"&gt;
+    &lt;section id="sliderType04"&gt;
         &lt;div class="slider__wrap"&gt;
             &lt;div class="slider__img"&gt;
                 &lt;div class="slider__img"&gt;
-                    &lt;div class="slider"&gt;&lt;img src="img/slider11.jpg" alt="이미지1"&gt;&lt;/div&gt;
-                    &lt;div class="slider"&gt;&lt;img src="img/slider12.jpg" alt="이미지2"&gt;&lt;/div&gt;
-                    &lt;div class="slider"&gt;&lt;img src="img/slider13.jpg" alt="이미지3"&gt;&lt;/div&gt;
-                    &lt;div class="slider"&gt;&lt;img src="img/slider14.jpg" alt="이미지4"&gt;&lt;/div&gt;
-                    &lt;div class="slider"&gt;&lt;img src="img/slider15.jpg" alt="이미지5"&gt;&lt;/div&gt;
+                    &lt;div class="slider"&gt;&lt;img src="img/slider21.jpg" alt="이미지1"&gt;&lt;/div&gt;
+                    &lt;div class="slider"&gt;&lt;img src="img/slider22.jpg" alt="이미지2"&gt;&lt;/div&gt;
+                    &lt;div class="slider"&gt;&lt;img src="img/slider23.jpg" alt="이미지3"&gt;&lt;/div&gt;
+                    &lt;div class="slider"&gt;&lt;img src="img/slider24.jpg" alt="이미지4"&gt;&lt;/div&gt;
+                    &lt;div class="slider"&gt;&lt;img src="img/slider25.jpg" alt="이미지5"&gt;&lt;/div&gt;
                 &lt;/div&gt; 
             &lt;/div&gt;
         &lt;/div&gt;
@@ -136,15 +136,15 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
     height: 100vh;
 }
 .slider__img {  /* 화면 보이는 구간 */
     width: 800px;
     height: 480px;
-    overflow: hidden;
+    overflow: hidden; 
 }
 .slider__inner {  /* 이미지 움직이는 영역*/
-    display: flex;
     width: 4000px;
     position: relative;  /* left를 사용하기 위해서 (기준) */
 }
@@ -179,33 +179,26 @@ console.log(slider)
 
 let currentIndex = -1;       //첫 번째 이미지(현재 보이는 이미지)
 let sliderCount = slider.length;   //이미지 갯수
+let sliderHeight = sliderImg.offsetHeight;
+let sliderClone = sliderInner.firstElementChild.cloneNode(true)
+sliderInner.appendChild(sliderClone)
 
-setInterval(() => {
-    console.log(currentIndex);
+function SliderEffect(){
+    currentIndex++;
 
-        (currentIndex &lt; sliderCount - 1 ) ? currentIndex++ :  currentIndex = 0; //삼항 연산자로 한번에 표현할수있다.
+    sliderInner.style.transition = "all 0.4s"
+    sliderInner.style.top = - sliderHeight * currentIndex + "px"
 
-        if (currentIndex &lt; sliderCount-1){  //위와같은 내용이며 이프문으로는 이렇게 표현해줄수있다.
-            currentIndex++; 
-        } else {
-            currentIndex = 0;
-        }
-                                        
-        //sliderInner.style.left = "-0px";  800*0      
-        //sliderInner.style.left = "-800px";  800*1
-        //sliderInner.style.left = "-1600px"; 800*2 
-        //sliderInner.style.left = "-2400px"; 800*3
-        //sliderInner.style.left = "-3200px"; 800*4
-
-        //sliderInner.style.left = -800 * currentIndex +"px";  //위의 스타일 5줄의 내용을 1줄로 압축한내용
-        //sliderInner.style.transition = "all 0.6s ease";     //트랜지션효과 (부드럽게)
-        gsap.to(sliderInner,{             //gsap를 사용해서 움직이는 모션을 더 부드럽게 표현가능
-        duration: 0.4,
-            left: -800 * currentIndex,
-            ease: "power1.out"
-});
-        
-}, 2000)</code></pre>
+    if (currentIndex == 5){
+        setTimeout(()=>{
+        //초기화
+        sliderInner.style.transition ="0s";              //초기화순간에는 트랜지션삭제
+        sliderInner.style.top ="0px";  //0px로 초기화
+        },300)  // 수치는 셋인터벌의 간격과 애니메이션에 비례하여 임의로 설정
+        currentIndex = 0;  //인덱스값이 5가 되었을때 다시 0으로 되돌린다.
+    }
+}
+setInterval(SliderEffect, 2000);</code></pre>
                             </div>
                             <!-- //cont3 -->
                             <!-- cont4 -->
@@ -263,6 +256,6 @@ setInterval(() => {
         }
         setInterval(SliderEffect, 2000);
     </script>
-</body class="img02">
+</body>
 
 </html>

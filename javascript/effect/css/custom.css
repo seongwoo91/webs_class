@@ -34,12 +34,18 @@ body.img03 {
     background-image: url(../img/sliderbg03.jpg);
 }
 body.img04 {
-    background-image: url(../img/slider01.jpg);
+    background-image: url(../img/sliderbg04.jpg);
 }
 body.img05 {
-    background-image: url(../img/slider01.jpg);
+    background-image: url(../img/sliderbg05.jpg);
 }
 body.img06 {
+    background-image: url(../img/sliderbg06.jpg);
+}
+body.img07 {
+    background-image: url(../img/slider01.jpg);
+}
+body.img08 {
     background-image: url(../img/slider01.jpg);
 }
 body::before {
