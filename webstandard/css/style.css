@@ -170,7 +170,7 @@ width: 100%; height: 100%; }
 4. width: 0; height : 0; overflow:hiidden; (
 */
 
-/* tab_menu */
+/* 탭메뉴 */
 .tab_menu {position: relative; border:1px solid #ccc; padding: 8px; height: 105px;}
 .tab_menu ul {overflow: hidden; border-bottom: 1px solid #ccc;}
 .tab_menu ul li {float: left; border: 1px solid #ccc; margin-right: -1px;}
@@ -182,3 +182,13 @@ width: 100%; height: 100%; }
 .tab_menu ul li.active {background: #2c94c4;}
 .tab_menu ul li.active a {color:#fff;}
 .tab_menu ul li.active ul li a{color:#333;}
+
+/* 게시판4 */
+.notice4 {position: relative; border: 1px solid #ccc}
+.notice4 h4 {border-bottom: 1px solid #ccc; padding: 8px 10px;}
+.notice4 h4 em {color: #cf3292;}
+.notice4 ul {}
+.notice4 li {}
+.notice4 li a {}
+.notice4 li a span {}
+.notice4 a.more {position: absolute; right: 9px; top: 9px;}
