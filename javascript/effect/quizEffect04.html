@@ -1,4 +1,13 @@
-@font-face {
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>퀴즈 이펙트 - 여러개의 사용자 정답확인</title>
+    <style>
+     @font-face {
     font-family: 'DungGeunMo';
     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/DungGeunMo.woff') format('woff');
     font-weight: normal;
@@ -95,7 +104,6 @@ body {
 }
 #footer {
     width: 100%;
-    margin-top: 200px;
     background: #fff;
     text-align: center;
     padding: 20px;
@@ -111,11 +119,12 @@ body {
     justify-content: center;
     flex-wrap: wrap;
     margin-top: 150px;
+    height: 100vh;
 }
 
 .quiz {
-    width: 100%;
     max-width: 500px;
+    width: 100%;
     background: #fff;
     border: 8px ridge #cacaca;
     margin: 10px;
@@ -282,6 +291,7 @@ body {
     border: 6px ridge #cacaca;
     width: 100%;
     font-size: 22px;
+    line-height: 1.4;
     padding: 13px 22px;
     background: #fff;
     text-align: center;
@@ -299,6 +309,49 @@ body {
     font-family: 'Cafe24Dangdanghae';
     text-shadow: 1px 1px 1px #fff;
     margin-bottom: 10px;
+}
+
+/* 객관식 정답 */
+.quiz__selects {
+    margin-top: 15px;
+    margin-bottom: 20px;
+}
+.quiz__selects label {
+    display: flex;
+}
+.quiz__selects label input {
+    position: absolute;
+    left: -9999px;
+}
+.quiz__selects label span {
+    font-size: 20px;
+    padding: 10px 30px 10px 20px;
+    margin: 3px 0;
+    line-height: 1;
+    border-radius: 50px;
+    font-family: 'Cafe24Dangdanghae';
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.25s;
+}
+.quiz__selects label span::before {
+    content: '';
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin-right: 15px;
+    background: #fff;
+    display: flex;
+    flex-shrink: 0;
+    box-shadow: inset 0 0 0 4px #64a30b;
+    transition: all 0.25s;
+}
+.quiz__selects label input:checked + span {
+    background-color: #e2f8c2;
+}
+.quiz__selects label input:checked + span::before {
+    box-shadow: inset 0 0 0 10px #beda97;
 }
 /* dog */
 .dog .tail,
@@ -651,7 +704,7 @@ transition: 0.2s ease-in;
     border: 1px solid #fff;
     background: transparent;
     font-family: 'NexonLv1Gothic';
-    color: #333;
+    color: #fff;
     font-size: 16px;
     padding: 10px 30px;
     border-radius: 50px;
@@ -811,7 +864,7 @@ transition: 0.2s ease-in;
 }
 
 
-/* 윈도우창*/
+/* 윈도우창 >ㅅ< */
  .window {
     min-width: 360px;
     min-height: 220px;
@@ -914,69 +967,152 @@ transition: 0.2s ease-in;
   .content-container > .content > .scroll {
     width: 26px;
   }
-  .scroll {
-    background-color: #D7D7D7;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-direction: column;
-  }
-  .scroll > .progress {
-    width: 24px;
-    height: 70%;
-    cursor: pointer;
-    border-left: 2px solid #FCFCFC;
-    border-top: 2px solid #FCFCFC;
-    border-right: 2px solid #2A2A2A;
-    border-bottom: 2px solid #2A2A2A;
-    background-color: #c7c7c7;
-  }
-  .scroll > .progress:hover {
-    background-color: #bababa;
-  }
-  .scroll > .start, .scroll > .end {
-    width: 24px;
-    height: 22px;
-    position: relative;
-    border-left: 2px solid #FCFCFC;
-    border-top: 2px solid #FCFCFC;
-    border-right: 2px solid #2A2A2A;
-    border-bottom: 2px solid #2A2A2A;
-    background-color: #c7c7c7;
-  }
-  .scroll > .start:hover, .scroll > .end:hover {
-    background-color: #bababa;
-    border-left: 2px solid #2A2A2A;
-    border-top: 2px solid #2A2A2A;
-    border-right: 2px solid #FCFCFC;
-    border-bottom: 2px solid #FCFCFC;
-  }
-  .scroll > .start::after, .scroll > .end::after {
-    content: "";
-    display: block;
-    position: absolute;
-    width: 0;
-    height: 0;
-    top: 6px;
-    left: 4px;
-    border-top: 0;
-    border-left: 6px solid transparent;
-    border-right: 6px solid transparent;
-    border-bottom: 6px solid #000000;
-  }
-  .scroll > .end::after {
-    transform: rotate(180deg);
-  }
-  .scroll.-row {
-    flex-direction: row;
-  }
-  .scroll.-row > .progress {
-    width: 30%;
-    height: 24px;
-  }
-  .scroll.-row > .start::after {
-    transform: rotate(-90deg);
-  }
-  .scroll.-row > .end::after {
-    transform: rotate(90deg);
-  }
+  
+    </style>
+</head>
+
+<body>
+    <header id="header">
+        <h1>Quiz</h1>
+        <nav>
+            <ul>
+                <li><a href="quizEffect01.html">1</a></li>
+                <li><a href="quizEffect02.html">2</a></li>
+                <li><a href="quizEffect03.html">3</a></li>
+                <li class="active"><a href="quizEffect04.html">4</a></li>
+                <li><a href="quizEffect05.html">5</a></li>
+                <li><a href="quizEffect06.html">6</a></li>
+                <li><a href="quizEffect07.html">7</a></li>
+                <li><a href="quizEffect08.html">8</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="main">
+        <div class="quiz__wrap">
+            <div class="quiz">
+                <h2 class="quiz__type"></h2>
+                <h3 class="quiz__question">
+                    <span class="quiz__number"></span>
+                    <span class="quiz__ask"></span>
+                </h3>
+                <div class="quiz__view">
+                    <div class="true">정답입니다!</div>
+                    <div class="flase">틀렸습니다!</div>
+                    <div class='dog'>
+                        <div class='head'>
+                          <div class='ears'></div>
+                          <div class='face'></div>
+                          <div class='eyes'>
+                            <div class='teardrop'></div>
+                          </div>
+                          <div class='nose'></div>
+                          <div class='mouth'>
+                            <div class='tongue'></div>
+                          </div>
+                          <div class='chin'></div>
+                        </div>
+                        <div class='body'>
+                          <div class='tail'></div>
+                          <div class='legs'></div>
+                        </div>
+                      </div>
+                </div>
+                <div class="quiz__answer">
+                    <div class="quiz__selects">
+                        <label for="select1">
+                            <input class="select" type="radio" id="select1" name="select" value="1">
+                            <span class="choice"></span>
+                        </label>
+                        <label for="select2">
+                            <input class="select" type="radio" id="select2" name="select" value="2">
+                            <span class="choice"></span>
+                        </label>
+                        <label for="select3">
+                            <input class="select" type="radio" id="select3" name="select" value="3">
+                            <span class="choice"></span>
+                        </label>
+                        <label for="select4">
+                            <input class="select" type="radio" id="select4" name="select" value="4">
+                            <span class="choice"></span>
+                        </label>                                 
+                    </div>
+                    <button class="quiz__confirm">정답 확인하기</button>
+                    <div class="quiz__result"></div>
+                    <div class="quiz__ex"></div>
+                </div>
+            </div>
+        
+        </div>
+        
+
+        <div class="quiz_source"></div>
+    </main>
+
+    <footer id="footer">
+       <a href="mailto:seongwoo91@naver.com">seongwoo91@naver.com</a>
+    </footer>
+
+    <script>
+      const quizType = document.querySelector(".quiz__type");           //문제 유형
+      const quizNumber = document.querySelector(".quiz__number");       //문제 번호
+      const quizAsk = document.querySelector(".quiz__ask");             //문제 질문
+      const quizConfirm = document.querySelector(".quiz__confirm");     //문제 정답 버튼
+      const quizResult = document.querySelector(".quiz__result");       //문제 정답
+      const quizView = document.querySelector(".quiz__view");           //문제 화면
+      const quizSelects = document.querySelector(".quiz__selects");      //객관식 보기
+      const quizChoice = document.querySelectorAll(".choice")           //객관식 보기
+      const quizSelect = document.querySelectorAll(".select")           //인풋박스
+
+        //문제 정보
+        const quizInfo = [
+            {
+                answerType : "javascript",
+                answerNum : 1,
+                answerAsk : "객체 기반의 스크립트 프로그래밍 언어는 무엇입니까?",
+                answerChoice : ["javascript", "html", "css", "jquery"],
+                answerResult : "1",
+                answerEx : "객체 기반의 스크립트 프로그래밍 언어는 자바스크립트 입니다",
+            }
+        ];
+
+        //문제 출력
+        function updataQuiz() {
+            quizType.textContent = quizInfo[0].answerType
+            quizNumber.textContent = quizInfo[0].answerNum
+            quizAsk.textContent = quizInfo[0].answerAsk            
+            quizResult.textContent = quizInfo[0].answerEx
+
+            for(let i = 0; i <4; i++){
+                quizChoice[i].textContent = quizInfo[0].answerChoice[i]
+            };
+            //설명 감추기
+            quizResult.style.display = "none";
+           
+        }
+        updataQuiz();       
+        //정답 확인
+        function answerQuiz() {
+            //사용자가 클릭한 input -> checked : 사용자가 선택한 정답 == 객체 안에 정답
+            for(let i=0; i<quizSelect.length; i++){
+                if(quizSelect[i].checked == true){
+                    if(quizSelect[i].value == quizInfo[0].answerResult){
+                        quizView.classList.add('like')
+                        quizConfirm.style.display = "none";
+                        quizResult.style.display = "block";
+                    } else {
+                        quizView.classList.add('dislike')
+                        quizConfirm.style.display = "none";
+                        quizResult.style.display = "block";
+                    }
+                }
+            }
+
+
+        }
+
+        quizConfirm.addEventListener('click', answerQuiz)
+    </script>
+</body>
+
+</html>
