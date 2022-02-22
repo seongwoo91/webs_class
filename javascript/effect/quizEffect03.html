@@ -7,10 +7,358 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>퀴즈 이펙트 - 여러개의 사용자 정답확인</title>
     <style>
-        @import url(css/quizcustom.css);
         @import url(css/agate.min.css);
-        @import url(css/NexonLv1Gothic.css);
-       
+        @import url(css/dog.css);
+        @import url(css/quizsource.css);
+     @font-face {
+    font-family: 'DungGeunMo';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/DungGeunMo.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Cafe24Dangdanghae';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.2/Cafe24Dangdanghae.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+*, *:before, *:after {
+    box-sizing: border-box;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'DungGeunMo';
+
+}
+
+a {
+    text-decoration: none;
+}
+
+body {
+    width: 100%;
+    background-color: #f6f6f6;
+    background-image:
+        linear-gradient(90deg, #cdcccc 0px, #cdcccc 1px, transparent 1px, transparent 99px, transparent 100px),
+        linear-gradient(#cdcccc 0px, #cdcccc 1px, transparent 1px, transparent 99px, transparent 100px),
+        linear-gradient(#e0e0e0 0px, #e0e0e0 1px, transparent 1px, transparent 99px, transparent 100px),
+        linear-gradient(90deg, #e0e0e0 0px, #e0e0e0 1px, transparent 1px, transparent 99px, transparent 100px),
+        linear-gradient(transparent 0px, transparent 5px, #f6f6f6 5px, #f6f6f6 95px, transparent 95px, transparent 100px),
+        linear-gradient(90deg, #e0e0e0 0px, #e0e0e0 1px, transparent 1px, transparent 99px, #e0e0e0 99px, #e0e0e0 100px),
+        linear-gradient(90deg, transparent 0px, transparent 5px, #f6f6f6 5px, #f6f6f6 95px, transparent 95px, transparent 100px),
+        linear-gradient(transparent 0px, transparent 1px, #f6f6f6 1px, #f6f6f6 99px, transparent 99px, transparent 100px),
+        linear-gradient(#cdcccc, #cdcccc);
+    background-size: 100px 100%, 100% 100px, 100% 10px, 10px 100%, 100% 100px, 100px 100%, 100px 100%, 100px 100px, 100px 100px;
+}
+
+#header {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    background: #262626;
+    color: #fff;
+    display: flex;
+    padding: 10px;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 10;
+}
+
+#header::before {
+    content: '';
+    border: 4px ridge #a3a3a3;
+    position: absolute;
+    left: 5px;
+    top: 5px;
+    width: calc(100% - 10px);
+    height: calc(100% - 10px);
+    z-index: -1;
+}
+
+#header h1 {
+    padding: 3px 0 6px 10px;
+}
+#header nav {
+    padding-right: 10px;
+}
+#header nav li {
+    list-style: none;
+    display: inline;
+}
+#header nav li.active a {
+    background: #fff;
+    color: #262626;
+}
+
+#header nav li a {
+    color: #fff;
+    display: inline-block;
+    padding: 0 10px;
+    transition: all 0.2s;
+    border:1px dashed #fff;
+}
+
+#header nav li a:hover {
+    opacity: 0.5;
+}
+#footer {
+    width: 100%;
+    background: #fff;
+    text-align: center;
+    padding: 20px;
+}
+#footer a {
+    color : #333;
+    font-size: 16px;
+}
+/* quiz__wrap */
+.quiz__wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 150px;
+    height: 100vh;
+}
+
+.quiz {
+    max-width: 500px;
+    width: 100%;
+    background: #fff;
+    border: 8px ridge #cacaca;
+    margin: 10px;
+}
+
+.quiz__type {
+    background: #cacaca;
+    text-align: center;
+    font-size: 14px;
+    color: #3b3b3b;
+    border: 3px ridge #cacaca;
+    padding: 3px 0;
+    position: relative;
+}
+
+.quiz__type::before {
+    content: '';
+    position: absolute;
+    left: 2px;
+    top: 2px;
+    width: 5px;
+    height: 5px;
+    border: 6px ridge #1ce670;
+}
+
+.quiz__type::after {
+    content: '';
+    position: absolute;
+    right: 2px;
+    top: 2px;
+    width: 5px;
+    height: 5px;
+    border: 6px ridge #1ce670;
+}
+
+.quiz__question {
+    border-bottom: 6px ridge #cacaca;
+    border-top: 6px ridge #cacaca;
+    padding: 13px 30px;
+    font-size: 24px;
+    line-height: 1.6;
+}
+
+.quiz__number {
+    font-family: 'Cafe24Dangdanghae';
+    color: #64a30b;
+}
+
+.quiz__ask {
+    font-family: 'Cafe24Dangdanghae';
+}
+
+.quiz__answer {
+    background-color: #f5f5f5;
+    border-top: 6px ridge #cacaca;
+    padding: 10px;
+}
+
+.quiz__view {
+    background-color: #f5f5f5;
+    position: relative;
+}
+.quiz__view .true {
+    position: absolute;
+    left: 70%;
+    top: 100px;
+    widows: 120px;
+    height: 120px;
+    background: #fff;
+    border-radius: 50%;
+    z-index:100;
+    line-height: 100px;
+    text-align: center;
+    color: #fff;
+    background-color: #f5534F;
+    padding: 10px;
+    opacity: 0;
+    transform: scale(0);
+
+}
+.quiz__view .flase {
+    position: absolute;
+    right: 70%;
+    top: 100px;
+    widows: 120px;
+    height: 120px;
+    background: #fff;
+    border-radius: 50%;
+    z-index:100;
+    line-height: 100px;
+    text-align: center;
+    color: #f5534F;
+    padding: 10px;
+    opacity: 0;   
+    transform: scale(0);
+}
+.quiz__view.like .true {
+    opacity: 1;
+    transform: scale(1);
+    animation : bounceInUp 1s;
+
+}
+@keyframes bounceInUp {
+    0%,
+    60%,
+    75%,
+    90%,
+    to {
+        animation-timing-function: cubic-bezier(.215, .61, .355, 1)
+    }
+
+    0% {
+        opacity: 0;
+        transform: translate3d(0, 3000px, 0) scaleY(5)
+    }
+
+    60% {
+        opacity: 1;
+        transform: translate3d(0, -20px, 0) scaleY(.9)
+    }
+
+    75% {
+        transform: translate3d(0, 10px, 0) scaleY(.95)
+    }
+
+    90% {
+        transform: translate3d(0, -5px, 0) scaleY(.985)
+    }
+
+    to {
+        transform: translateZ(0)
+    }
+}
+.quiz__view.dislike .flase{
+    opacity: 1;
+    transform: scale(1);
+    animation : wobble 0.6s;
+}
+@keyframes wobble {
+    0% {transform: translateZ(0)}
+    15% {transform: translate3d(-25%, 0, 0) rotate(-5deg)}
+    30% {transform: translate3d(20%, 0, 0) rotate(3deg)}
+    45% {transform: translate3d(-15%, 0, 0) rotate(-3deg)}
+    60% {transform: translate3d(10%, 0, 0) rotate(2deg)}
+    75% {transform: translate3d(-5%, 0, 0) rotate(-1deg)}
+    100% {transform: translateZ(0)}
+}
+.quiz__confirm {
+    border: 6px ridge #cacaca;
+    width: 100%;
+    font-size: 22px;
+    padding: 13px 22px;
+    background: #d6d6d6;
+    font-family: 'Cafe24Dangdanghae';
+    text-shadow: 1px 1px 1px #fff;
+    transition: all 0.3s;
+    cursor: pointer;
+}
+
+.quiz__confirm:hover {
+    background: #b3b3b3;
+}
+
+.quiz__result {
+    border: 6px ridge #cacaca;
+    width: 100%;
+    font-size: 22px;
+    line-height: 1.4;
+    padding: 13px 22px;
+    background: #fff;
+    text-align: center;
+    font-family: 'Cafe24Dangdanghae';
+    text-shadow: 1px 1px 1px #fff;
+    /* display: none;  */
+}
+.quiz__input {
+    border: 6px ridge #cacaca;
+    width: 100%;
+    font-size: 22px;
+    padding: 13px 22px;
+    background: #fff;
+    text-align: center;
+    font-family: 'Cafe24Dangdanghae';
+    text-shadow: 1px 1px 1px #fff;
+    margin-bottom: 10px;
+}
+
+/* 객관식 정답 */
+.quiz__selects {
+    margin-top: 15px;
+    margin-bottom: 20px;
+}
+.quiz__selects label {
+    display: flex;
+}
+.quiz__selects label input {
+    position: absolute;
+    left: -9999px;
+}
+.quiz__selects label span {
+    font-size: 20px;
+    padding: 10px 30px 10px 20px;
+    margin: 3px 0;
+    line-height: 1;
+    border-radius: 50px;
+    font-family: 'Cafe24Dangdanghae';
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.25s;
+}
+.quiz__selects label span::before {
+    content: '';
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin-right: 15px;
+    background: #fff;
+    display: flex;
+    flex-shrink: 0;
+    box-shadow: inset 0 0 0 4px #64a30b;
+    transition: all 0.25s;
+}
+.quiz__selects label input:checked + span {
+    background-color: #e2f8c2;
+}
+.quiz__selects label input:checked + span::before {
+    box-shadow: inset 0 0 0 10px #beda97;
+}
+
+
     </style>
 </head>
 
@@ -134,120 +482,639 @@
                     <button class="quiz__confirm">정답 확인하기</button>
                     <div class="quiz__result"></div>
                 </div>
-            </div>
-            <div class="quiz">
-                <h2 class="quiz__type"></h2>
-                <h3 class="quiz__question">
-                    <span class="quiz__number"></span>
-                    <span class="quiz__ask"></span>
-                </h3>
-                <div class="quiz__view">
-                    <div class="true">정답입니다!</div>
-                    <div class="flase">틀렸습니다!</div>
-                    <div class='dog'>
-                        <div class='head'>
-                          <div class='ears'></div>
-                          <div class='face'></div>
-                          <div class='eyes'>
-                            <div class='teardrop'></div>
-                          </div>
-                          <div class='nose'></div>
-                          <div class='mouth'>
-                            <div class='tongue'></div>
-                          </div>
-                          <div class='chin'></div>
-                        </div>
-                        <div class='body'>
-                          <div class='tail'></div>
-                          <div class='legs'></div>
-                        </div>
-                      </div>
-                </div>
-                <div class="quiz__answer">
-                    <input type="text" placeholder="정답을 적어주세요!" class="quiz__input">
-                    <button class="quiz__confirm">정답 확인하기</button>
-                    <div class="quiz__result"></div>
-                </div>
-            </div>
-            <div class="quiz">
-                <h2 class="quiz__type"></h2>
-                <h3 class="quiz__question">
-                    <span class="quiz__number"></span>
-                    <span class="quiz__ask"></span>
-                </h3>
-                <div class="quiz__view">
-                    <div class="true">정답입니다!</div>
-                    <div class="flase">틀렸습니다!</div>
-                    <div class='dog'>
-                        <div class='head'>
-                          <div class='ears'></div>
-                          <div class='face'></div>
-                          <div class='eyes'>
-                            <div class='teardrop'></div>
-                          </div>
-                          <div class='nose'></div>
-                          <div class='mouth'>
-                            <div class='tongue'></div>
-                          </div>
-                          <div class='chin'></div>
-                        </div>
-                        <div class='body'>
-                          <div class='tail'></div>
-                          <div class='legs'></div>
-                        </div>
-                      </div>
-                </div>
-                <div class="quiz__answer">
-                    <input type="text" placeholder="정답을 적어주세요!" class="quiz__input">
-                    <button class="quiz__confirm">정답 확인하기</button>
-                    <div class="quiz__result"></div>
-                </div>
-            </div>
-            <div class="quiz">
-                <h2 class="quiz__type"></h2>
-                <h3 class="quiz__question">
-                    <span class="quiz__number"></span>
-                    <span class="quiz__ask"></span>
-                </h3>
-                <div class="quiz__view">
-                    <div class="true">정답입니다!</div>
-                    <div class="flase">틀렸습니다!</div>
-                    <div class='dog'>
-                        <div class='head'>
-                          <div class='ears'></div>
-                          <div class='face'></div>
-                          <div class='eyes'>
-                            <div class='teardrop'></div>
-                          </div>
-                          <div class='nose'></div>
-                          <div class='mouth'>
-                            <div class='tongue'></div>
-                          </div>
-                          <div class='chin'></div>
-                        </div>
-                        <div class='body'>
-                          <div class='tail'></div>
-                          <div class='legs'></div>
-                        </div>
-                      </div>
-                </div>
-                <div class="quiz__answer">
-                    <input type="text" placeholder="정답을 적어주세요!" class="quiz__input">
-                    <button class="quiz__confirm">정답 확인하기</button>
-                    <div class="quiz__result"></div>
-                </div>
-            </div>
+            </div>            
         </div>
         
 
-        <div class="quiz_source"></div>
+        <div class="source">
+          <button class="source-btn">소스보기</button>
+          <div id="modal">
+              <div class="modal-wrap">
+                  <div class="modal-cont">
+                      <div class="window">
+                          <div class="title-bar">
+                              <div class="t_name">Source</div>
+                              <div class="minimize">
+                                  <div class="symbol"></div>
+                              </div>
+                              <div class="maximize">
+                                  <div class="symbol"></div>
+                              </div>
+                              <div class="close">
+                                  <div class="symbol"></div>
+                              </div>
+                          </div>
+                          <div class="menu-bar">
+                              <span class="active">HTML</span>
+                              <span>CSS</span>
+                              <span>JavaScript</span>
+
+                          </div>
+                          <div class="content-container">
+                              <div class="content">
+                                  <div class="main">
+                                      <div class="view-cont">
+                                          <div>
+                                              <pre><code class="language-html">&lt;header id="header">
+    &lt;h1>Quiz&lt;/h1>
+    &lt;nav>
+        &lt;ul>
+            &lt;li>&lt;a href="quizEffect01.html">1&lt;/a>&lt;/li>
+            &lt;li>&lt;a href="quizEffect02.html">2&lt;/a>&lt;/li>
+            &lt;li class="active">&lt;a href="quizEffect03.html">3&lt;/a>&lt;/li>
+            &lt;li>&lt;a href="quizEffect04.html">4&lt;/a>&lt;/li>
+            &lt;li>&lt;a href="quizEffect05.html">5&lt;/a>&lt;/li>
+            &lt;li>&lt;a href="quizEffect06.html">6&lt;/a>&lt;/li>
+            &lt;li>&lt;a href="quizEffect07.html">7&lt;/a>&lt;/li>
+            &lt;li>&lt;a href="quizEffect08.html">8&lt;/a>&lt;/li>
+        &lt;/ul>
+    &lt;/nav>
+&lt;/header>
+
+&lt;main id="main">
+&lt;div class="quiz__wrap">
+    &lt;div class="quiz">
+        &lt;h2 class="quiz__type">&lt;/h2>
+        &lt;h3 class="quiz__question">
+            &lt;span class="quiz__number">&lt;/span>
+            &lt;span class="quiz__ask">&lt;/span>
+        &lt;/h3>
+        &lt;div class="quiz__view">
+            &lt;div class="true">정답입니다!&lt;/div>
+            &lt;div class="flase">틀렸습니다!&lt;/div>
+            &lt;div class='dog'>
+                &lt;div class='head'>
+                  &lt;div class='ears'>&lt;/div>
+                  &lt;div class='face'>&lt;/div>
+                  &lt;div class='eyes'>
+                    &lt;div class='teardrop'>&lt;/div>
+                  &lt;/div>
+                  &lt;div class='nose'>&lt;/div>
+                  &lt;div class='mouth'>
+                    &lt;div class='tongue'>&lt;/div>
+                  &lt;/div>
+                  &lt;div class='chin'>&lt;/div>
+                &lt;/div>
+                &lt;div class='body'>
+                  &lt;div class='tail'>&lt;/div>
+                  &lt;div class='legs'>&lt;/div>
+                &lt;/div>
+              &lt;/div>
+        &lt;/div>
+        &lt;div class="quiz__answer">
+            &lt;input type="text" placeholder="정답을 적어주세요!" class="quiz__input">
+            &lt;button class="quiz__confirm">정답 확인하기&lt;/button>
+            &lt;div class="quiz__result">&lt;/div>
+        &lt;/div>
+    &lt;/div>
+    &lt;div class="quiz">
+        &lt;h2 class="quiz__type">&lt;/h2>
+        &lt;h3 class="quiz__question">
+            &lt;span class="quiz__number">&lt;/span>
+            &lt;span class="quiz__ask">&lt;/span>
+        &lt;/h3>
+        &lt;div class="quiz__view">
+            &lt;div class="true">정답입니다!&lt;/div>
+            &lt;div class="flase">틀렸습니다!&lt;/div>
+            &lt;div class='dog'>
+                &lt;div class='head'>
+                  &lt;div class='ears'>&lt;/div>
+                  &lt;div class='face'>&lt;/div>
+                  &lt;div class='eyes'>
+                    &lt;div class='teardrop'>&lt;/div>
+                  &lt;/div>
+                  &lt;div class='nose'>&lt;/div>
+                  &lt;div class='mouth'>
+                    &lt;div class='tongue'>&lt;/div>
+                  &lt;/div>
+                  &lt;div class='chin'>&lt;/div>
+                &lt;/div>
+                &lt;div class='body'>
+                  &lt;div class='tail'>&lt;/div>
+                  &lt;div class='legs'>&lt;/div>
+                &lt;/div>
+              &lt;/div>
+        &lt;/div>
+        &lt;div class="quiz__answer">
+            &lt;input type="text" placeholder="정답을 적어주세요!" class="quiz__input">
+            &lt;button class="quiz__confirm">정답 확인하기&lt;/button>
+            &lt;div class="quiz__result">&lt;/div>
+        &lt;/div>
+    &lt;/div>
+    &lt;div class="quiz">
+        &lt;h2 class="quiz__type">&lt;/h2>
+        &lt;h3 class="quiz__question">
+            &lt;span class="quiz__number">&lt;/span>
+            &lt;span class="quiz__ask">&lt;/span>
+        &lt;/h3>
+        &lt;div class="quiz__view">
+            &lt;div class="true">정답입니다!&lt;/div>
+            &lt;div class="flase">틀렸습니다!&lt;/div>
+            &lt;div class='dog'>
+                &lt;div class='head'>
+                  &lt;div class='ears'>&lt;/div>
+                  &lt;div class='face'>&lt;/div>
+                  &lt;div class='eyes'>
+                    &lt;div class='teardrop'>&lt;/div>
+                  &lt;/div>
+                  &lt;div class='nose'>&lt;/div>
+                  &lt;div class='mouth'>
+                    &lt;div class='tongue'>&lt;/div>
+                  &lt;/div>
+                  &lt;div class='chin'>&lt;/div>
+                &lt;/div>
+                &lt;div class='body'>
+                  &lt;div class='tail'>&lt;/div>
+                  &lt;div class='legs'>&lt;/div>
+                &lt;/div>
+              &lt;/div>
+        &lt;/div>
+        &lt;div class="quiz__answer">
+            &lt;input type="text" placeholder="정답을 적어주세요!" class="quiz__input">
+            &lt;button class="quiz__confirm">정답 확인하기&lt;/button>
+            &lt;div class="quiz__result">&lt;/div>
+        &lt;/div>
+    &lt;/div>            
+&lt;/div></code></pre>
+                                          </div>
+                                          <div>
+                                              <pre><code class="language-css">@import url(css/agate.min.css);
+        @import url(css/dog.css);
+        @import url(css/quizsource.css);
+      @font-face {
+    font-family: 'DungGeunMo';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/DungGeunMo.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Cafe24Dangdanghae';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.2/Cafe24Dangdanghae.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+*, *:before, *:after {
+    box-sizing: border-box;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'DungGeunMo';
+
+}
+
+a {
+    text-decoration: none;
+}
+
+body {
+    width: 100%;
+    background-color: #f6f6f6;
+    background-image:
+        linear-gradient(90deg, #cdcccc 0px, #cdcccc 1px, transparent 1px, transparent 99px, transparent 100px),
+        linear-gradient(#cdcccc 0px, #cdcccc 1px, transparent 1px, transparent 99px, transparent 100px),
+        linear-gradient(#e0e0e0 0px, #e0e0e0 1px, transparent 1px, transparent 99px, transparent 100px),
+        linear-gradient(90deg, #e0e0e0 0px, #e0e0e0 1px, transparent 1px, transparent 99px, transparent 100px),
+        linear-gradient(transparent 0px, transparent 5px, #f6f6f6 5px, #f6f6f6 95px, transparent 95px, transparent 100px),
+        linear-gradient(90deg, #e0e0e0 0px, #e0e0e0 1px, transparent 1px, transparent 99px, #e0e0e0 99px, #e0e0e0 100px),
+        linear-gradient(90deg, transparent 0px, transparent 5px, #f6f6f6 5px, #f6f6f6 95px, transparent 95px, transparent 100px),
+        linear-gradient(transparent 0px, transparent 1px, #f6f6f6 1px, #f6f6f6 99px, transparent 99px, transparent 100px),
+        linear-gradient(#cdcccc, #cdcccc);
+    background-size: 100px 100%, 100% 100px, 100% 10px, 10px 100%, 100% 100px, 100px 100%, 100px 100%, 100px 100px, 100px 100px;
+}
+
+#header {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    background: #262626;
+    color: #fff;
+    display: flex;
+    padding: 10px;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 10;
+}
+
+#header::before {
+    content: '';
+    border: 4px ridge #a3a3a3;
+    position: absolute;
+    left: 5px;
+    top: 5px;
+    width: calc(100% - 10px);
+    height: calc(100% - 10px);
+    z-index: -1;
+}
+
+#header h1 {
+    padding: 3px 0 6px 10px;
+}
+#header nav {
+    padding-right: 10px;
+}
+#header nav li {
+    list-style: none;
+    display: inline;
+}
+#header nav li.active a {
+    background: #fff;
+    color: #262626;
+}
+
+#header nav li a {
+    color: #fff;
+    display: inline-block;
+    padding: 0 10px;
+    transition: all 0.2s;
+    border:1px dashed #fff;
+}
+
+#header nav li a:hover {
+    opacity: 0.5;
+}
+#footer {
+    width: 100%;
+    background: #fff;
+    text-align: center;
+    padding: 20px;
+}
+#footer a {
+    color : #333;
+    font-size: 16px;
+}
+/* quiz__wrap */
+.quiz__wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 150px;
+    height: 100vh;
+}
+
+.quiz {
+    max-width: 500px;
+    width: 100%;
+    background: #fff;
+    border: 8px ridge #cacaca;
+    margin: 10px;
+}
+
+.quiz__type {
+    background: #cacaca;
+    text-align: center;
+    font-size: 14px;
+    color: #3b3b3b;
+    border: 3px ridge #cacaca;
+    padding: 3px 0;
+    position: relative;
+}
+
+.quiz__type::before {
+    content: '';
+    position: absolute;
+    left: 2px;
+    top: 2px;
+    width: 5px;
+    height: 5px;
+    border: 6px ridge #1ce670;
+}
+
+.quiz__type::after {
+    content: '';
+    position: absolute;
+    right: 2px;
+    top: 2px;
+    width: 5px;
+    height: 5px;
+    border: 6px ridge #1ce670;
+}
+
+.quiz__question {
+    border-bottom: 6px ridge #cacaca;
+    border-top: 6px ridge #cacaca;
+    padding: 13px 30px;
+    font-size: 24px;
+    line-height: 1.6;
+}
+
+.quiz__number {
+    font-family: 'Cafe24Dangdanghae';
+    color: #64a30b;
+}
+
+.quiz__ask {
+    font-family: 'Cafe24Dangdanghae';
+}
+
+.quiz__answer {
+    background-color: #f5f5f5;
+    border-top: 6px ridge #cacaca;
+    padding: 10px;
+}
+
+.quiz__view {
+    background-color: #f5f5f5;
+    position: relative;
+}
+.quiz__view .true {
+    position: absolute;
+    left: 70%;
+    top: 100px;
+    widows: 120px;
+    height: 120px;
+    background: #fff;
+    border-radius: 50%;
+    z-index:100;
+    line-height: 100px;
+    text-align: center;
+    color: #fff;
+    background-color: #f5534F;
+    padding: 10px;
+    opacity: 0;
+    transform: scale(0);
+
+}
+.quiz__view .flase {
+    position: absolute;
+    right: 70%;
+    top: 100px;
+    widows: 120px;
+    height: 120px;
+    background: #fff;
+    border-radius: 50%;
+    z-index:100;
+    line-height: 100px;
+    text-align: center;
+    color: #f5534F;
+    padding: 10px;
+    opacity: 0;   
+    transform: scale(0);
+}
+.quiz__view.like .true {
+    opacity: 1;
+    transform: scale(1);
+    animation : bounceInUp 1s;
+
+}
+@keyframes bounceInUp {
+    0%,
+    60%,
+    75%,
+    90%,
+    to {
+        animation-timing-function: cubic-bezier(.215, .61, .355, 1)
+    }
+
+    0% {
+        opacity: 0;
+        transform: translate3d(0, 3000px, 0) scaleY(5)
+    }
+
+    60% {
+        opacity: 1;
+        transform: translate3d(0, -20px, 0) scaleY(.9)
+    }
+
+    75% {
+        transform: translate3d(0, 10px, 0) scaleY(.95)
+    }
+
+    90% {
+        transform: translate3d(0, -5px, 0) scaleY(.985)
+    }
+
+    to {
+        transform: translateZ(0)
+    }
+}
+.quiz__view.dislike .flase{
+    opacity: 1;
+    transform: scale(1);
+    animation : wobble 0.6s;
+}
+@keyframes wobble {
+    0% {transform: translateZ(0)}
+    15% {transform: translate3d(-25%, 0, 0) rotate(-5deg)}
+    30% {transform: translate3d(20%, 0, 0) rotate(3deg)}
+    45% {transform: translate3d(-15%, 0, 0) rotate(-3deg)}
+    60% {transform: translate3d(10%, 0, 0) rotate(2deg)}
+    75% {transform: translate3d(-5%, 0, 0) rotate(-1deg)}
+    100% {transform: translateZ(0)}
+}
+.quiz__confirm {
+    border: 6px ridge #cacaca;
+    width: 100%;
+    font-size: 22px;
+    padding: 13px 22px;
+    background: #d6d6d6;
+    font-family: 'Cafe24Dangdanghae';
+    text-shadow: 1px 1px 1px #fff;
+    transition: all 0.3s;
+    cursor: pointer;
+}
+
+.quiz__confirm:hover {
+    background: #b3b3b3;
+}
+
+.quiz__result {
+    border: 6px ridge #cacaca;
+    width: 100%;
+    font-size: 22px;
+    line-height: 1.4;
+    padding: 13px 22px;
+    background: #fff;
+    text-align: center;
+    font-family: 'Cafe24Dangdanghae';
+    text-shadow: 1px 1px 1px #fff;
+    /* display: none;  */
+}
+.quiz__input {
+    border: 6px ridge #cacaca;
+    width: 100%;
+    font-size: 22px;
+    padding: 13px 22px;
+    background: #fff;
+    text-align: center;
+    font-family: 'Cafe24Dangdanghae';
+    text-shadow: 1px 1px 1px #fff;
+    margin-bottom: 10px;
+}
+
+/* 객관식 정답 */
+.quiz__selects {
+    margin-top: 15px;
+    margin-bottom: 20px;
+}
+.quiz__selects label {
+    display: flex;
+}
+.quiz__selects label input {
+    position: absolute;
+    left: -9999px;
+}
+.quiz__selects label span {
+    font-size: 20px;
+    padding: 10px 30px 10px 20px;
+    margin: 3px 0;
+    line-height: 1;
+    border-radius: 50px;
+    font-family: 'Cafe24Dangdanghae';
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.25s;
+}
+.quiz__selects label span::before {
+    content: '';
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin-right: 15px;
+    background: #fff;
+    display: flex;
+    flex-shrink: 0;
+    box-shadow: inset 0 0 0 4px #64a30b;
+    transition: all 0.25s;
+}
+.quiz__selects label input:checked + span {
+    background-color: #e2f8c2;
+}
+.quiz__selects label input:checked + span::before {
+    box-shadow: inset 0 0 0 10px #beda97;
+}</code></pre>
+                                          </div>
+                                          <div>
+                                              <pre><code class="language-javascript">const quizType = document.querySelectorAll(".quiz__type");    //문제 유형
+const quizNumber = document.querySelectorAll(".quiz__number");   //문제 번호
+const quizAsk = document.querySelectorAll(".quiz__ask");         //문제 질문
+const quizConfirm = document.querySelectorAll(".quiz__confirm"); //문제 정답 버튼
+const quizResult = document.querySelectorAll(".quiz__result");   //문제 정답
+const quizView = document.querySelectorAll(".quiz__view");       //문제 화면
+const quizInput = document.querySelectorAll(".quiz__input");     //사용자 정답
+
+
+  //문제 정보
+  const answerType = "javascript";
+  const answerNum = 1;                                                               
+  const answerAsk = "객체 기반의 스크립트 프로그래밍 언어는 무엇입니까?";
+  const answerResult = "javascript";
+
+  const quizInfo = [
+      {
+          answerType : "javascript",
+          answerNum : 1,                                                               
+          answerAsk : "자료형 중에 참과 거짓으로 반환하는 타입은 무엇인가요?",
+          answerResult : "boolean"
+      },
+      {
+          answerType : "CSS",
+          answerNum : 2,                                                               
+          answerAsk : "바깥 여백을 설정하는 속성은 무엇인가요?",
+          answerResult : "margin"
+      },
+      {
+          answerType : "CSS",
+          answerNum : 3,                                                               
+          answerAsk : "안쪽 여백을 설정하는 속성은 무엇인가요?",
+          answerResult : "padding"
+      }
+      
+  ]
+
+      //문제 설정
+      // quizType[0].textContent = quizInfo[0].answerType;
+      // quizType[1].textContent = quizInfo[1].answerType;
+      // quizType[2].textContent = quizInfo[2].answerType;
+
+      // quizNumber[0].textContent = quizInfo[0].answerNum + ". ";
+      // quizNumber[1].textContent = quizInfo[1].answerNum + ". ";
+      // quizNumber[2].textContent = quizInfo[2].answerNum + ". ";
+
+      // quizAsk[0].textContent = quizInfo[0].answerAsk
+      // quizAsk[1].textContent = quizInfo[1].answerAsk
+      // quizAsk[2].textContent = quizInfo[2].answerAsk
+
+      // quizResult[0].textContent = quizInfo[0].answerResult
+      // quizResult[1].textContent = quizInfo[1].answerResult
+      // quizResult[2].textContent = quizInfo[2].answerResult
+
+      //for문으로 출력해보자.
+
+      //for(let i = 0; i <=quizInfo.length; i++){
+      //    quizType[i].textContent = quizInfo[i].answerType;
+      //    quizNumber[i].textContent = quizInfo[i].answerNum + ". ";
+      //    quizAsk[i].textContent = quizInfo[i].answerAsk
+      //    quizResult[i].textContent = quizInfo[i].answerResult
+      //
+
+      //forEach
+      quizInfo.forEach((e, i) => {
+          quizType[i].textContent = quizInfo[i].answerType;
+          quizNumber[i].textContent = quizInfo[i].answerNum + ". ";
+          quizAsk[i].textContent = quizInfo[i].answerAsk;
+          quizResult[i].textContent = "정답은 " + quizInfo[i].answerResult +" 입니다.";
+      });
+
+      //정답숨기기
+      quizResult.forEach(el => {
+          el.style.display = "none";
+      })
+
+      //정답 확인
+      quizConfirm.forEach((e, i) => {
+          e.addEventListener("click", () => {
+            //  e.style.display = "none";
+            //  quizResult[i].style.display = "block";
+
+            // 사용자 정답 = quizInfo 정답
+              const userWord = quizInput[i].value.toLowerCase().trim();
+
+              if( userWord == quizInfo[i].answerResult){
+                  quizView[i].classList.add('like');
+                  quizConfirm[i].style.display = "none";
+
+              } else {
+                  quizView[i].classList.add('dislike');
+                  quizConfirm[i].style.display = "none";
+                  quizResult[i].style.display = "block";
+                  quizInput[i].style.display = "none";
+              }
+          })
+      })</code></pre>
+                                          </div>
+
+                                      </div>
+                                  </div>
+                                  <div class="scroll">
+                                      <div class="start"></div>
+                                      <div class="progress"></div>
+                                      <div class="end"></div>
+                                  </div>
+                              </div>
+                              <div class="scroll -row">
+                                  <div class="start"></div>
+                                  <div class="progress"></div>
+                                  <div class="end"></div>
+                              </div>
+                          </div>
+                      </div>
+                      <button class="modal-close">닫기</button>
+                      <!-- //소스보기 -->
     </main>
 
     <footer id="footer">
        <a href="mailto:seongwoo91@naver.com">seongwoo91@naver.com</a>
     </footer>
-
+    <script src="js/highlight.min.js"></script>
+    <script src="js/quizsource.js"></script>
     <script>
+        highlight();
       const quizType = document.querySelectorAll(".quiz__type");    //문제 유형
       const quizNumber = document.querySelectorAll(".quiz__number");   //문제 번호
       const quizAsk = document.querySelectorAll(".quiz__ask");         //문제 질문
@@ -281,25 +1148,8 @@
                 answerNum : 3,                                                               
                 answerAsk : "안쪽 여백을 설정하는 속성은 무엇인가요?",
                 answerResult : "padding"
-            },
-            {
-            answerType : "HTML",
-                answerNum : 4,                                                               
-                answerAsk : "다른 페이지로 이동할수있게 설정하는 태그는 무엇인가요?",
-                answerResult : "a"
-            },
-            {
-            answerType : "Javascript",
-                answerNum : 5,                                                               
-                answerAsk : "반복문이 실행되는 도중 특정조건에 도달할시 멈추게 제어하는 것은 무엇인가요?",
-                answerResult : "break"
-            },
-            {
-            answerType : "html",
-                answerNum : 6,                                                               
-                answerAsk : "웹에 이미지를 설정하는 태그는 무엇인가요?",
-                answerResult : "img"
             }
+           
         ]
 
             //문제 설정

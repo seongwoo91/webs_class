@@ -42,8 +42,11 @@ body.img05 {
 body.img06 {
     background-image: url(../img/sliderbg06.jpg);
 }
+/* //슬라이드이펙트 */
+
+/* 마우스이펙트 */
 body.img07 {
-    background-image: url(../img/slider01.jpg);
+    background-image: url(../img/sliderbg07.jpg);
 }
 body.img08 {
     background-image: url(../img/slider01.jpg);
@@ -126,6 +129,15 @@ body::before {
 .source button:hover {
     background: #fff;
     color: #000;
+}
+
+.attr {
+    position: absolute;
+    left: 20px;
+    bottom: 20px;
+    font-size: 14px;
+    line-height: 1.6;
+
 }
 
 /* modal */

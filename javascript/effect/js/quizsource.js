@@ -1,3 +1,8 @@
+//highlight.js
+const highlight = function(){
+    hljs.highlightAll();
+}
+highlight();
 
 
 //modal

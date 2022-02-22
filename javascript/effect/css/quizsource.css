@@ -1,29 +1,4 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'NexonLv1Gothic';
-}
 
-a {
-    text-decoration: none;
-    color: #fff;
-    transition: all 0.2s;
-}
-
-li {
-    list-style: none;
-}
-
-img {
-    width: 100%;
-    vertical-align: top;
-    /*이미지 여백 제거*/
-}
-
-body {
-    color: #fff;
-}
 
 
 .window {
@@ -101,12 +76,12 @@ body {
 }
 
 .source button {
-    border: 1px solid #B39DDB;
-    background: #B39DDB;
+    border: 1px solid #304968;
+    background: #304968;
     color: #fff;
     font-size: 16px;
     padding: 10px 30px;
-    border-radius: 50px;
+    border-radius: 10px;
     transition: all 0.2s;
     cursor: pointer;
     position: relative;
@@ -115,8 +90,8 @@ body {
 }
 
 .source button:hover {
-    background: #FFCC80;
-    color: #fff;
+    background: #D4D0C8;
+    color: #000;
 }
 
 /* modal */
@@ -257,7 +232,7 @@ body {
 }
 
 .view-cont {
-    background-color: #2b2b2b;
+    background-color: #333;
     height: 100%;
     overflow: scroll;
     -ms-overflow-style: none;
@@ -309,6 +284,7 @@ html {
     top: 5px;
     left: 10px;
     font-size: 18px;
+    color: #fff !important;
 
 }
 .title-bar>.minimize,
@@ -377,6 +353,7 @@ html {
     display: inline-block;
     cursor: pointer;
     font-weight: normal;
+    color: #000;
 }
 
 .menu-bar>span::first-letter {
