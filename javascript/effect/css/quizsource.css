@@ -2,8 +2,8 @@
 
 
 .window {
-    width: 700px;
-    min-height: 550px;
+    width: 50vw;
+    height: 60vh;
     background-color: #c7c7c7;
     padding: 4px;
     border-left: 2px solid #FCFCFC;
@@ -180,8 +180,8 @@
 }
 
 .modal-close {
-    margin-top: 10px;
-    margin-left: 300px;
+    margin-top: -5vh;
+    margin-left: 20vw;
 }
 
 .modal-cont {
