@@ -1,0 +1,1118 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>퀴즈 이펙트 - 여러개의 사용자 정답확인</title>
+    <style>
+     @font-face {
+    font-family: 'DungGeunMo';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/DungGeunMo.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Cafe24Dangdanghae';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.2/Cafe24Dangdanghae.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+*, *:before, *:after {
+    box-sizing: border-box;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'DungGeunMo';
+
+}
+
+a {
+    text-decoration: none;
+}
+
+body {
+    width: 100%;
+    background-color: #f6f6f6;
+    background-image:
+        linear-gradient(90deg, #cdcccc 0px, #cdcccc 1px, transparent 1px, transparent 99px, transparent 100px),
+        linear-gradient(#cdcccc 0px, #cdcccc 1px, transparent 1px, transparent 99px, transparent 100px),
+        linear-gradient(#e0e0e0 0px, #e0e0e0 1px, transparent 1px, transparent 99px, transparent 100px),
+        linear-gradient(90deg, #e0e0e0 0px, #e0e0e0 1px, transparent 1px, transparent 99px, transparent 100px),
+        linear-gradient(transparent 0px, transparent 5px, #f6f6f6 5px, #f6f6f6 95px, transparent 95px, transparent 100px),
+        linear-gradient(90deg, #e0e0e0 0px, #e0e0e0 1px, transparent 1px, transparent 99px, #e0e0e0 99px, #e0e0e0 100px),
+        linear-gradient(90deg, transparent 0px, transparent 5px, #f6f6f6 5px, #f6f6f6 95px, transparent 95px, transparent 100px),
+        linear-gradient(transparent 0px, transparent 1px, #f6f6f6 1px, #f6f6f6 99px, transparent 99px, transparent 100px),
+        linear-gradient(#cdcccc, #cdcccc);
+    background-size: 100px 100%, 100% 100px, 100% 10px, 10px 100%, 100% 100px, 100px 100%, 100px 100%, 100px 100px, 100px 100px;
+}
+
+#header {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    background: #262626;
+    color: #fff;
+    display: flex;
+    padding: 10px;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 10;
+}
+
+#header::before {
+    content: '';
+    border: 4px ridge #a3a3a3;
+    position: absolute;
+    left: 5px;
+    top: 5px;
+    width: calc(100% - 10px);
+    height: calc(100% - 10px);
+    z-index: -1;
+}
+
+#header h1 {
+    padding: 3px 0 6px 10px;
+}
+#header nav {
+    padding-right: 10px;
+}
+#header nav li {
+    list-style: none;
+    display: inline;
+}
+#header nav li.active a {
+    background: #fff;
+    color: #262626;
+}
+
+#header nav li a {
+    color: #fff;
+    display: inline-block;
+    padding: 0 10px;
+    transition: all 0.2s;
+    border:1px dashed #fff;
+}
+
+#header nav li a:hover {
+    opacity: 0.5;
+}
+#footer {
+    width: 100%;
+    background: #fff;
+    text-align: center;
+    padding: 20px;
+}
+#footer a {
+    color : #333;
+    font-size: 16px;
+}
+/* quiz__wrap */
+.quiz__wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 150px;
+    height: 100vh;
+}
+
+.quiz {
+    max-width: 500px;
+    width: 100%;
+    background: #fff;
+    border: 8px ridge #cacaca;
+    margin: 10px;
+}
+
+.quiz__type {
+    background: #cacaca;
+    text-align: center;
+    font-size: 14px;
+    color: #3b3b3b;
+    border: 3px ridge #cacaca;
+    padding: 3px 0;
+    position: relative;
+}
+
+.quiz__type::before {
+    content: '';
+    position: absolute;
+    left: 2px;
+    top: 2px;
+    width: 5px;
+    height: 5px;
+    border: 6px ridge #cacaca;
+}
+
+.quiz__type::after {
+    content: '';
+    position: absolute;
+    right: 2px;
+    top: 2px;
+    width: 5px;
+    height: 5px;
+    border: 6px ridge #cacaca;
+}
+
+.quiz__question {
+    border-bottom: 6px ridge #cacaca;
+    padding: 13px 30px;
+    font-size: 24px;
+    line-height: 1.6;
+}
+
+.quiz__number {
+    font-family: 'Cafe24Dangdanghae';
+    color: #64a30b;
+}
+
+.quiz__ask {
+    font-family: 'Cafe24Dangdanghae';
+}
+
+.quiz__answer {
+    background-color: #f5f5f5;
+    border-top: 6px ridge #cacaca;
+    padding: 10px;
+}
+
+.quiz__view {
+    background-color: #f5f5f5;
+    position: relative;
+}
+.quiz__view .true {
+    position: absolute;
+    left: 70%;
+    top: 100px;
+    widows: 120px;
+    height: 120px;
+    background: #fff;
+    border-radius: 50%;
+    z-index:100;
+    line-height: 100px;
+    text-align: center;
+    color: #fff;
+    background-color: #f5534F;
+    padding: 10px;
+    opacity: 0;
+    transform: scale(0);
+
+}
+.quiz__view .flase {
+    position: absolute;
+    right: 70%;
+    top: 100px;
+    widows: 120px;
+    height: 120px;
+    background: #fff;
+    border-radius: 50%;
+    z-index:100;
+    line-height: 100px;
+    text-align: center;
+    color: #f5534F;
+    padding: 10px;
+    opacity: 0;   
+    transform: scale(0);
+}
+.quiz__view.like .true {
+    opacity: 1;
+    transform: scale(1);
+    animation : bounceInUp 1s;
+
+}
+@keyframes bounceInUp {
+    0%,
+    60%,
+    75%,
+    90%,
+    to {
+        animation-timing-function: cubic-bezier(.215, .61, .355, 1)
+    }
+
+    0% {
+        opacity: 0;
+        transform: translate3d(0, 3000px, 0) scaleY(5)
+    }
+
+    60% {
+        opacity: 1;
+        transform: translate3d(0, -20px, 0) scaleY(.9)
+    }
+
+    75% {
+        transform: translate3d(0, 10px, 0) scaleY(.95)
+    }
+
+    90% {
+        transform: translate3d(0, -5px, 0) scaleY(.985)
+    }
+
+    to {
+        transform: translateZ(0)
+    }
+}
+.quiz__view.dislike .flase{
+    opacity: 1;
+    transform: scale(1);
+    animation : wobble 0.6s;
+}
+@keyframes wobble {
+    0% {transform: translateZ(0)}
+    15% {transform: translate3d(-25%, 0, 0) rotate(-5deg)}
+    30% {transform: translate3d(20%, 0, 0) rotate(3deg)}
+    45% {transform: translate3d(-15%, 0, 0) rotate(-3deg)}
+    60% {transform: translate3d(10%, 0, 0) rotate(2deg)}
+    75% {transform: translate3d(-5%, 0, 0) rotate(-1deg)}
+    100% {transform: translateZ(0)}
+}
+.quiz__confirm {
+    border: 6px ridge #cacaca;
+    width: 100%;
+    font-size: 22px;
+    padding: 13px 22px;
+    background: #d6d6d6;
+    font-family: 'Cafe24Dangdanghae';
+    text-shadow: 1px 1px 1px #fff;
+    transition: all 0.3s;
+    cursor: pointer;
+}
+
+.quiz__confirm:hover {
+    background: #b3b3b3;
+}
+
+.quiz__result {
+    border: 6px ridge #cacaca;
+    width: 100%;
+    font-size: 22px;
+    line-height: 1.4;
+    padding: 13px 22px;
+    background: #fff;
+    text-align: center;
+    font-family: 'Cafe24Dangdanghae';
+    text-shadow: 1px 1px 1px #fff;
+    /* display: none;  */
+}
+.quiz__input {
+    border: 6px ridge #cacaca;
+    width: 100%;
+    font-size: 22px;
+    padding: 13px 22px;
+    background: #fff;
+    text-align: center;
+    font-family: 'Cafe24Dangdanghae';
+    text-shadow: 1px 1px 1px #fff;
+    margin-bottom: 10px;
+}
+
+/* 객관식 정답 */
+.quiz__selects {
+    margin-top: 15px;
+    margin-bottom: 20px;
+}
+.quiz__selects label {
+    display: flex;
+}
+.quiz__selects label input {
+    position: absolute;
+    left: -9999px;
+}
+.quiz__selects label span {
+    font-size: 20px;
+    padding: 10px 30px 10px 20px;
+    margin: 3px 0;
+    line-height: 1;
+    border-radius: 50px;
+    font-family: 'Cafe24Dangdanghae';
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.25s;
+}
+.quiz__selects label span::before {
+    content: '';
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin-right: 15px;
+    background: #fff;
+    display: flex;
+    flex-shrink: 0;
+    box-shadow: inset 0 0 0 4px #64a30b;
+    transition: all 0.25s;
+}
+.quiz__selects label input:checked + span {
+    background-color: #e2f8c2;
+}
+.quiz__selects label input:checked + span::before {
+    box-shadow: inset 0 0 0 10px #beda97;
+}
+/* dog */
+.dog .tail,
+.dog .chin,
+.dog .tongue::before,
+.dog .tongue::after,
+.dog .mouth,
+.dog .nose, 
+.dog .teardrop, 
+.dog .eyes, 
+.dog .face::before,
+.dog .face::after,
+.dog .ears::before,
+.dog .ears::after {
+transition: 0.2s ease-in;
+}
+.dog {
+    padding-top: 50px;
+}
+.like .dog .face::before {
+    margin-top: 10px;
+}
+.like .dog .face::after {
+    height: 85px;
+}
+.like .dog .eyes {
+    top: 13%;
+}
+.like .dog .eyes::before,
+.like .dog .eyes::after {
+    width: 18px;
+    height: 5px;
+    margin: 0px 12.5%;
+    transform: rotate(-37.5deg);
+    border-radius: 20px;
+}
+.like .dog .eyes::after {
+    transform: rotate(37.5deg)
+}
+.like .dog .nose {
+    top: 18%;
+}
+.like .dog .mouth {
+    top: 16.5%;
+}
+.like .dog .tongue::before {
+    height: 12px;
+}
+.like .dog .tongue::after {
+    height: 24px;
+    animation: movetongue .1s linear .35s infinite alternate forwards;
+}
+.like .dog .chin {
+    top: 34%
+}
+.like .dog .tail {
+    animation: movetail .1s linear infinite alternate forwards;
+}
+.dislike .dog {}
+.dislike .dog .ears::before {
+    transform: rotate(-50deg) translate(-7px, 2px);
+}
+.dislike .dog .ears::after {
+    transform: rotate(50deg) translate(7px, 2px);
+}
+.dislike .dog .face::before {
+    margin-top: 28px;
+}
+.dislike .dog .face::after {
+    height: 55px
+}
+.dislike .dog .eyes {
+    top: 38%;
+}
+.dislike .dog .eyes::before,
+.dislike .dog .eyes::after {
+    width: 18px;
+    height: 5px;
+    margin: 0px 14.5%;
+    transform: rotate(-37.5deg);
+    border-radius: 20px;
+}
+.dislike .dog .eyes::after {
+    transform: rotate(37.5deg);
+}
+.dislike .dog .teardrop {
+    animation: cry 0.1s ease-in 0.25s forwards;
+}
+.dislike .dog .nose {
+    top: 44%;
+}
+.dislike .dog .mouth {
+    top: 42%;
+}
+.dislike .dog .chin {
+    top: 52%;
+}
+.dislike .dog .tail {
+    transform: rotate(0);
+    animation: none;
+}
+.dog .head,
+.dog .body {
+    position: relative;
+    width: 115px;
+}
+.dog .head {
+    height: 115px;
+    border-radius: 50% 50% 0 0;
+    margin: 0 auto;
+}
+.dog .ears {
+    position: relative;
+    top: -14%;
+    width: 100%;
+}
+.dog .ears::before, .dog .ears::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 35px;
+    height: 70px;
+    background: #CB7A1D;
+    border-top: 11px solid #F7AA2B;
+    border-left: 7px solid #F7AA2B;
+    border-right: 7px solid #F7AA2B;
+}
+.dog .ears::before {
+    left: 0;
+    border-radius: 50% 45% 0 0;
+}
+.dog .ears::after {
+    right: 0;
+    border-radius: 45% 50% 0 0;
+}
+.dog .face {
+    position: absolute;
+    background: #F7AA2B;
+    width: 100%;
+    height: 100%;
+    border-radius: 50% 50% 0 0;
+}
+.dog .face::before, .dog .face::after {
+    content: "";
+    display: block;
+    margin: auto;
+    background: #FEFEFE;
+}
+.dog .face::before {
+    width: 15px;
+    height: 35px;
+    margin-top: 24px;
+    border-radius: 20px 20px 0 0;
+}
+.dog .face::after {
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    right: 0;
+    width: 60px;
+    height: 65px;
+    border-radius: 45% 45% 0 0;
+}
+.dog .eyes {
+    position: relative;
+    top: 29%;
+    text-align: center;
+}
+.dog .eyes::before, .dog .eyes::after {
+    content: "";
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    border-radius: 100%;
+    background: #451d1c;
+    margin: 0 14.5%;
+}
+.dog .teardrop {
+    position: absolute;
+    top: 125%;
+    left: 19%;
+    width: 6px;
+    height: 6px;
+    border-radius: 0 50% 50% 50%;
+    transform: rotate(45deg);
+    background: #FEFEFE;
+    visibility: hidden;
+}
+.dog .nose {
+    position: relative;
+    top: 35%;
+    width: 16px;
+    height: 8px;
+    border-radius: 35px 35px 65px 65px;
+    background: #451d1c;
+    margin: auto;
+}
+.dog .mouth {
+    position: relative;
+    top: 34.5%;
+    width: 4px;
+    height: 6px;
+    margin: 0 auto;
+    text-align: center;
+    background: #451d1c;
+}
+.dog .mouth::before, .dog .mouth::after {
+    content: "";
+    position: absolute;
+    top: -4px;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    border: 4px solid #451d1c;
+    border-left-color: transparent;
+    border-top-color: transparent;
+    z-index: 2;
+}
+.dog .mouth::before {
+    transform: translateX(-89%) rotate(45deg);
+}
+.dog .mouth::after {
+    transform: translateX(-2px) rotate(45deg);
+}
+.dog .tongue {
+    position: relative;
+    z-index: 1;
+}
+.dog .tongue::before, .dog .tongue::after {
+    content: "";
+    position: absolute;
+}
+.dog .tongue::before {
+    top: 10px;
+    left: -7px;
+    width: 18px;
+    height: 0;
+    border-radius: 50%;
+    background: #451d1c;
+    z-index: -1;
+}
+.dog .tongue::after {
+    top: 14px;
+    left: -4px;
+    width: 12px;
+    height: 0;
+    border-radius: 20px;
+    background: #F5534F;
+    z-index: 5;
+}
+.dog .chin {
+    position: relative;
+    top: 47.5%;
+    margin: 0 auto;
+    width: 12px;
+    height: 12px;
+    border-top: 10px solid #e8e7ec;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-radius: 2px;
+    z-index: 0;
+}
+.dog .body {
+    position: relative;
+    height: 139px;
+    margin: auto;
+    z-index: 0;
+}
+.dog .body::before, .dog .body::after {
+    content: "";
+    position: absolute;
+    top: -1px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: block;
+    width: 100%;
+    margin: auto;
+    background: #F7AA2B;
+}
+.dog .body::after {
+    top: -2px;
+    bottom: -1px;
+    width: 60px;
+    background: #FEFEFE;
+}
+.dog .tail {
+    position: absolute;
+    left: -60%;
+    bottom: 1px;
+    background: #F7AA2B;
+    width: 93px;
+    height: 15px;
+    transform: rotate(45deg);
+    transform-origin: 100% 50%;
+    border-radius: 25px 0 0 25px;
+    z-index: -2;
+    animation: movetail .1s linear infinite alternate forwards;
+}
+.dog .legs {
+    position: absolute;
+    bottom: 0;
+    left: -10%;
+    width: 120%;
+    height: 15%;
+    background: #F7AA2B;
+    border-radius: 10px 10px 0 0;
+}
+.dog .legs::before, .dog .legs::after {
+    content: "";
+    position: absolute;
+    bottom: 1px;
+    background: #CB7A1D;
+    z-index: -1;
+}
+.dog .legs::before {
+    left: -7.5%;
+    width: 115%;
+    height: 55%;
+    border-radius: 5px 5px 0 0;
+}
+.dog .legs::after {
+    left: -3.5%;
+    width: 107%;
+    height: 250%;
+    border-radius: 20px 20px 35px 35px;
+}
+
+
+@keyframes movetongue {100% {height: 27px;}}
+
+@keyframes movetail {
+    0% {transform: rotate(37deg);}
+  100% {transform: rotate(52deg);}
+}
+
+@keyframes cry {
+    100% {visibility: visible;}
+}
+
+
+/* source */
+.source {
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+}
+
+.source button {
+    border: 1px solid #fff;
+    background: transparent;
+    font-family: 'NexonLv1Gothic';
+    color: #fff;
+    font-size: 16px;
+    padding: 10px 30px;
+    border-radius: 50px;
+    transition: all 0.2s;
+    cursor: pointer;
+}
+
+.source button:hover {
+    background: #fff;
+    color: #000;
+}
+
+/* modal */
+#modal {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 1000;
+    transform: scale(0);
+    transition: all 0.3s ease;
+}
+
+#modal.show {
+    animation: foldOut 1s ease forwards;
+}
+#modal.show.hide {
+    animation: foldIn 1s 0.3s ease backwards;
+}
+.modal-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 100vh;
+    transform: scale(0)
+}
+#modal.show .modal-wrap {
+    animation: zoomOut 0.5s 1s ease forwards;
+}
+#modal.show.hide .modal-wrap {
+    animation: zoomIn 0.5s ease forwards;
+}
+@keyframes foldOut {
+    0%   {transform: scaleX(0) scaleY(0.005)}
+    50%  {transform: scaleX(1) scaleY(0.005)}
+    100% {transform: scaleX(1) scaleY(1)}
+}
+@keyframes foldIn {
+    0%   {transform: scaleX(1) scaleY(1)}
+    50%  {transform: scaleX(1) scaleY(0.005)}
+    100% {transform: scaleX(0) scaleY(0.005)}
+}
+@keyframes zoomOut {
+    0%   {transform: scale(0)}
+    100% {transform: scale(1)}
+}
+@keyframes zoomIn {
+    0%   {transform: scale(1)}
+    100% {transform: scale(0)}
+}
+.modal-close {
+    margin-top: 10px;
+}
+.modal-cont {
+    opacity: 1;
+    position: relative;
+}
+.code-view {
+    width: 60vw;
+    height: 60vh;
+    background: #fff;
+    border: 1px solid #f2f2f2;
+    border-radius: 5px; 
+    overflow: scroll;
+    overflow-X: hidden;
+}
+/*.code-view::-webkit-scrollbar {
+    width: 8px; /*스크롤바의 너비
+}
+.code-viewt::-webkit-scrollbar-thumb {
+    background-color: #fff; /*스크롤바의 색상
+}
+.code-view::-webkit-scrollbar-track {
+    background-color: #000; /*스크롤바 트랙 색상
+}
+.code-view::-webkit-scrollbar-corner {
+    background-color: #000;
+}*/
+.view-header {
+    position: absolute;
+    left: 0; top: 0;
+    width: 100%;
+    height: 32px;
+    background: #fff;
+    padding: 7px 0 7px 10px;
+    border-bottom: 1px solid #e2e8f0;
+    border-radius: 5px 5px 0 0 ;
+}
+.view-header > span {
+    width: 10px;
+    height: 10px;
+    display: inline-block;
+    border-radius: 10px;
+}
+.view-header > span:nth-child(1) {
+    background-color: #f56565;
+}
+.view-header > span:nth-child(2) {
+    background-color: #f6e05e;
+}
+.view-header > span:nth-child(3) {
+    background-color: #4ebb7b;
+}
+.view-title {       
+    position: absolute;
+    left: 0; top: 32px;
+    width: 100%;
+    background: #fff;     
+    border-bottom: 1px solid #eee;
+    padding: 9px 0px 7px;
+    height: 37px;
+}  
+.view-title ul {
+
+}  
+.view-title li {
+    display: inline;
+}  
+.view-title li a {
+    color: #38B63C;
+    font-size: 14px;
+    text-transform: uppercase;
+    padding: 12px 20px 8px 20px;
+    margin: 2px 0px 0 0px;
+}  
+.view-title li.active a {
+    color:#000;
+    border-bottom: 2px solid #f56565;
+    background: #ffeaea;
+}
+.view-cont {
+    background-color: #333;
+    height: 100%;
+    padding-top: 65px;
+}
+.view-cont > div {
+    display: none;
+}
+.view-cont > div:first-child {
+    display: block;
+}
+.view-cont pre code.hljs {
+    line-height: 1.6;
+}
+
+
+/* 윈도우창 >ㅅ< */
+ .window {
+    min-width: 360px;
+    min-height: 220px;
+    background-color: #c7c7c7;
+    padding: 4px;
+    border-left: 2px solid #FCFCFC;
+    border-top: 2px solid #FCFCFC;
+    border-right: 2px solid #2A2A2A;
+    border-bottom: 2px solid #2A2A2A;
+  }
+  
+  .title-bar {
+    background-color: #000080;
+    padding: 4px;
+    height: 30px;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+.title-bar > .minimize, .title-bar > .maximize, .title-bar > .close {
+    width: 26px;
+    height: 22px;
+    background-color: #c7c7c7;
+    margin-left: 4px;
+    border-left: 2px solid #FCFCFC;
+    border-top: 2px solid #FCFCFC;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+  }
+  .title-bar > .minimize:hover, .title-bar > .maximize:hover, .title-bar > .close:hover {
+    background-color: #bababa;
+    border-left: 2px solid #2A2A2A;
+    border-top: 2px solid #2A2A2A;
+    border-right: 2px solid #FCFCFC;
+    border-bottom: 2px solid #FCFCFC;
+  }
+  .title-bar > .minimize {
+    align-items: flex-end;
+  }
+  .title-bar > .minimize > .symbol {
+    width: 60%;
+    height: 3px;
+    background-color: #000000;
+    margin-bottom: 2px;
+  }
+  .title-bar > .maximize > .symbol {
+    width: 70%;
+    height: 80%;
+    border: 2px solid #000000;
+    border-top-width: 4px;
+  }
+  .title-bar > .close > .symbol {
+    width: 70%;
+    height: 3px;
+    background-color: #000000;
+    transform: rotate(45deg);
+  }
+  .title-bar > .close > .symbol::after {
+    content: "";
+    top: 0;
+    left: 0;
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    background-color: #000000;
+    transform: rotate(90deg);
+  }
+  
+.menu-bar > span {
+    padding: 8px;
+    display: inline-block;
+    cursor: pointer;
+  }
+  .menu-bar > span::first-letter {
+    text-decoration: underline;
+  }
+  .menu-bar > span:hover {
+    background-color: #bababa;
+  }
+  
+  .content-container {
+    border-left: 2px solid #2A2A2A;
+    border-top: 2px solid #2A2A2A;
+    border-right: 2px solid #FCFCFC;
+    border-bottom: 2px solid #FCFCFC;
+  }
+  .content-container > .content {
+    display: flex;
+    height: 260px;
+  }
+  .content-container > .content > .main, .content-container > .content > .scroll-left {
+    height: 100%;
+  }
+  .content-container > .content > .main {
+    width: calc(100% - 26px);
+  }
+  .content-container > .content > .scroll {
+    width: 26px;
+  }
+  
+    </style>
+</head>
+
+<body>
+    <header id="header">
+        <h1>Quiz</h1>
+        <nav>
+            <ul>
+                <li><a href="quizEffect01.html">1</a></li>
+                <li><a href="quizEffect02.html">2</a></li>
+                <li><a href="quizEffect03.html">3</a></li>
+                <li class="active"><a href="quizEffect04.html">4</a></li>
+                <li><a href="quizEffect05.html">5</a></li>
+                <li><a href="quizEffect06.html">6</a></li>
+                <li><a href="quizEffect07.html">7</a></li>
+                <li><a href="quizEffect08.html">8</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="main">
+        <div class="quiz__wrap">
+            <div class="quiz">
+                <h2 class="quiz__type"></h2>
+                <h3 class="quiz__question">
+                    <span class="quiz__number"></span>
+                    <span class="quiz__ask"></span>
+                </h3>
+                <div class="quiz__view">
+                    <div class="true">정답입니다!</div>
+                    <div class="flase">틀렸습니다!</div>
+                    <div class='dog'>
+                        <div class='head'>
+                          <div class='ears'></div>
+                          <div class='face'></div>
+                          <div class='eyes'>
+                            <div class='teardrop'></div>
+                          </div>
+                          <div class='nose'></div>
+                          <div class='mouth'>
+                            <div class='tongue'></div>
+                          </div>
+                          <div class='chin'></div>
+                        </div>
+                        <div class='body'>
+                          <div class='tail'></div>
+                          <div class='legs'></div>
+                        </div>
+                      </div>
+                </div>
+                <div class="quiz__answer">
+                    <div class="quiz__selects">
+                        <label for="select1">
+                            <input class="select" type="radio" id="select1" name="select" value="1">
+                            <span class="choice"></span>
+                        </label>
+                        <label for="select2">
+                            <input class="select" type="radio" id="select2" name="select" value="2">
+                            <span class="choice"></span>
+                        </label>
+                        <label for="select3">
+                            <input class="select" type="radio" id="select3" name="select" value="3">
+                            <span class="choice"></span>
+                        </label>
+                        <label for="select4">
+                            <input class="select" type="radio" id="select4" name="select" value="4">
+                            <span class="choice"></span>
+                        </label>                                 
+                    </div>
+                    <button class="quiz__confirm">정답 확인하기</button>
+                    <div class="quiz__result"></div>
+                    <div class="quiz__ex"></div>
+                </div>
+            </div>
+        
+        </div>
+        
+
+        <div class="quiz_source"></div>
+    </main>
+
+    <footer id="footer">
+       <a href="mailto:seongwoo91@naver.com">seongwoo91@naver.com</a>
+    </footer>
+
+    <script>
+      const quizType = document.querySelector(".quiz__type");           //문제 유형
+      const quizNumber = document.querySelector(".quiz__number");       //문제 번호
+      const quizAsk = document.querySelector(".quiz__ask");             //문제 질문
+      const quizConfirm = document.querySelector(".quiz__confirm");     //문제 정답 버튼
+      const quizResult = document.querySelector(".quiz__result");       //문제 정답
+      const quizView = document.querySelector(".quiz__view");           //문제 화면
+      const quizSelects = document.querySelector(".quiz__selects");      //객관식 보기
+      const quizChoice = document.querySelectorAll(".choice")           //객관식 보기
+      const quizSelect = document.querySelectorAll(".select")           //인풋박스
+
+        //문제 정보
+        const quizInfo = [
+            {
+                answerType : "javascript",
+                answerNum : 1,
+                answerAsk : "객체 기반의 스크립트 프로그래밍 언어는 무엇입니까?",
+                answerChoice : ["javascript", "html", "css", "jquery"],
+                answerResult : "1",
+                answerEx : "객체 기반의 스크립트 프로그래밍 언어는 자바스크립트 입니다",
+            }
+        ];
+
+        //문제 출력
+        function updataQuiz() {
+            quizType.textContent = quizInfo[0].answerType
+            quizNumber.textContent = quizInfo[0].answerNum
+            quizAsk.textContent = quizInfo[0].answerAsk            
+            quizResult.textContent = quizInfo[0].answerEx
+
+            for(let i = 0; i <4; i++){
+                quizChoice[i].textContent = quizInfo[0].answerChoice[i]
+            };
+            //설명 감추기
+            quizResult.style.display = "none";
+           
+        }
+        updataQuiz();       
+        //정답 확인
+        function answerQuiz() {
+            //사용자가 클릭한 input -> checked : 사용자가 선택한 정답 == 객체 안에 정답
+            for(let i=0; i<quizSelect.length; i++){
+                if(quizSelect[i].checked == true){
+                    if(quizSelect[i].value == quizInfo[0].answerResult){
+                        quizView.classList.add('like')
+                        quizConfirm.style.display = "none";
+                        quizResult.style.display = "block";
+                    } else {
+                        quizView.classList.add('dislike')
+                        quizConfirm.style.display = "none";
+                        quizResult.style.display = "block";
+                    }
+                }
+            }
+
+
+        }
+
+        quizConfirm.addEventListener('click', answerQuiz)
+    </script>
+</body>
+
+</html>
