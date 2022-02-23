@@ -432,25 +432,17 @@ mouseStyle.forEach((e,i)=>{
 
         //for
         const style = document.querySelectorAll(".mouse__wrap span");
-        const Cursor = document.querySelector(".cursor")
 
-        for(let i =0; i<mouseStyle.length; i++){
-            mouseStyle[i].addEventListener("mouseover",()=>{
-            document.querySelector(".cursor").classList.add("style"+(i+1));
+        
+        //forEach
+        style.forEach((e,i)=>{
+            e.addEventListener("mouseover",()=>{
+                document.querySelector(".cursor").classList.add("style"+(i+1));
             });
-            mouseStyle[i].addEventListener("mouseout",()=>{
+            e.addEventListener("mouseout",()=>{
             document.querySelector(".cursor").classList.remove("style"+(i+1));
             });
-        };
-        ////forEach
-        //mouseStyle.forEach((e,i)=>{
-        //    e.addEventListener("mouseover",()=>{
-        //        document.querySelector(".cursor").classList.add("style"+(i+1));
-        //    });
-        //    e.addEventListener("mouseout",()=>{
-        //    document.querySelector(".cursor").classList.remove("style"+(i+1));
-        //    });
-        //});
+        });
         
         //getAttribute()
 
