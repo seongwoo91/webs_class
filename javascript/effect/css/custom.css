@@ -49,7 +49,13 @@ body.img07 {
     background-image: url(../img/sliderbg07.jpg);
 }
 body.img08 {
-    background-image: url(../img/slider01.jpg);
+    background-image: url(../img/sliderbg08.jpg);
+}
+body.img09 {
+    background-image: url(../img/sliderbg09.jpg);
+}
+body.img10 {
+    background-image: url(../img/sliderbg10.jpg);
 }
 body::before {
     content: '';
@@ -63,6 +69,7 @@ body::before {
 }
 
 /* info */
+
 .title {
     position: absolute;
     left: 20px;
