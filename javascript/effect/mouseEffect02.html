@@ -86,9 +86,6 @@
 <body class="img08">
     <!-- main -->
     <main>
-    </main>
-    <!-- //main -->
-    <main>
         <section id="mouseType01">
             <div class="cursor"></div>
             <div class="cursor-follower"></div>
@@ -139,39 +136,36 @@
                             <div class="view-cont">
                                 <div>
 <pre><code class="language-html">&lt;!-- main -->
-    &lt;main>
-    &lt;/main>
-    &lt;!-- //main -->
-    &lt;main>
-        &lt;section id="mouseType01">
-            &lt;div class="cursor">&lt;/div>
+&lt;main>
+    &lt;section id="mouseType01">
+        &lt;div class="cursor">&lt;/div>
+        &lt;div class="cursor-follower">&lt;/div>
 
-            &lt;div class="mouse__wrap">
-                &lt;p>&lt;span class="style1">Push yourself&lt;/span> again and again. &lt;span class="style2">Don't give an inch until&lt;/span> the &lt;span class="style3">final buzzer&lt;/span> sounds.&lt;/p>
-                &lt;p>계속해서 &lt;span class="style4">자신을 밀어붙여라&lt;/span> &lt;span class="style5">마지막 버저&lt;/span>가 울릴 때까지 &lt;span class="style6">한 치도 양보하지 마라.&lt;/span>&lt;/p>
-            &lt;/div>
-        &lt;/section>
+        &lt;div class="mouse__wrap">
+            &lt;p>The difficulty in life is the &lt;span>choice&lt;/span>&lt;/p>
+            &lt;p>인생의 어려움이란 바로 &lt;span>선택이다.&lt;/span>&lt;/p>
+        &lt;/div>
+    &lt;/section>
 
-    &lt;/main>
-    &lt;!-- info -->
-    &lt;div class="info">
-        &lt;div class="title">
-            &lt;h1>&lt;a href="mouseEffect.html">JavaScript Mouse Effect01&lt;/a>&lt;/h1>
-            &lt;p>마우스 이펙트 - 따라다니기&lt;/p>
-        &lt;/div>
-        &lt;div class="number">
-            &lt;ul>
-                &lt;li class="active">&lt;a href="mouseEffect01.html">1&lt;/a>&lt;/li>
-                &lt;li>&lt;a href="mouseEffect02.html">2&lt;/a>&lt;/li>
-                &lt;li>&lt;a href="mouseEffect03.html">3&lt;/a>&lt;/li>
-                &lt;li>&lt;a href="mouseEffect04.html">4&lt;/a>&lt;/li>
-                &lt;li>&lt;a href="mouseEffect05.html">5&lt;/a>&lt;/li>
-                &lt;li>&lt;a href="mouseEffect06.html">6&lt;/a>&lt;/li>
-                &lt;li>&lt;a href="mouseEffect07.html">7&lt;/a>&lt;/li>
-                &lt;li>&lt;a href="mouseEffect08.html">8&lt;/a>&lt;/li>
-            &lt;/ul>
-        &lt;/div>
-</code></pre>
+&lt;/main>
+&lt;!-- info -->
+&lt;div class="info">
+    &lt;div class="title">
+        &lt;h1>&lt;a href="mouseEffect.html">JavaScript Mouse Effect02&lt;/a>&lt;/h1>
+        &lt;p>마우스 이펙트 - 따라다니기 : GSAP&lt;/p>
+    &lt;/div>
+    &lt;div class="number">
+        &lt;ul>
+            &lt;li>&lt;a href="mouseEffect01.html">1&lt;/a>&lt;/li>
+            &lt;li class="active">&lt;a href="mouseEffect02.html">2&lt;/a>&lt;/li>
+            &lt;li>&lt;a href="mouseEffect03.html">3&lt;/a>&lt;/li>
+            &lt;li>&lt;a href="mouseEffect04.html">4&lt;/a>&lt;/li>
+            &lt;li>&lt;a href="mouseEffect05.html">5&lt;/a>&lt;/li>
+            &lt;li>&lt;a href="mouseEffect06.html">6&lt;/a>&lt;/li>
+            &lt;li>&lt;a href="mouseEffect07.html">7&lt;/a>&lt;/li>
+            &lt;li>&lt;a href="mouseEffect08.html">8&lt;/a>&lt;/li>
+        &lt;/ul>
+    &lt;/div></code></pre>
                                 </div>
                                 <!-- //cont1 -->
                                 <div>
@@ -189,150 +183,112 @@
     width: 100%;
     height: 100vh;
     overflow: hidden;
-    cursor:none;
+    cursor:none; 
 }
 .mouse__wrap p {
-    font-size: 1.7vw;
+    font-size: 2.6vw;
     line-height: 2;
     font-weight: 300;
 }
 .mouse__wrap p:last-child {
-    font-size: 2vw;
+    font-size: 3vw;
     font-weight: 400;
 }
 .mouse__wrap p span {
-    border-bottom: 0.15vw dashed #fff;
+    border-bottom: 0.15vw dashed orange;
+    color: orange;
 }
 .cursor {
     position: absolute;
-    left: 0;
-    top: 0;
-    width: 50px;
-    height: 50px;
+    left: 0px;
+    top: 0px;
+    width: 10px;
+    height: 10px;
+    z-index: 99999;
     border-radius: 50%;
     border: 3px solid #fff;
     background-color: rgba(255,255,255,0.1);
     user-select: none;
-    pointer-events: none;       
-    transition: 
-        background-color 0.2s,     
-        border-color 0.2s,     
-        transform .6s;
+    pointer-events: none;
+    transition: transform 0.3s, opacirt 0.2s;       
+}
+.cursor-follower {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 30px;
+    height: 30px;            
+    border-radius: 50%;
+    background-color: rgba(255,255,255,0.3);
+    user-select: none;
+    pointer-events: none;
+    transition: transform 0.3s, opacirt 0.2s;     
+}
 
+.cursor.active {
+    transform: scale(0);
 }
-.cursor.style1 {
-    background-color: rgba(255,165,0,0.4);
-    border-color: orange;
+.cursor-follower.active {
+    transform: scale(10);
+    background: rgba(255,166,0,.6);
 }
-.cursor.style2 {
-    background-color: rgba(140,0,255,0.4);
-    border-color: rgb(140,0,255);
-    transform: rotate(720deg) scale(2);
+.cursor.show {
+    opacity: .5;
+    transform: scale(4);
+    box-shadow: 0px 0px 5px 20px #0f0;
+    border-color: #0f0;
 }
-.cursor.style3 {
-background-color: rgb(0, 47, 255, 0.4);
-border-color: rgb(0, 47, 255);
-transform: scale(1.5) rotate(45deg);
-border-radius: 10px;
-}
-.cursor.style4 {
-background-color: rgb(121, 235, 197, 0.4);
-border-color: rgb(121, 235, 197);
-transform: scale(10) rotateY(360deg);
-}
-.cursor.style5 {
-background-color: rgb(255, 0, 85, 0.4);
-border-color: rgb(255, 0, 85);
-transform: rotateY(720deg) scale(0.1);
-}
-.cursor.style6 {        
-transform: skew(90deg,90deg);
-border-color: black;
-background-color: rgba(219, 29, 156, 0.1);
+.cursor-follower.show {
+    transform: scale(0);
 }</code></pre>
                                 </div>
                                 <!-- //cont2 -->
                                 <div>
-<pre><code class="language-javascript">//출력용
-window.addEventListener("mousemove", (event) => {
-    document.querySelector(".clientX").innerText = event.clientX;
-    document.querySelector(".clientY").innerText = event.clientY;
-    document.querySelector(".offsetX").innerText = event.offsetX;
-    document.querySelector(".offsetY").innerText = event.offsetY;
-    document.querySelector(".pageX").innerText = event.pageX;
-    document.querySelector(".pageY").innerText = event.pageY;
-    document.querySelector(".screenX").innerText = event.screenX;
-    document.querySelector(".screenY").innerText = event.screenY;
-});
+<pre><code class="language-javascript">const cursor = document.querySelector(".cursor")
+const follower = document.querySelector(".cursor-follower")
+const span = document.querySelectorAll(".mouse__wrap span")
+const info = document.querySelectorAll(".info a")
 
-//마우스 움직이기
-window.addEventListener("mousemove", (e) => {
-    document.querySelector(".cursor").style.left = e.clientX -25 + "px";
-    document.querySelector(".cursor").style.top = e.clientY -25 + "px";
-})
+window.addEventListener("mousemove", e  => {
+    
+    ////마우스커서에 좌표값을 할당시켜줌 
+    //cursor.style.left = e.pageX -5 + "px";
+    //cursor.style.top = e.pageY -5 + "px";
+    //follower.style.left = e.pageX -15 + "px";
+    //follower.style.top = e.pageY -15 + "px";
 
-//커서가 올라갔을때 클래스가 생기게
-//document.querySelector(".style1").addEventListener("mouseover", () => {
-//    document.querySelector(".cursor").classList.add("style1");
-//})
-//document.querySelector(".style1").addEventListener("mouseout", () => {
-//    document.querySelector(".cursor").classList.remove("style1");
-//})
-//document.querySelector(".style2").addEventListener("mouseover", () => {
-//    document.querySelector(".cursor").classList.add("style2");
-//})
-//document.querySelector(".style2").addEventListener("mouseout", () => {
-//    document.querySelector(".cursor").classList.remove("style2");
-//})
-//document.querySelector(".style3").addEventListener("mouseover", () => {
-//    document.querySelector(".cursor").classList.add("style3");
-//})
-//document.querySelector(".style3").addEventListener("mouseout", () => {
-//    document.querySelector(".cursor").classList.remove("style3");
-//})
-//document.querySelector(".style4").addEventListener("mouseover", () => {
-//    document.querySelector(".cursor").classList.add("style4");
-//})
-//document.querySelector(".style4").addEventListener("mouseout", () => {
-//    document.querySelector(".cursor").classList.remove("style4");
-//})
-//document.querySelector(".style5").addEventListener("mouseover", () => {
-//    document.querySelector(".cursor").classList.add("style5");
-//})
-//document.querySelector(".style5").addEventListener("mouseout", () => {
-//    document.querySelector(".cursor").classList.remove("style5");
-//})
-//document.querySelector(".style6").addEventListener("mouseover", () => {
-//    document.querySelector(".cursor").classList.add("style6");
-//})
-//document.querySelector(".style6").addEventListener("mouseout", () => {
-//    document.querySelector(".cursor").classList.remove("style6");
-//})
+    gsap.to(cursor, {duration: .3, left: e.pageX -5, top: e.pageY -5 })
+    gsap.to(follower, {duration: .8, left: e.pageX -15, top: e.pageY -15 })
 
+    //오버 효과
+    //span 오버 했을 때 클래스 active 추가 / 나갔을때 active 삭제
+    //마우스오버,마우스엔터 / 마우스아웃, 마우스 리브 / 이벤트버블링 차이점
+    
+    span.forEach(e => {
+        e.addEventListener("mouseover", () => {
+            cursor.classList.add("active");
+            follower.classList.add("active");
+        })
+        e.addEventListener("mouseout", () => {
+            cursor.classList.remove("active");
+            follower.classList.remove("active");
+        })
+    })
 
-
-//for
-const mouseStyle = document.querySelectorAll(".mouse__wrap span");
-
-console.log(mouseStyle);
-for(let i =0; i&lt;mouseStyle.length; i++){
-    mouseStyle[i].addEventListener("mouseover",()=>{
-    document.querySelector(".cursor").classList.add("style"+(i+1));
-    });
-    mouseStyle[i].addEventListener("mouseout",()=>{
-    document.querySelector(".cursor").classList.remove("style"+(i+1));
-    });
-};
-//forEach
-mouseStyle.forEach((e,i)=>{
-    e.addEventListener("mouseover",()=>{
-        document.querySelector(".cursor").classList.add("style"+(i+1));
-    });
-    e.addEventListener("mouseout",()=>{
-    document.querySelector(".cursor").classList.remove("style"+(i+1));
-    });
-});
-</code></pre>
+    info.forEach(e => {
+        e.addEventListener("mouseover", () => {
+            cursor.classList.add("show");
+            follower.classList.add("show");
+        })
+        e.addEventListener("mouseout", () => {
+            cursor.classList.remove("show");
+            follower.classList.remove("show");
+        })
+    })
+    //출력
+    document.querySelector(".pageX").innerText = e.pageX;
+    document.querySelector(".pageY").innerText = e.pageY;
+})</code></pre>
                                 </div>
                                 <!-- //cont3 -->
                             </div>

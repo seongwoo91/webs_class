@@ -23,18 +23,18 @@
             width: 100%;
             height: 100vh;
             overflow: hidden;
-            /*cursor:none;*/ 
+            /* cursor:none;  */
         }
         .mouse__img {
             position: relative;
+            cursor:none;
         }
         .mouse__img figure {
             position: relative;
             width: 50vw;
             height: 51vh;
-            /* overflow: hidden; */
+            overflow: hidden;
             /* background-color: #ccc; */
-            border:3px solid #fff;
             transition: transform 500ms cubic-bezier(0.25, 0.46, 0.45, 0.84);
         }
         .mouse__img figure:hover {
@@ -46,7 +46,7 @@
             top: -5%;
             width: 110%;
             height: 110%;
-            opacity: 0.4;
+            /* opacity: 0.4; */
             object-fit: cover;
         }
         .mouse__img figcaption {
@@ -61,8 +61,8 @@
         }
         .cursor {
             position: absolute;
-            left: 0;
-            top: 0;
+            left: -30;
+            top: -30;
             width: 20px;
             height: 20px;
             border-radius: 50%;
@@ -70,17 +70,29 @@
             z-index: 1000;
             user-select: none;
             pointer-events: none;
-        }        
+        }       
+        .cursor ul {
+            position: absolute;
+            left: 40px; top: 0;
+        } 
+        .cursor ul li {
+            white-space: nowrap;
+        }
+        figcaption p {
+            font-size: 1.8vw;
+        }
     </style>
 </head>
 <body class="img10">
-    <!-- main -->
-    <main>
-    </main>
     <!-- //main -->
     <main>
         <section id="mouseType01">
-            <div class="cursor"></div>
+            <div class="cursor">
+                <!-- <ul>
+                    <li>pageX : <span class="pageX">0</span>px</li>
+                    <li>pageY : <span class="pageY">0</span>px</li>
+                </ul> -->
+            </div>
 
             <div class="mouse__wrap">
                 <div class="mouse__img">
@@ -134,40 +146,48 @@
                             </div>
                             <div class="view-cont">
                                 <div>
-<pre><code class="language-html">&lt;!-- main -->
-    &lt;main>
-    &lt;/main>
-    &lt;!-- //main -->
-    &lt;main>
-        &lt;section id="mouseType01">
-            &lt;div class="cursor">&lt;/div>
+<pre><code class="language-html">&lt;!-- //main -->
+&lt;main>
+    &lt;section id="mouseType01">
+        &lt;div class="cursor">
+            &lt;!-- &lt;ul>
+                &lt;li>pageX : &lt;span class="pageX">0&lt;/span>px&lt;/li>
+                &lt;li>pageY : &lt;span class="pageY">0&lt;/span>px&lt;/li>
+            &lt;/ul> -->
+        &lt;/div>
 
-            &lt;div class="mouse__wrap">
-                &lt;p>&lt;span class="style1">Push yourself&lt;/span> again and again. &lt;span class="style2">Don't give an inch until&lt;/span> the &lt;span class="style3">final buzzer&lt;/span> sounds.&lt;/p>
-                &lt;p>계속해서 &lt;span class="style4">자신을 밀어붙여라&lt;/span> &lt;span class="style5">마지막 버저&lt;/span>가 울릴 때까지 &lt;span class="style6">한 치도 양보하지 마라.&lt;/span>&lt;/p>
+        &lt;div class="mouse__wrap">
+            &lt;div class="mouse__img">
+                &lt;figure>
+                    &lt;img src="img/sliderbg10.jpg" alt="이미지">
+                &lt;/figure>
+                &lt;figcaption>
+                    &lt;p>Time waits for no one&lt;/p>
+                    &lt;p>시간은 아무도 기다려 주지 않아요&lt;/p>        
+                &lt;/figcaption>
             &lt;/div>
-        &lt;/section>
+        &lt;/div>
+    &lt;/section>
 
-    &lt;/main>
-    &lt;!-- info -->
-    &lt;div class="info">
-        &lt;div class="title">
-            &lt;h1>&lt;a href="mouseEffect.html">JavaScript Mouse Effect01&lt;/a>&lt;/h1>
-            &lt;p>마우스 이펙트 - 따라다니기&lt;/p>
-        &lt;/div>
-        &lt;div class="number">
-            &lt;ul>
-                &lt;li class="active">&lt;a href="mouseEffect01.html">1&lt;/a>&lt;/li>
-                &lt;li>&lt;a href="mouseEffect02.html">2&lt;/a>&lt;/li>
-                &lt;li>&lt;a href="mouseEffect03.html">3&lt;/a>&lt;/li>
-                &lt;li>&lt;a href="mouseEffect04.html">4&lt;/a>&lt;/li>
-                &lt;li>&lt;a href="mouseEffect05.html">5&lt;/a>&lt;/li>
-                &lt;li>&lt;a href="mouseEffect06.html">6&lt;/a>&lt;/li>
-                &lt;li>&lt;a href="mouseEffect07.html">7&lt;/a>&lt;/li>
-                &lt;li>&lt;a href="mouseEffect08.html">8&lt;/a>&lt;/li>
-            &lt;/ul>
-        &lt;/div>
-</code></pre>
+&lt;/main>
+&lt;!-- info -->
+&lt;div class="info">
+    &lt;div class="title">
+        &lt;h1>&lt;a href="mouseEffect.html">JavaScript Mouse Effect04&lt;/a>&lt;/h1>
+        &lt;p>마우스 이펙트 - 이미지 효과&lt;/p>
+    &lt;/div>
+    &lt;div class="number">
+        &lt;ul>
+            &lt;li>&lt;a href="mouseEffect01.html">1&lt;/a>&lt;/li>
+            &lt;li>&lt;a href="mouseEffect02.html">2&lt;/a>&lt;/li>
+            &lt;li>&lt;a href="mouseEffect03.html">3&lt;/a>&lt;/li>
+            &lt;li class="active">&lt;a href="mouseEffect04.html">4&lt;/a>&lt;/li>
+            &lt;li>&lt;a href="mouseEffect05.html">5&lt;/a>&lt;/li>
+            &lt;li>&lt;a href="mouseEffect06.html">6&lt;/a>&lt;/li>
+            &lt;li>&lt;a href="mouseEffect07.html">7&lt;/a>&lt;/li>
+            &lt;li>&lt;a href="mouseEffect08.html">8&lt;/a>&lt;/li>
+        &lt;/ul>
+    &lt;/div></code></pre>
                                 </div>
                                 <!-- //cont1 -->
                                 <div>
@@ -185,150 +205,104 @@
     width: 100%;
     height: 100vh;
     overflow: hidden;
+    /* cursor:none;  */
+}
+.mouse__img {
+    position: relative;
     cursor:none;
 }
-.mouse__wrap p {
-    font-size: 1.7vw;
-    line-height: 2;
-    font-weight: 300;
+.mouse__img figure {
+    position: relative;
+    width: 50vw;
+    height: 51vh;
+    overflow: hidden;
+    /* background-color: #ccc; */
+    transition: transform 500ms cubic-bezier(0.25, 0.46, 0.45, 0.84);
 }
-.mouse__wrap p:last-child {
-    font-size: 2vw;
-    font-weight: 400;
+.mouse__img figure:hover {
+    transform: scale(1.025);
 }
-.mouse__wrap p span {
-    border-bottom: 0.15vw dashed #fff;
+.mouse__img figure img {
+    position: absolute;
+    left: -5%;
+    top: -5%;
+    width: 110%;
+    height: 110%;
+    /* opacity: 0.4; */
+    object-fit: cover;
+}
+.mouse__img figcaption {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    font-size: 1.3vw;
+    line-height: 1.6;
+    white-space: nowrap;
 }
 .cursor {
     position: absolute;
-    left: 0;
-    top: 0;
-    width: 50px;
-    height: 50px;
+    left: -30;
+    top: -30;
+    width: 20px;
+    height: 20px;
     border-radius: 50%;
-    border: 3px solid #fff;
-    background-color: rgba(255,255,255,0.1);
+    background: #fff;
+    z-index: 1000;
     user-select: none;
-    pointer-events: none;       
-    transition: 
-        background-color 0.2s,     
-        border-color 0.2s,     
-        transform .6s;
-
+    pointer-events: none;
+}       
+.cursor ul {
+    position: absolute;
+    left: 40px; top: 0;
+} 
+.cursor ul li {
+    white-space: nowrap;
 }
-.cursor.style1 {
-    background-color: rgba(255,165,0,0.4);
-    border-color: orange;
-}
-.cursor.style2 {
-    background-color: rgba(140,0,255,0.4);
-    border-color: rgb(140,0,255);
-    transform: rotate(720deg) scale(2);
-}
-.cursor.style3 {
-background-color: rgb(0, 47, 255, 0.4);
-border-color: rgb(0, 47, 255);
-transform: scale(1.5) rotate(45deg);
-border-radius: 10px;
-}
-.cursor.style4 {
-background-color: rgb(121, 235, 197, 0.4);
-border-color: rgb(121, 235, 197);
-transform: scale(10) rotateY(360deg);
-}
-.cursor.style5 {
-background-color: rgb(255, 0, 85, 0.4);
-border-color: rgb(255, 0, 85);
-transform: rotateY(720deg) scale(0.1);
-}
-.cursor.style6 {        
-transform: skew(90deg,90deg);
-border-color: black;
-background-color: rgba(219, 29, 156, 0.1);
+figcaption p {
+    font-size: 1.8vw;
 }</code></pre>
                                 </div>
                                 <!-- //cont2 -->
                                 <div>
-<pre><code class="language-javascript">//출력용
-window.addEventListener("mousemove", (event) => {
-    document.querySelector(".clientX").innerText = event.clientX;
-    document.querySelector(".clientY").innerText = event.clientY;
-    document.querySelector(".offsetX").innerText = event.offsetX;
-    document.querySelector(".offsetY").innerText = event.offsetY;
-    document.querySelector(".pageX").innerText = event.pageX;
-    document.querySelector(".pageY").innerText = event.pageY;
-    document.querySelector(".screenX").innerText = event.screenX;
-    document.querySelector(".screenY").innerText = event.screenY;
-});
+<pre><code class="language-javascript">const circle = document.querySelector(".cursor").getBoundingClientRect();  //객체로 정보 전달 (bottom, height, left, right , top, width, x, y
 
-//마우스 움직이기
-window.addEventListener("mousemove", (e) => {
-    document.querySelector(".cursor").style.left = e.clientX -25 + "px";
-    document.querySelector(".cursor").style.top = e.clientY -25 + "px";
-})
+document.querySelector(".mouse__img").addEventListener("mousemove", (e) => {
+    //커서
+    gsap.to(".cursor", {duration: .2, left: e.pageX - circle.width/2 , top:e.pageY - circle.height/2})
+    
+    //마우스 좌표 값
+    let mousePageX = e.pageX;
+    let mousePageY = e.pageY;
 
-//커서가 올라갔을때 클래스가 생기게
-//document.querySelector(".style1").addEventListener("mouseover", () => {
-//    document.querySelector(".cursor").classList.add("style1");
-//})
-//document.querySelector(".style1").addEventListener("mouseout", () => {
-//    document.querySelector(".cursor").classList.remove("style1");
-//})
-//document.querySelector(".style2").addEventListener("mouseover", () => {
-//    document.querySelector(".cursor").classList.add("style2");
-//})
-//document.querySelector(".style2").addEventListener("mouseout", () => {
-//    document.querySelector(".cursor").classList.remove("style2");
-//})
-//document.querySelector(".style3").addEventListener("mouseover", () => {
-//    document.querySelector(".cursor").classList.add("style3");
-//})
-//document.querySelector(".style3").addEventListener("mouseout", () => {
-//    document.querySelector(".cursor").classList.remove("style3");
-//})
-//document.querySelector(".style4").addEventListener("mouseover", () => {
-//    document.querySelector(".cursor").classList.add("style4");
-//})
-//document.querySelector(".style4").addEventListener("mouseout", () => {
-//    document.querySelector(".cursor").classList.remove("style4");
-//})
-//document.querySelector(".style5").addEventListener("mouseover", () => {
-//    document.querySelector(".cursor").classList.add("style5");
-//})
-//document.querySelector(".style5").addEventListener("mouseout", () => {
-//    document.querySelector(".cursor").classList.remove("style5");
-//})
-//document.querySelector(".style6").addEventListener("mouseover", () => {
-//    document.querySelector(".cursor").classList.add("style6");
-//})
-//document.querySelector(".style6").addEventListener("mouseout", () => {
-//    document.querySelector(".cursor").classList.remove("style6");
-//})
+    //마우스 좌표 값을 가운데 초기화
+    //전체 가로 값
+    //window.innerWidth  //브라우저에서 실제 보여지는 크기
+    //window.outerWidth  //브라우저의 크기
+    //window.screenWidth  // 화면 크기
 
 
+    //마우스 좌표 기준점을 가운데 초기화
+    //전체 길이/2 - 마우스 X 좌표값 == 0 
+    let centerPageX = window.innerWidth/2 - mousePageX
+    let centerPageY = window.innerHeight/2 - mousePageY
 
-//for
-const mouseStyle = document.querySelectorAll(".mouse__wrap span");
+    
+    //이미지 움직이기
+    //const imgMove = document.querySelector(".mouse__img figure img");
+    //imgMove.style.transform = "translate("+ centerPageX/20 +"px, "+centerPageY/20 +"px)";
 
-console.log(mouseStyle);
-for(let i =0; i&lt;mouseStyle.length; i++){
-    mouseStyle[i].addEventListener("mouseover",()=>{
-    document.querySelector(".cursor").classList.add("style"+(i+1));
-    });
-    mouseStyle[i].addEventListener("mouseout",()=>{
-    document.querySelector(".cursor").classList.remove("style"+(i+1));
-    });
-};
-//forEach
-mouseStyle.forEach((e,i)=>{
-    e.addEventListener("mouseover",()=>{
-        document.querySelector(".cursor").classList.add("style"+(i+1));
-    });
-    e.addEventListener("mouseout",()=>{
-    document.querySelector(".cursor").classList.remove("style"+(i+1));
-    });
-});
-</code></pre>
+    //GSAP로 표현해주기 
+    gsap.to(".mouse__img figure img", {duration : 0.3 , x:centerPageX/20 ,y:centerPageY/20});
+
+    //출력
+    document.querySelector(".mousePageX").textContent = mousePageX;
+    document.querySelector(".mousePageY").textContent = mousePageY;
+    document.querySelector(".centerPageX").textContent = centerPageX;
+    document.querySelector(".centerPageY").textContent = centerPageY;
+
+})</code></pre>
                                 </div>
                                 <!-- //cont3 -->
                             </div>
@@ -341,10 +315,10 @@ mouseStyle.forEach((e,i)=>{
 
         <div class="attr">
             <ul>
-                <li>pageX : <span class="pageX">0</span>px</li>
-                <li>pageY : <span class="pageY">0</span>px</li>
-                <li>standardX : <span class="standardX">0</span>px</li>
-                <li>standardY : <span class="standardY">0</span>px</li>
+                <li>mousePageX : <span class="mousePageX">0</span>px</li>
+                <li>mousePageY : <span class="mousePageY">0</span>px</li>
+                <li>centerPageX : <span class="centerPageX">0</span>px</li>
+                <li>centerPageY : <span class="centerPageY">0</span>px</li>
             </ul>
         </div>
     </div>
@@ -357,7 +331,7 @@ mouseStyle.forEach((e,i)=>{
         //highlight();
         //modal();
         //tabMenu();
-
+                     
 
         const circle = document.querySelector(".cursor").getBoundingClientRect();  //객체로 정보 전달 (bottom, height, left, right , top, width, x, y
 
@@ -374,13 +348,28 @@ mouseStyle.forEach((e,i)=>{
             //마우스 좌표 값을 가운데 초기화
             //전체 가로 값
             //window.innerWidth  //브라우저에서 실제 보여지는 크기
-            //window.OuterWidth  //브라우저의 크기
+            //window.outerWidth  //브라우저의 크기
             //window.screenWidth  // 화면 크기
 
-            let windowWidth = window.screen.height;
+
+            //마우스 좌표 기준점을 가운데 초기화
+            //전체 길이/2 - 마우스 X 좌표값 == 0 
+            let centerPageX = window.innerWidth/2 - mousePageX
+            let centerPageY = window.innerHeight/2 - mousePageY
+
             
-            console.log(windowWidth)
-            
+            //이미지 움직이기
+            //const imgMove = document.querySelector(".mouse__img figure img");
+            //imgMove.style.transform = "translate("+ centerPageX/20 +"px, "+centerPageY/20 +"px)";
+
+            //GSAP로 표현해주기 
+            gsap.to(".mouse__img figure img", {duration : 0.3 , x:centerPageX/20 ,y:centerPageY/20});
+
+            //출력
+            document.querySelector(".mousePageX").textContent = mousePageX;
+            document.querySelector(".mousePageY").textContent = mousePageY;
+            document.querySelector(".centerPageX").textContent = centerPageX;
+            document.querySelector(".centerPageY").textContent = centerPageY;
 
         })
 
