@@ -1,0 +1,657 @@
+
+        * {
+            margin: 0;
+            font-family: 'Work Sans', sans-serif;
+        }
+
+        #wrap {
+            width: 1440px;
+            margin: 0 auto;
+        }
+        /* 메뉴바 */
+        #nav {
+            width: 100%;
+            height: 80px;
+            background-color: rgba(200, 196, 245,0.5);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .nav_name {
+            font-size: 30px;
+            color: #2947a9;
+            font-weight: bold;
+            margin-left: 112px;
+        }
+        #nav ul {
+            float: right;
+            padding: 0 0 0 410px;
+        }
+        #nav ul li {
+            display: inline;
+            font-weight: normal;
+            font-size: 18px;
+            padding: 30px;
+        }
+        .login a {
+            font-weight: 600;
+            color: #f9995d;
+            font-size: 18px;
+            margin-right: 112px;
+        }
+        /* 메인화면 */
+        #header {
+            width: 100%;
+            height: 646px;
+            position: relative;
+        }
+        .bgimg {
+            background-image: url(img/header_bgi.jpg);
+            width: 1440px;
+            height: 646px;
+        }
+        #header h2 {
+            position: absolute;
+            left: 112px;
+            top: 236px;
+            color: #292e3d;
+            font-size: 72px;
+            font-weight: 600;
+        }
+
+        /* 팀프로젝트 */
+        #section_pj {
+            width: 100%;
+            height: 433px;
+            position: relative;
+        }
+        #section_pj h2 {
+            font-weight: bold;
+            font-size: 36px;
+            margin-top: 73px;
+            margin-left: 605px;
+            position: absolute;
+        }
+        .pj_img1 {
+            background-image: url(img/pjimg1.jpg);
+            width: 292px;
+            height: 191px;
+            margin-top: 154px;
+            margin-left: 216px;
+            position: absolute;
+        }
+        .pj_img2 {
+            background-image: url(img/pjimg2.jpg);
+            width: 292px;
+            height: 191px;
+            position: absolute;
+            margin-top: 154px;
+            margin-left: 580px;
+        }
+        .pj_img3 {
+            background-image: url(img/pjimg3.jpg);
+            width: 292px;
+            height: 191px;
+            position: absolute;
+            margin-top: 154px;
+            margin-left: 944px;
+        }
+        /* 프로젝트브리프 */
+        #pj_bf {
+            width: 100%;
+            height: 945px;
+            position: relative;
+        }
+        .bf_img {
+            background-image: url(img/pb_img.jpg);
+            position: absolute;
+            width: 902px;
+            height: 669px;
+            margin-top: 81px;
+            margin-left: 112px;
+        }
+        .bf_bluebox {
+            position: absolute;
+            width: 488px;
+            height: 523px;
+            margin-top: 156px;
+            margin-left: 840px;
+            background: #2947a9;
+        }
+        .bf_textbox {
+            position: relative;
+        }
+        .bf_textbox h3 {
+            font-size: 36px;
+            color: #fff;
+            margin-top: 50px;
+            margin-left: 40px;
+        }
+        .bf_textbox p {
+            font-size: 20px;
+            color: #fff;
+            margin-top: 37px;
+            margin-left: 40px;
+        }
+        .bf_textbox .bf_btn {
+            width: 219px;
+            height: 53px;
+            border: solid 2px #2947a9;
+            border-radius: 6px;
+            background-color: #fff;
+            margin-top: 140px;
+            margin-left: 40px;
+            position: relative;
+        }
+        .bf_btn p {
+            color: #2947a9;
+            font-size: 18px;
+            font-weight: 600;
+            position: absolute;
+            bottom: 18px;
+            left: -19px;
+        }
+
+        /* 서비스 */
+        #service {
+            width: 100%;
+            height: 608px;
+            position: relative;
+            background: #F6F8F7;
+        }
+        #service h2 {
+            position: absolute;
+            top: 51px;
+            left: 643px;
+        }
+        .rank_img1 {
+            width: 271px;
+            height: 181px;
+            background-image: url(img/rankimg1.jpg);
+            position: absolute;
+            top: 127px;
+            left: 215px;
+        }
+        .rank_img2 {
+            width: 271px;
+            height: 181px;
+            background-image: url(img/rankimg2.jpg);
+            position: absolute;
+            top: 356px;
+            left: 215px;
+        }
+        .hint_img1 {
+            width: 271px;
+            height: 181px;
+            background-image: url(img/hintimg1.jpg);
+            position: absolute;
+            top: 356px;
+            left: 584px;
+        }
+        .hint_img2 {
+            width: 271px;
+            height: 181px;
+            background-image: url(img/hintimg2.jpg);
+            position: absolute;
+            top: 127px;
+            left: 584px;
+        }
+        .hall_img1 {
+            width: 271px;
+            height: 181px;
+            background-image: url(img/hallimg1.jpg);
+            position: absolute;
+            top: 127px;
+            left: 953px;
+        }
+        .hall_img2 {
+            width: 271px;
+            height: 181px;
+            background-image: url(img/hallimg2.jpg);
+            position: absolute;
+            top: 356px;
+            left: 953px;
+        }
+
+        /* 플로우차트 */
+        #flowchart {
+            width: 100%;
+            height: 723px;
+            position: relative;
+        }        
+        .fc_img {
+            background-image: url(img/flowchartimg.jpg);
+            width: 441px;
+            height: 666px;
+            top: 29px;
+            left: 263px;
+            position: absolute;
+        }
+        #flowchart h2 {
+            color: #2947a9;
+            font-size: 60px;
+            font-weight: bold;
+            position: absolute;
+            top: 172px;
+            left: 944px;
+        }
+        #flowchart p {
+            font-weight: normal;
+            color: #525b7a;
+            font-size: 20px;
+            position: absolute;
+            top: 352px;
+            left: 944px;
+        }
+        #flowchart .fc_btn {
+            border-radius: 2px;
+            width: 176px;
+            height: 53px;
+            position: absolute;
+            top: 493px;
+            left: 944px;
+            background: #2947a9;
+        }
+        .fc_btn .txt {
+            color: #fff;
+            font-size: 18px;
+            font-weight: 600;
+            text-align: center;
+            margin-top: 15px;
+        }
+        .fc_btn .txt a {
+            color: #fff;
+        }
+        
+        /* 배너 */
+        #banner {
+            width: 100%;
+            height: 300px;
+            background-image: url(img/bannerimg.jpg);
+            position: relative;
+        }
+        #banner h2 {
+            position: absolute;
+            top: 72px;
+            left: 116px;
+            font-size: 36px;
+            color: #fff;
+            font-weight: bold;
+        }
+        .b_num {
+            position: absolute;
+            top: 175px;
+            left: 116px;
+            font-size: 24px;
+            font-weight: normal;
+            color: #fff;
+        }
+        .b_num a {
+            color: #fff;
+            text-decoration: underline;
+        }
+        .b_btn {
+            position: absolute;
+            width: 158px;
+            height: 53px;
+            border: solid 2px #fff;
+            border-radius: 2px;
+            top: 96px;
+            left: 1100px;
+        }
+        .b_btn p {
+            color: #fff;
+            text-align: center;
+            margin-top: 15px;
+            font-size: 18px;
+            font-weight: 600;
+        }
+        
+        /* 퀴즈유형 */
+        #quiz {
+            width: 100%;
+            height: 1098px;
+            position: relative;
+            background-color: rgb(236, 232, 254);
+        }
+        #quiz ul {
+            display: flex;
+            position: absolute;
+            top: 928px;
+            left: 764px;
+        }
+        #quiz ul li {
+            display: inline;
+            border: 1px solid #fff;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            margin: 9px;
+            background: #fff;
+        }
+        #quiz ul li:first-child {
+            background: #2947a9;
+            border: 1px solid #2947a9;
+        }
+        #quiz h2 {
+            font-size: 36px;
+            font-weight: bold;
+            color: #292e3d;
+            position: absolute;
+            top: 88px;
+            left: 112px;
+        }
+        .lev_box {
+            width: 4px;
+            height: 28px;
+            background-color: #2947a9;
+            position: absolute;
+            top: 170px;
+            left: 112px;
+        }
+        .level {
+            color: #2947a9;
+            font-size: 24px;
+            font-weight: bold;
+            top: 170px;
+            left: 132px;
+            position: absolute;
+        }
+        .level1 {
+            top: 218px;
+            left: 132px;
+            position: absolute;
+            color: #c2c7d6;
+            font-size: 24px;
+        }
+        .level2 {
+            top: 266px;
+            left: 132px;
+            position: absolute;
+            color: #c2c7d6;
+            font-size: 24px;
+        }
+        .level3 {
+            top: 314px;
+            left: 132px;
+            position: absolute;
+            color: #c2c7d6;
+            font-size: 24px;
+        }
+        .quiz_box1 {
+            background-image: url(img/quizimg1.jpg);
+            width: 384px;
+            height: 321px;
+            position: absolute;
+            top: 170px;
+            left: 504px;
+        }
+        .quiz_box2 {
+            background-image: url(img/quizimg2.jpg);
+            width: 384px;
+            height: 321px;
+            position: absolute;
+            top: 170px;
+            left: 919px;
+        }
+        .quiz_box3 {
+            background-image: url(img/quizimg3.jpg);
+            width: 384px;
+            height: 331px;
+            position: absolute;
+            top: 536px;
+            left: 504px;
+        }
+        .quiz_box4 {
+            background-image: url(img/quizimg4.jpg);
+            width: 384px;
+            height: 331px;
+            position: absolute;
+            top: 536px;
+            left: 919px;
+        }
+        .btn_back {
+            background-image: url(img/backbtn.jpg);
+            width: 295px;
+            height: 64px;
+            position: absolute;
+            top: 914px;
+            left: 496px;
+        }
+        .btn_next {
+            background-image: url(img/nextbtn.jpg);
+            width: 295px;
+            height: 64px;
+            position: absolute;
+            top: 914px;
+            left: 1001px;
+        }
+
+        /* 건의사항 */
+        #sug {
+            width: 100%;
+            height: 632px;
+            background: #f6f8f7;
+            position: relative;
+        }
+        #sug h2 {
+            position: absolute;
+            color: #292e3d;
+            font-size: 36px;
+            font-weight: bold;
+            top: 60px;
+            left: 462px;
+        }
+        #sug p {
+            text-align: center;
+            position: absolute;
+            font-size: 20px;
+            font-weight: normal;
+            color: #292e3d;
+            top: 122px;
+            left: 451px;
+        }
+        .sug_btn {
+            position: absolute;
+            top: 518px; left: 585px;
+            width: 271px; height: 53px;
+            background-color: #2947a9;
+            border-radius: 2px;
+        }
+        .sug_btn h3 {
+            font-size: 18px;
+            font-weight: 600;
+            text-align: center;
+            padding-top: 16px;
+        }
+        .sug_btn h3 a {
+            color: #fff;
+        }        
+        .ipbox_name {
+            position: absolute;
+            top: 206px; left: 424px;
+        }
+        .ipbox_name input {
+            width: 272px; height: 35px;
+        }
+        .ipbox_mail {
+            position: absolute;
+            top: 206px; left: 736px;
+        }
+        .ipbox_mail input {
+            width: 272px; height: 35px;
+        }
+        .ipbox_conta {
+            position: absolute;
+            top: 267px; left: 424px;
+        }
+        .ipbox_conta input {
+            width: 272px; height: 35px;
+        }
+        .ipbox_phone {
+            position: absolute;
+            top: 267px; left: 736px;
+        }
+        .ipbox_phone input {
+            width: 272px; height: 35px;
+        }
+        .ipbox_message {
+            position: absolute;
+            top: 328px; left: 424px;
+        }
+        .ipbox_message input {
+            width: 584px; height: 129px;
+        }
+        #sug h4 {
+            position: absolute;
+            top: 471px; left: 424px;
+            font-size: 16px;
+            color: #667299;
+            font-weight: normal;
+        }
+        #sug h4 em {
+            color: #c40303;
+        }
+        /* 푸터 */
+        #footer {
+            width: 100%;
+            height: 377px;
+            position: relative;
+        }
+        .f_address {
+            position: absolute;
+            color: #2947a9;
+            font-size: 20px;
+            font-weight: 500;
+            left: 112px;
+            top: 86px;
+        }
+        .f_phnon {
+            position: absolute;
+            color: #2947a9;
+            font-size: 20px;
+            font-weight: 500;
+            left: 112px;
+            top: 141px;
+        }
+        .f_email {
+            position: absolute;
+            color: #2947a9;
+            font-size: 20px;
+            font-weight: 500;
+            left: 112px;
+            top: 196px;
+        }
+        .f_address_txt {
+            position: absolute;
+            color: #292e3d;
+            font-size: 20px;
+            font-weight: normal;
+            top: 86px;
+            left: 216px;
+        }
+        .f_phnon_txt {
+            position: absolute;
+            color: #292e3d;
+            font-size: 20px;
+            font-weight: normal;
+            top: 141px;
+            left: 216px;
+        }
+        .f_email_txt {
+            position: absolute;
+            color: #292e3d;
+            font-size: 20px;
+            font-weight: normal;
+            top: 196px;
+            left: 216px;
+        }
+        .f_logo {
+            position: absolute;
+            color: #2947a9;
+            font-size: 30px;
+            font-weight: bold;
+            top: 257px;
+            left: 112px;
+        }
+        .f_new {
+            position: absolute;
+            top: 86px;
+            left: 899px;
+            font-size: 20px;
+            font-weight: 500;
+            color: #2947a9;
+        }
+        .f_sns {
+            position: absolute;
+            top: 212px;
+            left: 899px;
+            color: #2947a9;
+            font-size: 20px;
+            font-weight: 500;
+        }
+        .sns_img1 {
+            position: absolute;
+            top: 255px;
+            left: 899px;
+            background-image: url(img/fb_img.jpg);
+            width: 40px;
+            height: 40px;
+        }
+        .sns_img2 {
+            position: absolute;
+            top: 255px;
+            left: 959.8px;
+            background-image: url(img/in_img.jpg);
+            width: 40px;
+            height: 40px;
+        }
+        .sns_img3 {
+            position: absolute;
+            top: 255px;
+            left: 1019.8px;
+            background-image: url(img/tw_immg.jpg);
+            width: 40px;
+            height: 40px;
+        }
+        .new_btn {
+            position: absolute;
+            top: 129px; left: 1187px;
+            width: 136px; height: 41px;
+            background-color: #f9995d;
+            border-radius: 4px;
+        }
+        .new_btn p {
+            font-size: 18px;
+            font-weight: 600;
+            text-align: center;
+            padding-top: 10px;
+        }
+        .new_btn p a {
+            color: #fff;
+        }
+        .ip_box {
+            position: absolute;
+            top: 129px;left: 899px;
+
+        }
+        .ip_box input {
+            width: 272px; height: 37px;
+            font-size: 18px;
+            border-radius: 4px;
+            border:solid 1px #e0e3eb;
+        }
+        /* 마지막줄 */
+        #bar {
+            width: 100%;
+            height: 70px;
+            background-color: rgba(83,98,229,0.5);
+            position: relative;
+        }
+        .bar_txt {
+            position: absolute;
+            color: #fff;
+            font-size: 16px;
+            font-weight: normal;
+            top: 33px;left: 112px;
+        }
