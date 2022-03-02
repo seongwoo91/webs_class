@@ -26,7 +26,7 @@
         .mouse__img {
             position: relative;
             text-align: center;
-            transform: perspective(600px) rotateX(0deg) rotateY(0deg);
+            transform:rotateX(0deg) rotateY(0deg);
             transform-style: preserve-3d;
             will-change: transform;
         }   
@@ -304,6 +304,10 @@ document.querySelector(".mouse__img").addEventListener("mousemove", (e) => {
                 <li>mousePageY : <span class="mousePageY">0</span>px</li>
                 <li>centerPageX : <span class="centerPageX">0</span>px</li>
                 <li>centerPageY : <span class="centerPageY">0</span>px</li>
+                <li>maxPageX : <span class="maxPageX">0</span>px</li>
+                <li>maxPageY : <span class="maxPageY">0</span>px</li>
+                <li>softPageX : <span class="softPageX">0</span>px</li>
+                <li>softPageY : <span class="softPageY">0</span>px</li>
             </ul>
         </div>
     </div>
@@ -328,13 +332,26 @@ document.querySelector(".mouse__img").addEventListener("mousemove", (e) => {
             let centerPageX = window.innerWidth/2 - mousePageX; 
             let centerPageY = window.innerHeight/2 - mousePageY;
 
+            //최소값은 -50 최대값은 50 으로 설정하기
+            let maxPageX = Math.max(-800, Math.min(800, centerPageX));
+            let maxPageY = Math.max(-300, Math.min(300, centerPageY));
+
+            //각도 줄이는 설정(부드럽게)
+            let anlexpageX = maxPageX * 0.12;
+            let anlexpageY = maxPageY * 0.12;
+
+            //부드럽게 설정 0 --> 30 한번에 바뀌는게 아닌 천천히
+            let softPageX =0 , softPageY =0;
+            softPageX += (anlexpageX - softPageX) * 0.4;
+            softPageY += (anlexpageY - softPageY) * 0.4;
+
             //원크기
             let circleWidth = mousePageX - circle.width/2;
             let circleHeight = mousePageY - circle.height/2;
             
             //transform: rotateX(0deg) rotateY(0deg);
             const imgMove = document.querySelector(".mouse__img");
-            imgMove.style.transform = "rotateX("+centerPageX/20+"deg) rotateY("+centerPageY/20+"deg)";
+            imgMove.style.transform = "perspective(600px) rotateX("+softPageY+"deg) rotateY("+ -softPageX+"deg)";
 
             //커서
             gsap.to(".cursor", {duration: .3, left: mousePageX-circle.width/2, top:mousePageY-circle.height/2});
@@ -345,6 +362,10 @@ document.querySelector(".mouse__img").addEventListener("mousemove", (e) => {
             document.querySelector(".mousePageY").textContent = mousePageY;
             document.querySelector(".centerPageX").textContent = centerPageX;
             document.querySelector(".centerPageY").textContent = centerPageY;
+            document.querySelector(".maxPageX").textContent = maxPageX;
+            document.querySelector(".maxPageY").textContent = maxPageY;
+            document.querySelector(".softPageX").textContent = softPageX;
+            document.querySelector(".softPageY").textContent = softPageY;
 
         };
 
