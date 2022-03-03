@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>평가문항1번(float)</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            background-color: #FFEBEE;
+        }
+        #wrap {
+            width: 1200px;
+            margin: 0 auto;
+        }
+        #header {
+            width: 100%;
+            height: 150px;
+            background-color: #FFCDD2;            
+        }        
+        #content1 {
+            width: 30%;
+            height: 780px;
+            background-color: #E57373;
+            float: left;
+        }
+        #content2 {
+            width: 70%;
+            height: 780px;
+            background-color: #EF5350;
+            float: left;
+        }
+        #footer {
+            width: 100%;
+            height: 150px;
+            background-color: #F44336;
+            clear: both;
+        }
+        @media (max-width: 1220px){
+            #wrap {
+                width: 96%;
+            }
+        }
+        @media (max-width: 768px){
+            #wrap {
+                width: 100%;
+            }
+            #header {
+                height: 250px;
+            }
+            #footer {
+                height: 250px;
+            }
+        }
+        @media (max-width: 480px){
+            #wrap {
+                width: 100%;
+            }
+            #header {
+                width: 100%;
+                height: 400px;
+            }
+            #content1 {
+                width: 100%;
+                height: 400px;
+            }
+        #content2 {
+                width: 100%;
+                height: 500px;
+           }
+            #footer {
+                width: 100%;
+                height: 200px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <div id="header"></div>
+        <div id="content1"></div>
+        <div id="content2"></div>
+        <div id="footer"></div>
+    </div>
+</body>
+</html>

@@ -159,7 +159,7 @@ const txt1 = "모던"
 const txt2 = " 자바스크립트"
 const txt3 = "핵심"
 
-document.querySelector(".sample01_R3").innerHTML = "나는" + txt1 +"(modern"+ txt2 +"(javascript) "+ txt3 +"을 배우고싶다."
+document.querySelector(".sample01_R3").innerHTML = "나는" + txt1 +"(modern)"+ txt2 +"(javascript) "+ txt3 +"을 배우고싶다."
 
 const tem1 = "모던"
 const tem2 = "자바스크립트"
@@ -213,7 +213,7 @@ const currentStr1 = str1.length;
 document.querySelector(".sample02_R1").innerHTML = currentStr1;
 
 const str2 = "javascript";
-const currentStr2 = str1.length;
+const currentStr2 = str2.length;
 
 document.querySelector(".sample02_R2").innerHTML = currentStr2;</code></pre>
     </div>
@@ -999,7 +999,7 @@ document.querySelector(".sample11_R4").innerHTML = url4;</code></pre>
             document.querySelector(".sample01_N3").innerHTML = "3";
             document.querySelector(".sample01_Q3").innerHTML = "모던, 자바스크립트, 핵심";
             document.querySelector(".sample01_M3").innerHTML = "문자열 결합";
-            document.querySelector(".sample01_R3").innerHTML = "나는" + txt1 + "(modern" + txt2 + "(javascript) " + txt3 +
+            document.querySelector(".sample01_R3").innerHTML = "나는" + txt1 + "(modern)" + txt2 + "(javascript) " + txt3 +
                 "을 배우고싶다."
 
             const tem1 = "모던"
@@ -1023,7 +1023,7 @@ document.querySelector(".sample11_R4").innerHTML = url4;</code></pre>
             document.querySelector(".sample02_R1").innerHTML = currentStr1;
 
             const str2 = "javascript";
-            const currentStr2 = str1.length;
+            const currentStr2 = str2.length;
 
             document.querySelector(".sample02_N2").innerHTML = "2";
             document.querySelector(".sample02_Q2").innerHTML = str2;
@@ -1044,11 +1044,11 @@ document.querySelector(".sample11_R4").innerHTML = url4;</code></pre>
             document.querySelector(".sample03_R1").innerHTML = currentStr1;
 
             const str2 = "JAVASCIRPT";
-            const currentStr2 = str2.toUpperCase();
+            const currentStr2 = str2.toLowerCase();
 
             document.querySelector(".sample03_N2").innerHTML = "2";
             document.querySelector(".sample03_Q2").innerHTML = str2;
-            document.querySelector(".sample03_M2").innerHTML = "toUpperCase()";
+            document.querySelector(".sample03_M2").innerHTML = "toLowerCase()";
             document.querySelector(".sample03_R2").innerHTML = currentStr2;
 
         }
@@ -1229,7 +1229,7 @@ document.querySelector(".sample11_R4").innerHTML = url4;</code></pre>
 
             document.querySelector(".sample07_N7").innerHTML = "7";
             document.querySelector(".sample07_Q7").innerHTML = str;
-            document.querySelector(".sample07_M7").innerHTML = "substring(4, 2)";
+            document.querySelector(".sample07_M7").innerHTML = "substr(4, 2)";
             document.querySelector(".sample07_R7").innerHTML = text7;
         }
         //{8}
@@ -1248,7 +1248,7 @@ document.querySelector(".sample11_R4").innerHTML = url4;</code></pre>
             const text2 = str2.replace('img01.jpg','img02.jpg');
 
             document.querySelector(".sample08_N2").innerHTML = "2";
-            document.querySelector(".sample08_Q2").innerHTML = str;
+            document.querySelector(".sample08_Q2").innerHTML = str2;
             document.querySelector(".sample08_M2").innerHTML = "replace('img01.jpg','img02.jpg')";
             document.querySelector(".sample08_R2").innerHTML = text2;
 
@@ -1256,7 +1256,7 @@ document.querySelector(".sample11_R4").innerHTML = url4;</code></pre>
             const text3 = str3.replace('-','');
 
             document.querySelector(".sample08_N3").innerHTML = "3";
-            document.querySelector(".sample08_Q3").innerHTML = str;
+            document.querySelector(".sample08_Q3").innerHTML = str3;
             document.querySelector(".sample08_M3").innerHTML = "replace('-','')";
             document.querySelector(".sample08_R3").innerHTML = text3;
 
@@ -1264,7 +1264,7 @@ document.querySelector(".sample11_R4").innerHTML = url4;</code></pre>
             const text4 = str4.replace(/-/g,''); //정규식표현
 
             document.querySelector(".sample08_N4").innerHTML = "4";
-            document.querySelector(".sample08_Q4").innerHTML = str;
+            document.querySelector(".sample08_Q4").innerHTML = str4;
             document.querySelector(".sample08_M4").innerHTML = "replace(/-/g,'')";
             document.querySelector(".sample08_R4").innerHTML = text4;
 
@@ -1272,8 +1272,8 @@ document.querySelector(".sample11_R4").innerHTML = url4;</code></pre>
             const text5 = str5.replace(/-/g,' ');
 
             document.querySelector(".sample08_N5").innerHTML = "5";
-            document.querySelector(".sample08_Q5").innerHTML = str;
-            document.querySelector(".sample08_M5").innerHTML = "(/-/g,' ')";
+            document.querySelector(".sample08_Q5").innerHTML = str5;
+            document.querySelector(".sample08_M5").innerHTML = "replace(/-/g,' ')";
             document.querySelector(".sample08_R5").innerHTML = text5;
         }
         //{9}
@@ -1342,7 +1342,7 @@ document.querySelector(".sample11_R4").innerHTML = url4;</code></pre>
             const text3 = num3.padStart(3, '0')
 
             document.querySelector(".sample10_N3").innerHTML = "3";
-            document.querySelector(".sample10_Q3").innerHTML = num2;
+            document.querySelector(".sample10_Q3").innerHTML = num3;
             document.querySelector(".sample10_M3").innerHTML = "padStart(3, '0')";
             document.querySelector(".sample10_R3").innerHTML = text3;
 

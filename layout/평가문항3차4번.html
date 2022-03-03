@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>평가문항4번(grid)</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            background-color: #E8EAF6;
+        }
+        #wrap {
+            width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 100%;
+            grid-template-rows: 100px 400px 400px 100px;
+            grid-template-areas: 
+                "header"
+                "nav"
+                "contents"
+                "footer"
+            ;
+        }
+        #header {
+            background-color: #C5CAE9;
+            grid-area: header;
+        }
+        #nav {
+            background-color: #9FA8DA;
+            grid-area: nav;
+        }
+        #contents {
+            background-color: #7986CB;
+            grid-area: contents;
+            display: grid;
+            grid-template-columns: 11.11% 11.11% 11.11% 11.11% 11.11% 11.11% 11.11% 11.11% 11.11%;
+            grid-template-rows: 100px 50px 100px;
+            grid-template-areas: 
+                "cont1  cont2  cont3  cont4  cont5"
+                "cont6 cont7 cont8 cont9 cont10"
+            ;
+            padding: 80px 5vw;
+        }
+        .cont1 {
+            background-color: #5C6BC0;
+            grid-area: cont1;
+            grid-column-start: 1;
+            grid-column-end: 2;
+            grid-row-start: 1;
+            grid-row-end: 2;
+        }
+        .cont2 {
+            background-color: #5C6BC0;
+            grid-area: cont2;
+            grid-column-start: 3;
+            grid-column-end: 4;
+            grid-row-start: 1;
+            grid-row-end: 2;
+
+        }
+        .cont3 {
+            background-color: #5C6BC0;
+            grid-area: cont3;
+            grid-column-start: 5;
+            grid-column-end: 6;
+            grid-row-start: 1;
+            grid-row-end: 2;
+
+        }
+        .cont4 {
+            background-color: #5C6BC0;
+            grid-area: cont4;
+            grid-column-start: 7;
+            grid-column-end: 8;
+            grid-row-start: 1;
+            grid-row-end: 2;
+        }
+        .cont5 {
+            background-color: #5C6BC0;
+            grid-area: cont5;
+            grid-column-start: 9;
+            grid-column-end: 10;
+            grid-row-start: 1;
+            grid-row-end: 2;
+
+        }
+        .cont6 {
+            background-color: #5C6BC0;
+            grid-area: cont6;
+            grid-column-start: 1;
+            grid-column-end: 2;
+            grid-row-start: 3;
+            grid-row-end: 4;
+        }
+        .cont7 {
+            background-color: #5C6BC0;
+            grid-area: cont7;
+            grid-column-start: 3;
+            grid-column-end: 4;
+            grid-row-start: 3;
+            grid-row-end: 4;
+        }
+        .cont8 {
+            background-color: #5C6BC0;
+            grid-area: cont8;
+            grid-column-start: 5;
+            grid-column-end: 6;
+            grid-row-start: 3;
+            grid-row-end: 4;
+        }
+        .cont9 {
+            background-color: #5C6BC0;
+            grid-area: cont9;
+            grid-column-start: 7;
+            grid-column-end: 8;
+            grid-row-start: 3;
+            grid-row-end: 4;
+        }
+        .cont10 {
+            background-color: #5C6BC0;
+            grid-area: cont10;
+            grid-column-start: 9;
+            grid-column-end: 10;
+            grid-row-start: 3;
+            grid-row-end: 4;
+        }
+        #footer {
+            background-color: #303F9F;
+            grid-area: footer;
+            
+        }
+        @media (max-width : 1220px){
+            #wrap {
+                width: 100%;
+            }
+            #contents {
+            background-color: #7986CB;
+            grid-area: contents;
+            display: grid;
+            grid-template-columns: 14.28% 14.28% 14.28% 14.28% 14.28% 14.28% 14.28%;
+            grid-template-rows: 100px 50px 100px;
+            grid-template-areas: 
+                "cont1 cont2 cont3 cont4"
+                "cont5 cont6 cont7 cont8"
+            ;
+            padding: 80px 8vw;
+        }
+        .cont1 {
+            background-color: #5C6BC0;
+            grid-area: cont1;
+            grid-column-start: 1;
+            grid-column-end: 2;
+            grid-row-start: 1;
+            grid-row-end: 2;
+        }
+        .cont2 {
+            background-color: #5C6BC0;
+            grid-area: cont2;
+            grid-column-start: 3;
+            grid-column-end: 4;
+            grid-row-start: 1;
+            grid-row-end: 2;
+
+        }
+        .cont3 {
+            background-color: #5C6BC0;
+            grid-area: cont3;
+            grid-column-start: 5;
+            grid-column-end: 6;
+            grid-row-start: 1;
+            grid-row-end: 2;
+
+        }
+        .cont4 {
+            background-color: #5C6BC0;
+            grid-area: cont4;
+            grid-column-start: 7;
+            grid-column-end: 8;
+            grid-row-start: 1;
+            grid-row-end: 2;
+        }
+        .cont5 {
+            background-color: #5C6BC0;
+            grid-area: cont5;
+            grid-column-start: 1;
+            grid-column-end: 2;
+            grid-row-start: 3;
+            grid-row-end: 4;
+        }
+        .cont6 {
+            background-color: #5C6BC0;
+            grid-area: cont6;
+            grid-column-start: 3;
+            grid-column-end: 4;
+            grid-row-start: 3;
+            grid-row-end: 4;
+        }
+        .cont7 {
+            background-color: #5C6BC0;
+            grid-area: cont7;
+            grid-column-start: 5;
+            grid-column-end: 6;
+            grid-row-start: 3;
+            grid-row-end: 4;
+        }
+        .cont8 {
+            background-color: #5C6BC0;
+            grid-area: cont8;
+            grid-column-start: 7;
+            grid-column-end: 8;
+            grid-row-start: 3;
+            grid-row-end: 4;
+        }
+        .cont9 {
+            display: none;
+        }
+        .cont10 {
+            display: none;
+        }
+        }
+        @media (max-width : 768px){
+            #wrap {
+                width: 100%;
+            grid-template-columns: 100%;
+            grid-template-rows: 100px 300px 700px 100px;
+            grid-template-areas: 
+                "header"
+                "nav"
+                "contents"
+                "footer"
+            ;
+            }
+            #contents {
+            background-color: #7986CB;
+            grid-area: contents;
+            display: grid;
+            grid-template-columns: 20% 20% 20% 20% 20%;
+            grid-template-rows: 100px 50px 100px 50px 100px;
+            grid-template-areas: 
+                "cont1 cont2 cont3"
+                "cont4 cont5 cont6"
+                "cont7 cont8 cont9"
+            ;
+            padding: 150px 10vw 80px 10vw;
+        }
+        .cont1 {
+            background-color: #5C6BC0;
+            grid-area: cont1;
+            grid-column-start: 1;
+            grid-column-end: 2;
+            grid-row-start: 1;
+            grid-row-end: 2;
+        }
+        .cont2 {
+            background-color: #5C6BC0;
+            grid-area: cont2;
+            grid-column-start: 3;
+            grid-column-end: 4;
+            grid-row-start: 1;
+            grid-row-end: 2;
+
+        }
+        .cont3 {
+            background-color: #5C6BC0;
+            grid-area: cont3;
+            grid-column-start: 5;
+            grid-column-end: 6;
+            grid-row-start: 1;
+            grid-row-end: 2;
+
+        }
+        .cont4 {
+            background-color: #5C6BC0;
+            grid-area: cont4;
+            grid-column-start: 1;
+            grid-column-end: 2;
+            grid-row-start: 3;
+            grid-row-end: 4;
+        }
+        .cont5 {
+            background-color: #5C6BC0;
+            grid-area: cont5;
+            grid-column-start: 3;
+            grid-column-end: 4;
+            grid-row-start: 3;
+            grid-row-end: 4;
+        }
+        .cont6 {
+            background-color: #5C6BC0;
+            grid-area: cont6;
+            grid-column-start: 5;
+            grid-column-end: 6;
+            grid-row-start: 3;
+            grid-row-end: 4;
+        }
+        .cont7 {
+            background-color: #5C6BC0;
+            grid-area: cont7;
+            grid-column-start: 1;
+            grid-column-end: 2;
+            grid-row-start: 5;
+            grid-row-end: 6;
+        }
+        .cont8 {
+            background-color: #5C6BC0;
+            grid-area: cont8;
+            grid-column-start: 3;
+            grid-column-end: 4;
+            grid-row-start: 5;
+            grid-row-end: 6;
+        }
+        .cont9 {
+            background-color: #5C6BC0;
+            grid-area: cont9;
+            grid-column-start: 5;
+            grid-column-end: 6;
+            grid-row-start: 5;
+            grid-row-end: 6;
+            display: block;
+        }
+        .cont10 {
+            display: none;
+        }
+            
+        }
+        @media (max-width : 480px){
+            #wrap {
+            width: 100%;
+            grid-template-columns: 100%;
+            grid-template-rows: 100px 300px 1000px 100px;
+            grid-template-areas: 
+                "header"
+                "nav"
+                "contents"
+                "footer"
+            ;
+            }
+            #contents {
+            background-color: #7986CB;
+            grid-area: contents;
+            display: grid;
+            grid-template-columns: 35% 30% 35%;
+            grid-template-rows: 100px 50px 100px 50px 100px 50px 100px 50px 100px;
+            grid-template-areas: 
+                "cont1 cont2"
+                "cont3 cont4"
+                "cont5 cont6"
+                "cont7 cont8"
+                "cont9 cont10"
+            ;
+            padding: 150px 13vw 80px 13vw;
+            }
+            .cont1 {
+            background-color: #5C6BC0;
+            grid-area: cont1;
+            grid-column-start: 1;
+            grid-column-end: 2;
+            grid-row-start: 1;
+            grid-row-end: 2;
+        }
+        .cont2 {
+            background-color: #5C6BC0;
+            grid-area: cont2;
+            grid-column-start: 3;
+            grid-column-end: 4;
+            grid-row-start: 1;
+            grid-row-end: 2;
+
+        }
+        .cont3 {
+            background-color: #5C6BC0;
+            grid-area: cont3;
+            grid-column-start: 1;
+            grid-column-end: 2;
+            grid-row-start: 3;
+            grid-row-end: 4;
+
+        }
+        .cont4 {
+            background-color: #5C6BC0;
+            grid-area: cont4;
+            grid-column-start: 3;
+            grid-column-end: 4;
+            grid-row-start: 3;
+            grid-row-end: 4;
+        }
+        .cont5 {
+            background-color: #5C6BC0;
+            grid-area: cont5;
+            grid-column-start: 1;
+            grid-column-end: 2;
+            grid-row-start: 5;
+            grid-row-end: 6;
+        }
+        .cont6 {
+            background-color: #5C6BC0;
+            grid-area: cont6;
+            grid-column-start: 3;
+            grid-column-end: 4;
+            grid-row-start: 5;
+            grid-row-end: 6;
+        }
+        .cont7 {
+            background-color: #5C6BC0;
+            grid-area: cont7;
+            grid-column-start: 1;
+            grid-column-end: 2;
+            grid-row-start: 7;
+            grid-row-end: 8;
+        }
+        .cont8 {
+            background-color: #5C6BC0;
+            grid-area: cont8;
+            grid-column-start: 3;
+            grid-column-end: 4;
+            grid-row-start: 7;
+            grid-row-end: 8;
+        }
+        .cont9 {
+            background-color: #5C6BC0;
+            grid-area: cont9;
+            grid-column-start: 1;
+            grid-column-end: 2;
+            grid-row-start: 9;
+            grid-row-end: 10;
+            display: block;
+        }
+        .cont10 {
+            background-color: #5C6BC0;
+            grid-area: cont10;
+            grid-column-start: 3;
+            grid-column-end: 4;
+            grid-row-start: 9;
+            grid-row-end: 10;
+            display: block;
+        }
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <div id="header"></div>
+        <div id="nav"></div>
+        <div id="contents">
+            <div class="cont1"></div>
+            <div class="cont2"></div>
+            <div class="cont3"></div>
+            <div class="cont4"></div>
+            <div class="cont5"></div>
+            <div class="cont6"></div>
+            <div class="cont7"></div>
+            <div class="cont8"></div>
+            <div class="cont9"></div>
+            <div class="cont10"></div>
+        </div>
+        <div id="footer"></div>
+    </div>
+</body>
+</html>
