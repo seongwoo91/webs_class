@@ -95,16 +95,17 @@
                 <h3>MAMP 설치</h3>
                 <img src="img/설치mamp.jpg" alt="설치">
              </div>
-             <!-- //box2 -->
+             
 <pre class="language-js"><code>
 
 </code></pre>
+<!-- //box2 -->
              <!-- box3 -->
              <div class="bs-docs-section">
                 <h2 id="intro3" class="page-header">MySQL 실행</h2>
                 <div class="bs-callout bs-callout-info">
                     윈도우 : C:\MAMP\bin\mysql\bin>
-                    윈도우 : mysql -uroot -proot
+                    로그인 : mysql -uroot -proot
                 </div>
 <pre class="language-js"><code>
 mysql: [Warning] Using a password on the command line interface can be insecure.
@@ -122,7 +123,7 @@ Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
 </code></pre>
                 <div class="bs-callout bs-callout-info">
                     맥 : cd /Application/mamp/Libary/bin
-                    맥 : sudo ./mysql-uroot -p
+                    로그인 : sudo ./mysql-uroot -p
                 </div>
 <pre class="language-js"><code>
 mysql: [Warning] Using a password on the command line interface can be insecure.
@@ -140,6 +141,71 @@ Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
 </code></pre>
              </div>
              <!-- //box3 -->
+
+              <!-- box4 -->
+            <div class="bs-docs-section">
+                <h2 id="intro4" class="page-header">데이터베이스</h2>
+                <h3 id="intro4-1" class="page-header">데이터베이스 만들기</h3>
+                <div class="bs-callout bs-callout-info">
+                    create database 데이터베이스이름;
+                </div>
+                <pre class="language-js"><code>mysql> create database sample01;
+Query OK, 1 row affected (0.00 sec)</code></pre>
+                <h3 id="intro4-2" class="page-header">데이터베이스 보기</h3>
+                <div class="bs-callout bs-callout-info">
+                    show databases;
+                </div>
+                <pre class="language-js"><code>mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mysql              |
+| performance_schema |
+| sample01           |
+| sys                |
++--------------------+
+5 rows in set (0.00 sec)</code></pre>
+                <h3 id="intro4-3" class="page-header">데이터베이스 사용</h3>
+                <div class="bs-callout bs-callout-info">
+                    use 데이터베이스이름;
+                </div>
+                <pre class="language-js"><code>mysql> use sample01;
+Database changed</code></pre>
+                <h3 id="intro4-4" class="page-header">데이터베이스 삭제</h3>
+                <div class="bs-callout bs-callout-info">
+                    drop database 데이터베이스이름;
+                </div>
+                <pre class="language-js"><code>mysql> drop database sample01;
+Query OK, 0 rows affected (0.00 sec)</code></pre>
+            </div>
+             <!-- //box4 -->
+
+            <!-- box5 -->
+            <div class="bs-docs-section">
+                <h2 id="intro5" class="page-header">테이블</h2>
+                <h3 id="intro5-1" class="page-header">테이블 만들기</h3>
+                <div class="bs-callout bs-callout-info">
+                    
+                </div>
+                <pre class="language-js"><code></code></pre>
+                <h3 id="intro5-2" class="page-header">테이블 전체 보기</h3>
+                <div class="bs-callout bs-callout-info">
+                    
+                </div>
+                <pre class="language-js"><code></code></pre>
+                <h3 id="intro5-3" class="page-header">테이블 보기</h3>
+                <div class="bs-callout bs-callout-info">
+                    
+                </div>
+                <pre class="language-js"><code></code></pre>
+                <h3 id="intro5-4" class="page-header">테이블 삭제</h3>
+                <div class="bs-callout bs-callout-info">
+                     
+                </div>
+                <pre class="language-js"><code></code></pre>
+            </div>
+            <!-- //box5 --> 
             </div>
             <div class="col-md-3">
                 <div class="bs-sidebar hidden-print" role="complementary">
@@ -147,6 +213,22 @@ Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
                         <li><a href="#intro1">MySQL</a></li>
                         <li><a href="#intro2">MySQL 설치</a></li>
                         <li><a href="#intro3">MySQL 실행</a></li>
+                        <li><a href="#intro4">데이터베이스</a>
+                            <ul class="nav bs-sidenav">
+                                <li><a href="#intro4-1">데이터베이스 만들기</a></li>
+                                <li><a href="#intro4-2">데이터베이스 보기</a></li>
+                                <li><a href="#intro4-3">데이터베이스 사용</a></li>
+                                <li><a href="#intro4-4">데이터베이스 삭제</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#intro5">테이블</a>
+                            <ul class="nav bs-sidenav">
+                                <li><a href="#intro5-1">테이블 만들기</a></li>
+                                <li><a href="#intro5-2">테이블 전체 보기</a></li>
+                                <li><a href="#intro5-3">테이블 보기</a></li>
+                                <li><a href="#intro5-4">테이블 삭제</a></li>
+                            </ul>
+                        </li>
                     </ul>
                 </div>
             </div>
