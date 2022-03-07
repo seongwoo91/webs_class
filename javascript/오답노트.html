@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>오답노트</title>
+</head>
+<body>
+    
+
+    <script>
+        //2022.03.07 자바스크립트 5차 시험
+        //틀린거 1번
+        {
+            const arrNum = [100, 200, 300, 400, 500];
+            let result = 0;
+
+            for(let i =0; i<arrNum.length; i++){
+                result += arrNum[i]
+            }
+            document.write(result);
+        }
+        // 오답 : 0 1 2 3 4
+        // 정답 : 1500
+
+        //틀린거 2번
+        {
+            const str = "자바스크립트(javascirpt) 공부";
+
+            const text = str.slice(3,1);
+            document.write(text)
+
+            const text2 = str.slice(-14, -4);
+            document.write(text2)
+
+            const text3 = str.slice(19, 21);
+            document.write(text3)
+        }
+        // 오답 : text 2번 : javascrip  / text3번 : 부
+        // 정답 : text 2번 : javascript / text3번 : 공부
+
+        //틀린거 3번
+        {
+            const str = "자바스크립트(javascript)공부";
+            
+            const text = str.charAt(4)
+            document.write(text)
+
+            const text2 = str.charAt()
+            document.write(text2)
+        }
+        //오답 : text2번 : 안씀 
+        //정답 : text2번 : 자
+
+        //틀린거 4번
+        {
+            function func(data, exp){
+                let result = 1;
+                for(i = 0; i<exp; i++){
+                    result = result * data
+                }
+                document.write(result);
+            }
+            func(2, 5);
+        }
+        //오답 : 4
+        //정답 : 32
+
+        //틀린거 5번
+        {
+            function func(){
+                let i = 10; j = 10; k = 30;
+                i /= j;
+                j -= i;
+                k %= j;
+                document.write(i)
+                document.write(j)
+                document.write(k)
+            }
+            func();
+        }
+        //오답 : 1, 0, 0
+        //정답 : 1, 9, 3
+    </script>
+</body>
+</html>

@@ -57,11 +57,16 @@
         }
         #parallax__nav {
             position: fixed;
-            right: 20px;top: 20px;
+            right: 20px;
+            top: -200px;
             z-index: 1000;
             background-color: rgba(0,0,0,0.4);
             padding: 15px 20px;
             border-radius: 50px;
+            transition: top 0.3s ease-in-out;
+        }
+        #parallax__nav.show {
+            top: 20px
         }
         #parallax__nav li {
             list-style: none;
@@ -69,16 +74,14 @@
         }
         #parallax__nav li a {
             display: inline-block;
-            width: 30px;
-            height: 30px;
-            padding: 5px;
+            padding: 5px 20px;
             text-align: center;
             line-height: 30px;
         }
         #parallax__nav li.active a {
             background: #fff;
             color: #000;
-            border-radius: 50%;
+            border-radius: 30px;
         }
         #parallax__cont {
             max-width: 1600px;
@@ -211,50 +214,17 @@
             list-style: none;
             line-height: 1.6;
         }
-        #parallax__dot {
-            position: fixed;
-            right: 20px; top: 50%;
-            transform: translateY(-50%);
-            z-index: 1000;
-            background: rgba(0,0,0,0.4);
-            padding: 20px 10px;
-            border-radius: 30px;
-        }
-        #parallax__dot li {
-            position: relative;
-            width: 20px;height: 20px;
-            border-radius: 50%;
-            list-style: none;
-            margin: 12px 8px;
-            box-shadow: 0 0 0 2px rgba(255,255,255,0);
-            transition: box-shadow .2s ease;
-        }
-        #parallax__dot li a {
-            background: #fff;
-            width: 100%;
-            height: 100%;
-            position: absolute;
-            top: 0;left: 0;
-            border-radius: 50%;
-            transition: all .2s ease;            
-        }
-        #parallax__dot li.active {
-            box-shadow: 0 0 0 2px rgba(255,255,255,1);
-        }
-        #parallax__dot li.active a {
-            transform: scale(0.4);
-        }
     </style>
 </head>
 <body>
 
     <header id="parallax__title">
-        <h1><a href="parallaxEffect.html">JavaScript Parallax Effect02</a></h1>
-        <p>패럴릭스 스크롤링 효과 - 사이드 메뉴</p>
+        <h1><a href="parallaxEffect.html">JavaScript Parallax Effect03</a></h1>
+        <p>패럴릭스 스크롤링 효과 - 숨김 메뉴</p>
         <ul>
             <li><a href="parallaxEffect01.html">1</a></li>
-            <li class="active"><a href="parallaxEffect02.html">2</a></li>
-            <li><a href="parallaxEffect03.html">3</a></li>
+            <li><a href="parallaxEffect02.html">2</a></li>
+            <li class="active"><a href="parallaxEffect03.html">3</a></li>
             <li><a href="parallaxEffect04.html">4</a></li>
             <li><a href="parallaxEffect05.html">5</a></li>
             <li><a href="parallaxEffect06.html">6</a></li>
@@ -263,17 +233,17 @@
     </header>
     <!-- //parallax__title -->
 
-    <nav id="parallax__dot">
+    <nav id="parallax__nav">
         <ul>
-            <li class="active"><a href="#section1"><span>s1</span></a></li>
-            <li><a href="#section2"><span>s2</span></a></li>
-            <li><a href="#section3"><span>s3</span></a></li>
-            <li><a href="#section4"><span>s4</span></a></li>
-            <li><a href="#section5"><span>s5</span></a></li>
-            <li><a href="#section6"><span>s6</span></a></li>
-            <li><a href="#section7"><span>s7</span></a></li>
-            <li><a href="#section8"><span>s8</span></a></li>
-            <li><a href="#section9"><span>s9</span></a></li>
+            <li class="active"><a href="#section1"><span>메뉴1</span></a></li>
+            <li><a href="#section2"><span>메뉴2</span></a></li>
+            <li><a href="#section3"><span>메뉴3</span></a></li>
+            <li><a href="#section4"><span>메뉴4</span></a></li>
+            <li><a href="#section5"><span>메뉴5</span></a></li>
+            <li><a href="#section6"><span>메뉴6</span></a></li>
+            <li><a href="#section7"><span>메뉴7</span></a></li>
+            <li><a href="#section8"><span>메뉴8</span></a></li>
+            <li><a href="#section9"><span>메뉴9</span></a></li>
         </ul>
     </nav> 
     <!-- //parallax__dot -->
@@ -372,64 +342,49 @@
     
     <!-- script -->
     <script>
-        document.querySelectorAll("#parallax__dot a").forEach(el => {
-            el.addEventListener("click", e => {
-                e.preventDefault();
-
-                //window.scroll(0, 1000);
-                //window.scroll({left:0, top:1000});
-                //window.scroll({left:0, top:1000, behavior:"smooth"});
-
-                //window.scrollTo(0, 1000);
-                //window.scrollTo({left:0, top:1000});
-                //window.scrollTo({left:0, top:1000, behavior:"smooth"});
-
-                //window.scrollBy(0, 1000);
-                //window.scrollBy({left:0, top:1000});
-                //window.scrollBy({left:0, top:1000, behavior:"smooth"});
-
-                document.querySelector(el.getAttribute("href")).scrollIntoView({behavior: "smooth"}); //el (a)에 있는 href를 가져와서 스무스하게 움직이게 효과
-            })
-        })
-
-
-        //출력부분
-        window.addEventListener("scroll", () => {
+         window.addEventListener("scroll", () => {
            let scrollTop = window.screenY || window.pageYOffset || document.documentElement.scrollTop; //(스크롤값 구하는 3가지 방법)
-            
-           document.querySelector(".scrollTop span").innerText = Math.round(scrollTop); //스크롤 값 나타냄(round는 소수점 없애기)
 
 
-           //forEach문
-            document.querySelectorAll("#parallax__dot li").forEach((element, index) => {
-                if(scrollTop >= document.getElementById("section"+(index+1)).offsetTop - 2){ //스크롤값이 현재 섹션의 스크롤탑값과 같거나 클경우
-                    document.querySelectorAll("#parallax__dot li").forEach(li=>{        //모든 li에 클래스액티브를 지운다.
-                        li.classList.remove("active");
-                    });
-                    document.querySelector("#parallax__dot li:nth-child("+(index+1)+")").classList.add("active") //그리고 현재 있는 섹션의  li에 active를 준다
-                }
-            })            
+           //스크롤값이 0보다 크면 show를 추가해주세요
+            //if(scrollTop > 0){
+            //    document.querySelector("#parallax__nav").classList.add("show");
+            //} else {
+            //    document.querySelector("#parallax__nav").classList.remove("show");
+            //}
+
+           document.querySelector(".scrollTop span").innerText = Math.round(scrollTop);
         })
-        
 
-         // //스크롤 값 구하기
-            // window.screenY
-            // window.pageYOffset
-            // document.documentElement.scrollTop
-            
-            // window.screenX
-            // window.pageXOffset
-            // document.documentElement.scrollLeft
+        let nowScroll = true;
+        let lastScroll = 0;
 
-            // //스크롤 값으로 이동하기
-            // window.scroll()     //브라우저 기준 위치
-            // window.scrollTo()   //절대적 위치
-            // window.scrollBy()   //상대적 위치
+        function scrollProgress(){
+            nowScroll = true;       //함수가 작동되며 아래에서 폴스가 된 nowScroll값은 함수가 실행될떄마다 다시 true로 초기화시켜준다.
 
-            // element.scroll()
-            // element.scrollTo()
-            // element.scrollBy()
-            // element.scrollIntoView()
+            setInterval(() => {
+                if(nowScroll){      //이프문 조건으로 nowScroll이 트루일시 nowScroll을 폴스로 바꾸며 함수 hasScroll을 실행한다.
+                    nowScroll = false;    
+                    hasScroll();
+                }
+            }, 300);
+            console.log(nowScroll);
+        }
+
+        function hasScroll(){       // scrollProgress 함수가 실행될때마다 셋인터벌내에 hasScroll함수를 실행
+            let scrollTop = window.screenY || window.pageYOffset || document.documentElement.scrollTop; //현재의 스크롤값
+
+            if(scrollTop > lastScroll){       //셋인터벌이 실행될때마다 현재의 스크롤값과 0.3초전의 스크롤값을 비교(셋인터벌 실행간격이 0.3초)
+                document.querySelector("#parallax__nav").classList.remove("show");   // 이프문 조건과 맞으면 작동
+            } else {
+                document.querySelector("#parallax__nav").classList.add("show");     // 이프문 조건과 안맞으면 작동
+            }
+
+            lastScroll = scrollTop;  //라스트 스크롤값에 현재스크롤값을 줍니다.
+
+        }
+        window.addEventListener("scroll", scrollProgress) //스크롤 할때마다 scrollProgress 함수가 계속 실행
+
     </script>
 </body>
 </html>
