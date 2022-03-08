@@ -372,6 +372,7 @@
     </div>
 </div>
 <!-- //sample13 -->
+
 <!-- sample14 -->
 <div id="sample14" class="sample">
     <h3>14. 즉시실행 함수</h3>
@@ -400,7 +401,7 @@
 <!-- //sample14 -->
 
 <!-- sample15 -->
-<div id="sample14" class="sample">
+<div id="sample15" class="sample">
     <h3>15. 파라미터 함수</h3>
     <div class="code">
         <pre class="line-numbers"><code class="language-js">{
@@ -418,6 +419,28 @@
     </div>
 </div>
 <!-- //sample15 -->
+
+<!-- sample16 -->
+<div id="sample16" class="sample">
+    <h3>16. 아규먼트 함수 (인자값을 배열처럼 꺼내쓸수있다)</h3>
+    <div class="code">
+        <pre class="line-numbers"><code class="language-js">{
+    function func(a, b){
+        document.write(arguments[0]);
+        document.write(arguments[1]);
+    }
+    func("함수가 실행되었습니다1.","함수가 실행되었습니다2.");
+}</code></pre>
+    </div>
+    <div class="result">
+        <h4>결과보기</h4>
+        <div>
+            함수가 실행되었습니다1.<br>
+            함수가 실행되었습니다2.
+        </div>
+    </div>
+</div>
+<!-- //sample16 -->
 
 
         </div>
@@ -517,75 +540,95 @@
         //     }
         //     document.write(func("함수가 실행되었습니다.8"));
         //09. 화살표 함수 : 익명함수 + 매개변수 + 리턴값
+        //{
+        //    const func = (str) => {
+        //        return str;
+        //    }
+        //    document.write(func("함수가실행되었습니다."));
+        //}
+//
+        ////10. 화살표 함수 : 익명함수 + 매개변수 + 리턴값 + 괄호 생략
+        //{
+        //    const func = str => {  //매개 변수가 2개이상이면 괄호가 있어야하고, 하나만 쓰면 생략가능 
+        //        return str;
+        //    }
+        //    document.write(func("함수가 실행되었습니다."));            
+        //}
+//
+        ////11. 화살표 함수 : 익명함수 + 매개변수 + 리턴값 + 괄호 생략 + 리턴 생략
+        //{
+        //    const func = str => str;        
+//
+        //    document.write(func("함수가 실행되었습니다."));
+        //}
+        ////12. 화살표 함수 : 선언적함수 + 매개변수 + 리턴값 + 괄호 생략 + 리턴 생략
+        //{
+        //    func = str => str;        
+//
+        //    document.write(func("함수가 실행되었습니다."));
+        //}
+        ////13. 내부 함수
+        //{
+        //    function func(){
+        //        function funA(){
+        //            document.write("함수가 실행되었습니다a.");
+        //        }
+        //        funA();
+        //        function funB(){
+        //            document.write("함수가 실행되었습니다b.");
+        //        }
+        //        funB();
+        //    }
+        //    func();
+        //}
+        ////14. 즉시실행 함수
+        //{
+        //   // function func(){
+        //   //     document.write("함수가 실행되었습니다b.");
+        //   // }
+        //   // func();
+        //   (function (){
+        //    document.write("함수가 실행되었습니다c.");
+        //   }());
+        //   (() => {
+        //    document.write("함수가 실행되었습니다d.");
+        //   })();
+        //}    
+        ////15. 파라미터 함수
+        //{
+        //    function func(str="함수가 실행되었습니다."){
+        //        document.write(str);
+        //    }
+        //    func();
+        //}
+        ////16. 아규먼트 함수 (인자값을 배열처럼 꺼내쓸수있다.)
+        //{
+        //    function func(a, b){
+        //        document.write(arguments[0]);
+        //        document.write(arguments[1]);
+        //    }
+        //    func("함수가 실행되었습니다1","함수가 실행되었습니다2.");
+        //}
+        //17. 재귀 함수 : 자기 스스로를 호출
         {
-            const func = (str) => {
-                return str;
-            }
-            document.write(func("함수가실행되었습니다."));
-        }
+            //function func(){
+            //    document.write("함수가실행되었습니다.");
+            //    func();
+            //}
+            //func();
 
-        //10. 화살표 함수 : 익명함수 + 매개변수 + 리턴값 + 괄호 생략
-        {
-            const func = str => {  //매개 변수가 2개이상이면 괄호가 있어야하고, 하나만 쓰면 생략가능 
-                return str;
-            }
-            document.write(func("함수가 실행되었습니다."));            
-        }
-
-        //11. 화살표 함수 : 익명함수 + 매개변수 + 리턴값 + 괄호 생략 + 리턴 생략
-        {
-            const func = str => str;        
-
-            document.write(func("함수가 실행되었습니다."));
-        }
-        //12. 화살표 함수 : 선언적함수 + 매개변수 + 리턴값 + 괄호 생략 + 리턴 생략
-        {
-            func = str => str;        
-
-            document.write(func("함수가 실행되었습니다."));
-        }
-        //13. 내부 함수
-        {
-            function func(){
-                function funA(){
-                    document.write("함수가 실행되었습니다a.");
+            function func(num){
+                if(num <=1){
+                    document.write("함수가 실행되었습니다.");
+                } else {
+                    document.write("함수가 실행되었습니다.");
+                    func(num-1)
                 }
-                funA();
-                function funB(){
-                    document.write("함수가 실행되었습니다b.");
-                }
-                funB();
             }
-            func();
-        }
-        //14. 즉시실행 함수
-        {
-           // function func(){
-           //     document.write("함수가 실행되었습니다b.");
-           // }
-           // func();
-           (function (){
-            document.write("함수가 실행되었습니다c.");
-           }());
-           (() => {
-            document.write("함수가 실행되었습니다d.");
-           })();
-        }    
-        //15. 파라미터 함수
-        {
-            function func(str="함수가 실행되었습니다."){
-                document.write(str);
-            }
-            func();
-        }
-        //아규먼트 함수 (인자값을 배열처럼 꺼내쓸수있다.)
-        {
-            function func(a, b){
-                document.write(arguments[0]);
-                document.write(arguments[1]);
-            }
-            func("함수가 실행되었습니다","함수가 실행되었습니다.");
-        }
+            func(5)
+        }   
+
+        //18. 콜백 함수 : 
     </script>
     <script src="assets/js/script.js"></script>
 </body>
