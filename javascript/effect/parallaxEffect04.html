@@ -379,16 +379,11 @@
             //    document.getElementById("section1").classList.add("show");
             //}
 
-            document.querySelectorAll(".content__item").forEach(el=>{
-                if(scrollTop >= el.offsetTop - window.innerHeight/2){
+            document.querySelectorAll(".content__item").forEach(el=>{  //컨텐츠를 포이치로 선택하여 각 컨텐츠마다 스크롤값이 컨텐츠의 오프셋값에 오게되면 쇼를 붙여줍니다.
+                if(scrollTop >= el.offsetTop - window.innerHeight/2){  //그리고 최대한 자연스럽게 아래서부터 등장할수있도록 현재의 하이트값/2을 빼주었습니다.
                     el.classList.add("show");
                 }            
             });
-            
-
-
-
-
             requestAnimationFrame(scroll);      //스크롤을 사용하면 사이트가 너무 무거워지기때문에 리퀘스트애니메이션 프레임을 사용한다. 초당 60번씩 체크한다.
         }
         scroll();   //함수실행
