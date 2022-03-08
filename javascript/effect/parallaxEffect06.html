@@ -362,17 +362,15 @@
             //        item.querySelector(".content__item__desc").classList.add("show")
             //    }
             //})
-
+            
+            //span에 show를 순차적으로 붙여주는 작업 (css로 하면 너무 작업량이 많기에 스크립트로 한번에 할수있다.)
             document.querySelectorAll(".content__item").forEach(item => {
                 if(scrollTop > item.offsetTop){
                     item.querySelectorAll(".content__item__desc span").forEach((span, index) => {
-                        setTimeout(()=>{
-                            span.classList.add("show");
-                        }, 50 * (index+1))
-                        
-
-                     
-                    })
+                        setTimeout(()=>{   //각 1번만 실행 (셋 타임아웃)
+                            span.classList.add("show"); //span에 클래스 쇼를 붙여준다.
+                        }, 50 * (index+1))      //시간차를 두고, 0.05초마다 실행을 하는데, 실행될떄마다 그 숫자만큼을 실행속도에 곱해준다.
+                    })                          //그럼으로써 2번째는 0.1초 , 3번째는 0.15초 이런식으로 실행이 된다.
                 }
             })
 
