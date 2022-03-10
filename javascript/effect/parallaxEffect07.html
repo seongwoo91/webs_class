@@ -242,36 +242,36 @@
         .reveal.reveal-BTT.show::after {
             animation: reveal-BTT 1000ms 300ms;
         }
-        @keyframes reveal-RTL {
-            0%   {width: 0;   right: 0;}
-            50%  {width: 100%;right: 0;}
-            80%  {width: 100%;right: 0;}
-            100% {width: 0;   right: 100%;}
-        }     
+        @keyframes opacity {
+            0% {opacity:0;}
+            60% {opacity:0;}
+            70% {opacity:1;}
+            100% {opacity:1;}
+        }       
         @keyframes reveal {
             0%   {width: 0;   left: 0;}
             50%  {width: 100%;left: 0;}
             80%  {width: 100%;left: 0;}
             100% {width: 0;   left: 100%;}
         }     
+        @keyframes reveal-RTL {
+            0%   {width: 0;   right: 0;}
+            50%  {width: 100%;right: 0;}
+            80%  {width: 100%;right: 0;}
+            100% {width: 0;   right: 100%;}
+        }    
         @keyframes reveal-TTB {
-            0%   {width: 0;   height: 0; top:0;}
+            0%   {width: 100%;   height: 0;    top:0;}
             50%  {width: 100%;height: 100%; top:0;}
             80%  {width: 100%;height: 100%; top:0;}
-            100% {width: 0;   height: 0; top:100%;}
+            100% {width: 100%;   height: 0;    top:100%;}
         }   
         @keyframes reveal-BTT {
-            0%   {width: 0;   height: 0; top: auto; bottom:0}
+            0%   {width: 100%;   height: 0;    top: auto; bottom:0}
             50%  {width: 100%;height: 100%; top: auto; bottom:0}
             80%  {width: 100%;height: 100%; top: auto; bottom:0}
-            100% {width: 0;   height: 0; top: auto; bottom:100%}
+            100% {width: 100%;   height: 0;    top: auto; bottom:100%}
         }      
-        @keyframes opacity {
-            0% {opacity:0;}
-            60% {opacity:0;}
-            70% {opacity:1;}
-            100% {opacity:1;}
-        }
         
     </style>
 </head>
@@ -354,10 +354,10 @@
             <section id="section7" class="content__item">
                 <span class="content__item__num">07</span>
                 <h2 class="content__item__title">Section7</h2>
-                <figure class="content__item__imgWrap reveal">
+                <figure class="content__item__imgWrap reveal reveal-two reveal-BTT">
                     <div class="content__item__img"></div>
                 </figure>
-                <p class="content__item__desc reveal"><span>용기는 악운을 깨드린다.<span></p>
+                <p class="content__item__desc reveal reveal-two" data-delay="500"><span>용기는 악운을 깨드린다.<span></p>
             </section>
             <!-- //section7 -->
             <section id="section8" class="content__item">
@@ -375,7 +375,7 @@
                 <figure class="content__item__imgWrap reveal">
                     <div class="content__item__img"></div>
                 </figure>
-                <p class="content__item__desc reveal"><span>두려움은 언제나 무지에서 샘솟는다.<span></p>
+                <p class="content__item__desc reveal">두려움은 언제나 무지에서 샘솟는다.</p>
             </section>
             <!-- //section9 -->
         </div>
@@ -389,6 +389,20 @@
     <!-- script -->
     <script src="js/gsap.js"></script> 
     <script>
+
+        //만약에 reveal 클래스가 있는데 
+        //글씨를 span으로 감싸주고 
+        //글씨를 다 넣어줘요 함
+        document.querySelectorAll(".content__item__desc.reveal").forEach((el,i)=>{
+            if(!(el.querySelector("span"))){
+                const text = el.innerText;
+                el.innerHTML = `<span>${text}</span>`;
+            }
+        });
+
+        
+
+        
             function scroll(){              
             let scrollTop = window.screenY || window.pageYOffset || document.documentElement.scrollTop;
 
@@ -396,11 +410,24 @@
 
             reveal.forEach(elem => {
                 let revealOffset = elem.offsetTop +elem.parentElement.offsetTop;
-            
-                if(scrollTop >= revealOffset - window.innerHeight){  //쇼가 화면 맨위가 아닌 중간정도 왔을떄 붙을수있게 
-                    elem.classList.add("show")          //스크롤값이 리빌이 붙어있는 곳에 오게되면 쇼를 붙여준다.
+                let revealDelay = elem.dataset.delay;
+
+            //    if(scrollTop >= revealOffset - window.innerHeight){  //쇼가 화면 맨위가 아닌 중간정도 왔을떄 붙을수있게 
+            //        elem.classList.add("show")          //스크롤값이 리빌이 붙어있는 곳에 오게되면 쇼를 붙여준다.
+            //    }
+
+                if(scrollTop >= revealOffset - window.innerHeight/2){
+                    if(revealDelay == undefined){
+                        elem.classList.add("show");
+                    } else {
+                        setTimeout(()=>{
+                            elem.classList.add("show");
+                        }, revealDelay)
+                    }
                 }
             })
+
+
 
 
 
