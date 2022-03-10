@@ -191,7 +191,8 @@
         .reveal > span {
             opacity: 0;
         }
-        .reveal.show > span {
+        .reveal.show > span,
+        .reveal.show > div {
             animation: opacity 1s linear forwards;
         }
         .reveal::before{
@@ -202,18 +203,26 @@
             width: 0;
             height: 100%;
             background: #fff;
+            z-index: 1;
         }
         .reveal.show::before {
             animation: reveal 1s;
         }
+        .reveal.reveal-RTL.show::before {
+            animation: reveal-RTL 1s;
+        }
+        @keyframes reveal-RTL {
+            0%   {width: 0;   right: 0;}
+            50%  {width: 100%;right: 0;}
+            80%  {width: 100%;right: 0;}
+            100% {width: 0;   right: 100%;}
+        }     
         @keyframes reveal {
             0%   {width: 0;left: 0;}
             50%  {width: 100%;left: 0;}
             80%  {width: 100%;left: 0;}
             100% {width: 0;left: 100%;}
-        }
-
-        
+        }        
         @keyframes opacity {
             0% {opacity:0;}
             60% {opacity:0;}
@@ -247,7 +256,7 @@
             <section id="section1" class="content__item">
                 <span class="content__item__num">01</span>
                 <h2 class="content__item__title">Section1</h2>
-                <figure class="content__item__imgWrap">
+                <figure class="content__item__imgWrap reveal">
                     <div class="content__item__img"></div>
                 </figure>
                 <p class="content__item__desc reveal"><span>열의 없이 성취 된 위업이란 아직 하나도 없다.</span></p>
@@ -256,73 +265,73 @@
             <section id="section2" class="content__item">
                 <span class="content__item__num">02</span>
                 <h2 class="content__item__title">Section2</h2>
-                <figure class="content__item__imgWrap">
+                <figure class="content__item__imgWrap reveal reveal-RTL">
                     <div class="content__item__img"></div>
                 </figure>
-                <p class="content__item__desc reveal"><span>높은 목표를 세우고, 스스로 채찍질 한다.</span></p>
+                <p class="content__item__desc reveal reveal-RTL"><span>높은 목표를 세우고, 스스로 채찍질 한다.</span></p>
             </section>
             <!-- //section2 -->
             <section id="section3" class="content__item">
                 <span class="content__item__num">03</span>
                 <h2 class="content__item__title">Section3</h2>
-                <figure class="content__item__imgWrap">
+                <figure class="content__item__imgWrap reveal">
                     <div class="content__item__img"></div>
                 </figure>
-                <p class="content__item__desc reveal">오늘 달걀 한 개 갖는 것보다, 내인 암탉을 한 마리 갖는 편이 낫다.</p>
+                <p class="content__item__desc reveal reveal">오늘 달걀 한 개 갖는 것보다, 내인 암탉을 한 마리 갖는 편이 낫다.</p>
             </section>
             <!-- //section3 -->
             <section id="section4" class="content__item">
                 <span class="content__item__num">04</span>
                 <h2 class="content__item__title">Section4</h2>
-                <figure class="content__item__imgWrap">
+                <figure class="content__item__imgWrap reveal reveal-RTL">
                     <div class="content__item__img"></div>
                 </figure>
-                <p class="content__item__desc">끝을 맺기를 처음과 같이 하면 실패가 없다.</p>
+                <p class="content__item__desc reveal reveal-RTL">끝을 맺기를 처음과 같이 하면 실패가 없다.</p>
             </section>
             <!-- //section4 -->
             <section id="section5" class="content__item">
                 <span class="content__item__num">05</span>
                 <h2 class="content__item__title">Section5</h2>
-                <figure class="content__item__imgWrap">
+                <figure class="content__item__imgWrap reveal">
                     <div class="content__item__img"></div>
                 </figure>
-                <p class="content__item__desc">기다림만으로 사는 사람은 굶어서 죽는다.</p>
+                <p class="content__item__desc reveal">기다림만으로 사는 사람은 굶어서 죽는다.</p>
             </section>
             <!-- //section5 -->
             <section id="section6" class="content__item">
                 <span class="content__item__num">06</span>
                 <h2 class="content__item__title">Section6</h2>
-                <figure class="content__item__imgWrap">
+                <figure class="content__item__imgWrap reveal reveal-RTL">
                     <div class="content__item__img"></div>
                 </figure>
-                <p class="content__item__desc">내일에 의지하지 말라 그날그날이 일 년 중에서 최선의 날이다.</p>
+                <p class="content__item__desc reveal reveal-RTL">내일에 의지하지 말라 그날그날이 일 년 중에서 최선의 날이다.</p>
             </section>
             <!-- //section6 -->
             <section id="section7" class="content__item">
                 <span class="content__item__num">07</span>
                 <h2 class="content__item__title">Section7</h2>
-                <figure class="content__item__imgWrap">
+                <figure class="content__item__imgWrap reveal">
                     <div class="content__item__img"></div>
                 </figure>
-                <p class="content__item__desc">용기는 악운을 깨드린다.</p>
+                <p class="content__item__desc reveal">용기는 악운을 깨드린다.</p>
             </section>
             <!-- //section7 -->
             <section id="section8" class="content__item">
                 <span class="content__item__num">08</span>
                 <h2 class="content__item__title">Section8</h2>
-                <figure class="content__item__imgWrap">
+                <figure class="content__item__imgWrap reveal reveal-RTL">
                     <div class="content__item__img"></div>
                 </figure>
-                <p class="content__item__desc">오랫동안 꿈을 그리는 사람은 마침내 그 꿈을 닮아간다.</p>
+                <p class="content__item__desc reveal reveal-RTL">오랫동안 꿈을 그리는 사람은 마침내 그 꿈을 닮아간다.</p>
             </section>
             <!-- //section8 -->
             <section id="section9" class="content__item">
                 <span class="content__item__num">09</span>
                 <h2 class="content__item__title">Section9</h2>
-                <figure class="content__item__imgWrap">
+                <figure class="content__item__imgWrap reveal">
                     <div class="content__item__img"></div>
                 </figure>
-                <p class="content__item__desc">두려움은 언제나 무지에서 샘솟는다.</p>
+                <p class="content__item__desc reveal">두려움은 언제나 무지에서 샘솟는다.</p>
             </section>
             <!-- //section9 -->
         </div>
