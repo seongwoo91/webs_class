@@ -133,7 +133,78 @@
         // 오답 : 0 , 10
         // 정답 : 5 , 10
 
-        
+        //4번
+        {
+            function func(){
+                let a = 12, b = 8, c = 2, d= 3;
+                a /= b - c * d;
+
+                document.write(a);
+                document.write(a*b);
+            }
+            func();
+        }
+        // 오답 : 6, 12
+        // 정답 : 6, 48
+
+        //5번
+        {
+            function func(){
+                let a = 0, sum = 0;
+                while(a < 10){
+                    a++;
+                    if(a % 2 == 1) continue;
+                    sum +=a;
+                }
+                document.write(sum);
+            }
+            func();
+        }
+        // 오답 : 21
+        // 정답 : 30
+
+        //6번
+        {
+            function solution(a, b, c){
+                let answer;
+
+                if( a < b ) answer = a;
+                else answer = b;
+
+                if( c < answer ) answer = c;
+
+                return answer;
+            }
+            document.write(solution(2, 5, 1));
+        }
+        // 오답 : 5
+        // 정답 : 1
+
+        //7번
+        {
+            function func(){
+                function funA(){
+                    document.write("함수A가 실행되었습니다.")
+                }
+                funA()
+                function funB(){
+                    document.write("함수B가 실행되었습니다.")
+                }
+            }
+            func();
+        }
+        // 오답 : 함수A가 실행되었습니다.
+        // 정답 : 함수B가 실행되었습니다.
+
+        //8번
+        {
+            function solution(text) {
+                return text.split("").join("/").replace("s","site")
+            }
+            document.write(solution("webs"))
+        }
+        // 오답 : w/e/b/s/i/t/e
+        // 정답 : w/e/b/site
     </script>
 </body>
 </html>
