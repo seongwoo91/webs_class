@@ -393,35 +393,31 @@
         //만약에 reveal 클래스가 있는데 
         //글씨를 span으로 감싸주고 
         //글씨를 다 넣어줘요 함
-        document.querySelectorAll(".content__item__desc.reveal").forEach((el,i)=>{
+        document.querySelectorAll(".content__item__desc.reveal").forEach((el,i)=>{      //텍스트에 span이 없을경우 span으로 감싸준다.
             if(!(el.querySelector("span"))){
                 const text = el.innerText;
-                el.innerHTML = `<span>${text}</span>`;
+                el.innerHTML = `<span>${text}</span>`;      
             }
         });
-
-        
-
-        
             function scroll(){              
             let scrollTop = window.screenY || window.pageYOffset || document.documentElement.scrollTop;
 
             const reveal = document.querySelectorAll(".reveal");
 
             reveal.forEach(elem => {
-                let revealOffset = elem.offsetTop +elem.parentElement.offsetTop;
-                let revealDelay = elem.dataset.delay;
+                let revealOffset = elem.offsetTop +elem.parentElement.offsetTop;    //reveal의 부모요소의 오프셋값을 변수로 설정
+                let revealDelay = elem.dataset.delay;                               //텍스트에 설정된 딜레이값을 변수로 설정
 
             //    if(scrollTop >= revealOffset - window.innerHeight){  //쇼가 화면 맨위가 아닌 중간정도 왔을떄 붙을수있게 
             //        elem.classList.add("show")          //스크롤값이 리빌이 붙어있는 곳에 오게되면 쇼를 붙여준다.
             //    }
 
                 if(scrollTop >= revealOffset - window.innerHeight/2){
-                    if(revealDelay == undefined){
+                    if(revealDelay == undefined){               //딜레이가 없을시 즉시 실행
                         elem.classList.add("show");
                     } else {
                         setTimeout(()=>{
-                            elem.classList.add("show");
+                            elem.classList.add("show");         //딜레이값이 있을 경우 그 딜레이값만큼 딜레이후에 실행
                         }, revealDelay)
                     }
                 }
