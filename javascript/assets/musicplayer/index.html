@@ -315,14 +315,15 @@
             musicAudio.pause();
         }
         //이전버튼
-        function backMusic(){
-            musicIndex--;
+        function backMusic(){               
+            musicIndex < 1 ? musicIndex == allMusic.length : musicIndex--;
             loadMusic(musicIndex);
             playMusic();
+            
         }
         //다음버튼
-        function nextMusic(){
-            musicIndex++;
+        function nextMusic(){           
+            musicIndex > allMusic.length ? musicIndex == 1 : musicIndex ++;
             loadMusic(musicIndex);
             playMusic();
         }
