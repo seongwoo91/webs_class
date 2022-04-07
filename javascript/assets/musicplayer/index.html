@@ -282,6 +282,8 @@
        const musicArtist = document.querySelector(".music__song .artist");
        const musicAudio = document.querySelector("#main-audio");
        const musicPlay = document.querySelector("#control_play");
+       const musicBackbtn = document.querySelector("#control_skip_previous");
+       const musicNextbtn = document.querySelector("#control_skip_next");
        
 
        let musicIndex = 10;
@@ -299,6 +301,13 @@
            loadMusic(musicIndex);
         });
 
+        musicBackbtn.addEventListener("click", ()=>{
+            musicIndex + 1;
+        })
+        musicNextbtn.addEventListener("click", ()=>{
+            musicIndex - 1;
+        })
+
         function playMusic(){
             musicWrap.classList.add("paused");
             musicPlay.innerText = "pause";
@@ -309,6 +318,8 @@
             musicPlay.innerText = "play_arrow";
             musicAudio.pause();
         }
+
+
        
         musicPlay.addEventListener("click", ()=>{
             const isMusicPaused = musicWrap.classList.contains("paused");
