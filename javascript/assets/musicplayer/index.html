@@ -301,30 +301,38 @@
            loadMusic(musicIndex);
         });
 
-        musicBackbtn.addEventListener("click", ()=>{
-            musicIndex + 1;
-        })
-        musicNextbtn.addEventListener("click", ()=>{
-            musicIndex - 1;
-        })
-
+        
+        //플레이버튼
         function playMusic(){
             musicWrap.classList.add("paused");
             musicPlay.innerText = "pause";
             musicAudio.play();
         }
+        //정지버튼
         function pauseMusic(){
             musicWrap.classList.remove("paused");
             musicPlay.innerText = "play_arrow";
             musicAudio.pause();
         }
-
-
+        //이전버튼
+        function backMusic(){
+            musicIndex--;
+            loadMusic(musicIndex);
+        }
+        //다음버튼
+        function nextMusic(){
+            musicIndex++;
+            loadMusic(musicIndex);
+        }
        
+
         musicPlay.addEventListener("click", ()=>{
             const isMusicPaused = musicWrap.classList.contains("paused");
             isMusicPaused ? pauseMusic() : playMusic();            
         })
+
+        musicBackbtn.addEventListener("click", backMusic);
+        musicNextbtn.addEventListener("click", nextMusic);
     </script>
 </body>
 </html>
