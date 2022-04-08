@@ -229,7 +229,7 @@
                 </div>
                 <div class="timer">
                     <span class="current">0:00</span>
-                    <span class="max">0:00</span>
+                    <span class="duration">0:00</span>
                 </div>
             </div>
             <!-- //music__progress -->
@@ -284,6 +284,10 @@
        const musicPlay = document.querySelector("#control_play");
        const musicBackbtn = document.querySelector("#control_skip_previous");
        const musicNextbtn = document.querySelector("#control_skip_next");
+       const musicProgres = musicWrap.querySelector(".music__progress")
+       const musicProgresBar = musicWrap.querySelector(".bar")
+       const musicProgresCurrent = musicWrap.querySelector(".current")
+       const musicProgresDuration = musicWrap.querySelector(".duration")
        
 
        let musicIndex = 10;
@@ -295,12 +299,7 @@
             musicName.innerText = allMusic[num-1].name;
             musicArtist.innerText = allMusic[num-1].artist;
             musicAudio.src = `songs/${allMusic[num-1].audio}.mp3`;
-        };
-
-        window.addEventListener("load", ()=>{
-           loadMusic(musicIndex);
-        });
-
+        };      
         
         //플레이버튼
         function playMusic(){
@@ -317,7 +316,7 @@
         //이전버튼
         function backMusic(){   
             musicIndex--;
-            musicIndex < 1 ? musicIndex == allMusic.length : musicIndex = musicIndex;
+            musicIndex < 1 ? musicIndex = allMusic.length : musicIndex = musicIndex;
             loadMusic(musicIndex);
             playMusic();
             
@@ -325,19 +324,91 @@
         //다음버튼
         function nextMusic(){
             musicIndex ++;
-            musicIndex > allMusic.length ? musicIndex == 1 : musicIndex = musicIndex;
+            musicIndex > allMusic.length ? musicIndex = 1 : musicIndex = musicIndex;
             loadMusic(musicIndex);
             playMusic();
+            console.log(musicIndex);
         }
-       
 
+        //뮤직 진행바
+        //musicAudio.addEventListener("timeupdate", (e) => {
+        //    //console.log(e);
+        //    const currentTime = e.target.currentTime;
+        //    const duration = e.target.duration;
+        //    let progressWidth = (currentTime/duration) * 100;
+        //    musicProgresBar.style.width = `${progressWidth}%`;                  
+        //})
+            // 뮤직 진행바
+        musicAudio.addEventListener("timeupdate", (e) => {
+            //console.log(e);
+            const currentTime = e.target.currentTime;
+            const duration = e.target.duration;
+            let progressWidth = (currentTime / duration) * 100;
+            musicProgresBar.style.width = `${progressWidth}%`;
+
+
+            musicAudio.addEventListener("loadeddata", ()=>{
+            let audioDuration = musicAudio.duration;
+            let totalMin = Math.floor(audioDuration / 60);
+            let totalSec = Math.floor(audioDuration % 60);
+            if(totalSec < 10) totalSec = `0${totalSec}`;
+
+            musicProgresDuration.innerText = `${totalMin}:${totalSec}`;
+            });
+
+            let currentMin = Math.floor(currentTime / 60);
+            let currentSec = Math.floor(currentTime % 60);
+            if(currentSec < 10) currentSec = `0${currentSec}`;
+            musicProgresCurrent.innerText = `${currentMin}:${currentSec}`;
+        });       
+
+       
+        //플레이버튼
         musicPlay.addEventListener("click", ()=>{
             const isMusicPaused = musicWrap.classList.contains("paused");
             isMusicPaused ? pauseMusic() : playMusic();            
         })
+        //이전곡버튼
+        musicBackbtn.addEventListener("click", ()=>{
+            backMusic()
+        });
+        //다음곡버튼
+        musicNextbtn.addEventListener("click", ()=>{
+            nextMusic()
+        });
 
-        musicBackbtn.addEventListener("click", backMusic);
-        musicNextbtn.addEventListener("click", nextMusic);
+        //진행버튼 
+        musicProgres.addEventListener("click", (e)=>{
+            let progressWidth = musicProgres.clientWidth;
+            let clickedOffsetX = e.offsetX;
+            let songDuration = musicAudio.duration;
+
+            musicAudio.currentTime = (clickedOffsetX / progressWidth) * songDuration;
+            playMusic();
+        });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        //플레이
+        window.addEventListener("load", ()=>{
+           loadMusic(musicIndex);
+        });
     </script>
 </body>
 </html>
