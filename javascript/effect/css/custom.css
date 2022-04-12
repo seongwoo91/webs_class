@@ -60,6 +60,12 @@ body.img10 {
 body.img11 {
     background-image: url(../img/sliderbg11.jpg);
 }
+body.img12 {
+    background-image: url(../img/mousebody06.jpg);
+}
+body.img13 {
+    background-image: url(../img/mous07bg.jpg);
+}
 body::before {
     content: '';
     position: absolute;

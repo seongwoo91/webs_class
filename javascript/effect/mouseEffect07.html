@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>마우스 이펙트</title>
+    <link rel="stylesheet" href="css/NexonLv1Gothic.css">
+    <link rel="stylesheet" href="css/agate.min.css">
+    <link rel="stylesheet" href="css/custom.css">
+    <style>
+        body::before {
+            background: rgba(74, 86, 128, 0.87)
+        }
+        .mouse__wrap {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            color: #fff;
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+            /* cursor: none; */
+        }    
+        .mouse__text {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            width: 100%;
+            /* height: 100vh; */
+            overflow: hidden;
+        }
+        .mouse__text p {
+            font-size: 2vw;
+            margin-bottom: 2vw;
+        }
+        .mouse__img {
+            position: relative;
+        }
+        .mouse__img .img {
+            position: absolute;
+            left: 50%;
+            top: 0;
+            transform: translateX(-50%);
+            width: 400px;
+            opacity: 0;
+        }
+        .mouse__img .txt {
+            font-size: 3vw;
+        }
+    </style>
+</head>
+<body class="img13">
+    <!-- //main -->
+    <main>
+        <section id="mouseType01">
+            <div class="cursor"></div>
+            
+            <div class="mouse__wrap">
+                <div class="mouse__text">
+                    <p>Choose a job you love, and you will never have to work a day in your life</p>
+                </div>
+
+                <div>
+                    <a href="#" class="mouse__img">
+                        <div class="img">
+                            <img src="img/mouse07-1.jpg" alt="">
+                        </div>
+                        <span class="txt">좋아하는 </span>                        
+                    </a>
+                    <a href="#" class="mouse__img">
+                        <div class="img">
+                            <img src="img/mouse07-2.jpg" alt="">
+                        </div>
+                        <span class="txt"> 직업을 </span>                        
+                    </a>
+                    <a href="#" class="mouse__img">
+                        <div class="img">
+                            <img src="img/mouse07-3.jpg" alt="">
+                        </div>
+                        <span class="txt"> 택하면 </span>                        
+                    </a>
+                    <a href="#" class="mouse__img">
+                        <div class="img">
+                            <img src="img/mouse07-4.jpg" alt="">
+                        </div>
+                        <span class="txt"> 평생 </span>                        
+                    </a>
+                    <a href="#" class="mouse__img">
+                        <div class="img">
+                            <img src="img/mouse07-5.jpg" alt="">
+                        </div>
+                        <span class="txt"> 일하지 </span>                        
+                    </a>
+                    <a href="#" class="mouse__img">
+                        <div class="img">
+                            <img src="img/mouse07-6.jpg" alt="">
+                        </div>
+                        <span class="txt"> 않아도 </span>                        
+                    </a>
+                    <a href="#" class="mouse__img">
+                        <div class="img">
+                            <img src="img/mouse07-7.jpg" alt="">
+                        </div>
+                        <span class="txt"> 될것이다 </span>                        
+                    </a>                    
+                </div>
+            </div>            
+        </section>
+
+    </main>
+    <!-- info -->
+    <div class="info">
+        <div class="title">
+            <h1><a href="mouseEffect.html">JavaScript Mouse Effect07</a></h1>
+            <p>마우스 이펙트 - 텍스트 효과</p>
+        </div>
+        <div class="number">
+            <ul>
+                <li><a href="mouseEffect01.html">1</a></li>
+                <li><a href="mouseEffect02.html">2</a></li>
+                <li><a href="mouseEffect03.html">3</a></li>
+                <li><a href="mouseEffect04.html">4</a></li>
+                <li><a href="mouseEffect05.html">5</a></li>
+                <li><a href="mouseEffect06.html">6</a></li>
+                <li class="active"><a href="mouseEffect07.html">7</a></li>
+                <li><a href="mouseEffect08.html">8</a></li>
+            </ul>
+        </div>
+        <!-- 소스보기 -->
+        <div class="source">
+            <button class="source-btn">소스보기</button>
+            <div id="modal">
+                <div class="modal-wrap">
+                    <div class="modal-cont">
+                        <div class="code-view">
+                            <div class="view-header" aria-hidden="true">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </div>
+                            <div class="view-title">
+                                <ul>
+                                    <li class="active"><a href="#">HTML</a></li>
+                                    <li><a href="#">CSS</a></li>
+                                    <li><a href="#">JavaScript</a></li>
+                                </ul>
+                            </div>
+                            <div class="view-cont">
+                                <div>
+<pre><code class="language-html"></code></pre>
+                                </div>
+                                <!-- //cont1 -->
+                                <div>
+<pre><code class="language-css"></code></pre>
+                                </div>
+                                <!-- //cont2 -->
+                                <div>
+<pre><code class="language-javascript"></code></pre>
+                                </div>
+                                <!-- //cont3 -->
+                            </div>
+                        </div>
+                    </div>
+                    <button class="modal-close">닫기</button>
+                </div>
+            </div>
+        </div>       
+    </div>
+    <!-- //info -->
+    <!-- script -->
+    <script src="js/highlight.min.js"></script>
+    <script src="js/custom.js"></script>
+    <script src="js/gsap.js"></script>    
+    <script>
+        //highlight();
+        //modal();
+        //tabMenu();
+
+        const mouseImg = document.querySelectorAll(".mouse__img");
+
+        mouseImg.forEach((item)=>{
+            const imageWrap = item.querySelector(".img");
+            const imageWrapBounds = imageWrap.getBoundingClientRect();
+            let itemBounds = item.getBoundingClientRect();
+
+            const onMouseEnter = () => {
+                gsap.set(imageWrap, {xPercent:50, yPercent:50, rotation:-15, scale:0.3 ,opacity:0, ease:Power4.easeOut});
+                gsap.to(imageWrap, {xPercent:50, yPercent:50, rotation:0, scale:1 ,opacity:1 });
+            };
+
+            const onMouseLeave = () => {
+                gsap.to(imageWrap, {xPercent: -50, yPercent:-100, rotation:15, scale:0.3, opacity:0})
+            }
+
+            const onMouseMove = ({x, y}) => {
+                gsap.to (imageWrap,
+                 {duration:1.25,
+                    x: Math.abs(x - itemBounds.left) - imageWrapBounds.width - 100 ,
+                    y: Math.abs(y - itemBounds.top) - imageWrapBounds.height - 100                      
+                })
+            }
+
+            item.addEventListener("mouseenter", onMouseEnter)
+            item.addEventListener("mouseleave", onMouseLeave)
+            item.addEventListener("mousemove", onMouseMove)
+        });
+    </script>
+</body>
+</html>
