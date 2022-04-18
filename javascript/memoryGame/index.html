@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>재미있는 카드게임</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -80,11 +81,33 @@
             50% {transform: translateX(8px)}
             100% {transform: translateX(0)}
         }
+        .card__sound {
+            position: absolute;
+            right: 20px;
+            top: 20px;
+            
+        }
+        .card__sound button {
+            line-height: 40px;
+            width: 40px;height: 40px;
+            background: #fff;            
+            color: #007bff;
+            text-align: center;
+            line-height: 40px;
+            border-radius: 50%; 
+            cursor: pointer;  
+        }
+
     </style>
 </head>
 <body>
     <div class="wrap__card">
         <div class="card__inner">
+            <div class="card__sound">
+                <button class="material-icons">volume_up</button>
+                <!-- <span class="material-icons">volume_off</span> -->
+                <audio id="song" src="sound/succsess.mp3" loop="loop"></audio>
+            </div>
             <ul class="cards">
                 <li>
                     <div class="view front">
@@ -227,6 +250,9 @@
         //07. 빨리 클릭하면 버그 발생
 
         const cards = document.querySelectorAll(".cards li");
+        const sound = document.querySelector(".card__sound button");
+        const song = document.querySelector("#song");
+        
 
         let cardOne, cardTwo;
         let disableDeck = false;
@@ -274,15 +300,30 @@
                 disableDeck = false;
             },1200);
             }
-            
-
-            
+                       
         }
 
         cards.forEach(card=>{
             card.addEventListener("click", flipCard); 
         })
 
+        //sound.addEventListener("click", function(){
+        //    
+        //})
+        sound.addEventListener("click", ()=>{
+            sound.classList.toggle(".is-playing");
+
+            if(sound.classList.contains(".is-playing")){
+                sound.innerText = "volume_off";
+                song.play();
+            } else {
+                sound.innerText = "volume_up";
+                song.pause();
+            }
+        })
+
+
+        console.log();
         
     </script>
 </body>
