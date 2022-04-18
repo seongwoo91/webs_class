@@ -1,0 +1,682 @@
+/* 메뉴바 */
+* {
+    font-family: 'Poppins', sans-serif;
+}
+/* 컨테이너 */
+.container {
+    width: 1440px;
+    margin: 0 auto;
+}
+
+#wrap { margin: 0 auto;
+}
+/* 메뉴부분 */
+#header {
+    width: 1440px;
+    height: 100px;
+    display: flex;
+    padding: 10px;
+    justify-content: space-between;
+    padding: 20px;
+    margin: 0 auto;
+    margin-bottom: 100px;
+}
+#header .logo {
+    display: inline-block;
+    display: flex;
+    margin-top: 20px;
+}
+#header .logo .pik {
+    background-image: url(../img/logo1.jpg);
+    width: 35px;
+    height: 35px;
+}
+#header .logo a {
+    margin-left: 10px;
+    font-size: 30px;
+    line-height: 1;
+}
+#header .menu {
+    margin-top: 20px;
+    display: inline-block;
+    display: flex;
+    margin-right: 200px;
+    
+}
+#header .menu a {
+    font-size: 17px;
+    margin: 0 25px;
+    font-weight: 600;
+}
+
+#header .my {
+    display: flex;
+    position: relative;
+    align-items: center;
+    margin-top: 20px;
+}
+#header .my div:nth-child(1) {
+    background-image: url(../img/icon1.jpg);
+    width: 24px;
+    height: 24px;
+    margin-right: 25px;
+}
+#header .my div:nth-child(2) {
+    background-image: url(../img/icon2.jpg);
+    width: 24px;
+    height: 24px;
+    margin-right: 25px;
+}
+#header .my div:nth-child(3) {
+    background-image: url(../img/icon3.jpg);
+    width: 24px;
+    height: 24px;
+}
+/* 배너부분 */
+#banner {
+    width: 100%;
+    height: 853px;
+    position: relative;
+    margin: 0 auto;
+
+}
+#banner .banner_imgtxt {
+    background-image: url(../img/shopa.jpg);
+    background-repeat: no-repeat;
+    background-position:right 20% top 50%;
+    width: 100%;
+    height: 853px;
+}
+#banner .banner_imgtxt .container .desc {
+
+}
+#banner .banner_imgtxt .container .desc h4 {
+    font-family: 'Poppins';
+    font-size: 80px;
+    line-height: 1;
+    font-weight: 600;
+}
+#banner .banner_imgtxt .container .desc p {
+    margin-top: 55px;
+    font-size: 18px;
+}
+#banner .banner_imgtxt .container .desc strong {
+    position: absolute;
+    left: 42%;
+    bottom: 10%;
+    font-size: 20px;
+    
+}
+#banner .banner_imgtxt .desc div {
+
+}
+#banner .banner_imgtxt .desc div a {
+
+}
+.banner_imgtxt .btn {
+    margin-top: 70px;
+}
+.banner_imgtxt .btn .btn1 {
+    width: 202px;
+    height: 70px;
+    background: #c4a586;
+    color: #fff;
+    padding: 20px 35px;
+    margin-right: 26px;
+}
+.banner_imgtxt .btn .btn2 {
+    width: 202px;
+    height: 70px;
+    background: #fff;
+    color: #c4a586;
+    padding: 20px 50px;
+    border: 1px solid #c4a586;
+}
+
+/* 중간 기업로고 */
+#centerlogo {
+    width: 1440px;
+    height: 126px;
+    margin: 0 auto;
+}
+#centerlogo .clogo {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+#centerlogo .clogo .clogo1 {
+    background-image: url(../img/clogo1\(96x47\).jpg);
+    width: 96px;
+    height: 47px;
+}
+#centerlogo .clogo .clogo2 {
+    background-image: url(../img/clogo2\(109x38\).jpg);
+    width: 109px;
+    height: 38px;
+}
+#centerlogo .clogo .clogo3 {
+    background-image: url(../img/clogo3\(147x61\).jpg);
+    width: 147px;
+    height: 61px;
+}
+#centerlogo .clogo .clogo4 {
+    background-image: url(../img/clogo4\(110x32\).jpg);
+    width: 110px;
+    height: 32px;
+}
+#centerlogo .clogo .clogo5 {
+    background-image: url(../img/clogo5\(97x28\).jpg);
+    width: 97px;
+    height: 28px;
+}
+#centerlogo .clogo .clogo6 {
+    background-image: url(../img/clogo6\(122x24\).jpg);
+    width: 122px;
+    height: 24px;
+}
+
+/* 중간 텍스트이미지 */
+#text_image1 {
+    width: 1440px;
+    height: 388px;
+    margin: 0 auto;
+    display: flex;
+}
+#text_image1 .timage1 {
+    width: 720px;
+    height: 388px;
+    background: #FCEFE9;
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+}
+#text_image1 .timage1 .image1{
+    background-image: url(../img/centerimage1.png);
+    width: 348px;
+    height: 388px;
+}
+#text_image1 .timage1 .image1 h4 {
+    position: absolute;
+    left: 101px;
+    top: 110px;
+    font-size: 34px;
+    font-family: 'Poppins';
+}
+#text_image1 .timage1 .image1 p {
+    position: absolute;
+    left: 101px;
+    top: 289px;
+    font-size: 20px;
+    font-family: 'Poppins';
+}
+#text_image1 .timage2 {
+    width: 720px;
+    height: 388px;
+    background: #FAE2C8;
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+
+}
+#text_image1 .timage2 .image2{
+    background-image: url(../img/centerimage2.png);
+    width: 404px;
+    height: 388px;   
+}
+#text_image1 .timage2 .image2 h4 {
+    position: absolute;
+    left: 101px;
+    top: 110px;
+    font-size: 34px;
+    font-family: 'Poppins';
+}
+#text_image1 .timage2 .image2 p {
+    position: absolute;
+    left: 101px;
+    top: 289px;
+    font-size: 20px;
+    font-family: 'Poppins';
+}
+
+/* 카드이미지 */
+#cardimage1 {
+    width: 1052px;
+    height: 1124px;
+    margin: 0 auto;
+    margin-top: 173px;
+}
+#cardimage1 .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+#cardimage1 .header .txt1 {
+    color: #3d3d3f;
+    font-size: 50px;
+    font-weight: bold;
+}
+#cardimage1 .header .txt2 a,
+#cardimage1 .header .txt3 a {
+    font-weight: bold;
+    font-size: 23px;
+    color: #a9a7a6;
+    margin-left: 90px;
+}
+#cardimage1 .header .txt4 a {
+    color: #3d3d3f;
+    font-size: 17px;
+    font-weight: bold;
+    margin-left: 200px;
+
+}
+#cardimage1 .header .arrow {
+    background-image: url(../img/Arrow.jpg);
+    width: 41.5px;
+    height: 19px;
+}
+#cardimage1 .menu {
+    width: 421px;
+    height: 20px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 111px;
+    margin-bottom: 150px;
+}
+#cardimage1 .menu a {
+    color:#a9a7a6;
+    font-size: 18px;
+}
+#cardimage1 .menu a:hover {
+    color :#3d3d3f;
+    font-weight: bold;
+}
+.card1 {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 191px;
+}
+
+.card1 .cardbox1,
+.card1 .cardbox2,
+.card1 .cardbox3 {
+    width: 312px;
+    height: 305px;
+    background: #fff4e8;
+    border-radius: 3px;
+}
+.card1 .cardbox1 .price,
+.card1 .cardbox2 .price,
+.card1 .cardbox3 .price {
+    display: flex;
+    justify-content: space-around;
+}
+.card1 .cardbox1 .price .price1,
+.card1 .cardbox2 .price .price1,
+.card1 .cardbox3 .price .price1 {
+    color : #3d3d3f;
+    font-size: 19px;
+    font-weight: bold;
+    margin-left: 22px;
+}
+.card1 .cardbox1 .price .price2,
+.card1 .cardbox2 .price .price2,
+.card1 .cardbox3 .price .price2 {
+    text-decoration: line-through;
+    font-size: 15px;
+    color: #a9a7a6;
+    margin-right: 85px;
+    margin-top: 5px;
+}
+.card1 .cardbox1 .cart,
+.card1 .cardbox2 .cart,
+.card1 .cardbox3 .cart {
+    width: 137px;
+    height: 40px;
+    background-color: #d9ab82;
+    border-radius: 40px;
+    display: flex;
+    margin: -20px 0px 23px 87.5px;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.card1 .cardbox1 .cart p {
+    color: #fff;
+    font-size: 14px;
+}
+.card1 .cardbox2 .cart p {
+    color: #fff;
+    font-size: 14px;
+}
+.card1 .cardbox3 .cart p {
+    color: #fff;
+    font-size: 14px;
+}
+.card1 .cardbox1 .cart .cart_image,
+.card1 .cardbox2 .cart .cart_image,
+.card1 .cardbox3 .cart .cart_image {
+    background-image: url(../img/500500.svg);
+    width: 26px;
+    height: 26px;
+}
+.card1 .cardbox1 .name,
+.card1 .cardbox2 .name,
+.card1 .cardbox3 .name {
+    font-size: 26px;
+    margin-left: 51px;
+    font-weight: bold;
+    margin-bottom: 32px;
+    color : #3d3d3f;
+}
+
+.card1 .cardbox1 .image {
+    background-image: url(../img/cardimage1.png);
+    width: 312px;
+    height: 290px;
+}
+
+.card1 .cardbox2 .image {
+    background-image: url(../img/cardimage2.png);
+    width: 312px;
+    height: 262px;
+}
+.card1 .cardbox3 .image {
+    background-image: url(../img/cardimage3.png);
+    width: 312px;
+    height: 258px;
+}
+
+.card2 {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 191px;
+}
+
+.card2 .cardbox1,
+.card2 .cardbox2,
+.card2 .cardbox3 {
+    width: 312px;
+    height: 305px;
+    background: #fff4e8;
+    border-radius: 3px;
+}
+.card2 .cardbox1 .price,
+.card2 .cardbox2 .price,
+.card2 .cardbox3 .price {
+    display: flex;
+    justify-content: space-around;
+}
+.card2 .cardbox1 .price .price1,
+.card2 .cardbox2 .price .price1,
+.card2 .cardbox3 .price .price1 {
+    color : #3d3d3f;
+    font-size: 19px;
+    font-weight: bold;
+    margin-left: 22px;
+}
+.card2 .cardbox1 .price .price2,
+.card2 .cardbox2 .price .price2,
+.card2 .cardbox3 .price .price2 {
+    text-decoration: line-through;
+    font-size: 15px;
+    color: #a9a7a6;
+    margin-right: 85px;
+    margin-top: 5px;
+}
+.card2 .cardbox1 .cart,
+.card2 .cardbox2 .cart,
+.card2 .cardbox3 .cart {
+    width: 137px;
+    height: 40px;
+    background-color: #d9ab82;
+    border-radius: 40px;
+    display: flex;
+    margin: -20px 0px 23px 87.5px;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.card2 .cardbox1 .cart p {
+    color: #fff;
+    font-size: 14px;
+}
+.card2 .cardbox2 .cart p {
+    color: #fff;
+    font-size: 14px;
+}
+.card2 .cardbox3 .cart p {
+    color: #fff;
+    font-size: 14px;
+}
+.card2 .cardbox1 .cart .cart_image,
+.card2 .cardbox2 .cart .cart_image,
+.card2 .cardbox3 .cart .cart_image {
+    background-image: url(../img/500500.svg);
+    width: 26px;
+    height: 26px;
+}
+.card2 .cardbox1 .name,
+.card2 .cardbox2 .name,
+.card2 .cardbox3 .name {
+    font-size: 26px;
+    margin-left: 51px;
+    font-weight: bold;
+    margin-bottom: 32px;
+    color : #3d3d3f;
+}
+
+.card2 .cardbox1 .image {
+    background-image: url(../img/cardimage4.png);
+    width: 312px;
+    height: 286px;
+}
+
+.card2 .cardbox2 .image {
+    background-image: url(../img/cardimage5.png);
+    width: 312px;
+    height: 293px;
+}
+.card2 .cardbox3 .image {
+    background-image: url(../img/cardimage6.png);
+    width: 312px;
+    height: 294px;
+}
+/* 텍스트이미지2 */
+.cb_box {
+    position: relative;
+    width: 1110px;
+    height: 811px;
+    margin: 0 auto;
+    margin-top: 307px;
+}    
+
+.cb_image {
+    background-image: url(../img/cbimg1.jpg);
+    width: 502px;
+    height: 588px;
+}
+.cb_box h2 {
+    position: absolute;
+    left: 577px;
+    top: 69px;
+    font-size: 53px;
+    line-height: 56px;
+    color: #3d3d3f;
+    font-weight: bold;
+    display: block;
+}
+.cb_box p {
+    position: absolute;
+    left: 577px;
+    top: 224px;
+    font-size: 18px;
+    line-height: 28px;
+    color: #72696a;   
+}
+
+/* 푸터 */
+.txt_img3 {
+    display: flex;
+    width: 1440px;
+    height: 520px;
+    margin: 0 auto;    
+    padding: 130px 135px;
+    position: relative;
+}
+.t_box .logobox{
+    font-size: 14px;
+    line-height: 20px;
+    color: #fe8432;
+    border: 1px solid #fe8432;
+    border-radius: 18px;
+    display: inline;
+    padding: 8px 36px 8px 35px;
+}
+.t_box h2{
+    margin-top: 38px;
+    font-size: 53px;
+    color: #3d3d3f;
+    line-height: 56px;
+    font-weight: bold;
+}
+.t_box .btnbox{
+    margin-top: 43px;
+    background: #f5f5f5;
+    width: 445px;
+    height: 73px;
+    display: flex;
+    position: relative;
+    border-radius: 5px;
+}
+.btnbox p {
+    font-size: 16px;
+    text-align: left;
+    color:#9f9fac;
+    margin-top: 25px;
+    margin-left: 25px;
+}
+.btnbox .st_btn {
+    width: 198px;
+    height: 60px;
+    background: #d9ab82;
+    border-radius: 6px;
+    right: 6px;
+    top: 6px;
+    position: absolute;
+}    
+.st_btn .sbox {
+    display: flex;
+    position: relative;
+}
+.st_btn .arw_btn {
+    width: 50px;
+    height: 54px;
+    border-radius: 6px;
+    background: #fae2c8;
+    position: absolute;
+    right: 3px;
+    top: 3px;    
+}
+.arw_btn .arw {
+    background-image: url(../img/arw.svg);
+    width: 20px;
+    height: 11px;
+    margin-left: 15px;
+    margin-top: 20px;
+}
+.st_btn p {
+    color:#fff;
+    font-size: 18px;
+    position: absolute;
+    left: 0; top: -8px;
+  
+}
+.f_img {
+    background-image: url(../img/71x59.jpg);
+    width: 71px;
+    height: 59px;
+    margin-top: 223px;
+    margin-left: -140px;
+}
+.txt_img3 a {
+    margin-top: 236px;
+    margin-left: 10px;
+    text-decoration: underline;
+}
+.txt_img3 .c_img {
+    background-image: url(../img/258x279.jpg);
+    width: 258px;
+    height: 279px;
+    right: 32px;
+    top: 160px;
+    position: absolute;
+}
+.bm_menu {
+    width: 1440px;
+    height: 50px;
+    margin: 0 auto;
+    padding: 0 0 0 135px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.menu2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.menu2 a {
+    font-size: 15px;
+    line-height: 20px;
+    color: #494949;
+    margin: 0 43px;
+}
+.my2 {
+    display: flex;
+    align-items: center;  
+    margin-right: 100px;  
+}
+.my2 .btn1 {
+    background-image: url(../img/bi1\(6x12\).jpg);
+    width: 6px;
+    height: 12px;
+    margin-right: 25px;
+}
+.my2 .btn2 {
+    background-image: url(../img/bi2\(13x9\).jpg);
+    width: 13px;
+    height: 9px;
+    margin-right: 25px;
+}
+.my2 .btn3 {
+    background-image: url(../img/bi3\(12x12\).jpg);
+    width: 12px;
+    height: 12px;
+    margin-right: 25px;
+}
+.logo2 {
+    display: flex;
+}
+.logo2 .pik {
+    background-image: url(../img/logo1.jpg);
+    width: 35px;
+    height: 35px;
+}
+.lop {      
+    font-size: 30px;
+    line-height: 1;
+    display: inline-block;
+    padding-left: 10px;
+}
+/* 푸터 */
+#footer {
+    width: 1440px;
+    height: 90px;
+    margin: 0 auto;
+}
+#footer p {
+    padding: 30px 0 0 0;
+    text-align: center;
+    margin-left: 120px;
+    font-size: 12px;
+    color: #adadad;
+}

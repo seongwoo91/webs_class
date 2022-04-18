@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>웹디자인기능사</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        .ir_pm {
+            display: block;
+            overflow: hidden;
+            font-size: 0;
+            line-height: 0;
+            text-indent: -9999px;
+        }
+        .ir_wa {
+            display: block;
+            overflow: hidden;
+            position: relative;
+            z-index: -1;
+            width: 100%;
+            height: 100%;
+        }
+        .ir_so {
+            overflow: hidden;
+            position: absolute;
+            width: 0;
+            height: 0;
+            line-height: 0;
+            text-indent: -9999px;
+        }
+        #wrap {
+            width: 960px;
+            margin: 0 auto;        
+        }
+        
+        a {
+            text-decoration: none;
+            color: #000;
+        }
+        ol,
+        ul,
+        li {
+            list-style: none;
+        }
+        .clearfix::before, .clearfix::after {display: block; content: ''; clear: both;}
+        #header {height: 100px;}
+        #header h1 {float: left; padding-top: 5px;}
+        #header h1 img {width: 130px;}
+        #header .nav {float: right; z-index: 100; position: relative; margin-top: 20px;}
+        #header .nav li {position: relative; float: left; width: 120px; text-align: center;}
+        #header .nav li a {display: block; padding: 20px 15px; background: #ccc; white-space: nowrap;}
+        #header .nav li a:hover {background: #ddd;}
+        #header .nav li ul.submenu {display: none; position: absolute; left: 0; top: 59px; background: #ddd;}
+        #header .nav li ul.submenu li a {padding: 10px;}
+        #header .nav li ul.submenu li a:hover {background: #999;}
+
+        /* #header .menu {
+        }
+        #header .menu ul {
+            float: right;
+        }
+        #header .menu ul li {
+            display: inline;
+        }
+        #header .menu ul li a {
+            display: inline-block;
+            padding: 20px 20px 0px 20px;
+            font-weight: 700;
+            font-size: 18px;
+        } */
+        .slider_warp {
+            
+        }
+        .slider_img {  /* 화면 보이는 구간 */
+           width: 960px;
+           height: 370px;
+           overflow: hidden;           
+        }
+        .slider_inner {  /* 이미지 움직이는 영역*/
+         display: flex;
+         width: 2880px;       /* 이미지 총 길이 */
+         transform: translateX(0); 
+        }       
+        .slider {
+         width: 960px;
+         position: relative;
+        }
+        .section2 {
+            display: grid;
+            grid-template-columns: 47.5% 5% 47.5%;
+            margin-bottom: 30px;
+        }
+        .notice {position: relative; padding: 15px;}
+        .notice ul li {float: left; margin-right: 20px;}
+        .notice ul li a {font-size: 24px; color: #999; font-weight: bold;}
+        .notice ul li.active a {color: #000;}
+        .notice ul li ul {position: absolute; left: 30px; top: 70px;}
+        .notice ul li ul li {width: 95%; padding: 5px 0;}
+        .notice ul li ul li a {float: left; width: 60%; font-size: 16px; color: #333;
+            overflow: hidden; white-space: nowrap; text-overflow: ellipsis; font-weight: normal;}
+        .notice ul li ul li span {float: right; width: 20%;}
+        .notice .more {position: absolute; right: 15px; top: 15px;}      
+        .section2 {
+            margin-top: 30px;
+        }
+        .popup {
+            background-image: url(img/web2.jpg);
+            height: 220px;
+            background-size: cover;
+        }
+        .cardsection {
+            display: grid;
+            grid-template-columns: 23.5% 2% 23.5% 2% 23.5% 2% 23.5%
+        }
+        .card1 {
+            background-image: url(img/web3.jpg);
+            height: 240px;
+            background-size: cover;
+            display: block;
+        }
+        .card2 {
+            background-image: url(img/web4.jpg);
+            height: 240px;
+            background-size: cover;
+        }
+        .card3 {
+            background-image: url(img/web5.jpg);
+            height: 240px;
+            background-size: cover;
+        }
+        .card4 {
+            background-image: url(img/web6.jpg);
+            height: 240px;
+            background-size: cover;
+        }
+        .card1 p {
+            display: block;
+        }
+    </style>    
+</head>
+<body>
+    <div id="wrap">
+        <header id="header" class="clearfix">
+            <h1><a href="#"><img src="img/weblogo.jpg" alt="롯데월드"></a></h1>
+            <nav class="nav">
+                <ul class="clearfix">
+                    <li><a href="#">즐길거리</a>
+                        <ul class="submenu">
+                            <li><a href="#">subMenu-1</a></li>
+                            <li><a href="#">subMenu-2</a></li>
+                            <li><a href="#">subMenu-3</a></li>
+                            <li><a href="#">subMenu-4</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">요금/우대혜택</a>
+                        <ul class="submenu">
+                            <li><a href="#">subMenu-1</a></li>
+                            <li><a href="#">subMenu-2</a></li>
+                            <li><a href="#">subMenu-3</a></li>
+                            <li><a href="#">subMenu-4</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">참여프로그램</a>
+                        <ul class="submenu">
+                            <li><a href="#">subMenu-1</a></li>
+                            <li><a href="#">subMenu-2</a></li>
+                            <li><a href="#">subMenu-3</a></li>
+                            <li><a href="#">subMenu-4</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">이용가이드</a>
+                        <ul class="submenu">
+                            <li><a href="#">subMenu-1</a></li>
+                            <li><a href="#">subMenu-2</a></li>
+                            <li><a href="#">subMenu-3</a></li>
+                            <li><a href="#">subMenu-4</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">소통서비스</a>
+                        <ul class="submenu">
+                            <li><a href="#">subMenu-1</a></li>
+                            <li><a href="#">subMenu-2</a></li>
+                            <li><a href="#">subMenu-3</a></li>
+                            <li><a href="#">subMenu-4</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+        <!-- //header -->       
+        </header>
+        <!-- //메뉴 -->
+        <main>
+            <section class="banner">
+                <div class="slider_warp">
+                    <div class="slider_img">
+                        <div class="slider_inner">
+                            <div class="slider"><img src="img/web1.jpg" alt="이미지1"></div>
+                            <div class="slider"><img src="img/web1-1.jpg" alt="이미지2"></div>
+                            <div class="slider"><img src="img/web1-2.jpg" alt="이미지3"></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- //슬라이드배너 -->
+
+            <div class="section2">
+                <article class="notice">
+                    <ul class="clearfix">
+                        <li class="active"><a href="#">롯데월드 소식</a>
+                            <ul>
+                                <li><a href="#">1. 첫번째 목록입니다. 첫번째 목록입니다. 첫번째 목록입니다.</a><span>2019.05.03</span></li>
+                                <li><a href="#">1. 첫번째 목록입니다. 첫번째 목록입니다. 첫번째 목록입니다.</a><span>2019.05.03</span></li>
+                                <li><a href="#">1. 첫번째 목록입니다. 첫번째 목록입니다. 첫번째 목록입니다.</a><span>2019.05.03</span></li>
+                                <li><a href="#">1. 첫번째 목록입니다. 첫번째 목록입니다. 첫번째 목록입니다.</a><span>2019.05.03</span></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">뉴스&middot;공지</a>
+                            <ul>
+                                <li><a href="#">2. 두번째 목록입니다. 두번째 목록입니다. 두번째 목록입니다.</a><span>2019.05.03</span></li>
+                                <li><a href="#">2. 두번째 목록입니다. 두번째 목록입니다. 두번째 목록입니다.</a><span>2019.05.03</span></li>
+                                <li><a href="#">2. 두번째 목록입니다. 두번째 목록입니다. 두번째 목록입니다.</a><span>2019.05.03</span></li>
+                                <li><a href="#">2. 두번째 목록입니다. 두번째 목록입니다. 두번째 목록입니다.</a><span>2019.05.03</span></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <a href="#" class="more">더보기 +</a>
+                </article>
+                <div></div>
+                <div>
+                    <div class="popup"></div>
+                </div>
+            </div>  
+            <!-- //탭메뉴 -->
+
+            <h3>특별한 경험</h3>
+            <div class="cardsection">
+                <div class="card1">
+                    <div class="image1"></div>
+                    <a href="#">연간 회원 안내</a>                    
+                </div>   
+                <div></div>
+                <div class="card2">
+                    <div class="image2"></div>
+                </div>
+                <div></div>
+                <div class="card3">
+                    <div class="image3"></div>
+                </div>
+                <div></div>
+                <div class="card4">
+                    <div class="image4"></div>
+                </div>
+            </div>
+            
+            <!-- //카드이미지 -->            
+        </main>
+    </div>
+
+    <script src="../assets/js/jquery-1.9.1.min.js"></script>
+    <script src="js/script.js"></script>
+    <script>
+        const sliderWrap = document.querySelector(".slider_wrap")
+        const sliderImg = document.querySelector(".slider_img")
+        const slider = document.querySelectorAll(".slider")
+        const sliderInner = document.querySelector(".slider_inner")
+        let sliderCount = slider.length; 
+        let currentIndex = 0;
+        let sliderWidth = sliderImg.offsetWidth; 
+        let sliderClone = sliderInner.firstElementChild.cloneNode(true);
+        sliderInner.appendChild(sliderClone);
+        function sliderEffect(){        
+            currentIndex++;         
+            sliderInner.style.transition ="all 0.3s";    
+            sliderInner.style.transform ="translateX(-"+ sliderWidth * currentIndex +"px)";  
+            if (currentIndex == 3){
+                setTimeout(()=>{              
+                sliderInner.style.transition ="0s";              
+                sliderInner.style.transform ="translateX(0px)";  
+                },300) 
+                currentIndex = 0;  
+            }
+        }
+        setInterval(sliderEffect, 2000); 
+
+        
+
+
+    </script>
+</body>
+</html>

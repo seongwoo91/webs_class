@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Reference06</title>
+
+    <!-- 파비콘 -->
+    <link rel="shortcut icon" href="../assets/face/css50.png">
+    <link rel="apple-touch-icon-precomposed" href="../assets/face/css50.png">
+    <link rel="icon" href="../assets/face/css50.png" sizes="128x128">
+    <!-- 파비콘 -->
+
+    <!-- CSS연동 -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/prism.css">
+    <!-- //CSS연동 -->
+</head>
+
+<body>
+
+    <header id="header">
+        <h1><a href="#">라인 중학교 1학년 코딩반</a></h1>
+        <strong>박성우</strong>
+    </header>
+
+    <main id="contents">
+        <h2><a href="css.html"><em>CSS</em> float</a></h2>
+
+        <!-- menu -->
+        <div class="menu">
+            <ul>
+                <li><a href="css.html">속성</a></li>
+                <li><a href="cssReference01.html">기초 문법</a></li>
+                <li><a href="cssReference02.html">Block/Inline</a></li>
+                <li><a href="cssReference03.html">CSS 단위</a></li>
+                <li><a href="cssReference04.html">CSS 색상</a></li>
+                <li><a href="cssReference05.html">ID/CLASS 차이점</a></li>
+                <li class="active"><a href="cssReference06.html">float</a></li>
+                <li><a href="cssReference07.html">벤더프리픽스</a></li>
+                <li><a href="cssReference08.html">img표현방법</a></li>
+                <li><a href="cssReference09.html">IR 기법</a></li>
+            </ul>
+        </div>
+        <!-- //menu -->
+
+
+        <!-- refer -->
+        <div class="refer">
+            <div class="doc">
+                <h3>CSS에서 float으로 레이아웃을 잡을때 height값을 인식하지못해 <br>영역이 깨지는 현상이 발생하며 이와 같은 에러를 잡기위한 몇가지 방법을 정리했습니다.</h3>
+                <br>
+                <br>
+                <h1>1.깨지는 영역에 float:left를 사용</h1>
+                <p>모든 박스에 float:left를 사용해야 하며 코드가 복잡할경우 어디에 넣어야할지 알기 어려워 지므로 거의 쓰지않는 방법</p>
+                <br>
+                <h1>2.깨지는 영역에 clear:both를 사용</h1>
+                <p>어떤 영역에 사용해야하는지 쉽사리 파악하기가 힘드므로 추천하지 않는 방법</p>
+                <br>
+                <h1>3.부모요소에게 overflow:hidden을 사용</h1>
+                <p>손쉽게 바로잡을수 있는 방법이지만 2단 메뉴시에는 사용할수 없고, 웹표준사이트에서 제일 많이 사용됨</p>
+                <br>
+                <h1>4.클래스를 만들어 clearfix를 사용한다.</h1>
+                <p>클리어픽스는 특별히 문제가 날 확률이 적고, 반응형 웹사이트를 만들때 많이 사용된다.</p>
+            </div>
+        </div>
+        <!--// refer -->
+
+    </main>
+
+    <!-- script연동 -->
+    <script src="assets/js/prism.js"></script>
+    <!-- script연동-->
+</body>
+
+</html>

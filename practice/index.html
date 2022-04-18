@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/scss/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Brush+Script&family=Nanum+Gothic:wght@400;700;800&display=swap" rel="stylesheet">
+   </head>
+        <body>
+        <a href="" class="button">Flex</a>
+        <a href="" class="button reverse dark">Grid</a>
+        <a href="" class="button fast white">Fast</a>
+
+        <!-- dribbble -->
+        <a class="dribbble" href="https://dribbble.com/shots/7441241-Button-Hover-Effects" target="_blank">
+            <img src="https://cdn.dribbble.com/assets/dribbble-ball-mark-2bd45f09c2fb58dbbfb44766d5d1d07c5a12972d602ef8b32204d28fa3dda554.svg"
+                alt=""></a>
+
+        <script>
+            document.querySelectorAll('.button').forEach(button => button.innerHTML = '<div><span>' + button.textContent
+                .trim().split('').join('</span><span>') + '</span></div>');
+        </script>
+        </body>
+
+</html>

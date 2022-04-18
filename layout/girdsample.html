@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+        }
+        #wrap {
+            width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-areas: 
+                "header header header"
+                "nav nav nav"
+                "side1 article1 side2"
+                "side1 article2 side2"
+                "side1 article3 side2"
+                "footer footer footer"
+            ;
+            grid-template-columns: 25% 50% 25%;
+            grid-template-rows: 100px 100px 260px 260px 260px 100px;
+        }
+        #header {
+            grid-area: header;
+            background-color: #F8BBD0;
+        }
+        #nav {
+            grid-area: nav;
+            background-color: #F48FB1;
+        }
+        #side1 {
+            grid-area: side1;
+            background-color: #F06292;
+        }
+        #article1 {
+            grid-area: article1;
+            background-color: #EC407A;
+        }
+        #article2 {
+            grid-area: article2;
+            background-color: #E91E63;
+        }
+        #article3 {
+            grid-area: article3;
+            background-color: #D81B60;
+        }
+        #side2 {
+            grid-area: side2;
+            background-color: #C2185B;
+        }
+        #footer {
+            grid-area: footer;
+            background-color: #AD1457;
+        }
+    </style>        
+</head>
+<body>
+    <div id="wrap">
+        <div id="header"></div>
+        <div id="nav"></div>
+        <div id="side1"></div>
+        <div id="article1"></div>
+        <div id="article2"></div>
+        <div id="article3"></div>
+        <div id="side2"></div>
+        <div id="footer"></div>
+    </div>
+</body>
+</html>

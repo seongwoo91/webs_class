@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>레이아웃 평가1번</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            background-color: #EDE7F6;
+        }
+        #wrap {
+            width: 1200px;
+            height: 1080;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        #header {
+            width: 1200px;
+            height: 100px;
+            background-color: #D1C4E9;
+        }
+        #nav {
+            width: 1200px;
+            height: 100px;
+            background-color: #B39DDB;
+        }
+        #contents {
+            width: 1200px;
+            height: 780px;
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: column;
+        }
+        #footer {
+            width: 1200px;
+            height: 100px;
+            background-color: #9575CD;
+        }
+        #contents .aside {
+            width: 400px;
+            height: 780px;
+            background-color: #7E57C2;
+        }
+        #contents .article1 {
+            width:800px;
+            height: 390px;
+            background-color: #673AB7;
+        }
+        #contents .article2 {
+            width:800px;
+            height: 390px;
+            background-color: #5E35B1;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <header id="header"></header>
+        <nav id="nav"></nav>
+        <section id="contents">
+            <aside class="aside"></aside>
+            <article class="article1"></article>
+            <article class="article2"></article>
+        </section>
+        <footer id="footer"></footer>
+    </div>
+    
+</body>
+</html>
+
+  <!-- sample2 -->
+  <div id="sample02" class="sample">
+    <h3>02. 문자열 속성 : length : 문자열 길이 구하기 : 반환(숫자)</h3>
+    <div class="table">
+        <table>
+            <colgroup>
+                <col style="width: 4%">
+                <col style="width: 32%">
+                <col style="width: 22%">
+                <col style="width: 42%">
+            </colgroup>
+            <thead>
+                <tr>
+                    <th>번호</th>
+                    <th>기본값</th>
+                    <th>메서드</th>
+                    <th>결괏값</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="sample02_N1"></td>
+                    <td class="sample02_Q1"></td>
+                    <td class="sample02_M1"></td>
+                    <td class="sample02_R1"></td>
+                </tr>
+                <tr>
+                    <td class="sample02_N2"></td>
+                    <td class="sample02_Q2"></td>
+                    <td class="sample02_M2"></td>
+                    <td class="sample02_R2"></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="code">
+        <pre class="line-numbers"><code class="language-js">const str1 = "자바스크립트";
+const currentStr1 = str1.length;
+
+document.querySelector(".sample02_R1").innerHTML = currentStr1;
+
+const str2 = "javascript";
+const currentStr2 = str1.length;
+
+document.querySelector(".sample02_R2").innerHTML = currentStr2;
+    </div></div>
+
+<!-- //sample2 -->
+
+<!-- sample3 -->
+<div id="sample03" class="sample">
+<h3>03. 문자열 메서드 : toUpperCase() / toLowerCase()</h3>
+<div class="table">
+    <table>
+        <colgroup>
+            <col style="width: 4%">
+            <col style="width: 32%">
+            <col style="width: 22%">
+            <col style="width: 42%">
+        </colgroup>
+        <thead>
+            <tr>
+                <th>번호</th>
+                <th>기본값</th>
+                <th>메서드</th>
+                <th>결괏값</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="sample03_N1"></td>
+                <td class="sample03_Q1"></td>
+                <td class="sample03_M1"></td>
+                <td class="sample03_R1"></td>
+            </tr>
+            <tr>
+                <td class="sample03_N2"></td>
+                <td class="sample03_Q2"></td>
+                <td class="sample03_M2"></td>
+                <td class="sample03_R2"></td>
+            </tr>                      
+        </tbody>
+    </table>
+</div>
+<div class="code">
+    <pre class="line-numbers"><code class="language-js"></div>
+</div>
+<!-- //sample3 -->
+
+<!-- sample4 -->
+<div id="sample04" class="sample">
+<h3>05. 문자열 메서드 : trim() : 문자열 공백 제거 : 반환(문자열) </h3>
+<div class="table">
+    <table>
+        <colgroup>
+            <col style="width: 4%">
+            <col style="width: 32%">
+            <col style="width: 22%">
+            <col style="width: 42%">
+        </colgroup>
+        <thead>
+            <tr>
+                <th>번호</th>
+                <th>기본값</th>
+                <th>메서드</th>
+                <th>결괏값</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="sample04_N1"></td>
+                <td class="sample04_Q1"></td>
+                <td class="sample04_M1"></td>
+                <td class="sample04_R1"></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div class="code">
+    <pre class="line-numbers"><code class="language-js"></div>
+</div>
+<!-- //sample4 -->
+
+<!-- sample5 -->
+<div id="sample05" class="sample">
+<h3>06. 문자열 메서드 : indexOf() / lastIndexOf() / search() / includes() / startsWidth() / endwidth() : 문자여 검색 </h3>
+<div class="table">
+    <table>
+        <colgroup>
+            <col style="width: 4%">
+            <col style="width: 32%">
+            <col style="width: 22%">
+            <col style="width: 42%">
+        </colgroup>
+        <thead>
+            <tr>
+                <th>번호</th>
+                <th>기본값</th>
+                <th>메서드</th>
+                <th>결괏값</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="sample05_N1"></td>
+                <td class="sample05_Q1"></td>
+                <td class="sample05_M1"></td>
+                <td class="sample05_R1"></td>
+            </tr>
+            <tr>
+                <td class="sample05_N2"></td>
+                <td class="sample05_Q2"></td>
+                <td class="sample05_M2"></td>
+                <td class="sample05_R2"></td>
+            </tr>
+            <tr>
+                <td class="sample05_N3"></td>
+                <td class="sample05_Q3"></td>
+                <td class="sample05_M3"></td>
+                <td class="sample05_R3"></td>
+            </tr>
+            <tr>
+                <td class="sample05_N4"></td>
+                <td class="sample05_Q4"></td>
+                <td class="sample05_M4"></td>
+                <td class="sample05_R4"></td>
+            </tr>
+            <tr>
+                <td class="sample05_N5"></td>
+                <td class="sample05_Q5"></td>
+                <td class="sample05_M5"></td>
+                <td class="sample05_R5"></td>
+            </tr>
+            <tr>
+                <td class="sample05_N6"></td>
+                <td class="sample05_Q6"></td>
+                <td class="sample05_M6"></td>
+                <td class="sample05_R6"></td>
+            </tr>
+            <tr>
+                <td class="sample05_N7"></td>
+                <td class="sample05_Q7"></td>
+                <td class="sample05_M7"></td>
+                <td class="sample05_R7"></td>
+            </tr>
+            <tr>
+                <td class="sample05_N8"></td>
+                <td class="sample05_Q8"></td>
+                <td class="sample05_M8"></td>
+                <td class="sample05_R8"></td>
+            </tr>
+            <tr>
+                <td class="sample05_N9"></td>
+                <td class="sample05_Q9"></td>
+                <td class="sample05_M9"></td>
+                <td class="sample05_R9"></td>
+            </tr>
+            <tr>
+                <td class="sample05_N10"></td>
+                <td class="sample05_Q10"></td>
+                <td class="sample05_M10"></td>
+                <td class="sample05_R10"></td>
+            </tr>
+            <tr>
+                <td class="sample05_N11"></td>
+                <td class="sample05_Q11"></td>
+                <td class="sample05_M11"></td>
+                <td class="sample05_R11"></td>
+            </tr>                        
+        </tbody>
+    </table>
+</div>
+<div class="code">
+    <pre class="line-numbers"><code class="language-js"></div>
+</div>
+<!-- //sample5 -->

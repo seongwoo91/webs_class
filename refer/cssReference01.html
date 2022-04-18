@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Reference01</title>
+
+    <!-- 파비콘 -->
+    <link rel="shortcut icon" href="../assets/face/css50.png">
+    <link rel="apple-touch-icon-precomposed" href="../assets/face/css50.png">
+    <link rel="icon" href="../assets/face/css50.png" sizes="128x128">
+    <!-- 파비콘 -->
+
+    <!-- CSS연동 -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/prism.css">
+    <!-- //CSS연동 -->
+</head>
+
+<body>
+
+    <header id="header">
+        <h1><a href="#">라인 중학교 1학년 코딩반</a></h1>
+        <strong>박성우</strong>
+    </header>
+
+    <main id="contents">
+        <h2><a href="css.html"><em>CSS</em> 기초 문법</a></h2>
+
+        <!-- menu -->
+        <div class="menu">
+            <ul>
+                <li><a href="css.html">속성</a></li>
+                <li class="active"><a href="cssReference01.html">기초 문법</a></li>
+                <li><a href="cssReference02.html">Block/Inline</a></li>
+                <li><a href="cssReference03.html">CSS 단위</a></li>
+                <li><a href="cssReference04.html">CSS 색상</a></li>
+                <li><a href="cssReference05.html">ID/CLASS 차이점</a></li>
+                <li><a href="cssReference06.html">float</a></li>
+                <li><a href="cssReference07.html">벤더프리픽스</a></li>
+                <li><a href="cssReference08.html">img표현방법</a></li>
+                <li><a href="cssReference09.html">IR 기법</a></li>
+            </ul>
+        </div>
+        <!-- //menu -->
+
+
+        <!-- refer -->
+        <div class="refer">
+            <div class="doc">
+                <h3>CSS란?</h3>
+                <p>CSS(Cascading Style Sheets)는 HTML 같은 문서의 스타일을 꾸밀 때 사용하는 스타일 시트 언어입니다.<br>
+                글꼴, 배경색, 너비와높이, 위치등을 조정하거나 웹브라우저의 스크린 크기, 장치에 따라서 화면을 다르게 표시하도록 지정할수도 있습니다.
+                </p>
+
+                <h3>css 주석 표시방법</h3>
+                <div class="code"><pre><code>/* CSS 주석 */</code></pre></div>
+            
+            <h3>CSS 선언 방법</h3>
+            
+            <h4>내부 스타일</h4>
+            <p>HTML 파일 안에 &lt;style&gt; 태그로 스타일을 작성하는 방식입니다.</p>
+            <div class="code"><pre><code>&lt;style&gt;
+    .doc {
+        font-size: 18px;
+        line-height: 1.8;
+        margin-bottom: 200px;
+    }
+&lt;/style&gt;</code></pre></div>
+
+            <h4>외부 스타일</h4>
+            <p>link 태그를 이용하여 외부 CSS 파일을 연결하는 방식입니다.</p>    
+    <div class="code"><pre><code>&lt;link rel="stylesheet" href="assets/css/style.css"&gt;</code></pre></div>
+
+            <h4>인라인 스타일</h4>
+            <p>요소의 style 속성에 직접 스타일을 작성하는 방식입니다.<br>
+            최우선 순위이기 때문에 외부스타일과 혼합하여 사용하는경우 추후 수정에 어려움이 따를수있는 방식입니다.</p>
+            <div class="code"><pre><code>&lt;div style="color:black; margin:20px;"&gt;
+    ...
+&lt;/div&gt;</code></pre></div>
+        </div>
+        </div>
+
+        <!--// refer -->
+        <div class="doc"></div>
+    </main>
+
+    <!-- script연동 -->
+    <script src="assets/js/prism.js"></script>
+    <!-- script연동-->
+</body>
+
+</html>

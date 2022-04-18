@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>오답노트 정리</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    //1
+    {
+        document.write("3차 시험 오답노트 1번<br>")
+
+        const str = [100, 200, 300, 400, 500]
+
+        str.forEach(function (i) {
+            document.write(i + "반복문이 실행되었습니다.")
+            document.write("<br>")
+        })
+    }
+    //2
+    {
+        document.write("3차 시험 오답노트 2번<br>")
+
+        const obj = {
+            a: 100,
+            b: 200
+        }
+
+        for (let key in obj) {
+            document.write(key);
+            document.write(obj[key]);
+            document.write("<br>")
+        }
+    }
+    //3
+    {
+        document.write("3차 시험 오답노트 3번<br>")
+
+        for (let i = 1; i <= 10; i++) {
+            document.write(i);
+            if (i == 0) {
+                break;
+            }
+            document.write("<br>")
+        }
+    }
+    //4
+    {
+        document.write("3차 시험 오답노트 4번<br>")
+
+        const str = [100, 200];
+
+        for (let i of str) {
+            document.write(i + ".반복문이 실행되었습니다.", "<br>");
+        }
+        document.write("<br>")
+    }
+    //5 
+    {
+        document.write("3차 시험 오답노트 5번<br>")
+
+        const str = [100, 200, 600];
+
+        for (let i in str) {
+            document.write(str[i] + ".반복문이 실행되었습니다.", "<br>");
+        }
+    }
+    //6
+    {
+        document.write("3차 시험 오답노트 6번<br>")
+
+        let num = 1;
+
+        function gallery(num) {
+            if (num) {
+                if (num == 2) direct++;
+            } else {
+                if (num == 1) direct--;
+            }
+        }
+        gallery(8);
+
+        document.write(num);
+    }
+</script>
+
+</html>

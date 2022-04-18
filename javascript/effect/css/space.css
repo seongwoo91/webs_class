@@ -1,0 +1,66 @@
+body {
+    margin: 0;
+    overflow: hidden;
+    width: 100vw;
+    height: 100vh;
+    background-image: url("https://user-images.githubusercontent.com/26748614/96337246-f14d4580-1085-11eb-8793-a86d929e034d.jpg");
+    background-size: cover;
+    backdrop-filter:  brightness(50%);
+}
+
+canvas {
+    display: block;
+}
+
+#canvas_container {
+    width: 100%;
+    height: 100vh;
+}
+
+
+h1 {
+    font-family: 'Six Caps', sans-serif;
+    position: absolute;
+    left: 50%;
+    top: 40%;
+    font-size: 6.5vw;
+    text-transform: uppercase;
+    font-weight: normal;
+    transform: translate(-50%, -50%);
+    letter-spacing: 1vw;
+    background: -webkit-linear-gradient(#49DCC6, #FF047D);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+}
+.pages {
+    font-family: 'NexonLv1Gothic';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 10px;
+}
+.pages li {
+    display: inline;
+    list-style: none;
+}
+.pages li a {
+    display: inline-block;
+    text-align: center;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    color: #F6680E;
+    border: 1px solid #F6680E;
+    text-decoration: none;
+    border-radius: 50%;
+    font-size: 14px;
+    margin: 4px;
+    box-shadow: 0 0 0 #f1e17e inset;
+    transition: all 0.4s;
+    opacity: 0.8;
+}
+.pages li a:hover {
+    box-shadow: 0 -100px 0 #f1e17e inset;
+    color: #FF047D;
+    opacity: 1;
+}

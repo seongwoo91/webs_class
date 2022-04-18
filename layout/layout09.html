@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>레이아웃</title>
+    <style>
+        * {
+            margin: 0;
+        }
+        #wrap {
+            width: 100%;
+            margin: 0 auto;
+        }
+        #header {
+            width: 100%;
+            height: 100px;
+            background-color: #E0F7FA;
+        }
+        #nav {
+            width: 100%;
+            height: 250px;
+            background-color: #B2EBF2;
+        }
+        #contents{
+            background-color: #80DEEA;
+        }
+
+        #contents .container {
+            display: flex;
+        }
+        #article1 {
+            width: 50%;
+            height: 600px;
+            background-color: #4DD0E1;
+        }
+        #article2 {
+            width: 50%;
+            height: 600px;
+            background-color: #26C6DA;
+
+        }
+        #footer {
+            width: 100%;
+            height: 100px;
+            background-color: #00BCD4;
+        }
+        .container {
+            width: 1200px;
+            margin: 0 auto;
+            height: inherit;
+            background-color: rgba(0,0,0,0.2);
+        }      
+        @media (max-width: 1220px){
+            #wrap {
+                width: 96%;
+            }
+            .container {
+                width: 96%;
+            }
+        }
+        @media (max-width: 768px){
+            #contents .container {
+                flex-wrap: wrap;
+            }
+            #article1 {
+                width: 100%;
+                height: 300px;
+            }
+            #article2 {
+                width: 100%;
+                height: 300px;
+            }
+        }
+                   
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <div id="header">
+            <div class="container"></div>
+        </div>
+        <div id="nav">
+            <div class="container"></div>
+        </div>
+        <div id="contents">
+            <div class="container">
+                <div id="article1"></div>
+                <div id="article2"></div>    
+            </div>            
+        </div>
+        <div id="footer">
+            <div class="container"></div>
+        </div>
+    </div>
+</body>
+</html>

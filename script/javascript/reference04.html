@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>reference01</title>
+   
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/prism.css">
+</head>
+
+<body>
+    <h1>식별자</h1>
+    <p>식별자는 코드 내의 변수, 함수, 혹은 속성(en-US)을 식별하는 문자열입니다.<br>
+        Javascript의 식별자는 대소문자를 구별하며 영문,$(달러),_(언더),숫자(0-9)로 구성할수 있지만, 숫자로 시작할 수는 없습니다.<br>
+        Javascript는 유니코드 문자셋을 사용합니다.<br>
+        또한 키워드사용이 불가하고, 숫자로 시작하거나 공백을 포함할수 없다.
+        <br>
+    </p>
+    <h6>식별자 단어 조합 규칙</h6>
+    <p>
+        하나 이상의 글자로 이루어져야 한다.<br>
+        첫 번째 글자는 문자이거나 '$', '_'여야한다.<br>
+        두 번째 이후의 글자는 숫자, 문자, '$', '_'여야한다.<br>
+        '$', '_' 외의 특수 문자는 사용할 수 없다.<br>
+        길이의 제한은 없다.<br>
+        키워드는 식별자로 사용할 수 없다.<br>
+
+    </p>
+    <br>
+    <h6>식별자 작성 방식</h6>
+    <p>Javascript에서는 식별자를 작성할 때 다음과 같은 방식을 사용할 수 있습니다.<br>
+        <br>
+        1.Camel Case 방식<br>
+        <br>
+        2.Underscore Case 방식<br>
+        <br>
+        <br>
+        Camel Case 방식이란 식별자가 여러 단어로 이루어질 경우에 첫 번째 단어는 모두 소문자로 작성하고,<br>
+        그다음 단어부터는 첫 문자만 대문자로 작성하는 방식입니다.<br>
+        Underscore Case 방식은 식별자를 이루는 단어들을 소문자로만 작성하고, 그 단어들은 언더스코어(_)로 연결하는 방식입니다.<br>
+
+        식별자를 작성할때 보통 Camel Case 방식을 많이 사용하는 편입니다.<br>
+
+        <h5>
+            <div id="sample1" class="sample">
+                <h3>키워드 종류</h3>
+                <div class="code">
+                    <pre class="line-numbers"><code class="language-js">
+var firstVar = 10;                 // Camel Case 방식
+
+function my first_func {          // Underscore Case 방식
+var firstLocalVal = 20;           // Camel Case 방식
+</code></pre>
+                </div>
+            </div>
+
+
+            <br>
+            <br>
+            <h1>키워드</h1>
+            <p>자바스크립트가 처음 만들어질 때 정해진, 특별한 의미가 있는 단어이다.<br>
+                키워드는 제어문의 시작과 끝, 특정한 조작 목적 등으로 쓰입니다.<br>
+                이런 기능들이 정의되어 있기 때문에 식별자나 프로퍼티 이름으로 사용할 수 없습니다.</p>
+            <br>
+            <h6></h6>
+            <div id="sample1" class="sample">
+                <h3>키워드 종류</h3>
+                <div class="code">
+                    <pre class="line-numbers"><code class="language-js">break<br>
+loop문이나 switch문을 종료하기 위해 사용<br>
+<br>
+continue<br>
+loop문을 빠져나가 최상단으로 가는데 사용<br>
+<br>
+var<br>
+변수를 선언한다.<br>
+<br>
+new<br>
+생성자 함수를 실행한다.<br>
+<br>
+function<br>
+함수 선언<br>
+<br>
+if ... else<br>
+if문 실행<br>
+<br>
+return<br>
+함수에 return 뒤에 있는 값을 반환하고 함수를 종료한다.<br>
+<br>
+switch<br>
+switch문 실행<br>
+<br>
+debugger<br>
+자바스크립트의 실행을 중지하고 (가능하다면)디버깅 function을 부른다.<br>
+<br>
+do ... while do while반복문 실행 for<br>
+for반복문 실행<br>
+<br>
+try ... catch<br>
+error를 핸들링하는 try catch문 실행<br>
+<br>
+abstract<br>
+abstract는 클래스의 메소드를 하위 클래스가 반드시 오버라이드 하도록 하는 것입니다.<br>
+이것을 통해서 부모클래스의 일부 기능을 하위 클래스가 구현하도록 강제할 수 있습니다.<br>
+<br>
+boolean<br>
+Boolean 객체는 불리언 값을 감싸고 있는 객체입니다.<br>
+<br>
+case<br>
+<br>
+catch<br>
+<br>
+char<br>
+<br>
+class<br>
+<br>
+const<br>
+const 선언은 블록 범위의 상수를 선언합니다. 상수의 값은 재할당할 수 없으며 다시 선언할 수도 없습니다.<br>
+<br>
+default<br>
+CSS : default 의사 클래스는 연관 요소 내에서의 기본값인 요소를 선택합니다.<br>
+<br>
+goto<br>
+<br>
+float<br>
+<br>
+for<br>
+<br>
+implements<br>
+<br>
+import<br>
+<br>
+in<br>
+<br>
+instanceof<br>
+<br>
+int<br>
+<br>
+interface<br>
+<br>
+byte<br>
+<br>
+public<br>
+<br>
+short<br>
+<br>
+static<br>
+<br>
+super<br>
+<br>
+synchronized<br>
+<br>
+this<br>
+<br>
+throw<br>
+<br>
+throws</code></pre>
+                </div>
+            </div>
+            <script src="../assets/js/prism.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>신나는타이핑게임</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            background: #17A2B8;
+        }
+        .typing__wrap {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+        .typing__inner {
+            width: 60vw;
+            min-height: 40vh;
+            background: #fff;
+            border-radius: 20px;
+            padding: 30px;            
+        }
+        .input__field {
+            position: absolute;
+            left: 10px;
+            padding: 10px;
+            top: 10px;
+        }
+        .typing__text {
+            border: 1px solid #c3c3c3;
+            border-radius: 10px;
+            padding: 30px;
+            font-size: 22px;
+            min-height: 300px;
+            font-weight: 300;
+            font-family: 'Poppins';
+            text-align: justify;
+            word-break: break-all;
+        }
+        .typing__info {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: 30px;
+            min-height: 3            jksdafㄴㅁㅇㄹ;
+        }
+        .typing__info button {
+            width: 210px;
+            background: #17A2B8;
+            color:#fff;
+            font-family: "Poppins";
+            border: 0;
+            margin: 20px 0     ;
+            border-radius: 5px;
+            padding: 10px;
+            font-size: 22px;
+            margin-left: 20px;
+            cursor: pointer;
+        }
+        .typing__info ul {
+            display: flex;
+            width: 100%;
+            justify-content: space-around;
+        }
+        .typing__info ul li {
+            width: 20%;
+            list-style: none;
+            display: flex;
+            font-size: 20px;
+            border-left: 1px solid #C3C3C3;
+            padding-left: 30px;
+            
+        }
+        .typing__info ul li:first-child {
+            padding-left: 0;
+            border-left: 0;
+        }
+        .typing__info li p {
+            white-space: nowrap;
+        }
+        .typing__text p span.correct {
+            color: rgb(10, 14, 240);
+            font-weight: bold;
+        } 
+        .typing__text p span.incorrect {
+            color:red;
+            background: #C3C3C3;
+            outline: 1px solid #fff;
+            border-radius: 4px;
+        }
+        .typing__text p span {
+            position: relative;
+        }
+        .typing__text p span.active {
+            color: #17a2b8;;
+        }
+        .typing__text p span.active::before {
+            content:'';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            height: 2px;
+            background: #17a2b8;
+            animation: blick 1s ease-in-out infinite;
+            opacity: 0;
+        }
+        @keyframes blick {
+         
+            50% {opacity: 1;}
+          
+        }
+        .typing__info li span {
+            padding: 0 10px;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="typing__wrap">
+        <input type="text" class="input__field">
+        <div class="typing__inner">
+            <div class="typing__text"><p></p></div>
+            <div class="typing__info">
+                <ul>
+                    <li class="time">
+                        <p>Time Left:</p>
+                        <span><b>60</b>s</span>
+                    </li>
+                    <li class="Mistakes">
+                        <p>Mistakes:</p>
+                        <span>0</span>
+                    </li>
+                    <li class="wpm">
+                        <p>wpm:</p>
+                        <span>0</span>
+                    </li>
+                    <li class="cpm">
+                        <p>cpm:</p>
+                        <span>0</span>
+                    </li>
+                </ul>
+                <button class="again">Try Again</button>
+            </div>
+        </div>
+    </div>
+    <script>
+        const paragraphs = [
+            "Praise for Embiid's improved passing has focused on those domineering possessions in which he lords over the action -- directing cutters, triggering rotations, whipping crosscourt passes. He is dishing a career-best 4.2 dimes, and his turnover rate shrinks every season. He is a truly majestic force But watch for those inside-out slingshots in which the ball leaves Embiid's hands almost the instant he touches it.",
+            "James Harden is broken right now as a scorer, but the Harden-Embiid pick-and-roll is as dominant as advertised. It is generating heaps of easy buckets for Embiid. Before the trade, Embiid set about 41 ball screens per 100 possessions and rolled to the rim on 37% of those plays, per Second Spectrum. Alongside Harden, Embiid is setting 46 picks per 100 possessions and rolling 51% of the time.",
+            "If I'm scheming against the Harden-Embiid dance, my No. 1 priority might be preventing Embiid from catching pocket passes -- even if it means playing Harden slightly for the drive. Given how Harden has looked recently, I'd rather force him to finish over a decent contest -- especially given playoff officiating tendencies -- than concede slicing interior touches to Embiid.",
+            "Even as he ascended to the MVP, Jokic was caricatured as a lead-footed sieve on defense. That reputation lingers -- and not without some justification. Jokic barely jumps. If you get a shot off around the rim against him, there's a great chance it's going in. Perimeter stars can expose him in open space. In fairness, they do that to most centers.",
+            "Defenses overload toward superstar ball handlers in this exact alignment a lot: The guy guarding the big near the basket slides toward the ball, and the defender in the weakside corner rotates into the lane to take away the lob. The goal is to coax the ball handler into that skip pass; the ball stays airborne long enough for the defense to reset itself.",
+            "Tatum has leaned into two-man games with Derrick White and Marcus Smart -- the Celtics most often defended by opposing point guards. Switch, and he bullies that mismatch. Double, and you're unleashing Tatum's playmaking. Drop back, and Tatum rains pull-up fire. Overplay that pull-up, and Tatum dusts you off the bounce. He has answers for any scheme.",
+            "With the first wave of NFL free agency and a few league-shaking quarterback trades past us, team needs are becoming more clear ahead of the 2022 NFL draft. We've seen which teams have been aggressive in adding veterans and which have sat out free agency (and saved salary-cap space) while looking to a draft class deep with wide receivers and edge rushers.",
+            "Let's get into a new post-free-agency first-round mock draft. I did my previous mock right before the combine earlier this month, so this one has some notable changes, with the Seahawks (No. 9) entering the first round and the Texans (No. 13) and Packers (No. 22) adding a second Round 1 selection. Where will the first quarterback go? Could the Lions shake things up at No. 2? And what's the Falcons' plan now?",
+            "Hamilton is a playmaking safety in a 6-foot-4 frame who would immediately raise the ceiling of a defense that has struggled for years. He can play in the box, out of the slot and as a center fielder. Normally I'd say this is too high for a safety, but Hamilton is a unique and special defender. Detroit brought back safety Tracy Walker, but he could play with Hamilton.",
+            "London, 6-foot-4 and my top-ranked wideout, had 88 catches for 1,084 yards in eight games in 2021 before a broken right ankle ended his season. He can be a weapon in the red zone. With London and Corey Davis on the outside and Elijah Moore and Braxton Berrios working out of the slot, New York would have a young and talented receiving corps for Wilson's second season.",
+            "Neal is a massive tackle who can overpower defenders in the run game and move his feet as a pass-protector. Andrew Thomas, the No. 4 pick in the 2020 draft, looked much better in Year 2 and could stay at left tackle, pushing Neal to the right side. Neal also played some guard at Alabama, and he could be great there too. This is a big season for quarterback Daniel Jones, so the Giants have to keep him upright.",
+            "This pick is logical for the team and for the prospect. The Giants' top pass-rusher last season was rookie Azeez Ojulari, who led the team with eight sacks, and they have to improve on the edge. This is their best chance to add a young, talented defensive end. They can afford to use this pick on Thibodeaux, who has a high ceiling but was inconsistent in 2021.",
+            "Atlanta could go with the best prospect available and fill a need position with Wilson, a field-stretcher who had 113 catches and 18 touchdowns for the Buckeyes over the past two seasons. He ran a speedy 4.38-second 40-yard dash at the combine. With Calvin Ridley suspended for the season, the Falcons don't have any starting-caliber receivers on their roster to catch Mariota's passes.",
+            "I think the Jets would be thrilled to get a shutdown corner with their second Round 1 pick, improving a secondary that allowed quarterbacks to put up a 53.5 QBR last season, which ranked 31st in the league. Signing D.J. Reed will help, but I still see cornerback as a need. They also need a safety, but I don't have another one with a first-round grade after Kyle Hamilton.",
+            "As I mentioned in my writeup for the No. 3 pick, the Texans aren't in the position to target needs over talent. They have to get the best players they can and figure out the rest later, because this is not going to be a quick rebuild. So while I thought about edge rusher Jermaine Johnson II and a couple wide receivers, I decided to get Houston a massive defensive tackle who could make everyone around him better.",
+            "he Ravens would likely be thrilled with this scenario. They just let Bradley Bozeman, who started at center in 2021 and left guard in 2019 and 2020, walk in free agency, and they don't have a replacement on the roster. Linderbaum would be an improvement, not just an instant replacement. As I've said a couple times, he's one of the best center prospects of the past decade.",
+            "You've heard by now how bad the Chargers' run defense was in 2021, and they've already taken steps to improve it, bringing in two defensive tackles via free agency in Sebastian Joseph-Day, whom coach Brandon Staley is familiar with from his time with the Rams, and Austin Johnson. That probably takes defensive tackle off the list of holes to fill in the draft.",
+            "So let's turn the attention over to right tackle where Bryan Bulaga was just released. I don't see Storm Norton as the answer there, but Penning can be. He's fantastic as a run blocker, and offensive line coaches love him because he's just plain mean and plays through the whistle. This would make back-to-back drafts with first-round tackles for the Chargers, and left tackle Rashawn Slater looked like a star as a rookie.",
+            "I made this pick before the Bucs re-signed Leonard Fournette on Tuesday morning, but I'm not going to change it. Their running back depth chart is still barren, and Hall could really help. I don't love taking backs in Round 1, but Tampa Bay general manager Jason Licht and coach Bruce Arians could ensure that they get their choice of the entire running back class here.",
+            "The Bengals have significantly retooled their offensive line this offseason, adding four new starters in free agency. That takes some of the pressure off Joe Burrow (literally) in Year 3, as he was battered in his first two seasons. The Super Bowl runners-up can now afford to fill a different need with this pick, and I see Jones as a replacement for Larry Ogunjobi, who had a great 2021 season.",
+        ];
+
+        const typingText = document.querySelector(".typing__text p");       
+        const inputField = document.querySelector(".input__field");       
+        const typingMistakes = document.querySelector(".Mistakes span");       
+        const typingTime = document.querySelector(".time span b");       
+        const typingWpm = document.querySelector(".wpm span");    
+        const typingCpm = document.querySelector(".cpm span");    
+        const typingAgain = document.querySelector(".again");    
+        
+        
+        //const tazaLength = paragraphs.length;
+        //const random = Math.floor(Math.random() * tazaLength);
+        //typingText.innerText = paragraphs[random];
+        let charIndex = 0;
+        let mistakes = 0;
+        let timer;
+        let maxTime = 60;
+        let timeLeft = maxTime;
+        let isTyping = 0;
+        
+
+
+        function randomParagraph(){
+            let randIndex = Math.floor(Math.random() * paragraphs.length);
+            typingText.innerHTML = "";
+
+            paragraphs[randIndex].split("").forEach(span => {
+                let spanTag = `<span>${span}</span>`;
+
+                typingText.innerHTML += spanTag;
+            });
+            document.addEventListener("keydown", () => inputField.focus());
+            typingText.addEventListener("click", () => inputField.focus());
+        }
+        
+        function initTyping(){
+            const characters = typingText.querySelectorAll("span");
+            let typedChar = inputField.value.split("")[charIndex];     
+            
+            if(charIndex < characters.length-1 && timeLeft > 0){
+                if(!isTyping){
+                timer = setInterval(initTimer, 1000);
+                isTyping = true;
+
+            }
+            
+            if(typedChar == null){
+                charIndex--;
+                if(characters[charIndex].classList.contains("incorrect")){
+                    mistakes--;                    
+                }
+                characters[charIndex].classList.remove("correct", "incorrect");
+            } else {
+                if(characters[charIndex].innerText === typedChar){
+                    characters[charIndex].classList.add("correct");
+                } else {
+                    mistakes++;
+                    characters[charIndex].classList.add("incorrect");
+                }
+                charIndex++;   
+            }
+            
+            characters.forEach(span => span.classList.remove("active"));  
+            characters[charIndex].classList.add("active"); 
+            typingMistakes.innerText = mistakes;                 
+           
+                 
+        let wpm = Math.round((((charIndex - mistakes)/5) / (maxTime - timeLeft)) * 60);
+            wpm = wpm < 0 || !wpm || wpm == Infinity ? 0 : wpm;
+            typingWpm.innerText = wpm;
+            typingCpm.innerText = charIndex - mistakes;
+
+            } else {
+                clearInterval(timer);
+                inputField.value = "";
+            }
+            
+        }
+
+        function initTimer(){
+            if(timeLeft > 0){
+                timeLeft--;
+                typingTime.innerText = timeLeft;
+            } else {
+                clearInterval(timer);
+            }
+        }
+        
+        function resetGame(){
+            randomParagraph();
+            clearInterval(timer);
+            inputField.value = "";
+            timeLeft = maxTime;
+            isTyping = charIndex = mistakes = 0;
+            typingMistakes.innerText = 0;
+            typingWpm.innerText = 0;
+            typingCpm.innerText = 0;          
+
+        }
+        typingAgain.addEventListener("click", ()=>{
+            resetGame();
+        })
+
+
+        randomParagraph();
+        inputField.addEventListener("input", initTyping);
+        
+    </script>
+</body>
+</html>
