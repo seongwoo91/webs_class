@@ -257,7 +257,13 @@
         let cardOne, cardTwo;
         let disableDeck = false;
 
+        let sounds = [
+            "sound/succsess.mp3",
+            "sound/fail.mp3"
+        ]
 
+        letsoundMatch = new Audio(sounds[0]);
+        letsoundNoMatch = new Audio(sounds[1]);
         
         function flipCard(e){
             let clickedCard = e.target; 
@@ -287,6 +293,7 @@
                 cardTwo.removeEventListener("click", flipCard);
                 cardOne = cardTwo = "";
                 disableDeck = false;
+                letsoundMatch.play();
             } else {
                 setTimeout(()=>{
                 cardOne.classList.add("shake");
@@ -299,6 +306,7 @@
                 cardOne = cardTwo = "";
                 disableDeck = false;
             },1200);
+            letsoundNoMatch.play();
             }
                        
         }
