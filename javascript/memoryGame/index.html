@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>재미있는 카드게임</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -80,11 +81,40 @@
             50% {transform: translateX(8px)}
             100% {transform: translateX(0)}
         }
+        .card__sound {
+            position: absolute;
+            right: 20px;
+            top: 20px;
+            
+        }
+        .card__sound button {
+            line-height: 40px;
+            width: 40px;height: 40px;
+            background: #fff;            
+            color: #007bff;
+            text-align: center;
+            line-height: 40px;
+            border-radius: 50%; 
+            cursor: pointer;  
+        }
+        .card__start {
+            position: absolute;
+            left: 20px;
+            top: 20px;
+        }
     </style>
 </head>
 <body>
     <div class="wrap__card">
         <div class="card__inner">
+            <div class="card__start">
+                <button class="material-icons">face</button>
+            </div>
+            <div class="card__sound">
+                <button class="material-icons">volume_up</button>
+                <!-- <span class="material-icons">volume_off</span> -->
+                <audio id="song" src="sound/succsess.mp3" loop="loop"></audio>
+            </div>
             <ul class="cards">
                 <li>
                     <div class="view front">
@@ -227,11 +257,24 @@
         //07. 빨리 클릭하면 버그 발생
 
         const cards = document.querySelectorAll(".cards li");
+        const sound = document.querySelector(".card__sound button");
+        const song = document.querySelector("#song");
+        const start = document.querySelector(".card__start");        
+        const li = document.querySelectorAll(".cards li")
+
+        
 
         let cardOne, cardTwo;
         let disableDeck = false;
+        let matchedCard = 0;
 
+        let sounds = [
+            "sound/succsess.mp3",
+            "sound/fail.mp3"
+        ]
 
+        letsoundMatch = new Audio(sounds[0]);
+        letsoundNoMatch = new Audio(sounds[1]);
         
         function flipCard(e){
             let clickedCard = e.target; 
@@ -257,10 +300,19 @@
 
         function matchCards(img1, img2){
             if(img1 == img2){
+                matchedCard++;
+
+                if(matchedCard == 8){
+                    setTimeout(() => {
+                        alert("다완성했습니다.");
+                    }, 1000);
+                    
+                }
                 cardOne.removeEventListener("click", flipCard);
                 cardTwo.removeEventListener("click", flipCard);
                 cardOne = cardTwo = "";
                 disableDeck = false;
+                letsoundMatch.play();
             } else {
                 setTimeout(()=>{
                 cardOne.classList.add("shake");
@@ -273,16 +325,64 @@
                 cardOne = cardTwo = "";
                 disableDeck = false;
             },1200);
+            letsoundNoMatch.play();
             }
-            
-
-            
+                       
         }
 
         cards.forEach(card=>{
             card.addEventListener("click", flipCard); 
         })
 
+        //sound.addEventListener("click", function(){
+        //    
+        //})
+        sound.addEventListener("click", ()=>{
+            sound.classList.toggle(".is-playing");
+
+            if(sound.classList.contains(".is-playing")){
+                sound.innerText = "volume_off";
+                song.play();
+            } else {
+                sound.innerText = "volume_up";
+                song.pause();
+            }
+        })
+
+        //카드섞기
+        function shuffledCard(){
+            cardOne, cardTwo = "";
+            disableDeck = false;
+            matchedCard = 0;            
+
+            let arr = [1,2,3,4,5,6,7,8,1,2,3,4,5,6,7,8];
+            let result = arr.sort(()=> Math.random() > 0.5 ? 1: -1);
+
+            cards.forEach((card, index) => {
+                card.classList.remove("flip");
+
+                setTimeout(()=>{
+                    card.classList.add("flip");
+                }, 200 * index);
+
+                
+                setTimeout(()=>{
+                    card.classList.remove("flip");
+                },4000)
+
+                let imgTag = card.querySelector(".back img");
+                imgTag.src = `img/${arr[index]}.jpg`
+            })
+            console.log(result)
+
+        }
+        shuffledCard();
+
+        //스타트버튼
+        
+        start.addEventListener("click", ()=>{
+            shuffledCard();
+        })
         
     </script>
 </body>
