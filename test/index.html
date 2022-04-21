@@ -11,21 +11,29 @@
             width: 100vw;
             height: 100vh;
             background-color: ccc;
+            overflow: hidden
+            
         }
 
         .target {
             display: inline-block;
             position: absolute;
-            width: 300px;
-            height: 300px;
+            width: 200px;
+            height: 200px;
             background-color: rgb(111, 187, 48);
-            transform: translate(-50%, -50%);            
+            transform: translateX(0px) translateY(0px) translateX(-50%) translateY(-50%);           
         }
         .target:nth-child(2) {
-            transform: translate(-200%, -200%);
+            transform: translateX(400px) translateY(400px) translateX(-50%) translateY(-50%);  
         }
         .target:nth-child(3) {
-            transform: translate(100%, 100%);
+            transform: translateX(-400px) translateY(-400px) translateX(-50%) translateY(-50%);  
+        }
+        .target:nth-child(4) {
+            transform: translateX(-400px) translateY(400px) translateX(-50%) translateY(-50%);  
+        }
+        .target:nth-child(5) {
+            transform: translateX(400px) translateY(-400px) translateX(-50%) translateY(-50%);  
         }
         .center {
             display: inline-block; 
@@ -43,9 +51,11 @@
 </head>
 <body onmousemove="handleMouseMove(event)">
     <!-- 움직일 타겟-->
-    <div class="target">타겟1</div>
-    <div class="target">타겟2</div>
-    <div class="target">타겟3</div>
+    <div class="target">작업물1</div>
+    <div class="target">작업물2</div>
+    <div class="target">작업물3</div>
+    <div class="target">작업물4</div>
+    <div class="target">작업물5</div>
     <!-- 중간 점 -->
     <div class="center"></div>
 <script>
@@ -99,6 +109,8 @@
         updateTargetPosition();
     }, 1000/60); //초당 60의 프레임
 
+
+    
 </script>
 </body>
     </html>
