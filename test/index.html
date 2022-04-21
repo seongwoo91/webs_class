@@ -12,20 +12,20 @@
             height: 100vh;
             background-color: ccc;
         }
-        
+
         .target {
             display: inline-block;
             position: absolute;
-            width: 50px;
-            height: 50px;
+            width: 300px;
+            height: 300px;
             background-color: rgb(111, 187, 48);
             transform: translate(-50%, -50%);            
         }
         .target:nth-child(2) {
-            transform: translate(-500%, -500%);
+            transform: translate(-200%, -200%);
         }
         .target:nth-child(3) {
-            transform: translate(-900%, 400%);
+            transform: translate(100%, 100%);
         }
         .center {
             display: inline-block; 
@@ -49,7 +49,7 @@
     <!-- 중간 점 -->
     <div class="center"></div>
 <script>
-    const movePower = 2; //이동 속도
+    const movePower = 2.5; //이동 속도
 
     //타겟의 기본좌표
     let targetX = window.innerWidth/2;
