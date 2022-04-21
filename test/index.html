@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test</title>    
+    <style>
+        body {
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+            background-color: ccc;
+        }
+        
+        .target {
+            display: inline-block;
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            background-color: rgb(111, 187, 48);
+            transform: translate(-50%, -50%);            
+        }
+        .target:nth-child(2) {
+            transform: translate(-500%, -500%);
+        }
+        .target:nth-child(3) {
+            transform: translate(-900%, 400%);
+        }
+        .center {
+            display: inline-block; 
+            pointer-events: none;
+            position: absolute;
+            width: 5px;
+            height: 5px;
+            background-color: black;
+            border-radius: 50%;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+    </style>
+</head>
+<body onmousemove="handleMouseMove(event)">
+    <!-- 움직일 타겟-->
+    <div class="target">타겟1</div>
+    <div class="target">타겟2</div>
+    <div class="target">타겟3</div>
+    <!-- 중간 점 -->
+    <div class="center"></div>
+<script>
+    const movePower = 2; //이동 속도
+
+    //타겟의 기본좌표
+    let targetX = window.innerWidth/2;
+    let targetY = window.innerHeight/2;
+    let degree = 0; //중간 점을 기준으로 마우스가 위치한 각도
+
+    updateTargetPosition(); //화면 중간으로 초기화
+
+    function handleMouseMove(e) {    
+        const centerX = window.innerWidth/2;
+        const centerY = window.innerHeight/2;
+        const mouseX = e.clientX;
+        const mouseY = e.clientY;
+        //화면 중간의 x,y와 마우스의 x,y를 이용하여
+
+        const x = mouseX - centerX;
+        const y = mouseY - centerY;
+
+        const radian = Math.atan2(y,x);
+        //중간 점을 기준으로 마우스가 위치한 각도를 산출
+        degree = radian * 180 / Math.PI;
+    }
+
+    //타겟 위치 업데이트
+    function updateTargetPosition() {
+        const targetElements = document.querySelectorAll(".target");
+
+        targetElements.forEach((t, i) => {
+            t.setAttribute("style", `left:${targetX + i*20}px; top:${targetY + i*20}px`);
+        }); 
+    }
+
+
+    //정보를 기반으로 타겟을 업데이트할 타이머
+    setInterval(()=>{
+        const nextDegree = degree + 180; //180도 반대방향의 각도를 산출
+
+        //각도를 기반으로 movePower만큼 이동한 x,y 를 산출
+        const nextX = Math.cos(Math.PI * (nextDegree / 180)) * movePower;
+        const nextY = Math.sin(Math.PI * (nextDegree / 180)) * movePower;
+
+        //타겟의 위치를 변경
+        targetX += nextX;
+        targetY += nextY;
+
+        //위치 업데이트
+        updateTargetPosition();
+    }, 1000/60); //초당 60의 프레임
+
+</script>
+</body>
+    </html>

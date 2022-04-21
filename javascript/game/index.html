@@ -12,8 +12,7 @@
     <div id="wrap">
         <header id="header">
             <div class="logo">Game Site</div>
-            <div id="clock"></div>  
-                    
+            <div id="clock"></div>                      
         </header>
         <div class="icon_wrap">
             <div class="icon_inner">
@@ -51,7 +50,7 @@
         </div>
 
         <div class="memorygame">
-            <iframe class="mgame" src="../memoryGame/index.html" frameborder="0"></iframe>
+            <iframe class="mgame" src="../memoryGame/index2.html" frameborder="0"></iframe>
         </div>
 
     </div>
@@ -71,32 +70,20 @@
         $(".btn3").click(function(){
             $(".memorygame").toggleClass("show");
         })
-
-
         window.addEventListener("mousemove", (e) => {            
             let x = e.clientX - 16 + "px";
             let y = e.clientY - 6 + "px";
-            document.querySelector(".cursor").style.cssText = "left:" + x + "; top:" + y;
-  
+            document.querySelector(".cursor").style.cssText = "left:" + x + "; top:" + y;  
         })
         function printTime() {
-
             var clock = document.getElementById("clock");            // 출력할 장소 선택
-
             var now = new Date();                                                  // 현재시간
-
             var nowTime = now.getFullYear() + "년" + (now.getMonth()+1) + "월" + now.getDate() + "일" + now.getHours() + "시" + now.getMinutes() + "분" + now.getSeconds() + "초";
-
             clock.innerHTML = nowTime;           // 현재시간을 출력
-
             setTimeout("printTime()",1000);         // setTimeout(“실행할함수”,시간) 시간은1초의 경우 1000
-
             }
-
-            window.onload = function() {                         // 페이지가 로딩되면 실행
-            
+            window.onload = function() {                         // 페이지가 로딩되면 실행            
             printTime();
-        
         }
 
 
