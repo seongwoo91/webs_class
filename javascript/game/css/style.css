@@ -40,14 +40,15 @@ a {
 #header {
 width: 100%;
 height: 40px;
-background-color: #FE998F;  
+background: #111;
+/* background-image: linear-gradient(to top, #000 0%, #005F0F 100%); */
 display: flex;
 justify-content: space-between;
 }
 #clock {
     margin-top: 10px;
     margin-right: 10px;
-    color: #fff;
+    color: #0DFD35;
     font-size: 22px;
     
 }
@@ -55,12 +56,12 @@ justify-content: space-between;
     font-size: 25px;
     margin-left: 5px;
     line-height: 1.5;
-    color: #fff;    
+    color: #0DFD35;    
 }
 
 .icon_wrap {
-    margin-top: 4rem;
-    margin-left: 5rem;
+    margin-top: 2rem;
+    margin-left: 2rem;
 }
 
 .icon_inner {
@@ -70,7 +71,8 @@ justify-content: space-between;
 
 .btn1,
 .btn2,
-.btn3 {
+.btn3,
+.btn4 {
     margin: 0 20px;
 }
 
@@ -82,7 +84,8 @@ justify-content: space-between;
 
 .btn1 img, 
 .btn2 img, 
-.btn3 img 
+.btn3 img,
+.btn4 img 
 {
     width: 50px;
     height: 50px;    
@@ -93,18 +96,20 @@ justify-content: space-between;
 
 .btn1, 
 .btn2,
-.btn3{
+.btn3,
+.btn4{
     text-align: center;
 }
 .btn1 p,
 .btn2 p,
-.btn3 p
+.btn3 p,
+.btn4 p
 {
     font-size: 20px;
     text-align: center;
     background: #000;
-    background-color: #2FE5BD;
-    color: #000;
+    background-color: #000;
+    color: #0DFD35;
 }
 
 .musicbox {
@@ -124,6 +129,7 @@ justify-content: space-between;
 iframe {
     width: 100%;
     height: 100%;
+    border-radius: 30px;
 }
 .cursor {
     position: absolute;
@@ -151,19 +157,124 @@ iframe {
   position: absolute;
   left: 0;
   top: 0;
-  bottom: 0;
+  bottom: -500%;
   right: 0;
   margin: auto;
-  width: 500px;
+  width: 600px;
   height: 600px;
+  border-radius: 30px;
   background: #fff;
-  border-radius: 10px;
+  border-radius: 30px;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.1), 0 6px 10px 0 rgba(0,0,0,0.17);
-
- 
-
+  transition: all 0.5s;
+  opacity: 0;
 }
 .memorygame.show {
     bottom: 5%;
     opacity: 1;
+}
+.reactsite {
+    display: flex;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;    
+    background: #000;   
+    transform: scale(0);     
+    z-index: 100;
+}
+.reactsite.open {          
+    transform: scale(1); 
+}
+
+.reactsite p {
+    color: #0DFD35;    
+    top: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size:60px;
+    position: relative;    
+}
+.reactsite p::before,
+.reactsite p::after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    content:attr(data-text);       
+}
+.reactsite p::before {
+    color: purple;
+    z-index: -1;
+    animation: zizic 0.3s ease infinite;
+}
+.reactsite p::before {
+    color: cyan;
+    z-index: -2;
+    animation: zizic2 0.3s ease infinite reverse;
+}
+@keyframes zizic {
+    0% {
+        transform: translate(-1px, 1px);
+    }
+    25% {
+        transform: translate(-2px, 2px);
+    }
+    50% {
+        transform: translate(1px, 1px);
+    }
+    75% {
+        transform: translate(1px, -2px);
+    }
+    100% {
+        transform: translate(-1px, 1px);
+    }
+}
+@keyframes zizic2 {
+    0% {
+        transform: translate(-1px, 1px);
+    }
+    25% {
+        transform: translate(-2px, 2px);
+    }
+    50% {
+        transform: translate(1px, 1px);
+    }
+    75% {
+        transform: translate(1px, -2px);
+    }
+    100% {
+        transform: translate(-1px, 1px);
+    }
+}
+.reactsite a {
+    position: absolute;
+    color: #0DFD35;
+    background-image: linear-gradient(to top, #000 0%, #005F0F 100%);
+    font-size: 30px;
+    padding: 10px 40px;
+    bottom: 40%;
+    left: 30%;
+    text-decoration: none;
+    transition: all 0.5s;
+}
+.reactsite div {
+    position: absolute;
+    color: #0DFD35;
+    background-image: linear-gradient(to top, #000 0%, #005F0F 100%);
+    font-size: 30px;
+    padding: 10px 40px;
+    bottom: 40%;
+    left: 60%;
+    transition: all 0.5s;
+}
+.reactsite a:hover,
+.reactsite div:hover {
+    background-image: linear-gradient(to top, #000 0%, #2DBB47 50%, #005F0F 100%);
+}
+
+@keyframes reactopen {
+
 }

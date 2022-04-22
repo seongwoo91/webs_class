@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>GAME SITE</title>
     <link rel="stylesheet" href="css/bg.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
@@ -18,23 +18,35 @@
             <div class="icon_inner">
                 <div class="btn1">
                     <a href="#3">
-                        <img src="img/asdf.svg" alt="">
+                        <img src="img/con1.svg" alt="">
                         <p>MUSIC</p>
                     </a>
                 </div>
                 <div class="btn2">
                     <a href="#3">
-                        <img src="img/234243.svg" alt="">
+                        <img src="img/con2.svg" alt="">
                         <p>Typing GAME</p>
                     </a>
                 </div>
                 <div class="btn3">
                     <a href="#3">
-                        <img src="img/1243123123.svg" alt="">
+                        <img src="img/con5.svg" alt="">
                         <p>MEMORY GAME</p>
                     </a>
                 </div>
+                <div class="btn4">
+                    <a href="#3">
+                        <img src="img/con4.svg" alt="">
+                        <p>REACT SITE</p>
+                    </a>
+                </div>
             </div>                
+        </div>
+        
+        <div class="reactsite">
+            <p data-text="리액트 사이트로 이동하시겠습니까?">리액트 사이트로 이동하시겠습니까?</p>
+            <a href="https://seongwoo1.netlify.app">네</a>
+            <div class="reactclose">네니오</div>
         </div>
         
         <div class="musicbox">
@@ -50,8 +62,10 @@
         </div>
 
         <div class="memorygame">
-            <iframe class="mgame" src="../memoryGame/index2.html" frameborder="0"></iframe>
+            <iframe class="mgame" src="../memoryGame/index3.html" frameborder="0"></iframe>
         </div>
+
+        
 
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
@@ -61,6 +75,7 @@
         $(".btn1").draggable();
         $(".btn2").draggable();
         $(".btn3").draggable();
+        $(".btn4").draggable();
         $(".btn1").click(function(){
             $(".musicbox").toggleClass("show");
         })
@@ -69,6 +84,12 @@
         })
         $(".btn3").click(function(){
             $(".memorygame").toggleClass("show");
+        })
+        $(".btn4").click(function(){
+            $(".reactsite").addClass("open");
+        })
+        $(".reactclose").click(function(){
+            $(".reactsite").removeClass("open");
         })
         window.addEventListener("mousemove", (e) => {            
             let x = e.clientX - 16 + "px";
