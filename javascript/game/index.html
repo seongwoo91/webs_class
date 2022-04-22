@@ -31,7 +31,7 @@
                 <div class="btn3">
                     <a href="#3">
                         <img src="img/con5.svg" alt="">
-                        <p>MEMORY GAME</p>
+                        <p>CARD GAME</p>
                     </a>
                 </div>
                 <div class="btn4">
@@ -40,13 +40,40 @@
                         <p>REACT SITE</p>
                     </a>
                 </div>
+                <div class="btn5">
+                    <a href="#3">
+                        <img src="img/con6.svg" alt="">
+                        <p>FIGMA</p>
+                    </a>
+                </div>
             </div>                
         </div>
+
+        <div class="poweroff1">
+            <img src="img/button.svg" alt="">
+            <p>MUSIC OFF</p>
+        </div>
+        <div class="poweroff2">
+            <img src="img/button.svg" alt="">
+            <p>TYPING OFF</p>
+        </div>
+        <div class="poweroff3">
+            <img src="img/button.svg" alt="">
+            <p>CARD OFF</p>
+        </div>
+
+
         
         <div class="reactsite">
             <p data-text="리액트 사이트로 이동하시겠습니까?">리액트 사이트로 이동하시겠습니까?</p>
-            <a href="https://seongwoo1.netlify.app">네</a>
-            <div class="reactclose">네니오</div>
+            <a href="https://seongwoo1.netlify.app" target="_blank" class="reacta">이동</a>
+            <div class="reactclose">취소</div>
+        </div>
+
+        <div class="figmasite">
+            <h2>피그마 작업 페이지로 이동할까요?</h2>
+            <a href="https://www.figma.com/file/Ar28ae0PxkB2fG0EnkzbXi/PORTFOLIO?node-id=0%3A1" target="_blank" class="figmayes">네</a>
+            <p class="figmano">아니요</p>
         </div>
         
         <div class="musicbox">
@@ -76,20 +103,63 @@
         $(".btn2").draggable();
         $(".btn3").draggable();
         $(".btn4").draggable();
+        $(".btn5").draggable();
         $(".btn1").click(function(){
             $(".musicbox").toggleClass("show");
         })
+        $(".btn1").click(function(){
+            $(".poweroff1").toggleClass("active");
+        })
+        $(".poweroff1").click(function(){
+            $(".poweroff1").removeClass("active");
+        })
+        $(".poweroff1").click(function(){
+            $(".musicbox").removeClass("show");
+        })
+
         $(".btn2").click(function(){
             $(".typinggmae").toggleClass("show");
         })
+        $(".btn2").click(function(){
+            $(".poweroff2").toggleClass("active");
+        })
+        $(".poweroff2").click(function(){
+            $(".poweroff2").removeClass("active");
+        })
+        $(".poweroff2").click(function(){
+            $(".typinggmae").removeClass("show");
+        })
+
         $(".btn3").click(function(){
             $(".memorygame").toggleClass("show");
         })
+        $(".btn3").click(function(){
+            $(".poweroff3").toggleClass("active");
+        })
+        $(".poweroff3").click(function(){
+            $(".poweroff3").removeClass("active");
+        })
+        $(".poweroff3").click(function(){
+            $(".memorygame").removeClass("show");
+        })
+
         $(".btn4").click(function(){
             $(".reactsite").addClass("open");
         })
+        $(".btn5").click(function(){
+            $(".figmasite").addClass("active");
+        })
         $(".reactclose").click(function(){
             $(".reactsite").removeClass("open");
+        })
+        $(".reacta").click(function(){
+            $(".reactsite").removeClass("open");
+        })
+        $(".figmayes").click(function(){
+            $(".figmasite").removeClass("active");
+        })
+        $(".figmano").click(function(){
+            $(".figmasite").removeClass("active");
         })
         window.addEventListener("mousemove", (e) => {            
             let x = e.clientX - 16 + "px";
