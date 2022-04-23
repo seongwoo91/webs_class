@@ -220,11 +220,49 @@
 }
 #contents_tit p {
 	padding:35px 0; 
-	font-family: 'Gaegu', cursive; font-size: 40px;
+	font-family: 'Gaegu', cursive; font-size: 45px;	
 }
 #contents_tit p a {
-	color:#2c94c4; 
+    text-transform: capitalize;
+    white-space: nowrap;
+	color: transparent;    
+    margin: 0;
+    position: absolute;    
+    transform: translate(-50%);
+	
 }
+#contents_tit p a::before {
+    content :"나는 박성우다.";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;    
+    color: #2c94c4;    
+    overflow: hidden;
+    border-right: 2px solid #2c94c4;
+    animation: hi 4.5s steps(18) infinite forwards;
+    transform: scale(0);
+	padding: 10px 0;	
+}
+@keyframes hi {
+    0% {
+        width: 0;  
+        transform: scale(1);      
+    }
+    50% {
+        width: 100%;
+        transform: scale(1); 
+    }
+	100% {
+        width: 0%;
+        transform: scale(1); 
+    }
+    
+}
+
+/* #contents_tit p a {
+	color:#2c94c4; 
+} */
 
 
 
