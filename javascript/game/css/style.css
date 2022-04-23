@@ -330,6 +330,7 @@ iframe {
 .figmasite.active {
     animation: figmaopen 2s ease;
     animation-fill-mode:forwards;
+    z-index: 50;
 }
 @keyframes figmaopen {
     0% {transform: translate(-50%, -50%) scaleX(0.005) scaleY(0.005);}
@@ -470,4 +471,9 @@ iframe {
     background: #000;
     font-size: 20px;
     padding: 2px 5px;
+}
+.poweroff1:hover,
+.poweroff2:hover,
+.poweroff3:hover {
+    
 }

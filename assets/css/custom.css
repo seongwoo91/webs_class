@@ -1,4 +1,6 @@
-body {background:#f1f4fb url(../img/body_bg.gif)}
+body {
+	background-image: linear-gradient(to top, #fff1eb 0%, #ace0f9 100%);
+}
 
 
 
@@ -51,8 +53,9 @@ body {background:#f1f4fb url(../img/body_bg.gif)}
 
 /* Header  */
 
-#header{
-	background:#a5d5fa center 57px;
+#header{	
+	background-image: url(../img/class_bg.jpg);
+	background-size: cover;
 	padding: 10px 0 10px 0px;
 }
 #header.sub {
