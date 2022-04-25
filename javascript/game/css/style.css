@@ -73,7 +73,8 @@ justify-content: space-between;
 .btn2,
 .btn3,
 .btn4,
-.btn5 {
+.btn5,
+.btn6 {
     margin: 0 20px;
 }
 
@@ -87,7 +88,8 @@ justify-content: space-between;
 .btn2 img, 
 .btn3 img,
 .btn4 img,
-.btn5 img 
+.btn5 img,
+.btn6 img 
 {
     width: 50px;
     height: 50px;    
@@ -100,14 +102,16 @@ justify-content: space-between;
 .btn2,
 .btn3,
 .btn4,
-.btn5 {
+.btn5,
+.btn6 {
     text-align: center;
 }
 .btn1 p,
 .btn2 p,
 .btn3 p,
 .btn4 p,
-.btn5 p
+.btn5 p,
+.btn6 p
 {
     font-size: 20px;
     text-align: center;
@@ -303,7 +307,7 @@ iframe {
     color: #0DFD35;    
     overflow: hidden;
     border-right: 3px solid #0DFD35;
-    animation: typing 2s 2s steps(18) forwards;
+    animation: typing 2s 1.5s steps(18) forwards;
     transform: scale(0);
 }
 @keyframes typing {
@@ -328,7 +332,7 @@ iframe {
     top: 40%;       
 }
 .figmasite.active {
-    animation: figmaopen 2s ease;
+    animation: figmaopen 1.5s ease;
     animation-fill-mode:forwards;
     z-index: 50;
 }
@@ -362,7 +366,7 @@ iframe {
     border: 1px solid #0DFD35;  
     border-radius: 5px;  
     overflow: hidden;    
-    animation: typing2 0.3s 4.1s steps(18) forwards;
+    animation: typing2 0.3s 3.6s steps(18) forwards;
     transform: scale(0);
 }
 @keyframes typing2 {
@@ -399,7 +403,7 @@ iframe {
     background: #05AA19;
     border: 1px solid #0DFD35;
     border-radius: 5px;  
-    animation: typing2 0.3s 4.5s steps(18) forwards;
+    animation: typing2 0.3s 4.0s steps(18) forwards;
     transform: scale(0);
 }
 
