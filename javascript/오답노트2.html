@@ -1,150 +1,159 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
+  </head>
+  <body>
     <script>
-        //1번
-        {
-            function solution(arr){
-                let answer=[];
-                let sum = 0, min = 1000;
-                for(let x of arr){
-                    if(x % 2 === 1){
-                        sum += x;
-                        if(x < min) min = x;
-                    }
-                }
-                answer.push(sum);
-                answer.push(min);
-                return answer;
+      //1번
+      {
+        function solution(arr) {
+          let answer = [];
+          let sum = 0,
+            min = 1000;
+          for (let x of arr) {
+            if (x % 2 === 1) {
+              sum += x;
+              if (x < min) min = x;
             }
+          }
+          answer.push(sum);
+          answer.push(min);
+          return answer;
+        }
 
-            arr = [12,77, 38, 41, 53, 92, 85];
-            console.log(solution(arr));
+        arr = [12, 77, 38, 41, 53, 92, 85];
+        console.log(solution(arr));
+      }
+      //2
+      {
+        function solution(n) {
+          let answer;
+          answer = Math.ceil(n / 12);
+          return answer;
         }
-        //2 
-        {
-            function solution(n){
-                let answer;
-                answer = Math.ceil(n/12);
-                return answer;
-            }
-            
-            console.log(solution(178));
-        }
-        //3
-        {
-            function solution(arr){
-                let answer=arr;
-                let sum = answer.reduce((a,b) => a + b, 0);
-                for(let i = 0; i < 8; i++){
-                    for(let j=i+1; j<9; j++){
-                        if((sum-(answer[i] + answer[j])) == 100){
-                            answer.splice(j, 1);
-                            answer.splice(i, 1);
-                        }
-                    }
-                }
-                return answer;
-            }
 
-            let arr = [20, 7, 23, 19, 10, 15, 25, 8, 13];
-            console.log(solution(arr));
-        }
-        //4 
-        {
-            function solution(s){
-                let answer = s;
-                answer = answer.replace(/a/g, "#");
-                return answer;
+        console.log(solution(178));
+      }
+      //3
+      {
+        function solution(arr) {
+          let answer = arr;
+          let sum = answer.reduce((a, b) => a + b, 0);
+          for (let i = 0; i < 8; i++) {
+            for (let j = i + 1; j < 9; j++) {
+              if (sum - (answer[i] + answer[j]) == 100) {
+                answer.splice(j, 1);
+                answer.splice(i, 1);
+              }
             }
-
-            let str="javascript";
-            console.log(solution(str));
+          }
+          return answer;
         }
-        //5
-        {
-            function solution(s,t){
-                let answer = s.split(t).length;             
-                return answer-1;
+
+        let arr = [20, 7, 23, 19, 10, 15, 25, 8, 13];
+        console.log(solution(arr));
+      }
+      //4
+      {
+        function solution(s) {
+          let answer = s;
+          answer = answer.replace(/a/g, "#");
+          return answer;
+        }
+
+        let str = "javascript";
+        console.log(solution(str));
+      }
+      //5
+      {
+        function solution(s, t) {
+          let answer = s.split(t).length;
+          return answer - 1;
+        }
+
+        let str = "javascript react vue";
+        console.log(solution(str, "a"));
+      }
+      //6
+      {
+        function solution(s) {
+          let answer = "";
+          for (let x of s) {
+            let num = x.charCodeAt();
+
+            if (x === x.toLowerCase()) answer += x.toUpperCase();
+            else answer += x;
+          }
+
+          return answer;
+        }
+
+        let str = "ItisTimeToStudy";
+        console.log(solution(str));
+      }
+      //7
+      {
+        function solution(s) {
+          let answer = "",
+            max = Number.MIN_SAFE_INTEGER;
+          for (let x of s) {
+            if (x.length > max) {
+              max = x.length;
+              answer = x;
             }
-
-            let str="javascript react vue";
-            console.log(solution(str,'a'));
+          }
+          return answer;
         }
-        //6
-        {
-            function solution(s){
-                let answer = "";
-                for(let x of s){
-                    let num=x.charCodeAt();
+        let str = ["teacher", "time", "student", "beautiful", "good"];
+        console.log(solution(str));
+      }
+      //8
+      {
+        function solution(s) {
+          let answer;
+          let mid = Math.floor(s.length / 2);
 
-                    if(x === x.toLowerCase()) answer += x.toUpperCase();
-                    else answer += x ;
-                }
+          if (s.length % 2 === 1) answer = s.substring(mid, mid + 1);
+          else answer = s.substring(mid - 1, mid + 1);
 
-                return answer;
-            }
+          return answer;
+        }
+        console.log(solution("study"));
+      }
+      //9
+      {
+        function solution(s) {
+          let answer = "";
+          for (let i = 0; i < s.length; i++) {
+            if (s.indexOf(s[i]) === i) answer += s[i];
+          }
+          return answer;
+        }
+        console.log(solution("ksekkset"));
+      }
+      //10\
+      {
+        function solution(s) {
+          let answer;
+          answer = s.filter(function (v, i) {
+            return s.indexOf(v) === i;
+          });
+          return answer;
+        }
+        let str = ["good", "time", "good", "time", "student"];
+        console.log(solution(str));
+      }
+      {
+        let test = "1234";
 
-            let str="ItisTimeToStudy";
-            console.log(solution(str));
-        }
-        //7
-        {
-            function solution(s){
-                let answer = "", max = Number.MIN_SAFE_INTEGER
-                for(let x of s){
-                    if(x.length > max){
-                        max = x.length;
-                        answer=x;
-                    }
-                }
-                return answer;
-            }
-            let str = ["teacher", "time", "student", "beautiful", "good"];
-            console.log(solution(str));
-        }
-        //8
-        {
-            function solution(s){
-                let answer;
-                let mid = Math.floor(s.length/2)
+        test2 = test.charAt(1);
 
-                if(s.length%2===1) answer = s.substring(mid, mid+1);
-                else answer = s.substring(mid-1, mid+1);
-
-                return answer;
-            }
-            console.log(solution("study"));
-        }
-        //9
-        {
-            function solution(s){
-                let answer = "";
-                for(let i=0; i<s.length; i++){
-                    if(s.indexOf(s[i]) === i) answer+=s[i];
-                }
-                return answer;
-            }
-            console.log(solution("ksekkset"));
-        }
-        //10
-        {
-            function solution(s){
-                let answer;
-                answer = s.filter(function(v,i){
-                    return s.indexOf(v) === i;
-                });
-                return answer;
-            }
-            let str = ['good', 'time', 'good', 'time', 'student'];
-            console.log(solution(str));
-        }
+        console.log(test2);
+      }
     </script>
-</body>
+  </body>
 </html>
